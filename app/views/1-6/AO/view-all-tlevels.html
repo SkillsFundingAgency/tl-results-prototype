@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+    {% if data['verify_tlevel_count'] == 0  and backLink == null %}
+        <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+    {% elif backLink != null %}
+        <a class="govuk-back-link" href="{{ backLink }}">Back</a>
+    {% else %}
+        <a class="govuk-back-link" href="tlevel-select">Back</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- MESSAGES -->
+{% if msg == 'confirm' or msg == 'reported' %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-error-summary" style="border-color: #00703c;">
+                <h3 class="govuk-heading-m" style="margin-bottom: 0px; color: #00703c;">
+                    {% if msg == 'reported' %}
+                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
+                        {% else %}
+                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
+                    {% endif %}                    
+                </h3>
+            </div>
+        </div>
+    </div>
+    {% set msg = false %}
+{% endif %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Your T Levels</h1>
+
+        {% if data['verify_tlevel_count'] == 0 %} 
+
+        <p>A list of T Levels you are delivering.</p>
+
+        {%endif%}
+
+        <dl class="govuk-summary-list">
+            {% for tLevel in data['tLevels-ao'] %}
+                {% if tLevel[6] != 'Unverified' %}
+                    <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">
+                            {{ tLevel[0] }}: {{ tLevel[1] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="action-view-tLevel-details?tl={{ tLevel[7] }}&bl=view-all-tlevels">
+                            Details<span class="govuk-visually-hidden"> {{ tLevel[0] }}: {{ tLevel[1] }}</span>
+                            </a>
+                        </dd>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </dl>        
+
+        {% if verifyTlevelCount == 0 %} 
+            <form class="form" action="tlevels-dashboard" method="post">
+                <button class="govuk-button" data-module="govuk-button">Home</button>
+            </form>
+        {% elif data['verify_tlevel_count'] != 0%}
+            <form class="form" action="tlevel-select" method="post">
+                <p>You need to review additional T Levels before they can appear in this list.</p>
+                <button class="govuk-button" data-module="govuk-button">Continue reviewing T Levels</button>
+            </form>
+        {% endif %}
+        
+    </div>
+  </div>
+
+{% endblock %}

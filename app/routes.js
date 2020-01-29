@@ -280,6 +280,15 @@ router.get('/1-5/Verification/sign-in', function (req, res) {
     res.render('1-5/Verification/sign-in')
 })
 
+router.get('/1-6/AO/tlevels-prototype-setup', function (req, res) {
+    require('./routes/routes-1-6.js')(router)
+    req.session.data['ao'] = null
+    req.session.data['selected_organisation'] = null
+    req.session.data['selected_role'] = null
+    checkIfActive(req)
+    res.render('1-6/AO/tlevels-prototype-setup')
+})
+
 router.get('/1-3/Verification/google-home', function (req, res) {
     require('./routes/routes-1-3.js')(router)
     var AO = req.query['ao']

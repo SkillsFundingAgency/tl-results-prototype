@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Tell us what's wrong</h1>
+
+            <form class="form" action="action-report-tLevel-issue" method="post">
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail">
+                        Give us further details about any errors with this T Level:
+                    </label>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                </div>
+
+                <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Route</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {{ data['view_selected_tLevel'][0] }}: {{ data['view_selected_tLevel'][1] }}
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Pathway</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {{ data['view_selected_tLevel'][1] }}
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Specialisms</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {% for spec in data['specialisms'] %}
+                                    {% if spec[1] === data['view_selected_tLevel'][1] %}
+                                        <ul class="govuk-list">
+                                            <li>
+                                                {{ spec[2] }}
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>             
+                    </tbody>
+                </table>
+
+                <p>
+                    Your comments will be sent to IfATE for review and you will be updated once any changes have been made.
+                </p>
+
+                <button class="govuk-button" data-module="govuk-button">Submit for review</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

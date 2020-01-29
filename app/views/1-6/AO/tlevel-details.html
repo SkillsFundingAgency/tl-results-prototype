@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="{{ data['back_link'] }}">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">T Level details</h1>
+
+            {% if data['view_selected_tLevel'][6] === 'Rejected' %}
+                <div class="govuk-inset-text">
+                    You or someone in your organisation has reported an error. You will be notified when this page has been updated.
+                    <br><br>If everything is correct you can <a href="action-confirm-tLevel-details?tl={{data['view_selected_tLevel'][7]}}">confirm details</a>.
+                </div>
+            {% endif %}
+
+            <div class="govuk-form-group">
+                <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Route</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {{ data['view_selected_tLevel'][0] }}: {{ data['view_selected_tLevel'][1] }}
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Pathway</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {{ data['view_selected_tLevel'][1] }}
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Specialisms</th>
+                            <td class="govuk-table__cell govuk-table__cell--numeric">
+                                {% for spec in data['specialisms'] %}
+                                    {% if spec[1] === data['view_selected_tLevel'][1] %}
+                                        <ul class="govuk-list">
+                                            <li>
+                                                {{ spec[2] }}
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        </tr>             
+                    </tbody>
+                </table>
+            </div>
+
+            {% if data['view_selected_tLevel'][6] === 'Verified' %}
+            <p><a href="action-something-wrong-tLevel-details?tl={{data['view_selected_tLevel'][7]}}">Something is not right</a></p>
+            {% endif %}
+
+            <form class="form" action="view-all-tlevels" method="post">
+                <button class="govuk-button" data-module="govuk-button">View all T Levels</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
