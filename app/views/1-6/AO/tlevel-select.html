@@ -23,9 +23,11 @@
                 <div class="govuk-error-summary" style="border-color: #00703c;">
                     <h3 class="govuk-heading-m" style="margin-bottom: 0px; color: #00703c;">
                         {% if msg == 'reported' %}
-                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
+                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} 
+                        <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
                         {% else %}
-                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
+                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} 
+                        <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
                         {% endif %}
                     </h3>
                 </div>
@@ -49,7 +51,7 @@
                             </h1>
                         </legend>
 
-                        <p>You must confirm the T Level details are correct before you can add any schools and colleges to that qualification.</p>
+                        <p>You need to confirm the details of each T Level before you can tell us which centres are offering it.</p>
 
                         <div class="govuk-radios">
                             <!-- Can show only those relevant to the AO here -->

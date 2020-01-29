@@ -23,10 +23,16 @@
             <div class="govuk-error-summary" style="border-color: #00703c;">
                 <h3 class="govuk-heading-m" style="margin-bottom: 0px; color: #00703c;">
                     {% if msg == 'reported' %}
-                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
+                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }}                      
+                        <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
                         {% else %}
-                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
-                    {% endif %}                    
+                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} 
+                        <a href="action-view-tlevel-details?tl={{ tlCode }}&bl=view-all-tlevels">View details</a>
+                    {% endif %}
+                    
+                    {% if data['verify_tlevel_count'] == 0 %}
+                    <br/><br/> You have now reviewed all your T Levels.
+                    {% endif %}
                 </h3>
             </div>
         </div>
@@ -42,7 +48,7 @@
 
         {% if data['verify_tlevel_count'] == 0 %} 
 
-        <p>A list of T Levels you are delivering.</p>
+        <p>You are assessing the following T Levels.</p>
 
         {%endif%}
 
