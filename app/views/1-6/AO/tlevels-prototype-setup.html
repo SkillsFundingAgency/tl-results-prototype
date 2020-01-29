@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% set serviceName %}
+
+{% endset%}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="action-tlevels-provider-setup" method="post">
+
+            {% if errors.length > 0 %}
+            <div class="govuk-form-group govuk-form-group--error">
+                {% else %}
+                <div class="govuk-form-group">
+                    {% endif %}
+
+                    {% if errors.length > 0 %}
+                    <span id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>
+                        {{ errors[0][1] }}
+                    </span>
+                    {% endif %}
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                    <h1 class="govuk-fieldset__heading">
+                        Prototype Setup
+                    </h1>
+                    </legend>
+
+                    <h2>Select Organisation</h2>
+
+                    <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org-2" name="selected_organisation" type="radio" value="ncfe" {{ checked("data['selected_organisation']", "ncfe") }}>
+                        <label class="govuk-label govuk-radios__label" for="org-2">
+                        NCFE
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org-2" name="selected_organisation" type="radio" value="pearson" {{ checked("data['selected_organisation']", "pearson") }}>
+                        <label class="govuk-label govuk-radios__label" for="org-2">
+                        Pearson
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org-3" name="selected_organisation" type="radio" value="cityandguilds" {{ checked("data['selected_organisation']", "cityandguilds") }}>
+                        <label class="govuk-label govuk-radios__label" for="org-3">
+                        City & Guilds
+                        </label>
+                    </div>     
+                    </div>
+
+                    <h2>Select User Roles</h2>
+
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="role-1" name="selected_role" type="checkbox" value="superuser" {{ checked("data['selected_role']", "superuser") }}>
+                            <label class="govuk-label govuk-checkboxes__label" for="role-1">
+                            Super User
+                            </label>
+                        </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="role-2" name="selected_role" type="checkbox" value="verifyuser" {{ checked("data['selected_role']", "verifyuser") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="role-2">
+                        Verify User
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="role-3" name="selected_role" type="checkbox" value="centreadministrator" {{ checked("data['selected_role']", "centreadministrator") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="role-3">
+                        Centre Administrator
+                        </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="role-4" name="selected_role" type="checkbox" value="noroles" {{ checked("data['selected_role']", "noroles") }}>
+                        <label class="govuk-label govuk-checkboxes__label" for="role-4">
+                        No Roles
+                        </label>
+                    </div>
+                    </div>
+                </fieldset>
+            </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
