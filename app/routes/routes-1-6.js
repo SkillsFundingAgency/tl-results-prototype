@@ -44,6 +44,21 @@ module.exports = function (router) {
             }
             req.session.save()
         })
+
+        // Accounts
+        req.session.data['accounts'] = []
+        var filename = 'app/views/1-1/AO/data/Accounts_v1.5.csv'
+        fs.readFile(filename, function (err, buf) {
+            data = buf.toString().split(/\r?\n/)
+            for (idx = 0; idx < data.length; idx++) {
+                line = data[idx].split('\t')
+                if (line[1] === req.session.data['ao']) {
+                    req.session.data['accounts'].push(line)
+                }
+            }
+            req.session.save()
+        })
+
     }
 
     function checkAndSetIfVerifyTlevelHasOneComponent(req) {
