@@ -177,10 +177,10 @@ module.exports = function (router) {
             checkAndSetIfVerifyTlevelHasOneComponent(req);
             var verifyTlevelCount = req.session.data['verify_tlevel_count'];
             if(verifyTlevelCount == 0) {
-                res.render('1-6/AO/view-all-tlevels', { 'msg' : 'confirm', 'tlCode': tlCode, 'backLink': '/1-6/AO/verify-tLevel-details', 'verifyTlevelCount': verifyTlevelCount, 'showAll' : req.session.data['has-one-tLevel-verified-or-queried'] })
+                res.render('1-6/AO/view-all-tlevels', { 'msg' : 'confirm', 'tlCode': tlCode, 'backLink': '/1-6/AO/verify-tlevel-details', 'verifyTlevelCount': verifyTlevelCount, 'showAll' : req.session.data['has-one-tLevel-verified-or-queried'] })
             }
             else {
-                res.render('1-6/AO/tlevel-select', { 'msg' : 'confirm', 'tlCode': tlCode, 'backLink': '/1-6/AO/verify-tLevel-details', 'verifyTlevelCount': verifyTlevelCount, 'showAll' : req.session.data['has-one-tLevel-verified-or-queried'] })
+                res.render('1-6/AO/tlevel-select', { 'msg' : 'confirm', 'tlCode': tlCode, 'backLink': '/1-6/AO/verify-tlevel-details', 'verifyTlevelCount': verifyTlevelCount, 'showAll' : req.session.data['has-one-tLevel-verified-or-queried'] })
             }
         }
     })
@@ -196,7 +196,7 @@ module.exports = function (router) {
         }
 
         req.session.data['back_link'] = backLink
-        
+        r
         for (tlevel of req.session.data['tLevels-ao']) {
             if (tlevel[7] === tlCode) {
                 req.session.data['view_selected_tLevel'] = tlevel
@@ -231,7 +231,7 @@ module.exports = function (router) {
                 req.session.data['req_tLevel'] = tlevel
             }
         }
-        res.redirect('/1-6/AO/verify-tLevel-details')
+        res.redirect('/1-6/AO/verify-tlevel-details')
     })
 
     router.get('/1-6/AO/action-something-wrong-tLevel-details', function (req, res) {
