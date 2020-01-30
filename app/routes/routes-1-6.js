@@ -196,7 +196,7 @@ module.exports = function (router) {
         }
 
         req.session.data['back_link'] = backLink
-        r
+        
         for (tlevel of req.session.data['tLevels-ao']) {
             if (tlevel[7] === tlCode) {
                 req.session.data['view_selected_tLevel'] = tlevel
