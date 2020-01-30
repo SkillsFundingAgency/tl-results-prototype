@@ -145,7 +145,7 @@ module.exports = function (router) {
                 req.session.data['req_tLevel'] = tlevel
             }
         }
-        res.redirect('/1-6/AO/verify-tLevel-details?tl=' + req.session.data['requested_tLevel'])
+        res.redirect('/1-6/AO/verify-tlevel-details?tl=' + req.session.data['requested_tLevel'])
     })
     
     router.post('/1-6/AO/action-verify-single-tLevel', function (req, res) {
