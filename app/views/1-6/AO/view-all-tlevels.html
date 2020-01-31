@@ -71,7 +71,7 @@
             {% endfor %}
         </dl>        
 
-        {% if verifyTlevelCount == 0 %} 
+        {% if verifyTlevelCount == 0 or data['verify_tlevel_count'] == 0 %} 
             <form class="form" action="tlevels-dashboard" method="post">
                 <button class="govuk-button" data-module="govuk-button">Home</button>
             </form>
