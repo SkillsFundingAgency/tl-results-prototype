@@ -23,11 +23,11 @@
                 <div class="govuk-error-summary" style="border-color: #00703c;">
                     <h3 class="govuk-heading-m" style="margin-bottom: 0px; color: #00703c;">
                         {% if msg == 'reported' %}
-                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} 
+                        You have reported an error with {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }}
                         <br/><br/>
                         <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
                         {% else %}
-                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }} 
+                        You have confirmed {{ data['req_tLevel'][0] }}: {{ data['req_tLevel'][1] }}
                         <br/><br/>
                         <a href="action-view-tLevel-details?tl={{ tlCode }}&bl=tlevel-select">View details</a>
                         {% endif %}
@@ -45,30 +45,31 @@
                     <fieldset class="govuk-fieldset">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                             <h1 class="govuk-fieldset__heading">
-                                {% if data['verify_tlevel_count'] == 1 or verifyTlevelCount == 1 %} 
+                                {% if data['verify_tlevel_count'] == 1 or verifyTlevelCount == 1 %}
                                     You have a T Level to review
                                 {% else %}
                                     Which T Level would you like to review?
-                                {% endif %}                           
+                                {% endif %}
                             </h1>
                         </legend>
 
-                        <p>You need to confirm the details of each T Level before you can tell us which centres are offering it.</p>
+                        <span class="govuk-hint">You need to confirm the details of each T Level before you can tell us which centres are offering it.</span>
 
                         <div class="govuk-radios">
                             <!-- Can show only those relevant to the AO here -->
+                            {{data['tLevels-ao'] | dump}}
                             {% for tLevel in data['tLevels-ao'] %}
 
-                                {% if (data['verify_tlevel_count'] == 1 or verifyTlevelCount == 1) and tLevel[6] == 'Unverified' %} 
+                                {% if (data['verify_tlevel_count'] == 1 or verifyTlevelCount == 1) and tLevel[6] == 'Unverified' %}
                                     <label class="govuk-label" for="{{ tLevel[7] }}">
                                         {{ tLevel[0] }}: {{ tLevel[1] }}
                                     </label>
-                                {% elif tLevel[6] == 'Unverified' %}                                
-                                    <div class="govuk-radios__item">                                        
+                                {% elif tLevel[6] == 'Unverified' %}
+                                    <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="{{ tLevel[7] }}" name="requested_tLevel" type="radio" value="{{ tLevel[7] }}" {{ checked("data['requested_tLevel']", "{{ tLevel[7] }}") }}>
                                         <label class="govuk-label govuk-radios__label" for="{{ tLevel[7] }}">
                                             {{ tLevel[0] }}: {{ tLevel[1] }}
-                                        </label>                                    
+                                        </label>
                                     </div>
                                 {% endif %}
                             {% endfor %}

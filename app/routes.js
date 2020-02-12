@@ -25,6 +25,7 @@ function initialiseVariables(req) {
     6 = Can view assessment results
     7 = Can view/add/edit/delete results
     */
+
     req.session.data['tasks'] = [
         ['You need to verify your T Level TQ titles', '/1-4/AO/ao-t-levels', '0', '1']
     ]
@@ -146,6 +147,28 @@ function initialiseVariables(req) {
     req.session.save()
     return
 }
+
+router.post('/1-7/AO/confirm-answer', function (req, res) {
+
+  let tLevelVerified = req.session.data['tLevel-verified']
+
+  if (tLevelVerified === 'Verified') {
+    res.redirect('confirmation-not-finished-confirmed')
+  } else {
+    res.redirect('report-tlevel-issue')
+  }
+})
+
+router.post('/1-7/AO/which-details-to-show', function (req, res) {
+
+  let tLevelName = req.session.data['tLevel-name']
+
+  if (tLevelName === 'Construction: Design, Surveying and Planning') {
+    res.redirect('verify-tlevel-details-construction')
+  } else {
+    res.redirect('verify-tlevel-details-digital')
+  }
+})
 
 function checkIfActive(req) {
     if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'] == false) {
@@ -505,4 +528,3 @@ router.post('/1-2/Verification/action-my-profile', function (req, res) {
 
 module.exports = router
 //checkIfActive(router.req)
-

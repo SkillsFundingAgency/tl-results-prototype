@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+DfE Sign-in
+{% endblock %}
+
+{% set serviceName %}
+DfE Sign-in
+{% endset%}
+
+{% block beforeContent %}
+{% include "includes/AO-phase-banner-admin.html" %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="add-services" class="govuk-back-link">Back</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action="review-new-services">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Select roles
+            </h1>
+
+        </div>
+    </div>
+
+    <!-- LIST OF SERVICES -->
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-body">
+                <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header govuk-!-width-one-third">
+                                User
+                            </td>
+                            <td scope="row" class="govuk-table__cell">
+                                <!-- {{ data['first-name'] }} {{ data['last-name'] }} -->
+                                Mohammed Ahmed
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">
+                                Organisation
+                            </td>
+                            <td scope="row" class="govuk-table__cell">
+                                <!-- {{ data['accountHolder'][1] }} -->
+                                Organisation
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__header">
+                                Service
+                            </td>
+                            <td scope="row" class="govuk-table__cell">
+                                Manage T Levels
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="roles-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+                        Select all required roles
+                    </legend>
+                    <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="roles-1" name="roles" type="checkbox"
+                                value="FullAccess">
+                            <label class="govuk-label govuk-checkboxes__label" for="roles-1">
+                                Site Administrator
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="roles-2" name="roles" type="checkbox"
+                                value="Approver">
+                            <label class="govuk-label govuk-checkboxes__label" for="roles-2">
+                                T Levels Reviewer
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="roles-3" name="roles" type="checkbox"
+                                value="centres-change">
+                            <label class="govuk-label govuk-checkboxes__label" for="roles-3">
+                                Centres Editor
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="roles-4" name="roles" type="checkbox"
+                                value="Registrations Administrator">
+                            <label class="govuk-label govuk-checkboxes__label" for="roles-4">
+                                Registrations Editor
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="roles-5" name="roles" type="checkbox"
+                                value="Results Administrator">
+                            <label class="govuk-label govuk-checkboxes__label" for="roles-5">
+                                Results Editor
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <button class="govuk-button" data-module="govuk-button" style="margin-right: 5px;" name="delete-service"
+                    value="delete">
+                    Continue
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+{% endblock %}

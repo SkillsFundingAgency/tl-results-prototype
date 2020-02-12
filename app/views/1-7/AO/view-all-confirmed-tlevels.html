@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  View all confirmed T Levels page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Your T Levels</h1>
+
+        <h2 class="govuk-heading-m">Confirmed T Levels</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Digital: Digital Production, Design and Development
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                View <span class="govuk-visually-hidden">Digital: Digital Production, Design and Development</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Construction: Design, Surveying and Planning
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                View <span class="govuk-visually-hidden">Construction: Design, Surveying and Plannin</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="form" action="tlevels-dashboard" method="post">
+            <button class="govuk-button" data-module="govuk-button">Home</button>
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}
