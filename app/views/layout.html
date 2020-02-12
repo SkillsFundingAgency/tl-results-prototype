@@ -29,16 +29,6 @@
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
-{% block cookie %}
-<div id="global-cookie-message">
-  <p class="govuk-width-container">This service uses cookies to make the site simpler.
-    <a class="govuk-link" href="#">Find out more about cookies</a>
-    or
-    <a class="govuk-link" href="#" id="global-cookie-message-dismiss">hide this message</a>
-  </p>
-</div>
-{% endblock %}
-
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
@@ -48,7 +38,6 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
