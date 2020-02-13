@@ -159,7 +159,29 @@ router.post('/1-7/AO/confirm-answer', function (req, res) {
   }
 })
 
+router.post('/1-8/AO/confirm-answer', function (req, res) {
+
+  let tLevelVerified = req.session.data['tLevel-verified']
+
+  if (tLevelVerified === 'Verified') {
+    res.redirect('confirmation-not-finished-confirmed')
+  } else {
+    res.redirect('report-tlevel-issue')
+  }
+})
+
 router.post('/1-7/AO/which-details-to-show', function (req, res) {
+
+  let tLevelName = req.session.data['tLevel-name']
+
+  if (tLevelName === 'Construction: Design, Surveying and Planning') {
+    res.redirect('verify-tlevel-details-construction')
+  } else {
+    res.redirect('verify-tlevel-details-digital')
+  }
+})
+
+router.post('/1-8/AO/which-details-to-show', function (req, res) {
 
   let tLevelName = req.session.data['tLevel-name']
 

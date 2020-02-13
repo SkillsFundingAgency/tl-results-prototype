@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Centre details - existing page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+            Centre details
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            Barnsley college (10000536)
+        </h2>
+
+        <p class="govuk-body govuk-!-margin-bottom-7">These are the T Levels the centre is approved to deliver.</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Digital: Digital Production, Design and Development
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                Remove <span class="govuk-visually-hidden">Digital: Digital Production, Design and Development</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Construction: Design, Surveying and Planning
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                Remove <span class="govuk-visually-hidden">Construction: Design, Surveying and Plannin</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="form" action="centre-details-new" method="post">
+            <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-9" data-module="govuk-button">Add another T Level</button>
+        </form>
+
+        <form class="form" action="find-centre" method="post">
+            <button class="govuk-button" data-module="govuk-button">Find a centre</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
