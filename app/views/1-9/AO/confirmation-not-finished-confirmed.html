@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  T Level Confirmation page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">T Level details confirmed</h1>
+        <div class="govuk-panel__body">
+          Construction: Design, Surveying and Planning
+        </div>
+      </div>
+
+      <p class="govuk-body govuk-!-padding-bottom-4">You still have more T Levels to review.</p>
+
+      <a class="gem-c-button govuk-button gem-c-button--inline" role="button" href="/1-9/AO/tlevel-select-1.html">Review another T Level</a>
+
+    </div>
+  </div>
+
+{% endblock %}

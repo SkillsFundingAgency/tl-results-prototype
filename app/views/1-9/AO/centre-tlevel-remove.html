@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm T Level removal page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/1-9/AO/confirm-removal-answer" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to remove this T Level?
+            </h1>
+          </legend>
+          <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
+            <strong>Digital: Digital Production, Design and Development</strong> from Barnsley College.
+          </span>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="tLevel-answer-1" name="tLevel-answer" type="radio" value="Yes" {{ checked("tlevel-answwer", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="tLevel-answer-1">
+                Yes, remove T Level
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="tLevel-answer-2" name="tLevel-answer" type="radio" value="No" {{ checked("tlevel-answer", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="tLevel-answer-2">
+                No, don't remove it
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

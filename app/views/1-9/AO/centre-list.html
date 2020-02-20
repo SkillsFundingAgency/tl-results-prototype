@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your providers page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+            Your providers
+        </h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-5">The T Level providers you have already set up are:</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value govuk-heading-m">
+              Barnsley College  <span class="govuk-hint">(<abbr>UKPRN</abbr>: 10000536)</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="centre-details-existing-fromlist">
+                View <span class="govuk-visually-hidden">Barnsley College</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value govuk-heading-m">
+              Huddersfield College  <span class="govuk-hint">(<abbr>UKPRN</abbr>: 10000999)</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="centre-details-existing-huddersfield">
+                View <span class="govuk-visually-hidden">Huddersfield College</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <p><a class="gem-c-button govuk-button govuk-button--secondary gem-c-button--inline" role="button" href="/1-9/AO/find-centre.html">Add another provider</a></p>
+        <p><a class="gem-c-button govuk-button gem-c-button--inline" role="button" href="/1-9/AO/tlevels-dashboard.html">Home</a></p>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

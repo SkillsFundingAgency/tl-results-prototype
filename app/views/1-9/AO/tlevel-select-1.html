@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  1 T Level to review page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+
+    {% if backLink == null %}
+        <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+    {% else %}
+        <a class="govuk-back-link" href="{{ backLink }}">Back</a>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                        You have one T Level to review
+                </h1>
+            </legend>
+
+            <p class="govuk-hint govuk-!-padding-bottom-4">You need to confirm this T Level's details before you can tell us which providers are offering it.</p>
+
+            <p class="govuk-body govuk-!-padding-bottom-4">Digital: Digital Production, Design and Development</p>
+
+            <a class="gem-c-button govuk-button gem-c-button--inline" role="button" href="/1-9/AO/verify-tlevel-details-digital.html">Continue</a>
+
+            <p class="govuk-body"><a href="view-reviewed-tlevels-1">View reviewed T levels</a></p>
+
+        </div>
+    </div>
+{% endblock %}
