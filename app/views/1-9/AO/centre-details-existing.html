@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provider's T Levels page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">
+            Provider's T Levels
+        </h1>
+
+        <h2 class="govuk-heading-l">
+            Barnsley College <span class="govuk-hint">(<abbr>UKPRN</abbr>: 10000536)</span>
+        </h2>
+
+        <p class="govuk-body govuk-!-margin-bottom-5">This provider is offering:</p>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Digital: Digital Production, Design and Development
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="centre-tlevel-remove">
+                Remove <span class="govuk-visually-hidden">Digital: Digital Production, Design and Development</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Construction: Design, Surveying and Planning
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="centre-tlevel-remove">
+                Remove <span class="govuk-visually-hidden">Construction: Design, Surveying and Plannin</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <p><a class="gem-c-button govuk-button govuk-button--secondary gem-c-button--inline" role="button" href="/1-9/AO/centre-details-existing-add.html">Add another T Level</a></p>
+        <p><a class="gem-c-button govuk-button gem-c-button--inline" role="button" href="/1-9/AO/find-centre.html">Find another provider</a></p>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

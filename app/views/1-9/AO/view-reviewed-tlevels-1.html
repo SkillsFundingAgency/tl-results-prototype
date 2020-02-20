@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  View reviewed T Levels page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+    {% if data['verify_tlevel_count'] == 0  and backLink == null %}
+        <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+    {% elif backLink != null %}
+        <a class="govuk-back-link" href="{{ backLink }}">Back</a>
+    {% else %}
+        <a class="govuk-back-link" href="tlevel-select">Back</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Your reviewed T Levels</h1>
+
+        <h2 class="govuk-heading-m">Confirmed T Levels</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Construction: Design, Surveying and Planning
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                View <span class="govuk-visually-hidden">Construction: Design, Surveying and Planning</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+            <form class="form" action="tlevel-select-1" method="post">
+                <p class="govuk-body">You have one or more T Levels waiting for review.</p>
+                <button class="govuk-button" data-module="govuk-button">Continue reviewing T Levels</button>
+            </form>
+
+    </div>
+  </div>
+
+{% endblock %}
