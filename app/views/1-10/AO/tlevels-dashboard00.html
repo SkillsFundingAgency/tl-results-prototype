@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage T Levels results dashboard
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <p>
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="tlevel-select-non-reviewed">
+                        T Levels
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Review T Level details and tell us if they are correct
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <p>
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="find-centre-no-centres">
+                        Providers
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Tell us which T Levels each provider is offering
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <p>
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="tlevel-select-non-reviewed">
+                        Registration data
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Upload student registration data
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <p>
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="find-centre-no-centres">
+                        Results data
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Upload student results data
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+              <p>
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="../verification/my-profile">
+                        Account
+                    </a>
+                </h2>
+              </p>
+              <p class="govuk-body">Manage your profile and permissions</p>
+        </div>
+    </div>
+
+{% endblock %}

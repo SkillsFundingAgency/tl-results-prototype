@@ -1,5 +1,19 @@
-{% block content %}
+  {% if data['showCookieMessage'] === 'true' %}
 
-  render "govuk_publishing_components/components/cookie_banner", new_cookie_banner: true
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="app-cookie-banner">
+          <p>
+            {{cookieText | safe }}
+          </p>
+          <a class="gem-c-button govuk-button gem-c-button--inline govuk-!-margin-right-4" style="min-width: 200px" role="button" href="?showCookieMessage=false">
+            Hide this message
+          </a>
+          <a class="gem-c-button govuk-button gem-c-button--inline" role="button" style="min-width: 200px" href="#">
+            View cookie policy
+          </a>
+        </div>
+      </div>
+    </div>
 
-{% endblock %}
+  {% endif %}

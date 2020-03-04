@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmed T Level Details page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="view-all-confirmed-tlevels">Your T Levels</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">T Level details</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">T Level details</h1>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Design, Surveying and Planning
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialisms
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Surveying and design for construction and the built environment</p>
+                    <p class="govuk-body">Civil engineering</p>
+                    <p class="govuk-body">Building services design</p>
+                    <p class="govuk-body">Hazardous materials analysis and surveying</p>
+                  </dd>
+                </div>
+              </dl>
+
+              <p class="govuk-body govuk-!-margin-bottom-9"><a href="report-tlevel-issue">Something is not right</a></p>
+
+            <form class="form" action="view-all-confirmed-tlevels" method="post">
+                <button class="govuk-button" data-module="govuk-button">Return to your T Levels list</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
