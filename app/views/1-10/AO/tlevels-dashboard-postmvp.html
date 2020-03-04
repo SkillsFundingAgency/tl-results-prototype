@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Manage T Levels results dashboard
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <p>
+                <h2 class="govuk-heading-m">
+                    T Levels
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Review T Level details and tell us if they are correct
+            </p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tlevel-select-non-reviewed">You have T Levels to review</a></p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="view-reviewed-tlevels-1">View your reviewed T Levels</a></p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <p>
+                <h2 class="govuk-heading-m">
+                    Providers
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Tell us which T Levels each provider is offering
+            </p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="tlevel-select-non-reviewed">Find a provider</a></p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="view-reviewed-tlevels-1">View providers you have already set up</a></p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+            <p>
+                <h2 class="govuk-heading-m">
+                    Registration data
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Upload and amend student registration data
+            </p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Upload registration data</a></p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-4">
+            <p>
+                <h2 class="govuk-heading-m">
+                    Results data
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Upload student results data
+            </p>
+            <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Upload results data</a></p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-5">
+              <p>
+                <h2 class="govuk-heading-m">
+                    Account
+                </h2>
+              </p>
+              <p class="govuk-body">Manage your profile and permissions</p>
+              <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Manage your profile</a></p>
+              <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">Manage users</a></p>
+        </div>
+    </div>
+
+{% endblock %}

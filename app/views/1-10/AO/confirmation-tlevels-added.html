@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation tlevels added page
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">T Levels added successfully</h1>
+      </div>
+
+      <p class="govuk-body govuk-!-padding-top-5">You confirmed Barnsley College (<abbr>UKPRN</abbr>: 10000536) will offer:</p>
+<ul class="govuk-list govuk-list--bullet">
+      <li><p class="govuk-body govuk-!-font-weight-bold">Digital: Digital Production, Design and Development</p></li>
+      <li><p class="govuk-body govuk-!-font-weight-bold">Construction: Design, Surveying and Planning</p></li>
+</ul>
+      <p class="govuk-body govuk-!-padding-bottom-5 govuk-!-padding-top-1"><a href="centre-details-existing">Manage provider's T Levels</a></p>
+
+      <p><a class="gem-c-button govuk-button gem-c-button--inline" role="button" href="/1-10/AO/find-centre.html">Find another provider</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
