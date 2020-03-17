@@ -57,7 +57,7 @@
 
                         <div class="govuk-radios">
                             <!-- Can show only those relevant to the AO here -->
-                            {{data['tLevels-ao'] | dump}}
+
                             {% for tLevel in data['tLevels-ao'] %}
 
                                 {% if (data['verify_tlevel_count'] == 1 or verifyTlevelCount == 1) and tLevel[6] == 'Unverified' %}
