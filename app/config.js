@@ -26,7 +26,7 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'This service has to use cookies to make the site work.',
+  cookieText: 'This service needs to use cookies to make the site work.',
 
   // Enable or disable Browser Sync
   useBrowserSync: 'true'
