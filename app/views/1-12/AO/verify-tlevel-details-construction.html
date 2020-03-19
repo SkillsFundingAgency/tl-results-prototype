@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify T Level page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="tlevel-select">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Are these details correct?</h1>
+
+      <p class="govuk-!-font-size-24 govuk-!-font-weight-bold">These details will be used on T Level certificates.</p>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Core
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Design, Surveying and Planning
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specialisms
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">Surveying and design for construction and the built environment</p>
+            <p class="govuk-body">Civil engineering</p>
+            <p class="govuk-body">Building services design</p>
+            <p class="govuk-body">Hazardous materials analysis and surveying</p>
+          </dd>
+        </div>
+      </dl>
+
+      <form action="/1-12/AO/confirm-answer" method="post" class="form" >
+        <div class="govuk-form-group govuk-!-margin-bottom-7">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <span class="govuk-visually-hidden">Are these details correct?</span>
+                <input class="govuk-radios__input" id="tLevel-verified-1" name="tLevel-verified" type="radio" value="Verified" {{ checked("tlevel-verified", "Verified") }}>
+                <label class="govuk-label govuk-radios__label" for="tLevel-verified-1">
+                  Yes, everything is correct
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="tLevel-verified-2" name="tLevel-verified" type="radio" value="Rejected" {{ checked("tlevel-verified", "Rejected") }}>
+                <label class="govuk-label govuk-radios__label" for="tLevel-verified-2">
+                  No - tell us what's wrong
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

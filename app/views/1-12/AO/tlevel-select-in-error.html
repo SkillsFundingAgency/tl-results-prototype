@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select T Levels page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form class="form" action="/1-12/AO/which-details-to-show" method="post">
+                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                  <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                  </h2>
+                  <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                      <li>
+                        <a href="#select-tlevel">Select a T Level to review</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="govuk-form-group govuk-form-group--error">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                    Select a T Level to review
+                            </h1>
+                        </legend>
+
+                        <p class="govuk-hint govuk-!-padding-bottom-4">You need to confirm the details of each T Level before you can add which providers are offering it.</p>
+
+                        <span id="select-tlevel" class="govuk-error-message">
+                              <span class="govuk-visually-hidden">Error:</span> Select a T Level to review
+                        </span>
+
+                        <div class="govuk-radios govuk-!-padding-bottom-2">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="tlevel-name-1" name="tLevel-name" type="radio" value="Construction: Design, Surveying and Planning" {{ checked("tlevel-name", "Construction: Design, Surveying and Planning") }}>
+                              <label class="govuk-label govuk-radios__label" for="tlevel-name-1">
+                                Construction: Design, Surveying and Planning
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="tlevel-name-2" name="tLevel-name" type="radio" value="Digital: Digital Production, Design and Development" {{ checked("tlevel-name", "Digital: Digital Production, Design and Development") }}>
+                              <label class="govuk-label govuk-radios__label" for="tlevel-name-2">
+                                Digital: Digital Production, Design and Development
+                              </label>
+                          </div>
+
+                    </fieldset>
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+                <p class="govuk-body"><a href="view-reviewed-tlevels">View reviewed T levels</a></p>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
