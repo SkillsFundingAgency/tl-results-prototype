@@ -203,6 +203,17 @@ router.post('/1-11/AO/confirm-answer', function (req, res) {
   }
 })
 
+router.post('/1-12/AO/confirm-answer', function (req, res) {
+
+  let tLevelVerified = req.session.data['tLevel-verified']
+
+  if (tLevelVerified === 'Verified') {
+    res.redirect('confirmation-not-finished-confirmed')
+  } else {
+    res.redirect('report-tlevel-issue')
+  }
+})
+
 router.post('/1-7/AO/which-details-to-show', function (req, res) {
 
   let tLevelName = req.session.data['tLevel-name']
@@ -258,6 +269,17 @@ router.post('/1-11/AO/which-details-to-show', function (req, res) {
   }
 })
 
+router.post('/1-12/AO/which-details-to-show', function (req, res) {
+
+  let tLevelName = req.session.data['tLevel-name']
+
+  if (tLevelName === 'Construction: Design, Surveying and Planning') {
+    res.redirect('verify-tlevel-details-construction')
+  } else {
+    res.redirect('verify-tlevel-details-digital')
+  }
+})
+
 router.post('/1-9/AO/confirm-removal-answer', function (req, res) {
 
   let tLevelAnswer = req.session.data['tLevel-answer']
@@ -281,6 +303,17 @@ router.post('/1-10/AO/confirm-removal-answer', function (req, res) {
 })
 
 router.post('/1-11/AO/confirm-removal-answer', function (req, res) {
+
+  let tLevelAnswer = req.session.data['tLevel-answer']
+
+  if (tLevelAnswer === 'Yes') {
+    res.redirect('confirmation-tlevel-removed')
+  } else {
+    res.redirect('centre-details-existing')
+  }
+})
+
+router.post('/1-12/AO/confirm-removal-answer', function (req, res) {
 
   let tLevelAnswer = req.session.data['tLevel-answer']
 
