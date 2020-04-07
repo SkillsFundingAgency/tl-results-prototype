@@ -324,6 +324,17 @@ router.post('/1-12/AO/confirm-removal-answer', function (req, res) {
   }
 })
 
+router.post('/1-13/AO/confirm-deletion-answer', function (req, res) {
+
+  let regAnswer = req.session.data['reg-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('confirmation-reg-deleted')
+  } else {
+    res.redirect('registration-details')
+  }
+})
+
 function checkIfActive(req) {
     if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'] == false) {
         initialiseVariables(req)

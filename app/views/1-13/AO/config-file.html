@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Configuration file format and rules
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="upload-file">Upload registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Configuration file</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-heading-xl">
+                    Configuration file format and rules
+            </h1>
+            <p class="govuk-body">The file must meet the following conditions for it to be accepted:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>must be in CSV format</li>
+                  <li>maximum of 10,000 registrations</li>
+                  <li>contain all mandatory fields</li>
+                </ul>
+
+            <h2 class="govuk-heading-s">To add a new registration</h2>
+            <p class="govuk-body">Upload a unique ULN with the mandatory data items and a new record will be created.</p>
+            <h2 class="govuk-heading-s">To change an existing registration</h2>
+            <p class="govuk-body">Upload an existing ULN and the existing data we hold will be overwritten.</p>
+            <h2 class="govuk-heading-s">To delete an existing registration</h2>
+            <p class="govuk-body">Enter 'Yes' in the delete column and the ULN will be removed.</p>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-!-padding-top-5">The config file must contain the following data items in this order:</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Data item</th>
+                  <th scope="col" class="govuk-table__header">Format</th>
+                  <th scope="col" class="govuk-table__header">Example</th>
+                  <th scope="col" class="govuk-table__header">Mandatory</th>
+                  <th scope="col" class="govuk-table__header">Notes</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><abbr title="Unique Learner Number">ULN</abbr></td>
+                  <td class="govuk-table__cell">10 digits</td>
+                  <td class="govuk-table__cell">1002345567</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell">Unique Learner Number</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><abbr title="UK Provider Reference Number">UKPRN</abbr></td>
+                  <td class="govuk-table__cell">8 digits</td>
+                  <td class="govuk-table__cell">10010023</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell">UK Provider Reference Number</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Core</td>
+                  <td class="govuk-table__cell">2 digits</td>
+                  <td class="govuk-table__cell">01</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell"><a href="core-codes">Core codes</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Specialism 1</td>
+                  <td class="govuk-table__cell">3 digits</td>
+                  <td class="govuk-table__cell">001</td>
+                  <td class="govuk-table__cell">No</td>
+                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>Must be submitted by 31/08/2020<br>Only one specialism is mandatory</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Specialism 2</td>
+                  <td class="govuk-table__cell">3 digitis</td>
+                  <td class="govuk-table__cell">001</td>
+                  <td class="govuk-table__cell">No</td>
+                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>Must be submitted by 31/08/2020<br>Only one specialism is mandatory</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Delete</td>
+                  <td class="govuk-table__cell">Yes or blank</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell">Use to delete an existing registration<br>Enter Yes to delete or leave blank</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><a class="govuk-button" role="button" href="/1-13/AO/upload-file.html">Back to upload file</a></p>
+
+      </div>
+
+
+
+    </div>
+
+{% endblock %}
