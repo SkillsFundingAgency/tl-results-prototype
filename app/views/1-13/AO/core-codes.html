@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Core codes page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="upload-file">Upload registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="config-file">Configuration file</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Core codes</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                    Core codes
+            </h1>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption">Use the following core codes for the cofiguration file:</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Code</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-three-quarter">Core name</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">01</td>
+                  <td class="govuk-table__cell">Design, Surveying and Planning</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">02</td>
+                  <td class="govuk-table__cell">Digital Production, Design and Development</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><a class="govuk-button" role="button" href="/1-13/AO/config-file.html">Back to config file</a></p>
+
+      </div>
+
+
+
+    </div>
+
+{% endblock %}
