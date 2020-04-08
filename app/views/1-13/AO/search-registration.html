@@ -30,12 +30,15 @@
                             Search for a registration
                         </h1>
                     </legend>
-                    <p class="govuk-body">You can view, edit and delete a ULN's registration details.</p>
+                    <p class="govuk-body">You can view, edit and delete a Unique Learner Number’s (ULN) registration.</p>
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="search">
                         Enter the ULN
                       </label>
-                      <input class="govuk-input" id="search" name="search" type="text" autocomplete="uln">
+                      <span id="ukprn-number-hint" class="govuk-hint">
+                          Must be 10 digits long
+                      </span>
+                      <input class="govuk-input govuk-input--width-10" id="search" name="search" type="text" autocomplete="uln">
                     </div>
 
                 </fieldset>
