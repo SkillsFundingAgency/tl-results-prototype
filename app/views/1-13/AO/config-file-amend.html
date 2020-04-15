@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Configuration file format and rules
+  Amend file format and rules
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,12 +11,12 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+      <a class="govuk-breadcrumbs__link" href="student-registrations0">Registrations</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="upload-file">Upload registrations</a>
+      <a class="govuk-breadcrumbs__link" href="upload-file-amend">Amend registrations</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Configuration file</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="#">Amend file format</li>
   </ol>
 </div>
 {% endblock %}
@@ -27,14 +27,16 @@
         <div class="govuk-grid-column-full">
 
             <h1 class="govuk-heading-xl">
-                    Configuration file format and rules
+                    Amend file format and rules
             </h1>
             <p class="govuk-body">In order to be accepted the file must:</p>
                 <ul class="govuk-list govuk-list--bullet">
                   <li>be in CSV format</li>
                   <li>contain all mandatory fields</li>
-                  <li>be a minimum of 1 or a maximum of 10,000 registrations</li>
+                  <li>be a minimum of 1 and a maximum of 10,000 existing registrations</li>
                 </ul>
+
+            <p class="govuk-inset-text">Any changes made in your file will overwrite the data we hold.</p>
 
             <table class="govuk-table">
               <caption class="govuk-table__caption govuk-!-padding-top-5">The config file must contain the following data items in this order:</caption>
@@ -81,39 +83,18 @@
                   <td class="govuk-table__cell">3 digits</td>
                   <td class="govuk-table__cell">001</td>
                   <td class="govuk-table__cell">No</td>
-                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>Must be submitted by 31/05/2021<br>Only one specialism is mandatory</td>
+                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>At least one specialism must be <br>submitted by 31/05/2021</td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell">Specialism 2</td>
                   <td class="govuk-table__cell">3 digits</td>
-                  <td class="govuk-table__cell">001</td>
+                  <td class="govuk-table__cell">002</td>
                   <td class="govuk-table__cell">No</td>
-                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>Must be submitted by 31/05/2021<br>Only one specialism is mandatory</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Add</td>
-                  <td class="govuk-table__cell">Y or N</td>
-                  <td class="govuk-table__cell">Y</td>
-                  <td class="govuk-table__cell">Yes</td>
-                  <td class="govuk-table__cell">Y if this is a new registration, otherwise enter N</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Amend</td>
-                  <td class="govuk-table__cell">Y or N</td>
-                  <td class="govuk-table__cell">N</td>
-                  <td class="govuk-table__cell">Yes</td>
-                  <td class="govuk-table__cell">Y to amend an existing registration, otherwise enter N</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">Delete</td>
-                  <td class="govuk-table__cell">Y or N</td>
-                  <td class="govuk-table__cell">N</td>
-                  <td class="govuk-table__cell">Yes</td>
-                  <td class="govuk-table__cell">Y to delete an existing registration, otherwise enter N</td>
+                  <td class="govuk-table__cell"><a href="specialism-codes">Specialism codes</a><br>At least one specialism must be <br>submitted by 31/05/2021</td>
                 </tr>
               </tbody>
             </table>
-            <p><a class="govuk-button" role="button" href="/1-13/AO/upload-file.html">Back to upload file</a></p>
+            <p><a class="govuk-button" role="button" href="/1-13/AO/upload-file-amend.html">Back to amend registrations</a></p>
 
       </div>
 
