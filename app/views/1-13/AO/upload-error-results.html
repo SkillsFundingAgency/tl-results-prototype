@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload errors
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="upload-file">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Upload errors
+            </h1>
+            <p class="govuk-body govuk-inset-text">The file could not be uploaded as it contains the following errors. Please correct them and try again.</p>
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Line</th>
+                  <th scope="col" class="govuk-table__header">Error</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">1</td>
+                  <td class="govuk-table__cell govuk-summary-list__value">
+                    <p class="govuk-body">ULN is missing</p>
+                    <p class="govuk-body">Start date is invalid</p>
+                  </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">2</td>
+                  <td class="govuk-table__cell">Core code is missing</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">3</td>
+                  <td class="govuk-table__cell">Core code is invalid</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><a class="govuk-button" role="button" href="/1-13/AO/upload-file.html">Back to upload file</a></p>
+      </div>
+
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Multi-page user guide
+{% endblock %}
+
+{% block content %}
+
+<style>
+    /* table of contents */
+    .contents {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .contents li {
+        padding-top: 7.5px;
+        line-height: 1.3;
+        margin-bottom: 0;
+    }
+
+    .contents li a {
+        text-decoration: none;
+    }
+
+    .contents a:hover,
+    .contents a:focus,
+    .contents a:active {
+        text-decoration: underline
+    }
+    .contents .number {
+        margin-right: 5px;
+    }
+    .contents a {
+        display: table
+    }
+    .contents .number {
+        display: table-cell;
+        min-width: 1.5em;
+        padding-right: 0.3em
+    }
+    /* call to action boxes */
+    .call-to-action {
+      margin: 2em 0;
+      background-color: #dee0e2;
+      padding: 2em;
+    }
+    @media (max-width: 641px) {
+        .call-to-action {
+            padding: 1.5em 1em;
+        }
+    }
+    /* back to top link */
+    .app-back-to-top {
+        position: fixed;
+        top: 20px;
+        padding: 14px;
+        z-index: 100;
+        display: block;
+    }
+    .app-back-to-top p {
+        margin-bottom: 0;
+    }
+    @media (max-width: 641px) {
+        .app-back-to-top {
+            bottom: 0;
+            top: inherit;
+            left: 0;
+            background-color: #dee0e2;
+            width: 100%;
+            display: none;
+        }
+        .contents,
+        .contents-title {
+            display: none;
+        }
+    }
+
+    .app-back-to-top p {
+        margin-bottom: 0;
+    }
+
+    .app-back-to-top__icon {
+        display: inline-block;
+        width: .8em;
+        height: 1em;
+        margin-top: 0;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .app-back-to-top--hidden {
+        display: none;
+    }
+    /* 2 column layout of clauses */
+    .clause {
+        margin-bottom: 15px;
+    }
+    .clause:after {
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    .govuk-heading-m + .clause {
+        padding-top: 5px;
+    }
+    .clause .call-to-action {
+        margin-top: 10px;
+    }
+    @media (min-width: 320px) {
+        .two-column-clauses,
+        .clause-column-fig,
+        .clause-column-content {
+            float: left;
+        }
+        .two-column-clauses {
+            width: 100%;
+        }
+        /* slighter wider number column on smaller desktop/mobile */
+        .clause-column-fig {
+            width: 12%;
+        }
+        .clause-column-content {
+            width: 88%;
+        }
+        .gem-c-pagination {
+            display: block;
+            margin: 50px 0;
+        }
+
+        .gem-c-pagination__list {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gem-c-pagination__item:first-child {
+            margin-bottom: 20px;
+        }
+
+        .gem-c-pagination__item {
+            font-family: "nta", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            list-style: none;
+        }
+
+        .gem-c-pagination__link:hover, .gem-c-pagination__link:active, .gem-c-pagination__link:visited {
+            color: #1d70b8;
+        }
+
+        .gem-c-pagination__link-title {
+            display: block;
+            border-top: 1px solid #b1b4b6;
+            padding-top: 15px;
+        }
+
+        .gem-c-pagination__link-icon {
+            font-family: "nta", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+            display: inline-block;
+            margin-bottom: 1px;
+            height: .482em;
+            width: .63em;
+            fill: #626a6e;
+        }
+
+        .gem-c-pagination__link {
+            display: block;
+            text-decoration: none;
+            padding-bottom: 20px;
+        }
+
+        .gem-c-pagination__link-text {
+            font-family: "nta", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 700;
+            font-size: 19px;
+            line-height: 1.25;
+            margin-left: 10px;
+        }
+
+        .gem-c-pagination__link-label {
+            display: inline-block;
+            margin-top: .1em;
+            text-decoration: underline;
+            margin-left: 25px;
+        }
+
+        @media (min-width: 40.0625em)
+        .gem-c-pagination__link-icon {
+            font-size: 24px;
+            line-height: 1.25;
+        }
+        @media (min-width: 40.0625em)
+        .gem-c-pagination__item {
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        @media (min-width: 40.0625em)
+        .gem-c-pagination__link-label {
+            margin-left: 30px;
+        }
+
+        @media (min-width: 40.0625em)
+        .gem-c-pagination__link-text {
+            font-size: 19px;
+            line-height: 1.3157894737;
+        }
+    }
+
+
+    /* narrow number column on large desktop */
+    @media (min-width: 960px) {
+        .clause-column-fig {
+            width: 8%;
+        }
+        .clause-column-content {
+            width: 92%;
+        }
+    }
+
+</style>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Manage T Levels results user guide
+        </h1>
+
+        <h2 class="govuk-body govuk-heading-s contents-title" id="contents-title">Contents</h2>
+        <ul class="govuk-list contents">
+          <li>- Introduction</li>
+          <li><a class="govuk-link--no-visited-state" href="#security">- Security and access</a></li>
+          <li><a class="govuk-link--no-visited-state" href="#roles">- Awarding Organisation roles and permissions</a></li>
+          <li><a class="govuk-link--no-visited-state" href="#help">- Further help</a></li>
+        </ul>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-l">Introduction</h2>
+        <p class="govuk-body">The Manage T Level results service is run by the Education and Skills Funding Agency (ESFA), an executive agency of the Department for Education (DfE).</p>
+        <p class="govuk-body">As an awarding organisation, this service enables you to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>tell us if T Level details are correct</li>
+          <li>tell us which T Levels each provider is offering</li>
+          <li>upload, download and amend student registrations</li>
+          <li>enter and generate results</li>
+        </ul>
+
+        <p class="govuk-body">This user guide tells you how to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>sign in and manage your account</li>
+          <li>manage your T Level details, registrations and results</li>
+        </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+      <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
+        <ul class="gem-c-pagination__list">
+            <li class="gem-c-pagination__item gem-c-pagination__item--next">
+              <a href="#" class="gem-c-pagination__link">
+                <span class="gem-c-pagination__link-title">
+                  <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg>
+                  <span class="gem-c-pagination__link-text">
+                    Next
+                  </span>
+                </span>
+                  <span class="govuk-visually-hidden">:</span>
+                  <span class="gem-c-pagination__link-label">Security and access</span>
+              </a>
+            </li>
+        </ul>
+      </nav>
+  </div>
+</div>
+
+{% endblock %}

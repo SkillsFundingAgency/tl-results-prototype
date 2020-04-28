@@ -30,49 +30,29 @@
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
 {% block head %}
-{% include "includes/head.html" %}
+  {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-GOV.UK Prototype Kit
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-{# Set serviceName in config.js. #}
-{{
-    govukHeader ({
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
     homepageUrl: "/",
-    serviceName: "T Levels Developer Hub",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container",
-    navigation: [
-    {
-      href: "https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub",
-      text: "Documentation",
-      active: true
-    },
-    {
-      href: "https://developer.service.hmrc.gov.uk/developer/applications",
-      text: "Applications"
-    },
-    {
-      href: "https://developer.service.hmrc.gov.uk/developer/support",
-      text: "Support"
-    },
-    {
-      href: "https://api-platform-status.production.tax.service.gov.uk/",
-      text: "Service availability"
-    }
-  ]
-  })
-}}
+    serviceName: serviceName,
+    serviceUrl: "../Option1/tlevels-dashboard",
+    containerClasses: "govuk-width-container"
+  }) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% if useAutoStoreData %}
-{% block footer %}
-{{ govukFooter({
+  {% block footer %}
+    {{ govukFooter({
       meta: {
         items: [
           {
@@ -85,15 +65,14 @@ GOV.UK Prototype Kit
           }
         ]
       }
-    })
-}}
-{% endblock %}
+    }) }}
+  {% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-{% block scripts %}
-{% include "includes/scripts.html" %}
-{% block pageScripts %}{% endblock %}
-{% endblock %}
-<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-option2.html" %}
 
 {% block pageTitle %}
   Student registrations page
@@ -25,7 +25,7 @@
         padding-bottom: 10px;
         padding-top: 0px;
         height: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
 </style>
 
@@ -44,17 +44,15 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-1">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Bulk upload file
+              <a class="govuk-link--no-visited-state" href="add-registrations">
+                  Add registrations
+              </a>
             </h2>
             <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="upload-file">
-                    Upload registration file
-                </a>
+                    Upload a file or add each one manually
             </p>
             <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="upload-history">
-                    View upload history
-                </a>
+
             </p>
         </div>
     </div>
@@ -62,19 +60,17 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-2">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Manage individual registrations
+              <a class="govuk-link--no-visited-state" href="manage-registrations">
+                  Manage existing registrations
+              </a>
             </h2>
             <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="registration-details-new">
-                    Add a registration manually
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="search-registration">
-                    Search for a registration
-                </a>
+                    View, amend, delete and download
             </p>
         </div>
     </div>
+
+  </div>
+
 
 {% endblock %}

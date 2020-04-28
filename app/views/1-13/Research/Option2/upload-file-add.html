@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layout-option2.html" %}
 
 {% block pageTitle %}
-  Upload amends registrations page
+  Upload new registrations page
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,12 +11,12 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-registrations000">Registrations</a>
+      <a class="govuk-breadcrumbs__link" href="student-registrations0">Registrations</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="view-all-registrations0">Manage existing registrations</a>
+      <a class="govuk-breadcrumbs__link" href="add-registrations">Add registrations</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="#">Upload amended registrations</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="#">Upload new registrations</li>
   </ol>
 </div>
 {% endblock %}
@@ -26,9 +26,9 @@
 
 <!-- MAIN HEADING -->
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-xl">Upload amends to existing registrations
+            <h1 class="govuk-heading-xl">Upload new registrations
             </h1>
         </div>
     </div>
@@ -37,15 +37,15 @@
 <!-- MAIN ROW -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">Only include existing registrations that you want to make to amends to in this upload file.</p>
+    <p class="govuk-body">Only include new registrations in this upload file.</p>
     <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-padding-top-2" for="file-upload-1">
+      <label class="govuk-label  govuk-!-padding-top-2" for="file-upload-1">
         Select the file to upload
       </label>
       <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
     </div>
 
-    <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="upload-successful00">Upload file</a>
+<p><a class="govuk-button govuk-!-margin-right-1" role="button " href="upload-successful0">Upload file</a>
 
   </div>
 </div>

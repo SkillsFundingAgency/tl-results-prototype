@@ -33,9 +33,9 @@
                     <p class="govuk-body">You can view, edit and delete a student’s registration.</p>
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="search">
-                        Enter the Unique Learner Number (ULN)
+                        Enter the student's name or Unique Learner Number (ULN)
                       </label>
-                      <span class="govuk-hint">
+                      <span id="ukprn-number-hint" class="govuk-hint">
                           ULN must be 10 digits long
                       </span>
                       <input class="govuk-input govuk-input--width-20" id="search" name="search">
@@ -47,6 +47,11 @@
             <button class="govuk-button" data-module="govuk-button">Search</button>
 
         </form>
+
+        <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+        <p class="govuk-body govuk-inset-text" role="alert">No students called <strong>John Smith</strong> could be found.</p>
+
     </div>
 </div>
 
