@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layout-option2.html" %}
 
 {% block pageTitle %}
-  Student registrations page
+  Add Registrations
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,10 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registrations</li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations000">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Add registrations</li>
   </ol>
 </div>
 {% endblock %}
@@ -33,7 +36,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-xl">Registrations
+            <h1 class="govuk-heading-xl">Add registrations
             </h1>
         </div>
     </div>
@@ -44,37 +47,30 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-1">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Bulk upload file
+                <a class="govuk-link--no-visited-state" href="upload-file-add">
+                    Upload new registrations file
+                </a>
             </h2>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="upload-file">
-                    Upload registration file
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="upload-history">
-                    View upload history
-                </a>
-            </p>
+
+            <p class="govuk-body">Only include new registrations in this upload file.</p>
+
         </div>
     </div>
 
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-2">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Manage individual registrations
+                <a class="govuk-link--no-visited-state" href="add-registration-q1">
+                    Add a new registration manually
+                </a>
             </h2>
             <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="registration-details-new">
-                    Add a registration manually
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="search-registration">
-                    Search for a registration
-                </a>
+                  You can add a registration using this online form.
             </p>
         </div>
     </div>
+
+  </div>
+
 
 {% endblock %}

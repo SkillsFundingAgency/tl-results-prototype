@@ -1,0 +1,98 @@
+{% extends "layout-option2.html" %}
+
+{% block pageTitle %}
+  Manage existing registrations
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations000">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage existing registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage existing registrations
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="view-all-registrations0">
+                        View all registrations
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">You can:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>see a list of all your registrations</li>
+              <li>amend or delete a registration</li>
+              <li>download a filtered set of registrations</li>
+              <li>see an audit trail of changes</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="upload-file-amend">
+                        Upload amended registration file
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Upload a file containing just amended registrations.
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+            <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="search-registration">
+                        Search registrations
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                View, amend or delete a specific registration.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

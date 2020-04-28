@@ -1,0 +1,48 @@
+{% extends "layout-option2.html" %}
+
+{% block pageTitle %}
+  View all registrations
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations000">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="manage-registrations">Manage existing registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">View all registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">View all registrations
+            </h1>
+            <p class="govuk-body">This page <strong>when designed </strong>will allow you to:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>See all your registrations in a table</li>
+              <li>Filter your registration</li>
+              <li>Amend or delete a registration</li>
+              <li>Download all or a filtered set of registrations</li>
+              <li>See an audit trail of changes</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+  </div>
+
+
+{% endblock %}

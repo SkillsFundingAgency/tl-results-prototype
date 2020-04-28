@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration details page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="all-registrations">Search registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registration details</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Registration details
+            </h1>
+
+            <h2 class="govuk-heading-l">
+                <abbr>ULN</abbr>: 1000053633
+            </h2>
+
+            <table class="govuk-table">
+              <caption class="govuk-table__caption">Student's registration details</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Data item</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-three-quarter">Value</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Name</td>
+                  <td class="govuk-table__cell">John Smith</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">UKPRN</td>
+                  <td class="govuk-table__cell">21323456 (Barnsley College)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Start date</td>
+                  <td class="govuk-table__cell">12/12/2020</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Core</td>
+                  <td class="govuk-table__cell">01 (Design, Surveying and Planning)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Specialism 1</td>
+                  <td class="govuk-table__cell">002 (Civil engineering)</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Specialism 2</td>
+                  <td class="govuk-table__cell"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p><a class="govuk-button govuk-button--secondary govuk-!-margin-right-1" role="button " href="registration-details-edit">Edit</a>
+            <a class="govuk-button govuk-button--secondary" role="button" href="delete-registration">Delete</a></p>
+            <p><a class="govuk-button" role="button" href="/1-13/AO/search-registration.html">Search again</a></p>
+
+      </div>
+
+
+
+    </div>
+
+{% endblock %}

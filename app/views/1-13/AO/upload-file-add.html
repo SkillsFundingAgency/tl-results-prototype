@@ -13,7 +13,10 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="student-registrations0">Registrations</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="#">New registrations</li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="add-registrations">Add registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="#">Upload new registrations</li>
   </ol>
 </div>
 {% endblock %}
@@ -35,17 +38,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <p class="govuk-body">Only include new registrations in this upload file.</p>
-    <p class="govuk-body"><a href="config-file-add">Add new file format and rules</a></p>
     <div class="govuk-form-group">
       <label class="govuk-label  govuk-!-padding-top-2" for="file-upload-1">
-        <strong>Select the file to upload</strong>
+        Select the file to upload
       </label>
       <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
     </div>
 
-    <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
-      Upload file
-    </button>
+<p><a class="govuk-button govuk-!-margin-right-1" role="button " href="upload-successful0">Upload file</a>
 
   </div>
 </div>

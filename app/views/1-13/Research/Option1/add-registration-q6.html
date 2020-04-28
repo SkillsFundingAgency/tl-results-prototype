@@ -1,0 +1,113 @@
+{% extends "layout-option1.html" %}
+
+{% block pageTitle %}
+  Add registration - Enter core
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-registration-q5">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+                  Add a new registration
+                </h1>
+              </legend>
+
+              <h2 class="govuk-heading-l">
+                Check and submit
+              </h2>
+
+              <p class="govuk-body">Check that the information is correct before submitting.</p>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">9876543210</p>
+                    <p class="govuk-body">John Smith<p>
+                    <details class="govuk-details" closed>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Incorrect name?
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                           <p class="govuk-body govuk-!-margin-bottom-0">The student name will be taken from LRS. If it is incorrect please ask the provider to update LRS.</p>
+                        </div>
+                    </details>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-registration-q1">
+                      Change<span class="govuk-visually-hidden"> ULN</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Barnsley College<p>
+                    <p class="govuk-body">UKPRN: 12345678</p>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-registration-q2">
+                      Change<span class="govuk-visually-hidden"> Provider</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Start date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    12/09/2020
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-registration-q3">
+                      Change<span class="govuk-visually-hidden"> Start date</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Design, Surveying and Planning
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-registration-q4">
+                      Change<span class="govuk-visually-hidden"> core</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialisms
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="add-registration-q5">
+                      Change<span class="govuk-visually-hidden"> Specialisms</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="registration-successful">Submit</a>
+      </div>
+    </div>
+
+{% endblock %}
