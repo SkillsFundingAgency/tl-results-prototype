@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration data: format and rules - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .gem-c-attachment {
+      font-family: "GDS Transport", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+      position: relative; }
+
+      @media print {
+        .gem-c-attachment {
+          font-family: sans-serif; } }
+
+      @media (min-width: 40.0625em) {
+        .gem-c-attachment {
+          font-size: 19px;
+          font-size: 1.1875rem;
+          line-height: 1.3157894737; } }
+
+      @media print {
+        .gem-c-attachment {
+          font-size: 14pt;
+          line-height: 1.15; } }
+
+      .gem-c-attachment:after {
+        content: "";
+        display: block;
+        clear: both; }
+
+      .gem-c-attachment .govuk-details__summary {
+        font-family: "GDS Transport", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 12px;
+        font-size: 0.75rem;
+        line-height: 1.25; }
+
+      @media print {
+        .gem-c-attachment .govuk-details__summary {
+            font-family: sans-serif; } }
+
+      @media (min-width: 40.0625em) {
+          .gem-c-attachment .govuk-details__summary {
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 1.4285714286; } }
+
+      @media print {
+          .gem-c-attachment .govuk-details__summary {
+            font-size: 12pt;
+            line-height: 1.2; } }
+
+    .gem-c-attachment__thumbnail {
+      position: relative;
+      width: auto;
+      margin-right: 25px;
+      margin-bottom: 15px;
+      padding: 5px;
+      float: left; }
+
+    .gem-c-attachment__thumbnail-image {
+      display: block;
+      width: auto;
+      max-width: 99px;
+      height: 140px;
+      border: rgba(11, 12, 12, 0.1);
+      outline: 5px solid rgba(11, 12, 12, 0.1);
+      background: #ffffff;
+      box-shadow: 0 2px 2px rgba(11, 12, 12, 0.4);
+      fill: #b1b4b6;
+      stroke: #b1b4b6; }
+
+    .gem-c-attachment__details {
+      padding-left: 134px; }
+      .gem-c-attachment__details .gem-c-details {
+        word-break: break-word;
+        word-wrap: break-word; }
+
+    .gem-c-attachment__title {
+      font-family: "GDS Transport", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 1.1111111111;
+      margin: 0 0 15px; }
+
+    @media print {
+        .gem-c-attachment__title {
+          font-family: sans-serif; } }
+
+    @media (min-width: 40.0625em) {
+        .gem-c-attachment__title {
+          font-size: 27px;
+          font-size: 1.6875rem;
+          line-height: 1.1111111111; } }
+
+    @media print {
+        .gem-c-attachment__title {
+          font-size: 18pt;
+          line-height: 1.15; } }
+
+    .gem-c-attachment__link {
+      line-height: 1.29; }
+
+    .gem-c-attachment__metadata {
+      font-family: "GDS Transport", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 12px;
+      font-size: 0.75rem;
+      line-height: 1.25;
+      margin: 0 0 15px; }
+
+    @media print {
+        .gem-c-attachment__metadata {
+          font-family: sans-serif; } }
+
+    @media (min-width: 40.0625em) {
+        .gem-c-attachment__metadata {
+          font-size: 14px;
+          font-size: 0.875rem;
+          line-height: 1.4285714286; } }
+
+    @media print {
+        .gem-c-attachment__metadata {
+          font-size: 12pt;
+          line-height: 1.2; } }
+
+    .gem-c-attachment__metadata:last-of-type {
+        margin-bottom: 0; }
+
+    .gem-c-attachment__metadata--compact {
+      margin-bottom: 0; }
+
+    .gem-c-attachment__abbr {
+      text-decoration: none;
+      cursor: help; }
+
+    .gem-c-attachment-link__abbr {
+      text-decoration: none;
+      cursor: help; }
+</style>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl ">
+                Registration data: format and rules
+        </h1>
+        <p class="govuk-body">In this guide you can get information on:</p>
+            <ul class="govuk-list govuk-list--bullet ">
+              <li>adding and editing registrations</li>
+              <li>technical requirements</li>
+              <li>file data items</li>
+              <li>core and specialism codes</li>
+            </ul>
+          <p class="govuk-body govuk-!-padding-bottom-5">You can also download an example CSV file.</p>
+
+        <section class="gem-c-attachment">
+            <div class="gem-c-attachment__thumbnail">
+                <a class="govuk-link" target="_self" tabindex="-1" aria-hidden="true" href="#">
+                    <svg class="gem-c-attachment__thumbnail-image" version="1.1" viewBox="0 0 99 140" width="99" height="140" aria-hidden="true">
+                      <path d="M12 12h75v27H12zM12 59h9v9h-9zM12 77h9v9h-9zM12 95h9v9h-9zM12 113h9v9h-9zM30 59h57v9H30zM30 77h39v9H30zM30 95h57v9H30zM30 113h48v9H30z" stroke-width="0"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="gem-c-attachment__details">
+                <p class="govuk-body-m">
+                  <a class="govuk-link gem-c-attachment__link" target="_self" href="/public/files/ESFA-registration-technical-requirements.csv">Download registration data format and rules guide</a>
+                </p>
+                <p class="gem-c-attachment__metadata"><span class="gem-c-attachment__attribute"><abbr title="Comma Separated Variables" class="gem-c-attachment__abbr">XLSX</abbr></span>, <span class="gem-c-attachment__attribute">16KB, </span><span class="gem-c-attachment__attribute">Version 1.0</span></p>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}
