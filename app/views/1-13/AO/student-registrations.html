@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-option1.html" %}
 
 {% block pageTitle %}
   Student registrations page
@@ -25,7 +25,7 @@
         padding-bottom: 10px;
         padding-top: 0px;
         height: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
 </style>
 
@@ -44,21 +44,12 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-1">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Add registrations
+                  Upload new and amended registrations
             </h2>
+
             <p class="govuk-body">
                 <a class="govuk-link--no-visited-state" href="upload-file">
-                    Upload registrations
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="registration-details-new">
-                    Add a registration manually
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="upload-history">
-                    View upload history
+                    Upload registration file
                 </a>
             </p>
         </div>
@@ -67,24 +58,30 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-2">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                  Manage registrations
+                  Manage existing registrations
             </h2>
             <p class="govuk-body">
                 <a class="govuk-link--no-visited-state" href="search-registration">
                     Search for a registration
                 </a>
             </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Add one new registration
+            </h2>
+
             <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="#">
-                    View all registrations
-                </a>
-            </p>
-            <p class="govuk-body">
-                <a class="govuk-link--no-visited-state" href="download-registrations">
-                    Download all registrations
+                <a class="govuk-link--no-visited-state" href="add-registration-q1">
+                    Add a new registration
                 </a>
             </p>
         </div>
     </div>
+  </div>
+
 
 {% endblock %}
