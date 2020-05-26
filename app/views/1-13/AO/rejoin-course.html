@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Delete registration page
+  Rejoin course page
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,28 +11,28 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/1-13/AO/confirm-deletion-answer" method="post" class="form" >
+    <form action="/1-13/AO/confirm-rejoin-answer" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
-        <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="rejoin-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to delete this registration?
+              Are you sure you want this learner to re-join this course?
             </h1>
           </legend>
-          <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
+          <span id="rejoin-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
             <strong>ULN:</strong> 1000053644
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reg-answer-1" name="reg-answer" type="radio" value="Yes" {{ checked("reg-answwer", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="reg-answer-1">
-                Yes, delete registration
+              <input class="govuk-radios__input" id="rejoin-answer-1" name="rejoin-answer" type="radio" value="Yes" {{ checked("rejoin-answwer", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="rejoin-answer-1">
+                Yes, re-join course
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reg-answer-2" name="reg-answer" type="radio" value="No" {{ checked("reg-answer", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="reg-answer-2">
-                No, do not delete it
+              <input class="govuk-radios__input" id="rejoin-answer-2" name="rejoin-answer" type="radio" value="No" {{ checked("rejoin-answer", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="rejoin-answer-2">
+                No, do not re-join course
               </label>
             </div>
           </div>

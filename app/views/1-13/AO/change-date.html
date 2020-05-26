@@ -1,11 +1,11 @@
-{% extends "layout-option1.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add registration - Enter start date
+  Change learner's start date
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="add-registration-q2">Back</a>
+  <a class="govuk-back-link" href="registration-details">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -16,13 +16,13 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
-                  Add a new registration
+                  Change registration
                 </h1>
               </legend>
 
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-!-font-size-27 govuk-!-margin-bottom-6" for="UKPRN">
-                  Enter the course start date
+                  Enter the learner's start date on the course
                 </label>
                 <span id="passport-issued-hint" class="govuk-hint">
                   For example, 23&nbsp&nbsp9&nbsp&nbsp2020
@@ -33,7 +33,7 @@
                       <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" inputmode="numeric" value="12">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -41,7 +41,7 @@
                       <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" inputmode="numeric" value="9">
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
@@ -49,14 +49,14 @@
                       <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" inputmode="numeric" value="2020">
                     </div>
                   </div>
                 </div>
 
               </fieldset>
 
-            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="add-registration-q4">Continue</a>
+            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="change-successful">Change</a>
       </div>
     </div>
 

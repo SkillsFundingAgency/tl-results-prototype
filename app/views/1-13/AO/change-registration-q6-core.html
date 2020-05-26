@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add registration - Change core
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-registration-q8-check">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+                  Add a new registration
+                </h1>
+              </legend>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-!-font-size-27 govuk-!-margin-bottom-6" for="UKPRN">
+                  Select the T Level core name
+                </label>
+                <select class="govuk-select govuk-!-width-full" id="core" name="core">
+                    <option value="published">Design, Surveying and Planning</option>
+                    <option value="published">Digital Production, Design and Development</option>
+                </select>
+              </div>
+
+            </fieldset>
+
+            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="change-registration-q7-specialism">Continue</a>
+      </div>
+    </div>
+
+{% endblock %}
