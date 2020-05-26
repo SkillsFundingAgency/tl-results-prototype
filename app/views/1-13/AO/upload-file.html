@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Upload file page
+  Upload registrations file - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload registrations</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload registrations file</li>
   </ol>
 </div>
 {% endblock %}
@@ -25,7 +25,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-xl">Upload registrations
+            <h1 class="govuk-heading-xl">Upload registrations file
             </h1>
         </div>
     </div>
@@ -34,11 +34,12 @@
 <!-- MAIN ROW -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body"><strong>New</strong> and <strong>amended</strong> registrations can be uploaded in the same file or separate files.</p>
-    <p class="govuk-body">In order to be accepted the file must:</p>
+    <p class="govuk-body">You can <strong>add</strong> new registrations and <strong>amend</strong> existing registrations by uploading them in the same file or separate files.</p>
+    <p class="govuk-body">We can only accept files that:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>be in CSV format</li>
-          <li>be a maximum of 10,000 registrations</li>
+          <li>are in CSV format</li>
+          <li>include all mandatory fields</li>
+          <li>contain between one and 10,000 registrations</li>
         </ul>
 
     <div class="govuk-form-group">
@@ -48,7 +49,7 @@
       <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
     </div>
 
-<p><a class="govuk-button govuk-!-margin-right-1" role="button " href="upload-successful">Upload file</a>
+    <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="upload-successful">Upload file</a>
 
   </div>
 </div>

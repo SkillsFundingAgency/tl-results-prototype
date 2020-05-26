@@ -335,6 +335,28 @@ router.post('/1-13/AO/confirm-deletion-answer', function (req, res) {
   }
 })
 
+router.post('/1-13/AO/confirm-withdraw-answer', function (req, res) {
+
+  let regAnswer = req.session.data['withdraw-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('confirmation-reg-withdraw')
+  } else {
+    res.redirect('registration-details')
+  }
+})
+
+router.post('/1-13/AO/confirm-rejoin-answer', function (req, res) {
+
+  let regAnswer = req.session.data['rejoin-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('confirmation-reg-rejoin')
+  } else {
+    res.redirect('registration-details')
+  }
+})
+
 function checkIfActive(req) {
     if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'] == false) {
         initialiseVariables(req)
