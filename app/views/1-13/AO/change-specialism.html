@@ -5,58 +5,52 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="registration-details">Back</a>
+<a class="govuk-back-link" href="registration-details">Back</a>
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Change registration
+        </h1>
 
-        <div class="govuk-grid-column-two-thirds">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
-                  Change registration
-                </h1>
-              </legend>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-!-font-size-27" for="specialism">
+            Select the specialisms for Design, Surveying and Planning (optional)
+          </label>
+          <p class="govuk-body govuk-!-margin-top-3">You can create a new registration without entering a specialism. However, at least one specialism needs to be added by 31 May 2021.</p>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-size-27" for="UKPRN">
-                  Select the specialisms for Design, Surveying and Planning (optional)
-                </label>
-                <p class="govuk-body govuk-!-margin-top-3">You can create a new registration without entering a specialism. However, at least one specialism needs to be added by 31 May 2021.</p>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="specialism-1" name="specialism" type="checkbox" value="Building Services Design">
+              <label class="govuk-label govuk-checkboxes__label" for="specialism-1">
+                 Building Services Design
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="specialism-2" name="specialism" type="checkbox" value="Civil Engineering">
+              <label class="govuk-label govuk-checkboxes__label" for="specialism-2">
+                Civil Engineering
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="specialism-3" name="specialism" type="checkbox" value="Hazardous Materials Analysis and Surveying">
+              <label class="govuk-label govuk-checkboxes__label" for="specialism-3">
+                Hazardous Materials Analysis and Surveying
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="specialism-4" name="specialism" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="specialism-4">
+                Surveying and Design for Construction and the Built Environment
+              </label>
+            </div>
+        </div>
 
-                <div class="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="specialism-1" name="specialism" type="checkbox" value="Building Services Design">
-                    <label class="govuk-label govuk-checkboxes__label" for="specialism-1">
-                       Building Services Design
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="specialism-2" name="specialism" type="checkbox" value="Civil Engineering">
-                    <label class="govuk-label govuk-checkboxes__label" for="specialism-2">
-                      Civil Engineering
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="specialism-3" name="specialism" type="checkbox" value="Hazardous Materials Analysis and Surveying">
-                    <label class="govuk-label govuk-checkboxes__label" for="specialism-3">
-                      Hazardous Materials Analysis and Surveying
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="specialism-4" name="specialism" type="checkbox" value="farm">
-                    <label class="govuk-label govuk-checkboxes__label" for="specialism-4">
-                      Surveying and Design for Construction and the Built Environment
-                    </label>
-                  </div>
-              </div>
-
-            </fieldset>
-
-            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="change-successful">Change</a>
-      </div>
+        <p><a class="govuk-button govuk-!-margin-right-1  govuk-!-margin-top-5" role="button " href="change-successful">Change</a>
     </div>
+</div>
 
 {% endblock %}
