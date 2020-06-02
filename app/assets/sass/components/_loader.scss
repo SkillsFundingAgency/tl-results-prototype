@@ -3,7 +3,7 @@
   position: relative;
   line-height: 0;
   &:focus{
-    outline: 3px solid $focus-colour;
+    outline: 3px solid $govuk-focus-colour;
   }
 
   &__spinner{
@@ -11,7 +11,6 @@
   }
 
   &__label{
-    @include core-19($tabular-numbers: true);
     display: block;
     line-height: 1em;
     margin-top: -.5em;
