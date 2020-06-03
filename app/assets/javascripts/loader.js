@@ -12,7 +12,7 @@
   var defaults = {
     container: 'loader',   // The name of the loader container
     label: false,          // The label of the loader
-    labelText: 'Loading, please wait.', // The text for the label
+    labelText: 'Processing, please wait. It could take up to 30 seconds.', // The text for the label
     size: 100,             // The size of the loader
     lines: 12,             // The number of lines to draw
     length: 7,             // The length of each line
