@@ -7,4 +7,13 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+  $('input[type="radio"]').click(function() {
+      if($(this).attr('id') == 'spec-answer-2') {
+           $('.bordered').show();
+      }
+
+      else {
+           $('.bordered').hide();
+      }
+  });
 })

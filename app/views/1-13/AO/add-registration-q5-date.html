@@ -1,63 +1,65 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Add registration - Enter learner's start date
+Add registration - Enter learner's start date
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="add-registration-q4-provider">Back</a>
+<a class="govuk-back-link" href="add-registration-q4-provider">Back</a>
 {% endblock %}
 
 {% block content %}
 
-    <div class="govuk-grid-row">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Add a new registration</span>
+            <fieldset class="govuk-fieldset" role="group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                          Enter the course start date
+                      </h1>
+                </legend>
 
-        <div class="govuk-grid-column-two-thirds">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                  Add a new registration
-                </h1>
-              </legend>
-
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-!-font-size-27" for="start-date">
-                  Enter the learner's start date on the course
-                </label>
-                <span id="start-date-hint" class="govuk-hint">
-                  For example, 23&nbsp&nbsp9&nbsp&nbsp2020
-                </span>
-                <div class="govuk-date-input" id="start-date">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="start-date-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" inputmode="numeric" value="12">
+                <div class="govuk-form-group">
+                    <span id="start-date-hint" class="govuk-hint">
+                      For example, 23&nbsp&nbsp9&nbsp&nbsp2020
+                    </span>
+                    <div class="govuk-date-input" id="start-date">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                                  Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" inputmode="numeric">
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="start-date-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" inputmode="numeric" value="9">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="start-date-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" inputmode="numeric" value="2020">
-                    </div>
-                  </div>
                 </div>
-
-              </fieldset>
-
-            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="add-registration-q6-core">Continue</a>
-      </div>
+            </fieldset>
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="add-registration-q6-core">
+                Continue
+            </a>
+        </p>
     </div>
+</div>
 
 {% endblock %}
