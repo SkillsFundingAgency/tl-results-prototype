@@ -346,6 +346,61 @@ router.post('/1-13/AO/confirm-withdraw-answer', function (req, res) {
   }
 })
 
+router.post('/1-13/AO/confirm-spec-answer', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('add-registration-q7b-specialism')
+  } else {
+    res.redirect('add-registration-q8-check')
+  }
+})
+
+router.post('/1-13/AO/confirm-spec-change', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('change-specialism-b')
+  } else {
+    res.redirect('change-successful')
+  }
+})
+
+router.post('/1-13/AO/change-spec-answer', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('change-registration-q7b-specialism')
+  } else {
+    res.redirect('change-successful')
+  }
+})
+
+router.post('/1-13/AO/change-spec-value', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('change-successful')
+  } else {
+    res.redirect('change-specialism-b')
+  }
+})
+
+router.post('/1-13/AO/change-spec-value2', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('add-registration-q8-check')
+  } else {
+    res.redirect('change-registration-q7b-specialism')
+  }
+})
+
 router.post('/1-13/AO/confirm-rejoin-answer', function (req, res) {
 
   let regAnswer = req.session.data['rejoin-answer']
