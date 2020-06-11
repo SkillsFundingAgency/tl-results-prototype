@@ -18,24 +18,21 @@ Add registration - Select specialism
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                            Do you want to add a specialism now?
+                            Has the learner decided on the specialism?
                         </h1>
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="spec-answer-1" name="spec-answer" type="radio" value="Yes" {{ checked("spec-answwer", "Yes") }}>
                             <label class="govuk-label govuk-radios__label" for="spec-answer-1">
-                                Yes, add a specialism
+                                Yes, add the specialism now
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="spec-answer-2" name="spec-answer" type="radio" value="No" {{ checked("spec-answer", "No") }}>
                             <label class="govuk-label govuk-radios__label" for="spec-answer-2">
-                                No, add a specialism later
+                                No, add the specialism later
                             </label>
-                        </div>
-                        <div class="bordered govuk-inset-text">
-                          You will need to select a specialism before 31 May 2021
                         </div>
                     </div>
                 </fieldset>
