@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add registration - Enter ULN
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-registration-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="ULN">
+                    ULN is already registered
+                </label>
+            </h1>
+        <p class="govuk-body">This ULN (1234567890) has already been registered by your organisation. You cannot add it again but you can amend it.</p>
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="registration-details">
+                Amend this ULN's registration
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
