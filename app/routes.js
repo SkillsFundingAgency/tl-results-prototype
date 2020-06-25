@@ -375,7 +375,7 @@ router.post('/1-13/AO/change-spec-answer', function (req, res) {
   if (regAnswer === 'Yes') {
     res.redirect('change-registration-q7b-specialism')
   } else {
-    res.redirect('change-successful')
+    res.redirect('add-registration-q8-check')
   }
 })
 
