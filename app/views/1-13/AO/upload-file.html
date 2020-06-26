@@ -48,8 +48,14 @@
       </label>
       <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
     </div>
-
-    <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="upload-successful">Submit</a>
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    JavaScript disabled: When you press the Submit button you will not see any progress indicator. Expect the processing to take up to 10 seconds depending on file size.
+  </strong>
+</div>
+    <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="upload-successful">Submit (only click once)</a>
 
   </div>
 </div>

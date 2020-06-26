@@ -353,7 +353,7 @@ router.post('/1-13/AO/confirm-spec-answer', function (req, res) {
   if (regAnswer === 'Yes') {
     res.redirect('add-registration-q7b-specialism')
   } else {
-    res.redirect('add-registration-q8-check')
+    res.redirect('add-registration-q5-date')
   }
 })
 
