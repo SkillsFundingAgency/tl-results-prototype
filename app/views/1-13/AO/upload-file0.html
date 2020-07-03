@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Upload registrations file - Manage T Level results - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload registrations file</li>
+  </ol>
+</div>
+{% endblock %}
+{% block pageScripts %}
+  <script>
+  $(document).ready(function(){
+    $('#uploadRegistrationsForm').submit(function (event) {
+        event.preventDefault();
+        $('#uploadRegistrationsButton').attr('disabled', 'disabled');
+        // set screen-reader attributes
+        $('#uploadRegistrationsContainer').attr('aria-hidden', 'true');
+        $('#spinnerText').attr('role', 'true');
+        $('#spinnerText').attr('aria-live', 'assertive');
+        setTimeout(function () {
+            $(window).scrollTop(0);
+            $('.govuk-breadcrumbs').toggleClass('tl-hide'); // new-line
+            $('#uploadRegistrationsContainer').toggleClass('tl-hide');
+            $('#processingRegistrationsContainer').toggleClass('tl-hide');
+        }, 500);
+    });
+  });
+  </script>
+{% endblock %}
+{% block content %}
+<style>
+  .tl-hide {
+     display: none;
+}
+ .tl-box-container {
+     position: relative;
+     margin: 1em 0;
+     padding: 2em;
+     background: #f8f8f8;
+}
+ .tl-spinner-container {
+     position: relative;
+     text-align: center;
+     line-height: 0;
+}
+ .tl-spinner-container:focus {
+     outline: 3px solid #ffd800;
+}
+ .tl-spinner-container .tl-spinner-control {
+     position: relative;
+     height: 125px;
+}
+ .tl-spinner-container .tl-spinner-control .tl-spinner {
+     position: absolute;
+     top: 50%;
+     left: calc(50% - 19px);
+     border: 8px solid #c7c6c3;
+     border-radius: 50%;
+     border-top: 8px solid #0b0c0c;
+     width: 38px;
+     height: 38px;
+     -webkit-animation: spin 1s linear infinite;
+     animation: spin 1s linear infinite;
+}
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+    }
+     100% {
+         transform: rotate(360deg);
+    }
+}
+ .tl-spinner-container .tl-spinner-label {
+     line-height: 1em;
+     margin-top: 12px;
+     padding-bottom: 0.5em;
+     text-align: center;
+     margin-bottom: 0px;
+}
+
+  </style>
+<!-- MAIN ROW -->
+<div id="uploadRegistrationsContainer">
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Upload registrations file</h1>
+        <p class="govuk-body">You can <strong>add</strong> new registrations and <strong>amend</strong> existing registrations by uploading them in the same file or separate files.</p>
+        <p class="govuk-body">We can only accept files that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+           <li>are in CSV format</li>
+           <li>include all mandatory fields</li>
+           <li>contain between one and 10,000 registrations</li>
+        </ul>
+        <form id="uploadRegistrationsForm" class="form" enctype="multipart/form-data" action="">
+           <div class="govuk-form-group">
+              <label for="file" class="govuk-label govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-font-weight-bold">
+              Upload a file
+              </label>
+              <span></span>
+              <input class="govuk-file-upload" id="file" type="file" accept=".csv" data-val="true" data-val-required="Select a file to upload" name="File">
+           </div>
+           <button id="uploadRegistrationsButton" class="govuk-button tl-show-on-js-only" data-module="govuk-button" type="submit">Submit</button>
+        </form>
+     </div>
+  </div>
+</div>
+<div id="processingRegistrationsContainer" class="tl-hide">
+  <div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+           <h1 class="govuk-heading-xl">
+              Processing registrations file
+           </h1>
+        </div>
+        <div class="tl-box-container">
+           <div class="tl-spinner-container" tabindex="0">
+              <div class="tl-spinner-control">
+                 <div class="tl-spinner"></div>
+              </div>
+              <div id="spinnerText" class="tl-spinner-label govuk-body">Processing, please wait. This could take up to 10 seconds. Do not refresh.</div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}

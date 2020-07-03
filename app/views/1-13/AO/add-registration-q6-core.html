@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add registration - Select core
+Add a new registration - Select the core - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="add-registration-q5-date">Back</a>
+<a class="govuk-back-link" href="add-registration-q4-provider">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,6 +24,16 @@ Add registration - Select core
                 <option value="published">Design, Surveying and Planning for Construction (60358300)</option>
                 <option value="published">Digital Production, Design and Development (60358324)</option>
             </select>
+            <details class="govuk-details govuk-!-margin-top-6" closed>
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Cannot find a core?
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                   <p class="govuk-body govuk-!-margin-bottom-0">If you cannot find the core you are looking for in the list above, ask your Providers Editor to add this core to the provider in the Providers section of this service.</p>
+                </div>
+            </details>
         </div>
         <p>
             <a class="govuk-button govuk-!-margin-right-1" role="button " href="add-registration-q7a-specialism">
