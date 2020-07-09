@@ -324,12 +324,12 @@ router.post('/1-12/AO/confirm-removal-answer', function (req, res) {
   }
 })
 
-router.post('/1-13/AO/confirm-deletion-answer', function (req, res) {
+router.post('/1-13/AO/confirm-cancel-answer', function (req, res) {
 
   let regAnswer = req.session.data['reg-answer']
 
   if (regAnswer === 'Yes') {
-    res.redirect('confirmation-reg-deleted')
+    res.redirect('confirmation-reg-cancelled')
   } else {
     res.redirect('registration-details')
   }
