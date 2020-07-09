@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new registration - ULN cannot be registered - Manage T Level results - GOV.UK
+  Change learner's registration date
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="add-registration-q1-uln">Back</a>
+  <a class="govuk-back-link" href="registration-details">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -15,14 +15,14 @@ Add a new registration - ULN cannot be registered - Manage T Level results - GOV
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6">
-                    ULN cannot be registered
+                    Registration date cannot be change
                 </label>
             </h1>
-        <p class="govuk-body">Another awarding organisation has already registered this ULN (1234567890). You must contact the provider and withdraw them from the other course first.</p>
+        <p class="govuk-body">You cannot change the registration date unless you change the Core first.</p>
         </div>
         <p>
-            <a class="govuk-button" role="button " href="student-registrations">
-                Back to registrations
+            <a class="govuk-button" role="button" href="registration-details">
+                Back to registration details
             </a>
         </p>
     </div>
