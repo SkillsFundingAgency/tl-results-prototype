@@ -500,6 +500,28 @@ router.post('/1-14/AO/confirm-rejoin-answer', function (req, res) {
   }
 })
 
+router.post('/1-14/Research/integrated/confirm-spec-answer', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('add-registration-q7b-specialism')
+  } else {
+    res.redirect('add-registration-q9-add-entries')
+  }
+})
+
+router.post('/1-14/Research/integrated/confirm-entry-answer', function (req, res) {
+
+  let regAnswer = req.session.data['entry-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('add-registration-q10-entries')
+  } else {
+    res.redirect('add-registration-q5a-year')
+  }
+})
+
 function checkIfActive(req) {
     if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'] == false) {
         initialiseVariables(req)

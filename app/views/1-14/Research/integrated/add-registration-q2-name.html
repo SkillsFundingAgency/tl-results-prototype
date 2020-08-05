@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - enter the learner’s name - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-registration-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Add a new registration</span>
+            <fieldset class="govuk-fieldset" role="group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                        Enter the learner's name
+                    </h1>
+                </legend>
+                <div class="govuk-date-input" id="name">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="first-name">
+                            First name
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="first-name" name="first-name" inputmode="numeric">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="last-name">
+                            Last name
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="last-name" name="last-name" inputmode="text">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="add-registration-q3-dob">
+                Continue
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
