@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Processing registrations file page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">
+                Processing registrations file
+            </h1>
+        </div>
+      <div id="govuk-loader"></div>
+      <p class="govuk-body"><a href="https://govuk-loader-prototype.herokuapp.com/components/loader-message">Please use this design</a></p>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/loader.js"></script>
+<script>
+	$(document).ready(function() {
+		var loadingSpinner = new GOVUK.Loader()
+		loadingSpinner.init({
+			container: 'govuk-loader',
+			label: true,
+			color: '#000'
+		})
+	})
+</script>
+{% endblock %}

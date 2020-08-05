@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Options page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations00">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Upload registrations
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body"><strong>New</strong> and <strong>amended</strong> registrations can be uploaded in the same file or separate files.</p>
+    <p class="govuk-body">In order to be accepted the file must:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>be in CSV format</li>
+          <li>be a maximum of 10,000 registrations</li>
+        </ul>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-font-weight-bold" for="file-upload-1">
+        Select the file to upload
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+    </div>
+
+    <button class="govuk-button">
+      Upload file
+    </button>
+
+  </div>
+</div>
+
+{% endblock %}

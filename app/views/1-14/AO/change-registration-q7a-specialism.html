@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add registration - Any specialisms?
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-registration-q6-core">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/1-14/AO/change-spec-answer" method="post" class="form" >
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <span class="govuk-caption-xl">Add a new registration</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Has the learner decided on the specialism?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="spec-answer-1" name="spec-answer" type="radio" value="Yes" {{ checked("spec-answwer", "Yes") }}>
+                            <label class="govuk-label govuk-radios__label" for="spec-answer-1">
+                                Yes, add the specialism now
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="spec-answer-2" name="spec-answer" type="radio" value="No" {{ checked("spec-answer", "No") }}>
+                            <label class="govuk-label govuk-radios__label" for="spec-answer-2">
+                                No, add the specialism later
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
