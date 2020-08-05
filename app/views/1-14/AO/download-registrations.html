@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Download registrations page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Download registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Download registrations
+            </h1>
+            <p class="govuk-body">You can download all the registrations that your organisation has previously uploaded.</p>
+            <p class="govuk-body govuk-!-padding-bottom-6">Select ‘Download now’ to download the CSV file to your downloads folder.</p>
+            <p><a class="govuk-button" role="button" href="#">Download now</a></p>
+
+      </div>
+
+    </div>
+
+{% endblock %}

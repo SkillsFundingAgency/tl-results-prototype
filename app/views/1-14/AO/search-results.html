@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="search-registration">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">
+                Search results
+            </h1>
+            <p class="govuk-body govuk-inset-text"><strong>John Smith</strong> has registered more than once. Select one to continue.</p>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                  2020
+                </dd>
+                <dd class="govuk-summary-list__value">
+                  <span class="govuk-visually-hidden">attending</span>UKPRN: 34343434<br>Barnsley College
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="registration-details">
+                    Select <span class="govuk-visually-hidden">to view year 2020</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dd class="govuk-summary-list__value">
+                  2019
+                </dd>
+                <dd class="govuk-summary-list__value" id="ULN1">
+                  <span class="govuk-visually-hidden">attending</span>UKPRN: 65656565<br>Preston College
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="registration-details">
+                    Select <span class="govuk-visually-hidden">to view year 2019</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <p><a class="govuk-button" role="button" href="/1-13/AO/search-registration.html">Back to search</a></p>
+      </div>
+
+
+
+    </div>
+
+{% endblock %}

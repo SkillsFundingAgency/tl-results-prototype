@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add registration - Change provider
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-registration-q8-check">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Add a new registration</span>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="provider">
+                    Select the provider
+                </label>
+            </h1>
+            <select class="govuk-select" id="provider" name="provider">
+                <option value="updated">Barnsley College (12345678)</option>
+                <option value="updated">City of Stoke-on-Trent sixth Form College (34567812)</option>
+                <option value="views">New City College (90123456)</option>
+                <option value="comments">Scarborough Sixth Form College (77344478)</option>
+            </select>
+            <details class="govuk-details govuk-!-margin-top-6" closed>
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Cannot find one of your providers?
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                   <p class="govuk-body govuk-!-margin-bottom-0">If you cannot find one of your providers in the list above, ask your Providers Editor to add it in the 'providers' section of this service.</p>
+                </div>
+            </details>
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="change-registration-q6-core">
+                Continue
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
