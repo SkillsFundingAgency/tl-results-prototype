@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registrations page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        min-height: 185px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Registrations
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Upload to add and amend registrations
+            </h2>
+
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="upload-file">
+                    Upload registrations file
+                </a>
+            </p>
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="upload-assessment-file">
+                    Upload assessment entry file
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Manage existing registrations
+            </h2>
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="search-registration">
+                    Search for a registration
+                </a>
+            </p>
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="add-entries-q1-uln">
+                    Add an assessment entry
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Add one new registration
+            </h2>
+
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="add-registration-q1-uln">
+                    Add a new registration
+                </a>
+            </p>
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}
