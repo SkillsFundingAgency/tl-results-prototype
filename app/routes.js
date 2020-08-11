@@ -516,7 +516,7 @@ router.post('/1-14/Research/integrated/confirm-entry-answer', function (req, res
   let regAnswer = req.session.data['entry-answer']
 
   if (regAnswer === 'Yes') {
-    res.redirect('add-registration-q10-entries')
+    res.redirect('add-registration-q10-core-entry')
   } else {
     res.redirect('add-registration-q5a-year')
   }
