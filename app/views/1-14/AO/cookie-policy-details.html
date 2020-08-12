@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Our cookie policy page
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Details about cookies on Manage T Level results
+        </h1>
+
+        <p class="govuk-body">This service puts small files (known as 'cookies') onto your computer to collect information about how you use the service. Find out more about the cookies we use, what they’re for and when they expire. </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>help us understand how you use the website, so we can make improvements</li>
+          <li>remember which notifications you've seen so you're not shown them more than once</li>
+          <li>temporarily store the selections you make and the information you enter</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">
+            Cookies that measure website usage
+        </h2>
+        <p class="govuk-body">We use Google Analytics software (Universal Analytics) to collect anonymised information about how you use the service. We do this to help make sure the site is meeting the needs of its users and to help us make improvements. We do not allow Google to use or share the data about how you use this site. Google Analytics stores information about: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>how you got to the site</li>
+          <li>the pages you visit on this service and how long you spend on them</li>
+          <li>what you click on while you are visiting the site</li>
+        </ul>
+
+        <table class="govuk-table govuk-!-margin-top-7">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Purpose</th>
+              <th scope="col" class="govuk-table__header">Expires</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">
+            Strictly necessary cookies
+        </h2>
+
+        <table class="govuk-table govuk-!-margin-top-7">
+          <caption class="govuk-table__caption govuk-body-l govuk-!-font-weight-bold">Protecting your security</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Purpose</th>
+              <th scope="col" class="govuk-table__header">Expires</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">CSRF-TOKEN_</td>
+              <td class="govuk-table__cell">Used to prevent cross-site scripting attacks</td>
+              <td class="govuk-table__cell">When the browser is closed</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">tlevels-x-csrf</td>
+              <td class="govuk-table__cell">Used to prevent cross site scripting attacks</td>
+              <td class="govuk-table__cell">When the browser is closed</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="govuk-table govuk-!-margin-top-7">
+          <caption class="govuk-table__caption  govuk-body-l govuk-!-font-weight-bold">Logging in and authentication</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">Purpose</th>
+              <th scope="col" class="govuk-table__header">Expires</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">qa-auth-cookie</td>
+              <td class="govuk-table__cell">Used to track your current session and keep you logged in when browsing the service</td>
+              <td class="govuk-table__cell">After 30 minutes of inactivity</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-9">
+            Change your settings
+        </h2>
+
+        <p class="govuk-body">You can <a class="govuk-link" href="cookie-policy-preferences">change which cookies you’re happy for us to use</a>.</p>
+
+    </div>
+</div>
+
+{% endblock %}
