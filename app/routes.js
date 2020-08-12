@@ -428,9 +428,21 @@ router.post('/1-14/AO/confirm-withdraw-answer', function (req, res) {
   let regAnswer = req.session.data['withdraw-answer']
 
   if (regAnswer === 'Yes') {
-    res.redirect('confirmation-reg-withdraw')
+    res.redirect('/1-14/Research/confirmation-reg-withdraw')
   } else {
-    res.redirect('registration-details')
+    res.redirect('/1-14/Research/registration-details')
+  }
+})
+
+
+router.post('/1-14/AO/confirm-rejoin-answer', function (req, res) {
+
+  let regAnswer = req.session.data['rejoin-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('/1-14/Research/confirmation-reg-rejoin')
+  } else {
+    res.redirect('/1-14/Research/registration-details')
   }
 })
 

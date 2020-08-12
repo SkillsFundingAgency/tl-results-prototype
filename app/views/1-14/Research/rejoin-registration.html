@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Rejoin course page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="registration-details-active">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/1-14/AO/confirm-rejoin-answer" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset" aria-describedby="uln-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure the learner wants to re-join the same course?
+            </h1>
+          </legend>
+          <span id="uln-hint" class="govuk-hint govuk-!-margin-bottom-7">
+            <strong>ULN:</strong> 1000053644
+          </span>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rejoin-answer-1" name="rejoin-answer" type="radio" value="Yes" {{ checked("rejoin-answwer", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="rejoin-answer-1">
+                Yes, re-join course
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rejoin-answer-2" name="rejoin-answer" type="radio" value="No" {{ checked("rejoin-answer", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="rejoin-answer-2">
+                No, do not re-join course
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

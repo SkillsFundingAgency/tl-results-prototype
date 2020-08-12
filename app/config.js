@@ -25,9 +25,6 @@ module.exports = {
   // Force HTTP to redirect to HTTPS on production
   useHttps: 'true',
 
-  // Cookie warning - update link to service's cookie page.
-  cookieText: 'This service needs to use cookies to make the site work.',
-
   // Enable or disable Browser Sync
   useBrowserSync: 'true'
 
