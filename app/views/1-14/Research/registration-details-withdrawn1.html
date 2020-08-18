@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-registration">Search for a registration</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Registration details</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+              <h1 class="govuk-heading-l">Registration details</h1>
+              <h2 class="govuk-heading-m">ULN: 1002323456</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Status
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--blue">Withdrawn</strong>
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    John Smith
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    14/05/2000
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider (UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Barnsley College (12345678)</p>
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core (code)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Design, Surveying and Planning for Construction (60358300)
+                  </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core assessment entry
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Summer 2021
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialism (code)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Civil Engineering (ZTLOS002)
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialism assessment entry
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Academic year
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    2020/21
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m govuk-!-margin-top-8">Manage this registration</h2>
+              <h3 class="govuk-heading-s">Re-join the same course</h3>
+              <p class="govuk-body">You can let us know if the learner wants to re-join the same course. They can do this up to a maximum of 4 years after the start of the course.</p>
+              <p class="govuk-body"><a class="govuk-link" href="">Re-join course</a></p>
+
+              <h3 class="govuk-heading-s">Register a new course</h3>
+              <p class="govuk-body">The learner can register for a new course.</p>
+              <p class="govuk-body"><a class="govuk-link" href="">Register for a new course</a></p>
+
+              <h3 class="govuk-heading-s">Delete this registration</h3>
+              <p class="govuk-body">Delete this registration permanently if:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>the registation was added by mistake</li>
+                  <li>the learner cannot or has no intention of completing any assessments</li>
+                </ul>
+              <p class="govuk-body"><a class="govuk-link" href="">Delete registration</a></p>
+
+              <p class="govuk-!-margin-top-8"><a class="govuk-link" href="">Search again</a></p>
+
+
+
+    </div>
+</div>
+
+{% endblock %}
