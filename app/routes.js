@@ -430,7 +430,7 @@ router.post('/1-14/AO/confirm-withdraw-answer', function (req, res) {
   if (regAnswer === 'Yes') {
     res.redirect('/1-14/Research/confirmation-reg-withdraw')
   } else {
-    res.redirect('/1-14/Research/registration-details')
+    res.redirect('/1-14/Research/registration-details-active')
   }
 })
 
@@ -454,6 +454,28 @@ router.post('/1-14/AO/confirm-spec-answer', function (req, res) {
     res.redirect('add-registration-q7b-specialism')
   } else {
     res.redirect('add-registration-q5a-year')
+  }
+})
+
+router.post('/1-14/AO/rereg-spec-answer', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('re-registration-q4-specialism')
+  } else {
+    res.redirect('re-registration-q5-year')
+  }
+})
+
+router.post('/1-14/AO/rereg-change-spec-answer', function (req, res) {
+
+  let regAnswer = req.session.data['spec-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('re-registration-change-q4-specialism')
+  } else {
+    res.redirect('re-registration-q6-check')
   }
 })
 

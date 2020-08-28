@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add registration - Change core
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="re-registration-change-q1-provider">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Re-registration</span>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="core">
+                    Select the core
+                </label>
+            </h1>
+            <select class="govuk-select" id="core" name="core">
+              <option value="published">Select one</option>
+              <option value="published">Design, Surveying and Planning for Construction (60358300)</option>
+              <option value="published">Digital Production, Design and Development (60358324)</option>
+            </select>
+            <details class="govuk-details govuk-!-margin-top-6" closed>
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Cannot find a core?
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                   <p class="govuk-body govuk-!-margin-bottom-0">If you cannot find the core you are looking for in the list above, ask your Providers Editor to add the relevant T Level to the provider in the 'providers’ section of this service. You cannot select the same core that the ULN is currently registered on.</p>
+                </div>
+            </details>
+        </div>
+        <p>
+            <a class="govuk-button" role="button " href="re-registration-change-q3-specialism">
+                Continue
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
