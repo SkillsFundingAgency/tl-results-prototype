@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add registration - Change academic year
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="re-registration-q6-check">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Re-registration</span>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="year">
+                    Select the academic year
+                </label>
+            </h1>
+            <select class="govuk-select" id="year" name="year">
+                <option value="updated">2020/21</option>
+            </select>
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="re-registration-q6-check">
+                Change
+            </a>
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}

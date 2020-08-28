@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add registration - Select specialism
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="re-registration-q3-specialism">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Re-registration</span>
+            <fieldset class="govuk-fieldset" role="group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                        Select the specialism for Design, Surveying and Planning
+                    </h1>
+                </legend>
+                <div class="govuk-checkboxes">
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="specialism-1" name="specialism" type="checkbox" value="Building Services Design">
+                     <label class="govuk-label govuk-checkboxes__label" for="specialism-1">
+                         Building Services Design (ZTLOS003)
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="specialism-2" name="specialism" type="checkbox" value="Civil Engineering">
+                     <label class="govuk-label govuk-checkboxes__label" for="specialism-2">
+                         Civil Engineering (ZTLOS002)
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="specialism-3" name="specialism" type="checkbox" value="Hazardous Materials Analysis and Surveying">
+                     <label class="govuk-label govuk-checkboxes__label" for="specialism-3">
+                         Hazardous Materials Analysis and Surveying (ZTLOS004)
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="specialism-4" name="specialism" type="checkbox" value="Surveying and Design for Construction and the Built Environment">
+                     <label class="govuk-label govuk-checkboxes__label" for="specialism-4">
+                         Surveying and Design for Construction and the Built Environment (ZTLOS001)
+                     </label>
+                   </div>
+                </div>
+
+                <p><a class="govuk-button govuk-!-margin-right-1 govuk-!-margin-top-5" role="button " href="re-registration-q5-year">Continue</a>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}
