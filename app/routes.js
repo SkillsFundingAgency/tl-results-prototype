@@ -457,7 +457,7 @@ router.post('/1-14/AO/confirm-spec-answer', function (req, res) {
   }
 })
 
-router.post('/1-14/AO/rereg-spec-answer', function (req, res) {
+router.post('/1-14/Research/confirm-spec-answer', function (req, res) {
 
   let regAnswer = req.session.data['spec-answer']
 

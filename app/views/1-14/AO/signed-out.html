@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You have been signed out
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                    You have been signed out
+            </h1>
+        <p class="govuk-body">Due to 30 minutes of inactivity you have been signed out.</p>
+        </div>
+        <p>
+            <a class="govuk-button" role="button" href="sign-in">
+                Sign in again
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
