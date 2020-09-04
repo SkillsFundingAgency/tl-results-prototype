@@ -556,6 +556,17 @@ router.post('/1-14/Research/integrated/confirm-entry-answer', function (req, res
   }
 })
 
+router.post('/1-14/Research/confirm-provider-answer', function (req, res) {
+
+  let regAnswer = req.session.data['provider-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('change-provider-withdraw')
+  } else {
+    res.redirect('change-provider-pe')
+  }
+})
+
 function checkIfActive(req) {
     if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'] == false) {
         initialiseVariables(req)
