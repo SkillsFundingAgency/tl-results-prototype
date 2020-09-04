@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Rejoin course page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="change-provider">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/1-14/Research/confirm-provider-answer" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset" aria-describedby="uln-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-xl">Change registration</span>
+            <h1 class="govuk-fieldset__heading">
+              Do you also want to change the core?
+            </h1>
+          </legend>
+          <span id="provider-hint" class="govuk-hint govuk-!-margin-bottom-7">
+            Huddersfield College (87878787) does not offer the core: Design, Surveying and Planning for Construction (60358300).
+          </span>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="provider-answer-1" name="provider-answer" type="radio" value="Yes" {{ checked("provider-answer", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="provider-answer-1">
+                Yes, I also want to change the core
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="provider-answer-2" name="provider-answer" type="radio" value="No" {{ checked("provider-answer", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="provider-answer-2">
+                No, I want to keep the same core
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
