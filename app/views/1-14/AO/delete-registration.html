@@ -1,22 +1,22 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Cancel registration page
+  Delete registration page - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="registration-details">Back</a>
+  <a class="govuk-back-link" href="registration-details-amend-options-active">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/1-14/AO/confirm-cancel-answer" method="post" class="form" >
+    <form action="/1-14/AO/confirm-delete-answer" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to cancel this registration?
+              Are you sure you want to delete this registration permanently?
             </h1>
           </legend>
           <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
@@ -24,15 +24,15 @@
           </span>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reg-answer-1" name="reg-answer" type="radio" value="Yes" {{ checked("reg-answwer", "Yes") }}>
+              <input class="govuk-radios__input" id="reg-answer-1" name="reg-answer" type="radio" value="Yes" {{ checked("reg-answer", "Yes") }}>
               <label class="govuk-label govuk-radios__label" for="reg-answer-1">
-                Yes, cancel registration
+                Yes, delete this registration
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="reg-answer-2" name="reg-answer" type="radio" value="No" {{ checked("reg-answer", "No") }}>
               <label class="govuk-label govuk-radios__label" for="reg-answer-2">
-                No, do not cancel it
+                No, do not delete it
               </label>
             </div>
           </div>
