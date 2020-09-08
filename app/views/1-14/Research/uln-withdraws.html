@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Registrations upload unsuccessful page - Manage T Level results - GOV.UK
+{% endblock %}
+
+
+<style>
+
+.gem-c-attachment__thumbnail {
+  position: relative;
+  width: auto;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  padding: 5px;
+  float: left; }
+
+.gem-c-attachment__thumbnail-image {
+  display: block;
+  width: auto;
+  max-width: 99px;
+  height: 140px;
+  border: rgba(11, 12, 12, 0.1);
+  outline: 5px solid rgba(11, 12, 12, 0.1);
+  background: #ffffff;
+  box-shadow: 0 2px 2px rgba(11, 12, 12, 0.4);
+  fill: #b1b4b6;
+  stroke: #b1b4b6; }
+
+.govuk-error-summary
+
+</style>
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+              <h1 class="govuk-heading-xl">
+                  Your file contains core changes
+              </h1>
+              <p class="govuk-body govuk-inset-text">The following ULNs have had their cores changed. We can create a new registration for each of them and withdraw them from the current registration.</p>
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN: 1234567890
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    John Smith
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN: 9087654321
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mike Jones
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN: 4545454545
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Mary Berry
+                  </dd>
+                </div>
+              </dl>
+
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading  govuk-!-margin-top-7">
+                            Do you want to create new registrations?
+                        </h2>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="season-answer-1" name="season-answer" type="radio" value="None" {{ checked("season-answwer", "None") }}>
+                          <label class="govuk-label govuk-radios__label" for="season-answer-1">
+                              Yes, create new registrations for each of the ULNs
+                          </label>
+                      </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="Summer2021" {{ checked("season-answwer", "Summer2021") }}>
+                            <label class="govuk-label govuk-radios__label" for="season-answer-2">
+                                No, do not create new registrations. Ignore these changes.
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="add-entries-q4-spec-entry">Continue</a>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
