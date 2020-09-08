@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cannot select same core page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="re-registration-q2-core">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                    You cannot select this core
+            </h1>
+        <p class="govuk-body">You cannot select the same core because you chose to register the learner on a different core.</p>
+        <p class="govuk-body">To register the learner on the same core you need to reactivate the registration.</p>
+        </div>
+        <p>
+            <a class="govuk-button" role="button" href="rejoin-registration">
+                Reactivate this registration
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

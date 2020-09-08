@@ -417,7 +417,7 @@ router.post('/1-14/AO/confirm-delete-answer', function (req, res) {
   let regAnswer = req.session.data['reg-answer']
 
   if (regAnswer === 'Yes') {
-    res.redirect('confirmation-reg-cancelled')
+    res.redirect('confirmation-reg-deleted')
   } else {
     res.redirect('registration-details-amend-options-active')
   }
