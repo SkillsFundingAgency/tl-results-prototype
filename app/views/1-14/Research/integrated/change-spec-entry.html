@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new registration - enter the learner’s name - Manage T Level results - GOV.UK
+Add a new registration - Select Specialism assessment entry - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,26 +17,26 @@ Add a new registration - enter the learner’s name - Manage T Level results - G
                 <span class="govuk-caption-xl">Change registration</span>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Select the core assessment entry
-                          <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">Design, Surveying and Planning for Construction (60358300)</p>
-                      </h1>
-                  </legend>
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Select the specialism assessment entry
+                            <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">Building Services Design (ZTLOS003)</p>
+                        </h1>
+                    </legend>
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="season-answer-1" name="season-answer" type="radio" value="None" >
+                          <input class="govuk-radios__input" id="season-answer-1" name="season-answer" type="radio" value="None" {{ checked("season-answwer", "None") }}>
                           <label class="govuk-label govuk-radios__label" for="season-answer-1">
                               Not chosen yet
                           </label>
                       </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="Summer2021" checked>
+                            <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="Summer2021" {{ checked("season-answwer", "Summer2021") }}>
                             <label class="govuk-label govuk-radios__label" for="season-answer-2">
                                 Summer 2021
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="season-answer-3" name="season-answer" type="radio" value="Autumn2021" >
+                            <input class="govuk-radios__input" id="season-answer-3" name="season-answer" type="radio" value="Autumn2021" {{ checked("season-answer", "Autumn2021") }}>
                             <label class="govuk-label govuk-radios__label" for="season-answer-3">
                                 Autumn 2021
                             </label>

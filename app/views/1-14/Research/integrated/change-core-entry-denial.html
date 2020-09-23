@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Academic year cannot be changed page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="registration-details-active-addanother">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                    Change core assessment entry
+            </h1>
+        <p class="govuk-body">You cannot change the assessment entry for the core as it has corresponding results.</p>
+        <p class="govuk-body">However, you can add another assessment entry for this core if it is for a retake.</p>
+        </div>
+        <p>
+            <a class="govuk-button" role="button" href="">
+                Add another assessment entry
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
