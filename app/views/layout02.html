@@ -38,7 +38,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-{% include "includes/cookie-banner.html" %}
+  <!--  removed for convenience {% include "includes/cookie-banner.html" %} -->
 {# Set serviceName in config.js. #}
 {{
     govukHeader ({
@@ -65,7 +65,7 @@ GOV.UK Prototype Kit
       text: "Service availability"
     }
   ]
-  }) 
+  })
 }}
 {% endblock %}
 
@@ -86,7 +86,7 @@ GOV.UK Prototype Kit
           }
         ]
       }
-    }) 
+    })
 }}
 {% endblock %}
 {% endif %}

@@ -16,12 +16,13 @@
         <fieldset class="govuk-fieldset" aria-describedby="remove-tlevel-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to delete this registration permanently?
+              Are you sure you want to delete this active registration permanently?
             </h1>
           </legend>
           <span id="remove-tlevel-hint" class="govuk-hint govuk-!-margin-bottom-7">
             <strong>ULN:</strong> 1000053644
           </span>
+          <p class="govuk-body">We will delete this active registration but we will not delete any previous registrations with different cores that were withdrawn.</p>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="reg-answer-1" name="reg-answer" type="radio" value="Yes" {{ checked("reg-answer", "Yes") }}>
