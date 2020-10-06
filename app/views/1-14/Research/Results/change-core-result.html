@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="assessment-entries1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Select the core result
+                          <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">Design, Surveying and Planning for Construction (60358300)</p>
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="None">
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              Not received yet
+                          </label>
+                      </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="A*">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-2a">
+                                A*
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="A" >
+                            <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                                A
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="B">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                                B
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-4" name="result-answer" type="radio" value="C" checked>
+                            <label class="govuk-label govuk-radios__label" for="result-answer-4">
+                                C
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-5" name="result-answer" type="radio" value="D">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-5">
+                                D
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-6" name="result-answer" type="radio" value="E">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-6">
+                                E
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer" type="radio" value="Fail">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-7">
+                                Fail
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="change-successful">Change</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
