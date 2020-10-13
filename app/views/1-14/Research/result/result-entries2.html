@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Registration details
+  Learner's results
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,9 +14,9 @@
       <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-uln">Search for a ULN</a>
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">ULN's results</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
   </ol>
 </div>
 {% endblock %}
@@ -26,7 +26,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-              <h1 class="govuk-heading-l">ULN's results</h1>
+              <h1 class="govuk-heading-l">Learner's results</h1>
               <h2 class="govuk-heading-m">ULN: 1234567890 (John Smith)</h2>
 
               <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
@@ -37,7 +37,10 @@
                      Result
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Not recieved yet
+                    <span class="govuk-visually-hidden">for </span>Summer 2021
+                  </dd>
+                  <dd class="govuk-summary-list__value">
+                    <span class="govuk-visually-hidden">grade </span>Not recieved yet
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="change-core-result">
@@ -55,7 +58,10 @@
                     Result
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Not recieved yet
+                    <span class="govuk-visually-hidden">for </span>Summer 2022
+                  </dd>
+                  <dd class="govuk-summary-list__value">
+                    <span class="govuk-visually-hidden">grade </span>Not recieved yet
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="change-spec-result">
@@ -65,7 +71,7 @@
                 </div>
               </dl>
 
-              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-uln">Search again</a></p>
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
 
     </div>
 </div>
