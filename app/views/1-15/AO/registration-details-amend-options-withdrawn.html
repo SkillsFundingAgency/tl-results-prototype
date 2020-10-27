@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Amend withdrawn registration page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="registration-details-withdrawn">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="/1-15/AO/withdrawn-what-to-do" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                             What you would like to do with this withdrawn registration?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="what-answer-1" name="what-answer" type="radio" value="rejoin" {{ checked("what-answer", "rejoin") }}>
+                            <label class="govuk-label govuk-radios__label" for="what-answer-1">
+                                <strong>Reactivate this registration with the same course</strong>
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="what-answer-2" name="what-answer" type="radio" value="reregister" {{ checked("what-answer", "reregister") }}>
+                            <label class="govuk-label govuk-radios__label" for="what-answer-2">
+                                <strong>Register learner on a different course</strong>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

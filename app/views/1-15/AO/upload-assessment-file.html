@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload registrations file - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-entries">Assessment entries</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload assessment entries file</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Upload assessment entries file
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">On existing registrations you can add or amend assessment entries by uploading them in the same file or separate files.</p>
+    <p class="govuk-body">We can only accept files that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>are in CSV format</li>
+          <li>include all mandatory fields</li>
+          <li>contain assessment entries for between one and 10,000 registrations</li>
+        </ul>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-font-weight-bold" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+    </div>
+    <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="upload-successful">Submit</a>
+
+  </div>
+</div>
+
+{% endblock %}
