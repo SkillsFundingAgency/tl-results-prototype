@@ -434,6 +434,16 @@ router.post('/1-14/AO/confirm-withdraw-answer', function (req, res) {
   }
 })
 
+router.post('/1-15/AO/confirm-withdraw-answer', function (req, res) {
+
+  let regAnswer = req.session.data['withdraw-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('/1-15/AO/confirmation-reg-withdraw')
+  } else {
+    res.redirect('/1-15/AO/registration-details-amend-options-active')
+  }
+})
 
 router.post('/1-14/Research/confirm-rejoin-answer', function (req, res) {
 
@@ -443,6 +453,17 @@ router.post('/1-14/Research/confirm-rejoin-answer', function (req, res) {
     res.redirect('/1-14/Research/confirmation-reg-rejoin')
   } else {
     res.redirect('/1-14/Research/registration-details')
+  }
+})
+
+router.post('/1-15/AO/confirm-rejoin-answer', function (req, res) {
+
+  let regAnswer = req.session.data['rejoin-answer']
+
+  if (regAnswer === 'Yes') {
+    res.redirect('/1-15/AO/confirmation-reg-rejoin')
+  } else {
+    res.redirect('/1-15/AO/registration-details')
   }
 })
 
@@ -600,7 +621,31 @@ router.post('/1-14/AO/active-what-to-do', function (req, res) {
   }
 })
 
+router.post('/1-15/AO/active-what-to-do', function (req, res) {
+
+  let regAnswer = req.session.data['what-answer']
+
+  if (regAnswer === 'withdraw') {
+    res.redirect('withdraw-registration')
+  } else {
+    res.redirect('delete-registration')
+  }
+})
+
 router.post('/1-14/AO/withdrawn-what-to-do', function (req, res) {
+
+  let regAnswer = req.session.data['what-answer']
+
+  if (regAnswer === 'rejoin') {
+    res.redirect('rejoin-registration')
+  }  if (regAnswer === 'reregister') {
+      res.redirect('re-registration-q1-provider')
+    } else {
+    res.redirect('delete-registration')
+  }
+})
+
+router.post('/1-15/AO/withdrawn-what-to-do', function (req, res) {
 
   let regAnswer = req.session.data['what-answer']
 
