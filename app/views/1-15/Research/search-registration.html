@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search for a registration page
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a registration</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="registration-details-active" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+                            Search for a registration
+                        </h1>
+                    </legend>
+                    <p class="govuk-body">You can view, amend and delete a learner’s registration.</p>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="search">
+                        Enter the Unique Learner Number (ULN)
+                      </label>
+                      <span class="govuk-hint">
+                          ULN must be 10 digits long
+                      </span>
+                      <input class="govuk-input govuk-input--width-20" id="search" name="search">
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Search</button>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
