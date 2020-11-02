@@ -1,0 +1,153 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201031.151342.409432.0.001.json",
+    "dumpEventTime": "2020-10-31T15:13:42Z",
+    "dumpEventTimeStamp": "1604157222508",
+    "processId": 409432,
+    "cwd": "C:\\Users\\ellio\\OneDrive\\MyCo\\Clients\\SFA\\Projects\\tl-results-prototype",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "listen-on-port.js"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19041",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 248102343,
+        "nice": 0,
+        "sys": 43598625,
+        "idle": 1225697375,
+        "irq": 2930531
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 79034609,
+        "nice": 0,
+        "sys": 31104406,
+        "idle": 1407259015,
+        "irq": 200609
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 130041562,
+        "nice": 0,
+        "sys": 39614453,
+        "idle": 1347742015,
+        "irq": 267390
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 64721171,
+        "nice": 0,
+        "sys": 18350828,
+        "idle": 1434326031,
+        "irq": 189781
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 92152718,
+        "nice": 0,
+        "sys": 31692828,
+        "idle": 1393552484,
+        "irq": 277484
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 58874453,
+        "nice": 0,
+        "sys": 19617171,
+        "idle": 1438906390,
+        "irq": 198468
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 75420453,
+        "nice": 0,
+        "sys": 25965140,
+        "idle": 1416012421,
+        "irq": 232406
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 58284671,
+        "nice": 0,
+        "sys": 20109578,
+        "idle": 1439003765,
+        "irq": 174250
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "28:16:a8:4c:bd:fd",
+        "address": "fe80::55a1:df94:30:8eb3",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 14
+      },
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "28:16:a8:4c:bd:fd",
+        "address": "192.168.0.54",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac"
