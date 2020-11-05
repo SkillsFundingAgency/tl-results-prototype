@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard0">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-entries0">Assessment entries</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner0">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's assessment entries</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+              <h1 class="govuk-heading-l">Learner's assessment entries</h1>
+              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
+              <p class="govuk-body">Name: John Smith</p>
+              <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+              <hr class="govuk-section-break govuk-section-break--visible">
+
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-8 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                     Next assessment entry
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Autumn 2021 (exam and project)
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-core-entry0">
+                      Change <span class="govuk-visually-hidden"> for core</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+              <details class="govuk-details" closed>
+                  <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                          Past core assessment entries
+                      </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                     <p class="govuk-body">Summer 2021 (exam and project)</p>
+                  </div>
+              </details>
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-8 govuk-!-font-weight-bold">Specialism: Not specified</h3>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Next assessment entry
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Not specified
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="change-core-entry">
+
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="registration-details-active">View and amend this learner's registration details</a></p>
+
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -5,7 +5,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="assessment-entries12">Back</a>
+<a class="govuk-back-link" href="assessment-entries1">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -17,21 +17,26 @@ Change assessment entry - Manage T Level results - GOV.UK
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Select the next core assessment entry
-                          <p class="govuk-body-m govuk-!-font-weight-regular govuk-!-margin-top-4">This next assessment entry can be for the exam only, the project only, or both.</p>
+                          What is the next assessment entry for?
                       </h1>
                     </legend>
                     <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="resit-answer-1" name="resit-answer" type="radio" value="exam">
+                          <label class="govuk-label govuk-radios__label" for="resit-answer-1">
+                              Exam only
+                          </label>
+                      </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="Autumn2021" >
-                            <label class="govuk-label govuk-radios__label" for="season-answer-2">
-                                Autumn 2021
+                            <input class="govuk-radios__input" id="resit-answer-2" name="resit-answer" type="radio" value="project">
+                            <label class="govuk-label govuk-radios__label" for="resit-answer-2">
+                                Employer project only
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="season-answer-3" name="season-answer" type="radio" value="Summer2022">
-                            <label class="govuk-label govuk-radios__label" for="season-answer-3">
-                                Summer 2022
+                            <input class="govuk-radios__input" id="resit-answer-3" name="resit-answer" type="radio" value="both">
+                            <label class="govuk-label govuk-radios__label" for="resit-answer-3">
+                                Both exam and employer project
                             </label>
                         </div>
                     </div>
@@ -40,8 +45,7 @@ Change assessment entry - Manage T Level results - GOV.UK
             <div class="govuk-inset-text">
                 Another assessment entry can be added after this one <strong>has passed</strong>, for example if there is another retake, or if the exam and project are being booked for different assessment entry series.
             </div>
-
-            <p><a class="govuk-button" role="button" href="change-successful00">Change</a>
+            <p><a class="govuk-button" role="button" href="2add-core-entry2">Continue</a>
         </form>
     </div>
 </div>

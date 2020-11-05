@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="assessment-entries15">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          What do you want to do?
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="change-reason-1" name="change-reason" type="radio" value="remove" >
+                            <label class="govuk-label govuk-radios__label" for="change-reason-1">
+                                Remove the assessment entry
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="change-reason-2" name="change-reason" type="radio" value="different">
+                            <label class="govuk-label govuk-radios__label" for="change-reason-2">
+                                Select a different assessment entry series
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="change-reason-3" name="change-reason" type="radio" value="change">
+                            <label class="govuk-label govuk-radios__label" for="change-reason-3">
+                                Change what the assessment entry is for (eg. exam, project or both)
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="">Change</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
