@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registrations page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard00">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Assessment entries</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        min-height: 140px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Assessment entries
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Upload to add and amend assessment entries
+            </h2>
+
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="">
+                    Upload assessment entries file
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                  Manually add or amend an assessment entry
+            </h2>
+            <p class="govuk-body">
+                <a class="govuk-link--no-visited-state" href="search-learner00">
+                    Search for a learner
+                </a>
+            </p>
+        </div>
+    </div>
+
+  </div>
+
+
+{% endblock %}
