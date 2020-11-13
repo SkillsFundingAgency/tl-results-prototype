@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Delete registration page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="confirmation-entry-removed">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="confirmation-entry-removed" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+              Are you sure you want to remove this entry?
+            </h1>
+            <span id="remove-tlevel-hint" class="govuk-hint govuk-!-font-weight-bold govuk-!-margin-bottom-3">
+              Core entry for Summer 2021
+            </span>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reg-answer-1" name="reg-answer" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="reg-answer-1">
+                Yes, remove this entry
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reg-answer-2" name="reg-answer" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="reg-answer-2">
+                No, do not remove it
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

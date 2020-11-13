@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="assessment-entries12">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Do you want to add the next available assessment entry?
+                      </h1>
+                      <p class="govuk-inset-text govuk-body-m govuk-!-font-weight-regular govuk-!-margin-top-4">Summer 2021 is the only one available.</p>
+
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="Yes" >
+                          <label class="govuk-label govuk-radios__label" for="season-answer-2">
+                              Yes, add to Summer 2021
+                          </label>
+                      </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="season-answer-2" name="season-answer" type="radio" value="No" >
+                            <label class="govuk-label govuk-radios__label" for="season-answer-2">
+                                No, do not make this booking
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="change-successful00">Submit</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
