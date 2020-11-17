@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's assessment entries
+  Learner's results
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,12 +11,12 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-entries">Assessment entries</a>
+      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's assessment entries</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
   </ol>
 </div>
 {% endblock %}
@@ -24,9 +24,9 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Learner's assessment entries</h1>
+              <h1 class="govuk-heading-l">Learner's results</h1>
               <h2 class="govuk-heading-m">ULN: 1234567890</h2>
               <p class="govuk-body">Name: John Smith</p>
               <p class="govuk-body">Provider: Barnsley College (12345678)</p>
@@ -36,15 +36,18 @@
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key" style="border-bottom:none">
-                     First assessment entry
-                  </dt>
+                  <dd class="govuk-summary-list__key" style="border-bottom:none">
+                     Result
+                  </dd>
                   <dd class="govuk-summary-list__value" style="border-bottom:none">
-                    Summer 2021
+                     <span class="govuk-visually-hidden">for </span>Summer 2021
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                    Grade: C
                   </dd>
                   <dd class="govuk-summary-list__actions" style="border-bottom:none">
-                    <a class="govuk-link" href="remove-entry">
-                      Remove entry <span class="govuk-visually-hidden"> for core</span>
+                    <a class="govuk-link" href="add-core-result">
+                      Change <span class="govuk-visually-hidden">core result</span>
                     </a>
                   </dd>
                 </div>
@@ -54,22 +57,9 @@
 
               <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: Building Services Design (ZTLOS003)</h3>
 
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key" style="border-bottom:none">
-                    First assessment entry
-                  </dt>
-                  <dd class="govuk-summary-list__value" style="border-bottom:none">
-                    Available to add after Autumn 2021 series has passed
-                  </dd>
-                  <dd class="govuk-summary-list__actions" style="border-bottom:none">
-                  </dd>
-                </div>
-              </dl>
+              <p class="govuk-inset-text">Specialism result cannot be provided until you <a class="govuk-link" href="">add an assessment entry</a>.</p>
 
               <hr class="govuk-section-break govuk-section-break--visible">
-
-              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="">View and amend this learner's registration details</a></p>
 
               <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
 
