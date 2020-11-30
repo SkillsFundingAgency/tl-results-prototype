@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Options
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-xl">Options
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Full journey</h2>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="tlevels-dashboard">Add core and specialism results</a></p>
+
+    <h2 class="govuk-heading-m">Other active variations</h2>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries0">No assessment entries added</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries10">1 core result and 1 specialism result - with outstanding assessment entries</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries20">2 core results and 2 specialisms (1 with a result)</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries8">2 core results and 1 specialism result - record closed</a></p>
+
+    <h2 class="govuk-heading-m">Withdrawn variations</h2>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="multiple-records">Multiple registrations</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries6">1 core result and 0 specialism results</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries5">2 core result and 0 specialism results</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries40">1 core result and no specialism registered</a></p>
+    <p class="govuk-!-margin-top-4"><a class="govuk-button" role="button" href="result-entries9">0 results</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+              <h1 class="govuk-heading-l">Learner's results</h1>
+              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
+              <p class="govuk-body">Name: John Smith</p>
+              <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+              <hr class="govuk-section-break govuk-section-break--visible">
+
+              <p class="govuk-inset-text">This learner's registration has been withdrawn. </p>
+
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

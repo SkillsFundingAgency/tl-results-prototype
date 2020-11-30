@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l">Learner's results</h1>
+              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
+              <p class="govuk-body">Name: John Smith</p>
+              <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+              <p class="govuk-inset-text">This registration has been withdrawn</p>
+              <hr class="govuk-section-break govuk-section-break--visible">
+
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key" style="border-bottom:none">
+                     Result
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                     <span class="govuk-visually-hidden">for </span>Summer 2021
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                    Grade: U
+                  </dd>
+                  <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+                  </dd>
+                </div>
+              </dl>
+
+              <hr class="govuk-section-break govuk-section-break--visible">
+
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: Not specified</h3>
+
+              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
+
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
