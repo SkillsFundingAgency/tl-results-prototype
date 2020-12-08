@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sign in to manage your T Level results
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Sign in to manage your T Level results
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Awarding Organisations
+    </h2>
+
+    <p class="govuk-body">As an awarding organisation you can use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>review your T Level details</li>
+      <li>tell us which providers are offering your T Levels</li>
+      <li>enter student registrations - from September 2020</li>
+      <li>enter student results - from 2021</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+      Providers
+    </h2>
+
+    <p class="govuk-body">As a provider you can use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>enter student results - from 2021</li>
+      <li>request statements of achievements</li>
+      <li>request certificates</li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-top-7">You will be signed out if you are inactive for 30 minutes. </p>
+
+    <a href="sign-in" role="button" draggable="false"
+      class="govuk-button govuk-button--start govuk-!-margin-top-6" data-module="govuk-button">
+      Start now
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+        viewBox="0 0 33 40" role="presentation" focusable="false">
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+      </svg>
+    </a>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-4">Before you start</h2>
+
+    <p class="govuk-body">
+        You need a DfE Sign-in account and an assigned service role to use this service.
+    </p>
+
+    <details class="govuk-details" closed>
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Awarding organisation service roles
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+           <p class="govuk-body"><strong>T Levels Reviewer</strong> – reviews T Level titles and confirms or queries the details</p>
+           <p class="govuk-body"><strong>Providers Editor</strong> – enters and amends T Level providers</p>
+           <p class="govuk-body"><strong>Registrations Editor</strong> – uploads, amends, views, deletes and adds student registrations and assessment entries</p>
+           <p class="govuk-body"><strong>Site Administrator</strong> – has all roles: T Levels Reviewer, Providers Editor, Registrations Editor</p>
+        </div>
+    </details>
+
+    <details class="govuk-details" closed>
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Provider service roles
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+           <p class="govuk-body"><strong>Results Editor</strong> – uploads, amends, views, deletes and adds student results</p>
+           <p class="govuk-body"><strong>Site Administrator</strong> – has all roles: Results Editor</p>
+        </div>
+    </details>
+
+  </div>
+
+</div>
+{% endblock %}
