@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add IP result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="update-ip-location-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Which public sector organisation did they work in?
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="NHS Trust" >
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              NHS Trust
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="DVLA">
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2a">
+                              DVLA
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="DEFRA">
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2a">
+                              DEFRA
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="update-ip-location-3">Continue</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
