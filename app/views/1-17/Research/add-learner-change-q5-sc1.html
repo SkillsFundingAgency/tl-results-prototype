@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - Special Consideration circumstance  - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q9c-check">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-learner-q9c-check" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <span class="govuk-caption-xl">Add a new learner</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Special consideration: select the option that best describes the learner’s circumstances
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-1" name="circumstance-answer" type="radio" value="1" >
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-1">
+                              Physical or mental illness or accident/injury at the time of the placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-2" name="circumstance-answer" type="radio" value="2">
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-2">
+                              Student or close family member has a diagnosed serious physical or mental illness at the time of the placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-3" name="circumstance-answer" type="radio" value="3" >
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-3">
+                              Bereavement of a family member or close friend at the time of the placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-4" name="circumstance-answer" type="radio" value="4" >
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-4">
+                              Significant domestic crisis arising at the time of the placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-5" name="circumstance-answer" type="radio" value="5" >
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-5">
+                              A traumatic incident, or significant change in the student’s circumstances, occurring at the time of the placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-6" name="circumstance-answer" type="radio" value="6">
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-6">
+                              Participation in significant sporting events, training camps or other competitions
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-7" name="circumstance-answer" type="radio" value="7" >
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-7">
+                              A safeguarding issue at the workplace where the placement is based has been identified by the provider and the student is unable to make up the hours on another placement
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="circumstance-answer-8" name="circumstance-answer" type="radio" value="8" checked>
+                          <label class="govuk-label govuk-radios__label" for="circumstance-answer-8">
+                              Withdrawal of the placement offer by the employer because they have gone into administration or have encountered severe disruption whereby the workplace is no longer considered a safe place to work, and the provider has exhausted all avenues to identify a suitable alternative placement to enable the student to make up the hours
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Change</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

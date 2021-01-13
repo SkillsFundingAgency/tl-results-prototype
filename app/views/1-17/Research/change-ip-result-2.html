@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Report T Level issue page
+{% endblock %}
+
+{% block Skiplinks %}
+  <a href="#content" class="govuk-skip-link">Skip to main content</a>
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="change-ip-result-1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-xl">Special consideration details</h1>
+
+            <h2 class="govuk-heading-m">Check and confirm the details are correct before continuing</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">1234567890</p>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Learner name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">John Smith</p>
+                </dd>
+              </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Core
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Digital Production, Design and Development
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Specialism
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <p class="govuk-body">Digital Production and Design</p>
+                  </dd>
+                </div>
+              </dl>
+
+            <p class="govuk-body">I confirm that special consideration has been applied because the learner has been unable to complete the minimum 315 hours due to exceptional and adverse circumstances but has satisfactorily met the other required industry placement completion criteria, as follows:</p>
+            <ol class="govuk-list govuk-list--number">
+              <li>The learner has demonstrated sufficient progress towards their learning goals</li>
+              <li>The learner has undertaken their placement in an external workplace, (with the exception of students with SEND or those in Young Offender Institutions where alternative approaches can be applied) and that was occupationally relevant to their T Level specialism</li>
+              <li>The learner circumstances meet the special consideration eligibility criteria</li>
+              <li>I have supporting evidence to document the reason why special consideration has been applied</li>
+            </ol>
+
+            <p><a class="govuk-button" role="button" href="change-ip-result-3">Confirm and continue</a></p>
+
+        </div>
+    </div>
+{% endblock %}

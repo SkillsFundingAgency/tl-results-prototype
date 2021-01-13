@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Select the core - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q7-mod1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" class="form" id="my_radio_box">
+          <div class="govuk-form-group govuk-!-margin-bottom-7">
+              <span class="govuk-caption-xl">Add a new learner</span>
+              <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                        Select the Industry Placement Model used
+                    </h1>
+                    <p class="govuk-body">Maximum of 2 can be selected</p>
+                  </legend>
+
+                  <div class="govuk-checkboxes">
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="model-1" name="model" type="checkbox" value="1">
+                       <label class="govuk-label govuk-checkboxes__label" for="model-1">
+                           Occupationally relevant part-time work
+                       </label>
+                     </div>
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="model-2" name="model" type="checkbox" value="2">
+                       <label class="govuk-label govuk-checkboxes__label" for="model-2">
+                           On-site facilities for 105 hours (for SEND students)
+                       </label>
+                     </div>
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="model-3" name="model" type="checkbox" value="3">
+                       <label class="govuk-label govuk-checkboxes__label" for="model-3">
+                           On-site facilities (for young people in Young Offender Institutions)
+                       </label>
+                     </div>
+                     <div class="govuk-checkboxes__item">
+                       <input class="govuk-checkboxes__input" id="model-4" name="model" type="checkbox" value="4">
+                       <label class="govuk-label govuk-checkboxes__label" for="model-4">
+                           Digital and Engineering & Manufacturing: route-level placements
+                       </label>
+                     </div>
+                  </div>
+              </fieldset>
+          </div>
+          <p><a class="govuk-button" role="button" href="add-learner-q9c-check">Continue</a>
+      </form>
+    </div>
+</div>
+
+{% endblock %}
