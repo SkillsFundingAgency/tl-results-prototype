@@ -4,53 +4,8 @@
   Learner's results
 {% endblock %}
 
-<style>
-    .Table
-    {
-        display: table;
-    }
-    .Title
-    {
-        display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
-    }
-    .Heading
-    {
-        display: table-row;
-        font-weight: bold;
-        text-align: center;
-    }
-    .Row
-    {
-        display: table-row;
-    }
-    .Cell
-    {
-        display: table-cell;
-        border: solid;
-        border-width: thin;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-</style>
-
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
-  </ol>
-</div>
+<a class="govuk-back-link" href="add-learner-q8-mod2">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -58,9 +13,54 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l">Learner's results</h1>
-              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-              <p class="govuk-body">Name: John Smith</p>
+      <span class="govuk-caption-xl">Add a new learner</span>
+
+      <h1 class="govuk-heading-l">
+        Check and submit
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
+
+      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Personal details</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">9876543210</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> ULN</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">John Smith</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">15/05/2000</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
+        </dl>
               <hr class="govuk-section-break govuk-section-break--visible">
 
               <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
@@ -74,9 +74,7 @@
                       Achieved (data from LRS)
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="dispute">
-                      Dispute <span class="govuk-visually-hidden"> achieved status</span>
-                    </a>
+
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -88,7 +86,7 @@
                   </dd>
 
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-em-send">
+                    <a class="govuk-link" href="">
                       Change <span class="govuk-visually-hidden"> SEND status</span>
                     </a>
                   </dd>
@@ -106,12 +104,12 @@
                       Yes
                   </dd>
                   <dd class="govuk-summary-list__actions" >
-                    <a class="govuk-link" href="change-ip-result-1">
-                      Change <span class="govuk-visually-hidden"> completed status</span>
+                    <a class="govuk-link" href="">
+                      Change <span class="govuk-visually-hidden">for industry placement </span>
                     </a>
                   </dd>
                 </div>
-                <div class="govuk-summary-list__row">
+              <div class="govuk-summary-list__row">
                   <dd class="govuk-summary-list__key">
                      Industry placement model
                   </dd>
@@ -119,14 +117,14 @@
                       <p class="govuk-body">Occupationally relevant part-time work</p>
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-ip-model-1">
-                      Change <span class="govuk-visually-hidden"> industry placement model </span>
+                    <a class="govuk-link" href="">
+                      Change <span class="govuk-visually-hidden">for industry placement </span>
                     </a>
                   </dd>
                 </div>
               </dl>
 
-              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+              <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="confirmation-learner-added">Submit</a>
 
     </div>
 </div>

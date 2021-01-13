@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add English and Maths result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="result-entries1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Has the learner achieved the minimum standard for maths and English?
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" checked>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              Yes, they have achieved the minimum standard
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
+                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                              No, they have not achieved the minimum standard
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+            </div>
+            <p><a class="govuk-button" role="button" href="change-em-status-successful">Change</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
