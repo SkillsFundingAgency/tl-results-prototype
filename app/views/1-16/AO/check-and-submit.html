@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check and submit result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-core-result">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+              Check and submit
+            </h1>
+
+            <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting the result.</p>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:none">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:none">
+                  9876543210
+                </dd>
+                <dd class="govuk-summary-list__actions" style="border-bottom:none">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:none">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:none">
+                  John Smith
+                </dd>
+                <dd class="govuk-summary-list__actions" style="border-bottom:none">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key" style="border-bottom:none">
+                  Provider (UKPRN)
+                </dt>
+                <dd class="govuk-summary-list__value" style="border-bottom:none">
+                  Barnsley College (12345678)
+                </dd>
+                <dd class="govuk-summary-list__actions" style="border-bottom:none">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Core (code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Design, Surveying and Planning for Construction (60358300)
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Result
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  C
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="re-registration-change-q5-year">
+                    Change<span class="govuk-visually-hidden"> result</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <p><a class="govuk-button govuk-!-margin-right-1" role="button " href="">Submit</a>
+      </div>
+    </div>
+
+{% endblock %}
