@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ULN could not be found - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="search-learner">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6">
+                    ULN (1234567890) cannot be found
+                </label>
+            </h1>
+        <p class="govuk-body">This ULN has not been registered by the awarding organisation. If you think it should be registered, contact them to find out more about this issue.</p>
+        </div>
+        <p>
+            <a class="govuk-button" role="button " href="search-learner">
+                Back to search
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
