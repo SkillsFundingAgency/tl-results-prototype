@@ -131,6 +131,9 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 res.redirect('/1-17/dynamic/add-learner-q1-ulnAlreadyAdded')  
             } 
+            else {
+                res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')  
+            }
         }
         else {
             res.redirect('/1-17/dynamic/add-learner-q1-uln')
@@ -194,8 +197,30 @@ module.exports = function (router) {
         req.session.data['result-ip-answer'] = "Yes, passed"        
         req.session.data['uln-already-added'] = true  
         res.redirect('/1-17/dynamic/result-entries1')      
+    })  
+    
+    
+    // Back Action routes
+    router.get('/1-17/dynamic/action-back-add-learner-q3-send', function (req, res) {
+        clearValidationError(req);        
+        res.redirect('/1-17/dynamic/add-learner-q3-send')      
     })    
 
+    router.get('/1-17/dynamic/action-back-add-learner-q2-em', function (req, res) {
+        clearValidationError(req);        
+        res.redirect('/1-17/dynamic/add-learner-q2-em')      
+    })    
+    
+    router.get('/1-17/dynamic/action-back-add-learner-q1-uln', function (req, res) {
+        clearValidationError(req);        
+        res.redirect('/1-17/dynamic/add-learner-q1-uln')      
+    }) 
+
+    router.get('/1-17/dynamic/action-back-search-failed-notadded', function (req, res) {
+        clearValidationError(req);        
+        res.redirect('/1-17/dynamic/search-failed-notadded')      
+    }) 
+    
     // Search Learner
     
     router.get('/1-17/dynamic/action-select-search-learner', function (req, res) {
@@ -238,7 +263,10 @@ module.exports = function (router) {
                 req.session.data['result-ip-answer'] = "Yes, passed"
 
                 res.redirect('/1-17/dynamic/result-entries1')  
-            }            
+            } 
+            else{
+                res.redirect('/1-17/dynamic/search-failed')  
+            }           
         }
         else {
             res.redirect('/1-17/dynamic/search-learner')
