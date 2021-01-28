@@ -12,7 +12,7 @@ Add English and Maths result - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="" method="post" class="form" id="my_radio_box">
+        <form action="action-change-em-status-successful" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
               <span class="govuk-caption-xl">Change learner's details</span>
                 <fieldset class="govuk-fieldset">
@@ -24,13 +24,13 @@ Add English and Maths result - Manage T Level results - GOV.UK
                     <div class="govuk-radios">
 
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" checked>
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Achieved" {{ checked("result-answer", "Achieved") }} />
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
                               Achieved the minimum standard
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
+                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Not achieved" {{ checked("result-answer", "Not achieved") }} />
                           <label class="govuk-label govuk-radios__label" for="result-answer-3">
                               Not achieved the minimum standard
                           </label>
@@ -38,7 +38,7 @@ Add English and Maths result - Manage T Level results - GOV.UK
                     </div>
                 </fieldset>
             </div>
-            <p><a class="govuk-button" role="button" href="change-em-status-successful">Change</a>
+            <button class="govuk-button" data-module="govuk-button">Change</button>
         </form>
     </div>
 </div>

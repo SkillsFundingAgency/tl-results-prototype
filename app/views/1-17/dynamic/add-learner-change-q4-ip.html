@@ -12,7 +12,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="add-learner-q5-check" method="post" class="form" id="my_radio_box">
+        <form action="action-add-learner-q5-check" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <span class="govuk-caption-xl">Add a new learner</span>
                 <fieldset class="govuk-fieldset">
@@ -22,31 +22,31 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                       </h1>
                     </legend>
                     <div class="govuk-radios">
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Yes, passed
-                          </label>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-1" name="result-ip-answer" type="radio" value="Yes, passed" {{ checked("result-ip-answer", "Yes, passed") }}>
+                            <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                                Yes, passed
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-2" name="result-ip-answer" type="radio" value="Yes, but with special consideration" {{ checked("result-ip-answer", "Yes, but with special consideration") }}>
+                            <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                                Yes, but with special consideration
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-3" name="result-ip-answer" type="radio" value="No - failed" {{ checked("result-ip-answer", "No - failed") }}>
+                            <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                                No, failed
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-4" name="result-ip-answer" type="radio" value="No, still on placement"  {{ checked("result-ip-answer", "No, still on placement") }}>
+                            <label class="govuk-label govuk-radios__label" for="result-answer-4">
+                                No, still on placement
+                            </label>
+                        </div>
                       </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Yes - with SC">
-                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                              Yes, but with special consideration
-                          </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-4" name="result-answer" type="radio" value="No - failed" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-4">
-                              No, failed
-                          </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                              No, still on placement
-                          </label>
-                      </div>
-                    </div>
                 </fieldset>
             </div>
             <button class="govuk-button" data-module="govuk-button">Change</button>

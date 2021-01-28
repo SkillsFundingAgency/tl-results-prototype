@@ -9,6 +9,12 @@ function initialiseVariables(req) {
     Sets up variables for the session
     */
 
+   //req.session.data['Uln'] = null
+
+   req.session.data['has-lrs-data'] = true
+   req.session.data['has-search-uln-added'] = true
+   req.session.data['uln-already-added'] = false
+   
     // T Levels
     req.session.data['tLevels'] = []
     req.session.data['tLevels-ao'] = []
@@ -143,10 +149,66 @@ function initialiseVariables(req) {
         req.session.save()
     })
 
+    // User Info
+    req.session.data['user_info'] = []
+        var filename = 'app/views/1-17/data/Accounts_v17.csv'
+        fs.readFile(filename, function (err, buf) {
+            data = buf.toString().split(/\r?\n/)
+            for (idx = 0; idx < data.length; idx++) {
+                line = data[idx].split('\t')
+                req.session.data['user_info'].push(line)
+            }
+            req.session.save()
+        })
+
     req.session.data['activeFlag'] = true
     req.session.save()
     return
 }
+
+router.get('/1-17/dynamic/action-select-student-results', function (req, res) {
+  require('./routes/routes-1-17.js')(router)
+  checkIfActive(req)
+  res.redirect('/1-17/dynamic/student-results')      
+})
+
+
+// function clearSession(req) {
+//   req.session.data['Uln'] = null
+// }    
+
+// router.get('/1-17/dynamic/action-select-add-learner', function (req, res) {
+//   clearSession(req);
+//   //loadProviderData(req)
+//   res.redirect('/1-17/dynamic/add-learner-q1-uln')      
+// })
+
+// router.post('/1-17/dynamic/action-add-learner', function (req, res) {
+
+//   var enteredUln = req.session.data['ULN']
+//   var userInfo = req.session.data['user_info']
+  
+//   if(enteredUln == userInfo[0][1]) 
+//   {
+//       res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')  
+//   }
+//   else if(enteredUln == userInfo[1][1])
+//   {
+//       res.redirect('/1-17/dynamic/add-learner-q2-em')  
+//   }        
+// }) 
+
+
+router.get('/1-5/AO/act-ao-view-providers', function (req, res) {
+  require('./routes/routes-1-5.js')(router)
+  req.session.data['ao-long'] = "Pearson (RN5133)"
+  req.session.data['ao-long'] = "NCFE (RN5156)"
+  req.session.data['ao'] = "NCFE"
+  checkIfActive(req)
+  req.session.save()
+  res.render('1-5/AO/ao-view-providers')
+})
+
 
 router.post('/1-7/AO/confirm-answer', function (req, res) {
 
