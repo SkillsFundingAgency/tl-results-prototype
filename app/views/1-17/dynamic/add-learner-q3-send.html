@@ -7,9 +7,9 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
 {% block beforeContent %}
 
 {% if data['has-lrs-data'] == true %}
-<a class="govuk-back-link" href="add-learner-q1-uln">Back</a>
+<a class="govuk-back-link" href="action-back-add-learner-q1-uln">Back</a>
 {% else %}
-<a class="govuk-back-link" href="add-learner-q2-em">Back</a>
+<a class="govuk-back-link" href="action-back-add-learner-q2-em">Back</a>
 {% endif %}
 
 {% endblock %}
@@ -61,7 +61,7 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
                         {{ data['errors'][0][1] }}
                     </span>
                     {% endif %}
-                    
+
                   <div class="govuk-radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="send-answer-1" name="send-answer" type="radio" value="Yes" {{ checked("send-answer", "Yes") }}>
