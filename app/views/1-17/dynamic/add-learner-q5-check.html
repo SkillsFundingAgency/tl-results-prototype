@@ -30,10 +30,10 @@
             ULN
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">9876543210</p>
+            <p class="govuk-body">{{ data['learner-uln'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            <a class="govuk-link" href="add-learner-q1-uln">
+            <a class="govuk-link" href="action-clear-add-learner-q1-uln">
               Change<span class="govuk-visually-hidden"> ULN</span>
             </a>
           </dd>
@@ -43,7 +43,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">John Smith</p>
+            <p class="govuk-body">{{ data['learner-name'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
 
@@ -54,7 +54,7 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">15/05/2000</p>
+            <p class="govuk-body">{{ data['date-of-birth'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
 
@@ -72,10 +72,18 @@
                Achieved status
             </dd>
             <dd class="govuk-summary-list__value">
+              {% if data['has-lrs-data'] == true %}
                 Achieved (data from LRS)
+              {% else %}
+                {{ data['result-answer'] }}
+              {% endif %}                
             </dd>
             <dd class="govuk-summary-list__actions">
-
+              {% if data['has-lrs-data'] == false %}
+              <a class="govuk-link" href="add-learner-change-q2-em">
+                Change <span class="govuk-visually-hidden"> {{ data['result-answer'] }} status</span>
+              </a>
+              {% endif %}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -83,7 +91,7 @@
                SEND learner
             </dd>
             <dd class="govuk-summary-list__value">
-                No
+                {{ data['send-answer'] }}
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -102,7 +110,7 @@
                Completed status
             </dd>
             <dd class="govuk-summary-list__value" >
-                Yes
+                {{ data['result-ip-answer'] }}
             </dd>
             <dd class="govuk-summary-list__actions" >
               <a class="govuk-link" href="add-learner-change-q4-ip">

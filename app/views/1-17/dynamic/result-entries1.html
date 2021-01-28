@@ -59,8 +59,8 @@
     <div class="govuk-grid-column-three-quarters">
 
         <h1 class="govuk-heading-l">Learner's results</h1>
-        <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-        <p class="govuk-body">Name: John Smith</p>
+        <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
+        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
         <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
@@ -71,12 +71,23 @@
                Achieved status
             </dd>
             <dd class="govuk-summary-list__value">
-                Achieved (data from LRS)
+              {% if data['has-lrs-data'] == false %}
+              {{ data['result-answer'] }}
+              {% else %}
+                Achieved (data from LRS)                
+              {% endif %}                  
             </dd>
             <dd class="govuk-summary-list__actions">
+              {% if data['has-lrs-data'] == false %}
+              <a class="govuk-link" href="change-em-status">
+                Change <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% else %}
               <a class="govuk-link" href="dispute">
                 Dispute <span class="govuk-visually-hidden"> achieved status</span>
               </a>
+              {% endif %}              
+              
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -84,7 +95,7 @@
                SEND learner
             </dd>
             <dd class="govuk-summary-list__value">
-                No
+              {{ data['send-answer'] }}
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -103,7 +114,7 @@
                Completed status
             </dd>
             <dd class="govuk-summary-list__value" >
-                Yes
+              {{ data['result-ip-answer'] }}
             </dd>
             <dd class="govuk-summary-list__actions" >
               <a class="govuk-link" href="change-ip-result">
@@ -113,7 +124,12 @@
           </div>
         </dl>
 
-        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+        {% if data['uln-already-added'] == true %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-clear-add-learner-q1-uln">Add another learner</a></p>
+        {% else %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-select-search-learner">Search again</a></p>
+        {% endif %}
+        
     </div>
 </div>
 

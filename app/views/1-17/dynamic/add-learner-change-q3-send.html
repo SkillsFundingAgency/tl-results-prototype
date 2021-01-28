@@ -12,7 +12,7 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="add-learner-q5-check" method="post" class="form" id="my_radio_box">
+        <form action="action-add-learner-q5-check" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <span class="govuk-caption-xl">Add a new learner</span>
                 <fieldset class="govuk-fieldset">
@@ -23,13 +23,13 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
                     </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="send-answer-1" name="send-answer" type="radio" value="Yes" checked>
+                            <input class="govuk-radios__input" id="send-answer-1" name="send-answer" type="radio" value="Yes" {{ checked("send-answer", "Yes") }}>
                             <label class="govuk-label govuk-radios__label" for="send-answer-1">
                                 Yes, they are a SEND learner
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="send-answer-2" name="send-answer" type="radio" value="No">
+                            <input class="govuk-radios__input" id="send-answer-2" name="send-answer" type="radio" value="No" {{ checked("send-answer", "No") }}>
                             <label class="govuk-label govuk-radios__label" for="send-answer-2">
                                 No, they are not a SEND learner
                             </label>
