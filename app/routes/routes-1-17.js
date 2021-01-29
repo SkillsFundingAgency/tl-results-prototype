@@ -116,7 +116,7 @@ module.exports = function (router) {
             {            
                 res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')  
             }
-            else if(enteredUln == userInfo[1][1] || enteredUln == userInfo[5][1])
+            else if(enteredUln == userInfo[1][1] || (enteredUln == userInfo[5][1] && req.session.data['has-search-uln-added'] == false))
             {
                 setLearnerDetails(req)
                 res.redirect('/1-17/dynamic/add-learner-q3-send')  
@@ -250,7 +250,7 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 
                 req.session.data['send-answer'] = "No"
-                req.session.data['result-ip-answer'] = "Yes, passed"
+                req.session.data['result-ip-answer'] = "Yes, but with special consideration"
 
                 res.redirect('/1-17/dynamic/result-entries1')  
             }   
@@ -259,8 +259,8 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 req.session.data['has-lrs-data'] = false
                 req.session.data['result-answer'] = "Achieved"
-                req.session.data['send-answer'] = "No"
-                req.session.data['result-ip-answer'] = "Yes, passed"
+                req.session.data['send-answer'] = "Yes"
+                req.session.data['result-ip-answer'] = "No, still on placement"
 
                 res.redirect('/1-17/dynamic/result-entries1')  
             } 
