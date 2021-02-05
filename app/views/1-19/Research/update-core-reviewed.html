@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Mark core as under review - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="result-entries1">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+              Are you sure you want to mark this core result as being under review?
+              <p class="govuk-body-m govuk-!-font-weight-regular govuk-!-margin-top-4">This can be a review for marking or moderation, a request for xxxx, for an exam or the project.</p>
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rev-answer-1" name="rev-answer" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="rev-answer-1">
+                Yes, mark as under review
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rev-answer-2" name="rev-answer" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="rev-answer-2">
+                No, do not mark as under review
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p><a class="govuk-button" role="button" href="result-entries2">Submit</a></p>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
