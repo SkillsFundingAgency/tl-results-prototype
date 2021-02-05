@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - Does the learner have a SEND certificate - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-learner-q4-ip" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <span class="govuk-caption-xl">Add a new learner</span>
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Did the learner need any reasonable adjustments?
+                          <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">Only tell us about adjustments made for special educational needs and/or disability (SEND).</p>
+                      </h1>
+                  </legend>
+                  <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="send-answer-1" name="send-answer" type="radio" value="Yes">
+                          <label class="govuk-label govuk-radios__label" for="send-answer-1">
+                              Yes, accepted English and maths at Entry Level 3
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="send-answer-1" name="send-answer" type="radio" value="Yes">
+                          <label class="govuk-label govuk-radios__label" for="send-answer-1">
+                              Yes, another reason
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="send-answer-2" name="send-answer" type="radio" value="No">
+                          <label class="govuk-label govuk-radios__label" for="send-answer-2">
+                              No adjustments were needed
+                          </label>
+                      </div>
+                  </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
