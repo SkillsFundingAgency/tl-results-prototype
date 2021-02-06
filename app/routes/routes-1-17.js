@@ -3,14 +3,8 @@ const e = require('express')
 module.exports = function (router) {
 
     function loadProviderData(req) {
-       
-        
-        // req.session.data['verify_tlevel_count'] = null
-        // req.session.data['tLevel-verified'] = null
-        // req.session.data['view_selected_tLevel'] = null
-        // req.session.data['verify_tlevel_count'] = null
 
-         var fs = require('fs')
+        var fs = require('fs')
         
         // Accounts
         req.session.data['user_info'] = []
@@ -79,8 +73,7 @@ module.exports = function (router) {
     }
 
     function addValidationError(req, res, errors)
-    {
-        //var errors = []
+    {        
         req.session.data['errors'] = [];
 
         if(errors != null || errors.length > 0)
@@ -119,7 +112,7 @@ module.exports = function (router) {
             else if(enteredUln == userInfo[1][1] || (enteredUln == userInfo[5][1] && req.session.data['has-search-uln-added'] == false))
             {
                 setLearnerDetails(req)
-                res.redirect('/1-17/dynamic/add-learner-q3-send')  
+                res.redirect('/1-17/dynamic/add-learner-q4-ip')  
             }
             else if(enteredUln == userInfo[2][1])
             {
@@ -158,17 +151,18 @@ module.exports = function (router) {
 
     router.post('/1-17/dynamic/action-add-learner-q4-ip', function (req, res) {
 
-        var hasSendSelected = req.session.data['send-answer']
+        var hasReultAnswerSelected = req.session.data['result-answer']
 
-        if(hasSendSelected == null || hasSendSelected == '')
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
         {
-            var sendErrors = ['#send-answer-1', "Select yes if the learner has special educational needs and/or a disability"]
+            var sendErrors = ['#result-answer-1', "Select if the learner has achieved the minimum standard"]
             addValidationError(req,res,sendErrors)
-            res.redirect('/1-17/dynamic/add-learner-q3-send')                             
+            res.redirect('/1-17/dynamic/add-learner-q2-em')                             
         } else {
             clearValidationError(req)
-            res.redirect('/1-17/dynamic/add-learner-q4-ip')                 
-        }
+            req.session.data['has-lrs-data'] = false            
+            res.redirect('/1-17/dynamic/add-learner-q4-ip')                  
+        }        
     })
     
     router.post('/1-17/dynamic/action-add-learner-q5-check', function (req, res) {
@@ -192,9 +186,7 @@ module.exports = function (router) {
     })
 
     router.get('/1-17/dynamic/action-result-entries1', function (req, res) {
-        //clearSession(req);      
-        req.session.data['send-answer'] = "No"
-        req.session.data['result-ip-answer'] = "Yes, passed"        
+        req.session.data['result-ip-answer'] = "Yes"        
         req.session.data['uln-already-added'] = true  
         res.redirect('/1-17/dynamic/result-entries1')      
     })  
@@ -250,7 +242,7 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 
                 req.session.data['send-answer'] = "No"
-                req.session.data['result-ip-answer'] = "Yes, but with special consideration"
+                req.session.data['result-ip-answer'] = "Yes, completed with special consideration"
 
                 res.redirect('/1-17/dynamic/result-entries1')  
             }   
@@ -258,9 +250,8 @@ module.exports = function (router) {
             {
                 setLearnerDetails(req)
                 req.session.data['has-lrs-data'] = false
-                req.session.data['result-answer'] = "Achieved"
-                req.session.data['send-answer'] = "Yes"
-                req.session.data['result-ip-answer'] = "No, still on placement"
+                req.session.data['result-answer'] = "Achieved"                
+                req.session.data['result-ip-answer'] = "No"
 
                 res.redirect('/1-17/dynamic/result-entries1')  
             } 
