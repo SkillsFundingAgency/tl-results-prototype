@@ -35,7 +35,7 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="action-add-learner-q3-send" method="post" class="form" id="my_radio_box">
+        <form action="action-add-learner-q4-ip" method="post" class="form" id="my_radio_box">
             {% if data['errors'].length > 0 %}
                 <div class="govuk-form-group govuk-!-margin-bottom-7 govuk-form-group--error">
                     {% else %}
@@ -45,8 +45,9 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                            Has the learner achieved the minimum standard for English and maths?
+                            Has the learner achieved the minimum standard for English and maths, as per departmental guidance?
                         </h1>
+                        <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">This includes adjusted minimum standards for learners with evidence of special educational needs and/or a disability (SEND)</p>
                     </legend>
 
                     {% if data['errors'].length > 0 %}

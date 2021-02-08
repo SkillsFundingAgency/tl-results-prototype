@@ -5,7 +5,14 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="action-back-add-learner-q3-send">Back</a>
+<!-- <a class="govuk-back-link" href="action-back-add-learner-q3-send">Back</a> -->
+<!-- <a class="govuk-back-link" href="action-back-add-learner-q1-uln">Back</a> -->
+
+{% if data['has-lrs-data'] == true %}
+<a class="govuk-back-link" href="action-back-add-learner-q1-uln">Back</a>
+{% else %}
+<a class="govuk-back-link" href="action-back-add-learner-q2-em">Back</a>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -58,27 +65,21 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                     
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer" type="radio" value="Yes, passed" {{ checked("result-ip-answer", "Yes, passed") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Yes, passed
+                          <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer" type="radio" value="Yes" {{ checked("result-ip-answer", "Yes") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
+                              Yes, completed successfully
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer" type="radio" value="Yes, but with special consideration" {{ checked("result-ip-answer", "Yes, but with special consideration") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                              Yes, but with special consideration
+                          <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer" type="radio" value="Yes, completed with special consideration" {{ checked("result-ip-answer", "Yes, completed with special consideration") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                              Yes, completed with special consideration
                           </label>
-                      </div>
+                      </div>                      
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer" type="radio" value="No - failed" {{ checked("result-ip-answer", "No - failed") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                              No, failed
-                          </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-ip-answer-4" name="result-ip-answer" type="radio" value="No, still on placement"  {{ checked("result-ip-answer", "No, still on placement") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-4">
-                              No, still on placement
+                          <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer" type="radio" value="No"  {{ checked("result-ip-answer", "No") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                              No, still to be completed
                           </label>
                       </div>
                     </div>
