@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<style>
+    .card-long-yellow {
+        background-color: #ffee80;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<style>
+    .card-long-grey {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+      <div class="govuk-form-group card-long-yellow" name="hub-choice-0">
+          <p class="govuk-body">
+              <h2 class="govuk-heading-m">
+                Provider's postal address
+              </h2>
+          </p>
+          <p class="govuk-body">
+            We need this to send learners' statement of achievements and certificates to you.
+          </p>
+          <a class="govuk-body govuk-link" href="add-address">
+              Add postal address
+          </a>
+      </div>
+  </div>
+
+  <div class="govuk-grid-column-full">
+      <div class="govuk-form-group card-long-grey" name="hub-choice-0">
+          <p class="govuk-body">
+              <h2 class="govuk-heading-m">
+                Provider's postal address
+              </h2>
+          </p>
+          <p class="govuk-body">
+            The following address will be used to send learners' statement of achievements and certificates to you:
+          </p>
+          <p class="govuk-body govuk-!-font-weight-bold">
+            Barnsley Sixth Form College, St Mary's Place, Barnsley, S70 2SR
+          </p>
+          <a class="govuk-body govuk-link" href="">
+              Change postal address
+          </a>
+      </div>
+  </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="student-results">
+                        Results
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                Add and amend results
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+            <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="statement">
+                        Statement of achievements
+                    </a>
+                </h2>
+            </p>
+            <p class="govuk-body">
+                View and request a statement of achievement
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+              <p class="govuk-body">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Account
+                    </a>
+                </h2>
+              </p>
+              <p class="govuk-body">Manage your profile and permissions</p>
+        </div>
+    </div>
+
+{% endblock %}
