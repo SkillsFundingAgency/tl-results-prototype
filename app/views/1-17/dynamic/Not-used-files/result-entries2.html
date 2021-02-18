@@ -43,12 +43,12 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
+      <a class="govuk-breadcrumbs__link" href="student-results">Manage learner records</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's record</li>
   </ol>
 </div>
 {% endblock %}
@@ -58,9 +58,11 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-l">Learner's results</h1>
+        <h1 class="govuk-heading-l">Learner's record</h1>
         <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
         <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
+        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
+        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
         <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
@@ -68,7 +70,7 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__key">
-               Achieved status
+               Status
             </dd>
             <dd class="govuk-summary-list__value">
                 Achieved
@@ -100,7 +102,7 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__key" >
-               Completed status
+               Status
             </dd>
             <dd class="govuk-summary-list__value" >
                 Yes

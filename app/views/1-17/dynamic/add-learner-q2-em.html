@@ -41,14 +41,42 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
                     {% else %}
                     <div class="govuk-form-group">
                         {% endif %}
-                <span class="govuk-caption-xl">Add a new learner</span>
+                <span class="govuk-caption-xl">Add a new learner record</span>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                            Has the learner achieved the minimum standard for English and maths, as per departmental guidance?
+                            Has the learner achieved the required minimum standard for English and maths?
                         </h1>
-                        <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">This includes adjusted minimum standards for learners with evidence of special educational needs and/or a disability (SEND)</p>
+                        <span id="uln-hint" class="govuk-hint">
+                          <strong>Learner</strong> {{ data['learner-name'] }}
+                        </span>
                     </legend>
+                    <details class="govuk-details" closed>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                What are the minimum standards?
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                           <p class="govuk-body">The minimum standards are full level 2 qualifications (GCSE or equivalent).</p>
+                           <p class="govuk-body">You can adjust the minimum standards for English and maths for learners with special educational needs and/or a disability (SEND) on an individual case-by-case basis, where all of the following conditions have been met:</p>
+                           <ul class="govuk-list govuk-list--bullet">
+                             <li>
+                               The learner has an existing or previously issued Education, Health and Care (EHC) Plan, a statement of Special Educational Need (SEN) or a Learning Difficulty Assessment (LDA)
+                             </li>
+                             <li>
+                               The provider holds or has conducted an evidenced assessment demonstrating that even with support, reasonable adjustments and stepping stone qualifications the learner is not able to achieve English or maths to the minimum level as a result of their learning difficulty or disability
+                             </li>
+                             <li>
+                               The learner is deemed able to successfully achieve all other aspects of the T Level requirements and achieve Entry Level 3 Functional Skills in the adjusted subject(s) before the end of their T Level
+                             </li>
+                             <li>
+                               There are no industry specific minimum entry requirements
+                             </li>
+                           </ul>
+                           <p class="govuk-body">You do not need to upload any evidence, but you should hold supporting documentation in your own files.</p>
+                        </div>
+                    </details>
 
                     {% if data['errors'].length > 0 %}
                     <span id="passport-issued-error" class="govuk-error-message">
@@ -62,6 +90,12 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
                           <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Achieved" {{ checked("result-answer", "Achieved") }}>
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
                               Achieved the minimum standard
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Achieved with SEND adjustments" {{ checked("result-answer", "Achieved with SEND adjustments") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                              Achieved the minimum standard with SEND adjustments
                           </label>
                       </div>
                       <div class="govuk-radios__item">

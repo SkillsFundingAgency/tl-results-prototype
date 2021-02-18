@@ -5,7 +5,7 @@ Add English and Maths result - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="result-entries1">Back</a>
+<a class="govuk-back-link" href="record-entries2">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -14,32 +14,65 @@ Add English and Maths result - Manage T Level results - GOV.UK
     <div class="govuk-grid-column-two-thirds">
         <form action="" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
-              <span class="govuk-caption-xl">Change learner's details</span>
-                <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-xl">Update learner's record</span>
+              <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Has the learner achieved the minimum standard for English and maths, as per departmental guidance?
+                          Has the learner achieved the required minimum standard for English and maths?
                       </h1>
-                      <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">This includes adjusted minimum standards for learners with evidence of special educational needs and/or a disability (SEND)</p>
-                    </legend>
-                    <div class="govuk-radios">
-
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" checked>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Achieved the minimum standard
-                          </label>
+                      <span id="uln-hint" class="govuk-hint">
+                        <strong>Learner</strong> John Smith
+                      </span>
+                  </legend>
+                  <details class="govuk-details" closed>
+                      <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                              What are the minimum standards?
+                          </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                         <p class="govuk-body">The minimum standards are full level 2 qualifications (GCSE or equivalent).</p>
+                         <p class="govuk-body">You can adjust the minimum standards for English and maths for learners with special educational needs and/or a disability (SEND) on an individual case-by-case basis, where all of the following conditions have been met:</p>
+                         <ul class="govuk-list govuk-list--bullet">
+                           <li>
+                             The learner has an existing or previously issued Education, Health and Care (EHC) Plan, a statement of Special Educational Need (SEN) or a Learning Difficulty Assessment (LDA)
+                           </li>
+                           <li>
+                             The provider holds or has conducted an evidenced assessment demonstrating that even with support, reasonable adjustments and stepping stone qualifications the learner is not able to achieve English or maths to the minimum level as a result of their learning difficulty or disability
+                           </li>
+                           <li>
+                             The learner is deemed able to successfully achieve all other aspects of the T Level requirements and achieve Entry Level 3 Functional Skills in the adjusted subject(s) before the end of their T Level
+                           </li>
+                           <li>
+                             There are no industry specific minimum entry requirements
+                           </li>
+                         </ul>
+                         <p class="govuk-body">You do not need to upload any evidence, but you should hold supporting documentation in your own files.</p>
                       </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                              Not achieved the minimum standard
-                          </label>
-                      </div>
+                  </details>
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" checked>
+                        <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                            Achieved the minimum standard
+                        </label>
                     </div>
-                </fieldset>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Yes-SEND">
+                        <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                            Achieved the minimum standard with SEND adjustments
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
+                        <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                            Not achieved the minimum standard
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
             </div>
-            <p><a class="govuk-button" role="button" href="change-em-status-successful">Change</a>
+            <p><a class="govuk-button" role="button" href="change-em-status-successful">Update</a>
         </form>
     </div>
 </div>

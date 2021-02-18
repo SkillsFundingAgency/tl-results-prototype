@@ -13,7 +13,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-xl">Add a new learner</span>
+      <span class="govuk-caption-xl">Add a new learner record</span>
 
       <h1 class="govuk-heading-l">
         Check and submit
@@ -21,7 +21,7 @@
 
       <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
 
-      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Personal details</h3>
+      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-3">
 
@@ -34,7 +34,7 @@
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
             <a class="govuk-link" href="action-clear-add-learner-q1-uln">
-              Change<span class="govuk-visually-hidden"> ULN</span>
+
             </a>
           </dd>
         </div>
@@ -60,6 +60,17 @@
 
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">Barnsley College (12345678)</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
         </dl>
 
         <hr class="govuk-section-break govuk-section-break--visible">
@@ -68,37 +79,60 @@
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key">
-               Achieved status
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
             </dd>
-            <dd class="govuk-summary-list__value">
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
               {% if data['has-lrs-data'] == true %}
-                Achieved (data from LRS)
+                Achieved (data from Learning Records Service - LRS)
               {% else %}
                 {{ data['result-answer'] }}
-              {% endif %}                
+              {% endif %}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data['has-lrs-data'] == false %}
+            {% if data['has-lrs-data'] == false %}
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="add-learner-change-q2-em">
                 Change <span class="govuk-visually-hidden"> {{ data['result-answer'] }} status</span>
               </a>
-              {% endif %}
             </dd>
-          </div>          
+            {% endif %}
+          </div>
+          {% if data['has-lrs-data'] == true %}
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <details class="govuk-details" closed>
+                  <summary class="govuk-details__summary" style="border-bottom:none">
+                      <span class="govuk-details__summary-text">
+                          What's LRS?
+                      </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                     <p class="govuk-body">The Learning Records Service (LRS) collects data relating to learners' post-14 qualifications, including GCSEs.</p>
+                     <p class="govuk-body">If you disagree with the achievement status, please contact your awarding organisation who may be able to update the results. If you still need help, please <a class="govuk-link" href="dispute">raise a query</a> with us.</p>
+                  </div>
+              </details>
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            </dd>
+          </div>
+          {% endif %}
         </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Industry placement</h3>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key" >
-               Completed status
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
             </dd>
-            <dd class="govuk-summary-list__value" >
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
                 {{ data['result-ip-answer'] }}
             </dd>
-            <dd class="govuk-summary-list__actions" >
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="add-learner-change-q4-ip">
                 Change <span class="govuk-visually-hidden">for industry placement </span>
               </a>
@@ -106,7 +140,12 @@
           </div>
         </dl>
 
-        <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="confirmation-learner-added">Submit</a>
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="confirmation-learner-added">Submit</a>
+          <a class="govuk-link" href="add-learner-q1-uln">Cancel</a>
+        </div>
 
     </div>
 </div>

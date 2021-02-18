@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Query - Manage T Level results - GOV.UK
+Dispute - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="result-entries1">Back</a>
+<a class="govuk-back-link" href="record-entries1">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -31,7 +31,7 @@ Query - Manage T Level results - GOV.UK
               Name
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">{{ data['learner-name'] }}</p>
+              <p class="govuk-body">John Smith</p>
             </dd>
           </div>
 
@@ -40,7 +40,7 @@ Query - Manage T Level results - GOV.UK
               ULN
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">{{ data['learner-uln'] }}</p>
+              <p class="govuk-body">9876543210</p>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -56,7 +56,7 @@ Query - Manage T Level results - GOV.UK
 
         <p class="govuk-body govuk-!-margin-top-6">We'll investigate your query and update you by email within 3 working days.</p>
 
-        <p><a class="govuk-button" role="button" href="confirmation-dispute">Submit query</a>
+        <p><a class="govuk-button" role="button" href="confirmation-query">Submit query</a>
       </form>
     </div>
 </div>
