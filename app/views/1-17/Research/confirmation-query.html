@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Query sent successfully
+  Dispute sent successfully
 {% endblock %}
 
 {% block content %}
@@ -11,14 +11,14 @@
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">Query submitted successfully</h1>
       <div class="govuk-panel__body">
-        {{ data['learner-name'] }}<br>
-        ULN: {{ data['learner-uln'] }}
+        John Smith<br>
+        ULN: 1234567890
       </div>
     </div>
 
     <p class="govuk-body">We'll investigate your query and update you by email within 3 working days.</p>
 
-    <p class="govuk-!-margin-top-8"><a class="govuk-button" role="button" href="result-entries1">Back to learner's record</a></p>
+    <p class="govuk-!-margin-top-8"><a class="govuk-button" role="button" href="record-entries1">Back to learner's record</a></p>
 
   </div>
 </div>

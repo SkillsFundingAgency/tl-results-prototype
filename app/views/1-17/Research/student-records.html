@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Records page - Manage T Level results - GOV.UK
+  Home page - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,7 +34,7 @@
     <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
             <h1 class="govuk-heading-l">
-              Manage learner records
+                Manage learner records
             </h1>
         </div>
     </div>
@@ -50,11 +50,11 @@
   </div>
 
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card" name="hub-choice-1">
+        <div class="govuk-form-group card" name="hub-choice-4">
             <h2 class="govuk-heading-m">
-              <a class="govuk-link--no-visited-state" href="action-select-add-learner">
-                  Add a new learner record
-              </a>
+                <a class="govuk-link--no-visited-state" href="add-learner-q1-uln">
+                    Add a new learner record
+                </a>
             </h2>
             <p class="govuk-body">
                 Add a new learner and add their English and maths achievements and industry placement status
@@ -63,20 +63,16 @@
     </div>
 
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card" name="hub-choice-2">
-            <h2 class="govuk-heading-m">
-              <a class="govuk-link--no-visited-state" href="action-select-search-learner">
-                  Update a learner record
-              </a>
-            </h2>
-
-            <p class="govuk-body">
-              Search for a registered learner and update their English and maths achievements and industry placement status
-            </p>
+        <div class="govuk-form-group card" name="hub-choice-5">
+              <h2 class="govuk-heading-m">
+                  <a class="govuk-link--no-visited-state" href="search-learner">
+                      Update a learner record
+                  </a>
+              </h2>
+              <p class="govuk-body">
+                Search for a registered learner and update their English and maths achievements and industry placement status
+              </p>
         </div>
     </div>
-
-  </div>
-
 
 {% endblock %}

@@ -47,14 +47,18 @@ Add a new registration - enter Unique Learner Number page - Manage T Level resul
                     {% else %}
                     <div class="govuk-form-group">
                         {% endif %}
-            <span class="govuk-caption-xl">Add a new learner</span>
+            <span class="govuk-caption-xl">Add a new learner record</span>
             <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="Uln">
                     Enter the Unique Learner Number (ULN)
                 </label>
             </h1>
+            <div class="govuk-inset-text" style="margin-top: 0px;">
+                You can only add records for learners who have been registered on a T Level programme by your awarding organisation.
+            </div>
+
             <span id="uln-number-hint" class="govuk-hint">
-                Must be 10 digits long
+                ULN must be 10 digits long
             </span>
 
             {% if data['errors'].length > 0 %}
@@ -69,7 +73,7 @@ Add a new registration - enter Unique Learner Number page - Manage T Level resul
            {% else %}
            <input class="govuk-input govuk-input--width-10" id="Uln" name="learner-uln" maxlength="10" inputmode="numeric" value="{{ data['learner-uln'] }}">
            {% endif %}
-            
+
         </div>
         <p>
             <button class="govuk-button govuk-!-margin-rnpmight-1" class="govuk-button" data-module="govuk-button">
