@@ -14,16 +14,15 @@ Add English and Maths result - Manage T Level results - GOV.UK
     <div class="govuk-grid-column-two-thirds">
         <form action="" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
-              <span class="govuk-caption-xl">Update learner record</span>
-              <fieldset class="govuk-fieldset">
+                      <span class="govuk-caption-xl">Change learner record</span>
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Has the learner achieved the required minimum standard for English and maths?
+                          Adjust the minimum standard for a SEND learner
                       </h1>
-                      <span id="uln-hint" class="govuk-hint">
-                        <strong>Learner</strong> John Smith
-                      </span>
                   </legend>
+                  <p class="govuk-body">
+                    The results data we have from the Learning Records Service (LRS) does not meet the minimum standards to qualify for a T Level. You need to tell us if the minimum standards should be adjusted for a learner with SEND.
+                  </p>
                   <details class="govuk-details" closed>
                       <summary class="govuk-details__summary">
                           <span class="govuk-details__summary-text">
@@ -50,44 +49,13 @@ Add English and Maths result - Manage T Level results - GOV.UK
                          <p class="govuk-body">You do not need to upload any evidence, but you should hold supporting documentation in your own files.</p>
                       </div>
                   </details>
-                  <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" >
-                        <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                            Achieved the minimum standard
-                        </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Yes-SEND" checked>
-                        <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                            Achieved the minimum standard with SEND adjustments
-                        </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="No" >
-                        <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                            Not achieved the minimum standard
-                        </label>
-                    </div>
-                  </div>
-              </fieldset>
-
-              <div class="govuk-inset-text">
-                <p>
-                  By selecting 'Update' I declare that:
-                </p>
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>
-                    the learner has been assessed by our organisation and meets all the conditions required to adjust the minimum standards
-                  </li>
-                  <li>
-                    the learner has met the minimum standard for English and maths as a SEND learner
-                  </li>
-                </ul>
-              </div>
 
             </div>
-            <p><a class="govuk-button" role="button" href="change-em-status-successful">Update</a>
+
+            <a class="govuk-button" role="button " href="declaration">
+                Continue
+            </a>
+
         </form>
     </div>
 </div>
