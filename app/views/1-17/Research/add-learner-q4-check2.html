@@ -4,53 +4,8 @@
   Learner's results
 {% endblock %}
 
-<style>
-    .Table
-    {
-        display: table;
-    }
-    .Title
-    {
-        display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
-    }
-    .Heading
-    {
-        display: table-row;
-        font-weight: bold;
-        text-align: center;
-    }
-    .Row
-    {
-        display: table-row;
-    }
-    .Cell
-    {
-        display: table-cell;
-        border: solid;
-        border-width: thin;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-</style>
-
 {% block beforeContent %}
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-records">Manage learner records</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's record</li>
-  </ol>
-</div>
+<a class="govuk-back-link" href="add-learner-q3-ip">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -58,11 +13,63 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-l">Learner record</h1>
-        <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-        <p class="govuk-body">Name: John Smith</p>
-        <p class="govuk-body">Date of birth: 15/05/2000</p>
-        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
+      <span class="govuk-caption-xl">Add a new learner record</span>
+
+      <h1 class="govuk-heading-l">
+        Check and submit
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
+
+      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">9876543210</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">John Smith</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">15/05/2000</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">Barnsley College (12345678)</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          </dd>
+        </div>
+      </dl>
+
         <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
@@ -76,8 +83,8 @@
                 Achieved (data from Learning Records Service (LRS) and provider's declaration)
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
-              <a class="govuk-link" href="change-em-status3">
-                Update
+              <a class="govuk-link" href="add-learner-change-q5-send">
+                Change<span class="govuk-visually-hidden"> achieved status</span>
               </a>
             </dd>
           </div>
@@ -97,8 +104,6 @@
                   </div>
               </details>
             </dd>
-            <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            </dd>
           </div>
         </dl>
 
@@ -115,8 +120,8 @@
                 Completed
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
-              <a class="govuk-link" href="change-ip-result">
-                Update <span class="govuk-visually-hidden"> completed status</span>
+              <a class="govuk-link" href="add-learner-change-q3-ip">
+                Change <span class="govuk-visually-hidden">for industry placement </span>
               </a>
             </dd>
           </div>
@@ -124,7 +129,11 @@
 
         <hr class="govuk-section-break govuk-section-break--visible">
 
-        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="confirmation-learner-added">Submit</a>
+          <a class="govuk-link" href="add-learner-q1-uln">Cancel</a>
+        </div>
+
     </div>
 </div>
 

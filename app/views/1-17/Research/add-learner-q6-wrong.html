@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - Does the learner have a SEND certificate - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q5-send">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Add a new learner record</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+          Our records are wrong
+        </h1>
+        <span id="uln-hint" class="govuk-hint">
+          <strong>Learner</strong> John Smith
+        </span>
+
+        <p class="govuk-body govuk-!-margin-top-7">
+          If you think our records are wrong then you must contact the awarding organisation and let them know. They will then update our records with the correct information.
+        </p>
+        <p class="govuk-body">
+          If you still want to add this learner's record then select 'Continue' or select 'Cancel' to return to the start.
+        </p>
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="add-learner-q3-ip">Continue</a>
+          <a class="govuk-link" href="student-records">Cancel</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

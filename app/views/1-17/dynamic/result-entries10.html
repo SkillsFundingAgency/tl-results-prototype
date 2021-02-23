@@ -43,10 +43,10 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-records">Manage learner records</a>
+      <a class="govuk-breadcrumbs__link" href="student-results">Manage learner records</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="action-select-search-learner">Search for a learner</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's record</li>
   </ol>
@@ -59,9 +59,9 @@
     <div class="govuk-grid-column-three-quarters">
 
         <h1 class="govuk-heading-l">Learner record</h1>
-        <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-        <p class="govuk-body">Name: John Smith</p>
-        <p class="govuk-body">Date of birth: 15/05/2000</p>
+        <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
+        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
+        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
         <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
         <hr class="govuk-section-break govuk-section-break--visible">
 
@@ -73,14 +73,25 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-                Achieved (data from Learning Records Service (LRS) and provider's declaration)
+              {% if data['has-lrs-data'] == false %}
+              {{ data['result-answer'] }}
+              {% else %}
+                Achieved (data from Learning Records Service (LRS) and provider's SEND declaration)
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
-              <a class="govuk-link" href="change-em-status3">
-                Update
+              {% if data['has-lrs-data'] == false %}
+              <a class="govuk-link" href="change-em-status">
+                Update <span class="govuk-visually-hidden"> achieved status</span>
               </a>
+              {% else %}
+              <a class="govuk-link" href="dispute">
+                Query <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% endif %}
             </dd>
           </div>
+          {% if data['has-lrs-data'] == true %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__key" style="border-bottom:none">
             </dd>
@@ -100,6 +111,7 @@
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
             </dd>
           </div>
+          {% endif %}
         </dl>
 
         <hr class="govuk-section-break govuk-section-break--visible">
@@ -112,7 +124,7 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-                Completed
+              {{ data['result-ip-answer'] }}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="change-ip-result">
@@ -124,7 +136,12 @@
 
         <hr class="govuk-section-break govuk-section-break--visible">
 
-        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+        {% if data['uln-already-added'] == true %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-clear-add-learner-q1-uln">Add another learner</a></p>
+        {% else %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-select-search-learner">Search again</a></p>
+        {% endif %}
+
     </div>
 </div>
 
