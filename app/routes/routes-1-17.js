@@ -294,6 +294,8 @@ module.exports = function (router) {
 
           if(answer == "wrong")
           {
+            req.session.data['result-answer'] = req.session.data['previous-result-answer']
+            req.session.data['previous-result-answer'] = null
               res.redirect('/1-17/dynamic/change-em-wrong')
           }
           else
@@ -306,4 +308,10 @@ module.exports = function (router) {
     router.post('/1-17/dynamic/action-change-ip-result-successful', function (req, res) {
         res.redirect('/1-17/dynamic/change-ip-result-successful')
     })
+
+    router.get('/1-17/dynamic/action-change-em-status1', function (req, res) {
+        var previousSelectedResultAnswer = req.session.data['result-answer']
+        req.session.data['previous-result-answer'] = previousSelectedResultAnswer
+        res.redirect('/1-17/dynamic/change-em-status1')
+    })    
 }

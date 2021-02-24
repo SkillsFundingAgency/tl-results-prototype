@@ -82,23 +82,32 @@ Add English and Maths result - Manage T Level results - GOV.UK
                     </div>
                 </fieldset>
 
-                <div class="govuk-inset-text">
+               
+                <div id="sendDeclaration" class="govuk-inset-text">
+                  
                   <p>
-                    By selecting 'Update' I declare that:
-                  </p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>
-                      the learner has been assessed by our organisation and meets all the conditions required to adjust the minimum standards
-                    </li>
-                    <li>
-                      the learner has met the minimum standard for English and maths as a SEND learner
-                    </li>
-                  </ul>
+                      By selecting 'Update' I declare that:
+                    </p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>
+                        the learner has been assessed by our organisation and meets all the conditions required to adjust the minimum standards
+                      </li>
+                      <li>
+                        the learner has met the minimum standard for English and maths as a SEND learner
+                      </li>
+                    </ul>
+                  
                 </div>
+              
             </div>
 
-            <button class="govuk-button" data-module="govuk-button">Update</button>
+            <button id="btnUpdate" class="govuk-button" data-module="govuk-button">Update</button>
         </form>
     </div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="../../public/javascripts/application.js"></script>
+
 {% endblock %}
