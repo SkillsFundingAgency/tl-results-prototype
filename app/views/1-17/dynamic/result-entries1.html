@@ -74,14 +74,18 @@
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               {% if data['has-lrs-data'] == false %}
-              {{ data['result-answer'] }}
+                {{ data['result-answer'] }}
               {% else %}
-                Achieved (data from Learning Records Service - LRS)
+                {{ data['result-answer'] }}
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               {% if data['has-lrs-data'] == false %}
               <a class="govuk-link" href="change-em-status">
+                Update <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% elseif data['learner-uln'] == 8878653767 %}
+              <a class="govuk-link" href="change-em-status1">
                 Update <span class="govuk-visually-hidden"> achieved status</span>
               </a>
               {% else %}
