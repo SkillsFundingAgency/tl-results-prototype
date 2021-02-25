@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add English and Maths result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="result-entries1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="action-change-em-status-successful" method="post" class="form" id="my_radio_box">
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+              <span class="govuk-caption-xl">Add a new learner record</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                            Does this learner have special educational needs and/or a disability (SEND)?
+                        </h1>
+                        <span id="uln-hint" class="govuk-hint">
+                          <strong>Learner</strong> Mark Philips
+                        </span>
+                    </legend>
+
+                    <div class="govuk-inset-text govuk-!-margin-top-0">
+                      <p class="govuk-body">Learning Records Service (LRS) data shows that this learner has an Entry Level 3 qualification in English and maths. We need more information before we can update this learner's record.</p>
+                      <details class="govuk-details" closed>
+                          <summary class="govuk-details__summary" style="border-bottom:none">
+                              <span class="govuk-details__summary-text">
+                                  What's LRS?
+                              </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                             <p class="govuk-body">The Learning Records Service (LRS) collects data relating to learners' post-14 qualifications, including GCSEs.</p>
+
+                          </div>
+                      </details>
+                    </div>
+
+                    <p class="govuk-body">Select the option which best applies:</p>
+
+                    <div class="govuk-radios">
+
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="SEND" {{ checked("result-answer", "SEND") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              this learner has SEND
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Wrong" {{ checked("result-answer", "Wrong") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                              the LRS data is wrong
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Correct" {{ checked("result-answer", "Correct") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                              the LRS data is correct but this learner does not have SEND
+                          </label>
+                      </div>
+                    </div>
+                    <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-2" closed>
+                        <summary class="govuk-details__summary" style="border-bottom:none">
+                            <span class="govuk-details__summary-text">
+                              More about SEND
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          <p class="govuk-body">SEND learners are supported by one of these documents:</p>
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>Education, Health and Care (EHC) Plan</li>
+                            <li>Statement of Special Educational Need (SEN)</li>
+                            <li>Learning Difficulty Assessment (LDA)</li>
+                          </ul>
+                          <p class="govuk-body">Both of the following conditions must also be met:</p>
+                          <ul class="govuk-list govuk-list--bullet">
+                            <li>The provider holds an evidenced assessment demonstrating that even with support, reasonable adjustments and stepping stone qualifications the learner is not able to achieve English or maths to the minimum level as a result of their learning difficulty or disability</li>
+                            <li>The learner is deemed able to achieve all other aspects of the T Level and achieve Entry Level 3 Functional Skills in the adjusted subject(s) before the end of their T Level</li>
+                          </ul>
+                        </div>
+                    </details>
+                </fieldset>
+                <p class="govuk-body govuk-!-margin-top-6">We'll review your answer offline and get back to you within 3 working days.</p>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

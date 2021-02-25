@@ -5,29 +5,39 @@ if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
 }
 
-$(document).ready(function () { alert('hello');
-  window.GOVUKFrontend.initAll()
+$(document).ready(function () {
+  window.GOVUKFrontend.initAll();
+
+  var selectedRadio = $('input[type="radio"]:checked');
+
+  if(selectedRadio.attr('id') == 'result-answer-1')  {
+    $('#sendDeclaration').show();
+  }else {
+    $('#sendDeclaration').hide();
+  }
+
+  $('input[type="radio"]').click(function() {
+    if($(this).attr('id') == 'result-answer-3') {
+      $('#btnUpdate').text('Continue');
+      $('#sendDeclaration').hide();
+    }
+    else {
+      $('#btnUpdate').text('Update');
+
+      if($(this).attr('id') == 'result-answer-1') {
+        $('#sendDeclaration').show();
+      } else {
+        $('#sendDeclaration').hide();
+      }
+    }
+});
+
   $('input[type="radio"]').click(function() {
       if($(this).attr('id') == 'spec-answer-2') {
            $('.bordered').show();
       }
-
       else {
            $('.bordered').hide();
       }
-  });
-  $('#uploadRegistrationsForm').submit(function () {
-      $('#uploadRegistrationsButton').attr('disabled', 'disabled');
-​
-      // set screen-reader attributes
-      $('#uploadRegistrationsContainer').attr('aria-hidden', 'true');
-      $('#spinnerText').attr('role', 'true');
-      $('#spinnerText').attr('aria-live', 'assertive');
-​
-      setTimeout(function () {
-          $(window).scrollTop(0);
-          $('#uploadRegistrationsContainer').toggleClass('tl-hide');
-          $('#processingRegistrationsContainer').toggleClass('tl-hide');
-      }, 500);
   });
 });

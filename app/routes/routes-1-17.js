@@ -124,6 +124,10 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 res.redirect('/1-17/dynamic/add-learner-q1-ulnAlreadyAdded')
             }
+            if(enteredUln == userInfo[8][1])
+            {
+                res.redirect('/1-17/dynamic/send-learner')
+            }
             else {
                 res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')
             }
@@ -242,6 +246,8 @@ module.exports = function (router) {
                 setLearnerDetails(req)
 
                 req.session.data['send-answer'] = "No"
+                req.session.data['has-lrs-data'] = true
+                req.session.data['result-answer'] = "Achieved (data from Learning Records Service - LRS)"
                 req.session.data['result-ip-answer'] = "Completed with special consideration"
 
                 res.redirect('/1-17/dynamic/result-entries1')
@@ -251,6 +257,15 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 req.session.data['has-lrs-data'] = false
                 req.session.data['result-answer'] = "Achieved"
+                req.session.data['result-ip-answer'] = "Still to be completed"
+
+                res.redirect('/1-17/dynamic/result-entries1')
+            }
+            else if(enteredUln == userInfo[9][1])
+            {
+                setLearnerDetails(req)
+                req.session.data['has-lrs-data'] = true
+                req.session.data['result-answer'] = "Not achieved (data from Learning Records Service - LRS)"
                 req.session.data['result-ip-answer'] = "Still to be completed"
 
                 res.redirect('/1-17/dynamic/result-entries1')
@@ -274,10 +289,29 @@ module.exports = function (router) {
     })
 
     router.post('/1-17/dynamic/action-change-em-status-successful', function (req, res) {
-        res.redirect('/1-17/dynamic/change-em-status-successful')
+
+          var answer = req.session.data['result-answer']
+
+          if(answer == "wrong")
+          {
+            req.session.data['result-answer'] = req.session.data['previous-result-answer']
+            req.session.data['previous-result-answer'] = null
+              res.redirect('/1-17/dynamic/change-em-wrong')
+          }
+          else
+          {
+              res.redirect('/1-17/dynamic/change-em-status-successful')
+          }
+
     })
 
     router.post('/1-17/dynamic/action-change-ip-result-successful', function (req, res) {
         res.redirect('/1-17/dynamic/change-ip-result-successful')
+    })
+
+    router.get('/1-17/dynamic/action-change-em-status1', function (req, res) {
+        var previousSelectedResultAnswer = req.session.data['result-answer']
+        req.session.data['previous-result-answer'] = previousSelectedResultAnswer
+        res.redirect('/1-17/dynamic/change-em-status1')
     })
 }
