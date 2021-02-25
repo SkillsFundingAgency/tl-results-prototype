@@ -18,7 +18,8 @@ $(document).ready(function () {
 
   $('input[type="radio"]').click(function() {
     if($(this).attr('id') == 'result-answer-3') {
-      $('#btnUpdate').text('Continue');    
+      $('#btnUpdate').text('Continue');
+      $('#sendDeclaration').hide();
     }
     else {
       $('#btnUpdate').text('Update');
