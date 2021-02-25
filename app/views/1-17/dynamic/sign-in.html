@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+DfE Sign-in
+{% endblock %}
+
+{% set serviceName %}
+DfE Sign-in
+{% endset%}
+
+{% block beforeContent %}
+{% include "includes/AO-phase-banner-plain.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Department for Education Sign-in
+        </h1>
+
+        <div class="govuk-form-group">
+            <p class="govuk-body">
+                DfE Sign-in allows you to access several important services in the education sector, such as COLLECT.
+            </p>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <form class="form" action="tlevels-dashboard" method="post">
+            <div class="govuk-form-group ">
+                <h2 class="govuk-heading-m">
+                    Sign-in
+                </h2>
+
+                <div class="govuk-form-group" name="choice-1">
+                    <label class="govuk-label" for="Signin-username">
+                        Email address
+                    </label>
+                    <input class="govuk-input" id="Signin-username" name="Signin-username" type="text" value="">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="Signin-password">
+                        Password
+                    </label>
+                    <input class="govuk-input" id="Signin-password" name="Signin-password" type="password">
+
+                    <ul class="govuk-list">
+                        <li>
+                            <a class="govuk-link" href="ao-forgot-password">
+                                Forgotten your password?
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="govuk-inset-text">
+                        By continuing you accept the <a href="ao-terms-conditions">terms and conditions</a>.
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <button type="submit" class="govuk-button" data-module="govuk-button">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body govuk-!-font-weight-bold">Need help? <a class="govuk-link govuk-body" href="">See our DfE Sign-in help guides</a></p>
+    </div>
+</div>
+
+{% endblock %}

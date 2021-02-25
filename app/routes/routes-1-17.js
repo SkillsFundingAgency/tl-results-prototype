@@ -126,7 +126,7 @@ module.exports = function (router) {
             }
             if(enteredUln == userInfo[8][1])
             {
-                res.redirect('/1-17/dynamic/email-us')
+                res.redirect('/1-17/dynamic/send-learner')
             }
             else {
                 res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')
@@ -313,5 +313,5 @@ module.exports = function (router) {
         var previousSelectedResultAnswer = req.session.data['result-answer']
         req.session.data['previous-result-answer'] = previousSelectedResultAnswer
         res.redirect('/1-17/dynamic/change-em-status1')
-    })    
+    })
 }

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Sign in to manage your T Level results
+Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block header %}
@@ -16,19 +16,31 @@ Sign in to manage your T Level results
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Sign in to manage your T Level results
+      Manage T Level results
     </h1>
 
-    <p class="govuk-body">As an awarding organisation you can use this service to:</p>
+    <p class="govuk-body">
+      This service is for awarding organisations and providers who deliver T Level qualifications.
+    </p>
+
+    <p class="govuk-body">Awarding organisations can use this service to:</p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>review your T Level details</li>
-      <li>tell us which providers are offering your T Levels</li>
-      <li>enter student registrations - from September 2020</li>
-      <li>enter student results - from 2021</li>
+      <li>tell us if T Level details are correct</li>
+      <li>tell us which T Levels each provider is offering</li>
+      <li>upload, amend, view, delete and add learner registrations</li>
+      <li>upload, amend, view, remove and add assessment entries</li>
+      <li>upload, amend, view, delete and add core component results</li>
     </ul>
 
-    <p class="govuk-body govuk-!-margin-top-7">You will be signed out if you are inactive for 30 minutes. </p>
+    <p class="govuk-body">Providers can use this service to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>tell us if a learner has achieved the minimum standard for English and maths</li>
+      <li>tell us if a learner has completed their industry placement</li>
+    </ul>
+
+    <p class="govuk-body govuk-!-margin-top-7">You will be signed out if you are inactive for 30 minutes.</p>
 
     <a href="sign-in" role="button" draggable="false"
       class="govuk-button govuk-button--start govuk-!-margin-top-6" data-module="govuk-button">
@@ -42,20 +54,36 @@ Sign in to manage your T Level results
     <h2 class="govuk-heading-m govuk-!-margin-top-4">Before you start</h2>
 
     <p class="govuk-body">
-        You need a DfE Sign-in account to use this service.
+        You will need a DfE Sign-in account and an assigned service role.
+    </p>
+    <p class="govuk-body">
+      You may need to prepare your CSV files for uploading registrations, assessments and results in bulk. Find out more about the technical requirements for each file on our <a class="govuk-link govuk-body" href="config-file">T Level data format and rules guides</a> page.
     </p>
 
     <details class="govuk-details" closed>
         <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-                Service roles
+                Awarding organisation service roles
             </span>
         </summary>
         <div class="govuk-details__text">
-           <p class="govuk-body"><strong>T Levels Reviewer</strong> – reviews T Level titles and confirms or queries the details</p>
-           <p class="govuk-body"><strong>Providers Editor</strong> – enters and amends T Level providers</p>
-           <p class="govuk-body"><strong>Registrations Editor</strong> – uploads, amends, views, deletes and adds student registrations and assessment entries</p>
-           <p class="govuk-body"><strong>Site Administrator</strong> – has all roles: T Levels Reviewer, Providers Editor, Registrations Editor</p>
+           <p class="govuk-body"><strong>T Levels Reviewer</strong> – reviews T Level Technical Qualification titles and confirms that details are correct or not</p>
+           <p class="govuk-body"><strong>Providers Editor</strong> – can enter and amend the T Levels each provider is offering</p>
+           <p class="govuk-body"><strong>Registrations Editor</strong> – can upload, amend, view, remove and add learner registrations and assessment entries</p>
+           <p class="govuk-body"><strong>Results Editor</strong> – can upload, amend, view, remove and add learners’ core component results</p>
+           <p class="govuk-body"><strong>Site Administrator</strong> – has all roles: T Levels Reviewer, Providers Editor, Registrations Editor, Results Editor</p>
+        </div>
+    </details>
+
+    <details class="govuk-details" closed>
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Provider service roles
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+           <p class="govuk-body"><strong>Learner Records Editor</strong> – can upload, amend, view, delete and add English and maths achievements and update industry placement completion status</p>
+           <p class="govuk-body"><strong>Site Administrator</strong> – has all roles: Learner Records Editor</p>
         </div>
     </details>
 
