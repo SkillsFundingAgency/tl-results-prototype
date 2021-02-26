@@ -195,6 +195,22 @@ module.exports = function (router) {
         res.redirect('/1-17/dynamic/result-entries1')
     })
 
+    router.post('/1-17/dynamic/action-confirmation-send-learner', function (req, res) {
+
+        var hasSendSelected = req.session.data['result-answer']
+
+        if(hasSendSelected == null || hasSendSelected == '')
+        {
+            var sendErrors = ['#result-answer-1', "Select if this learner has SEND"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-17/dynamic/send-learner')
+        } else {
+            clearValidationError(req)
+            res.redirect('/1-17/dynamic/confirmation-send-learner')
+        }
+    })
+    
+
 
     // Back Action routes
     router.get('/1-17/dynamic/action-back-add-learner-q3-send', function (req, res) {
