@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - Does the learner have a SEND certificate - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q5-send">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-xl">Update learner T Level record</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+          The LRS data is wrong
+        </h1>
+        <span id="uln-hint" class="govuk-hint">
+          <strong>Learner:</strong> John Smith
+        </span>
+
+        <p class="govuk-body govuk-!-margin-top-7">
+          If you think the LRS data is wrong, you must contact the exam board responsible for issuing the learner's English and maths qualifications. Your organisation's Exams Officer may be able to help.
+        </p>
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="record-entries3">Back to learner T Level record</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q3-ip">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <span class="govuk-caption-xl">Add a new learner T Level record</span>
+
+      <h1 class="govuk-heading-l">
+        Check and submit
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before you submit. If you need to make changes later on, you can search for and update a learner T Level record from the dashboard.</p>
+
+      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">9876543210</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">John Smith</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">15/05/2000</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">Barnsley College (12345678)</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            T Level core
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">Design, Surveying and Planning for Construction</p>
+          </dd>
+        </div>
+      </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">English and maths minimum standard</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+                Achieved with SEND adjustments
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              <a class="govuk-link" href="add-learner-change-q2-em">
+                Change<span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's industry placement completion</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+                Placement completed
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              <a class="govuk-link" href="add-learner-change-q3-ip">
+                Change <span class="govuk-visually-hidden">for industry placement </span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="confirmation-learner-added">Submit</a>
+          <a class="govuk-link" href="cancel">Cancel</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

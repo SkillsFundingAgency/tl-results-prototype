@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - enter Unique Learner Number page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="learner-details-add1">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <span class="govuk-caption-xl">Add a new learner T Level record</span>
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6" for="ULN">
+                    Enter the Unique Learner Number (ULN)
+                </label>
+            </h1>
+            <div class="govuk-inset-text" style="margin-top: 0px;">
+                You can only add T Level records for learners registered on a T Level programme by an exam board (also known as an awarding organisation).
+            </div>
+            <span id="uln-number-hint" class="govuk-hint">
+                ULN must be 10 digits long
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="ULN" name="ULN" inputmode="numeric" value="5647382910">
+        </div>
+        <p>
+            <a class="govuk-button govuk-!-margin-right-1" role="button " href="add-learner-q3-ip">
+                Continue
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

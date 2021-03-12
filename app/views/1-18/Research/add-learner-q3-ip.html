@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% if data['errors'].length > 0 %}
+<!-- ERROR BOX -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    {% for error in data['errors'] %}
+                    <li>
+                        <a href="{{ error[0] }}">{{ error[1] }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="action-add-learner-q4-check" method="post" class="form" id="my_radio_box">
+            {% if data['errors'].length > 0 %}
+                <div class="govuk-form-group govuk-!-margin-bottom-7 govuk-form-group--error">
+                    {% else %}
+                    <div class="govuk-form-group">
+                        {% endif %}
+                <span class="govuk-caption-xl">Add a new learner T Level record</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Has the learner completed their industry placement?
+                      </h1>
+                      <span id="uln-hint" class="govuk-hint">
+                        <strong>Learner:</strong> {{ data['learner-name'] }}
+                      </span>
+                    </legend>
+
+                    {% if data['errors'].length > 0 %}
+                    <span id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>
+                        {{ data['errors'][0][1] }}
+                    </span>
+                    {% endif %}
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer" type="radio" value="Placement completed" {{ checked("result-ip-answer", "Placement completed") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
+                              Yes, completed
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer" type="radio" value="Completed with special consideration" {{ checked("result-ip-answer", "Completed with special consideration") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
+                              Yes, completed with special consideration
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer" type="radio" value="Placement still to be completed"  {{ checked("result-ip-answer", "Placement still to be completed") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
+                              No, still to be completed
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+                <details class="govuk-details govuk-!-margin-top-6" closed>
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            What are special considerations?
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                       <p class="govuk-body">Select 'Yes, completed with special consideration' only if you have made adjustments for learners who were unable to perform to the best of their ability during their placement due to exceptional circumstances. For example:</p>
+                       <ul class="govuk-list govuk-list--bullet">
+                         <li>
+                           personal or family problems
+                         </li>
+                         <li>
+                           physical or mental illness or injury
+                         </li>
+                         <li>
+                           bereavement
+                         </li>
+                         <li>
+                           safeguarding issues
+                         </li>
+                         <li>
+                           withdrawal of initial placement offer
+                         </li>
+                       </ul>
+                       <p class="govuk-body">You do not need to tell us the reason or upload any evidence, but you should hold supporting documentation in your own files.</p>
+                    </div>
+                </details>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

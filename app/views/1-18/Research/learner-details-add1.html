@@ -11,9 +11,9 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="action-search-again">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's details</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
   </ol>
 </div>
 {% endblock %}
@@ -23,11 +23,12 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-l">Learner record</h1>
-        <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-        <p class="govuk-body">Name: John Smith</p>
-        <p class="govuk-body">Date of birth: 20/12/2004</p>
-        <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+        <h1 class="govuk-heading-l">Learner T Level record</h1>
+        <h2 class="govuk-heading-m">ULN: {{ data['learner-uln'] }}</h2>
+        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
+        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
+        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
+        <p class="govuk-body">T Level core: Design, Surveying and Planning for Construction</p>
 
         <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
 
@@ -76,12 +77,9 @@
                  English and maths
               </dd>
               <dd class="govuk-summary-list__value">
-                 Status unknown
+                 Not achieved the minimum standard
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="search-learner">
-                  Update
-                </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -92,16 +90,17 @@
                  Status unknown
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="search-learner">
-                  Update
-                </a>
               </dd>
             </div>
           </dl>
 
-        <p><a class="govuk-button" role="button" href="review-address">Request statement of achievement</a></p>
+          <div class="govuk-inset-text">
+              If you want to include English and maths achievement and industry placement status on the statement of achievement you need to <a class="govuk-link" href="add-learner-q1-uln">add these to the learner's T Level record</a>.
+          </div>
 
-        <p class="govuk-body"><a class="govuk-link" href="search-learner">Search again</a></p>
+        <p><a class="govuk-button govuk-!-margin-top-6" role="button" href="review-address">Request statement of achievement</a></p>
+
+        <p class="govuk-body"><a class="govuk-link" href="action-search-again">Search again</a></p>
 
     </div>
 </div>

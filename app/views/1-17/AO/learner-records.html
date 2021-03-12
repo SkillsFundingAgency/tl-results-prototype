@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage learner T Level records</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 20px;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage learner T Level records
+            </h1>
+        </div>
+        <p class="govuk-body">
+          Add or update records for learners registered on a T Level programme by an exam board (also known as an awarding organisation).
+        </p>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+      <div class="govuk-inset-text" style="margin-top: 0px;">
+          The information you provide here will be used to calculate overall T Level results and issue certificates and statements of achievement. Please make sure it is correct as it will not be checked by ESFA.
+      </div>
+  </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-4">
+            <h2 class="govuk-heading-m">
+                    Add a new learner T Level record
+            </h2>
+            <p class="govuk-body">Tell us if a learner has:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>met the minimum standard for English and maths</li>
+                <li>completed their industry placement</li>
+              </ul>
+            <p class="govuk-body">
+              <a class="govuk-link--no-visited-state" href="add-learner-q1-uln">
+                Add a new learner T Level record
+              </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-form-group card" name="hub-choice-5">
+        <h2 class="govuk-heading-m">
+          Update a learner T Level record
+        </h2>
+        <p class="govuk-body">Search for and change an existing:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>English and maths achievement status</li>
+          <li>industry placement completion status</li>
+        </ul>
+
+        <p class="govuk-body">
+          <a class="govuk-link--no-visited-state" href="search-learner">
+              Update a learner T Level record
+          </a>
+        </p>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cancel page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-learner-q4-check">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+              Are you sure you want to cancel adding this learner's information?
+            </h1>
+            <span id="uln-hint" class="govuk-hint">
+              <strong>Learner</strong> John Smith
+            </span>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rem-answer-1" name="rem-answer" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="rem-answer-1">
+                Yes, cancel
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rem-answer-2" name="rem-answer" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="rem-answer-2">
+                No, do not cancel
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p><a class="govuk-button" role="button" href="student-records">Continue</a></p>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

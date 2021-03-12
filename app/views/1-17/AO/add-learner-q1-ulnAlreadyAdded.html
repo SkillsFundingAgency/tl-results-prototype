@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            ULN (1234567890) has already been added
+        </h1>
+        <span id="uln-hint" class="govuk-hint">
+          <strong>Learner:</strong> John Smith
+        </span>
+
+        <p class="govuk-body">
+          Select 'Continue' to view this learner's T Level record.
+        </p>
+
+        <p>
+          <a class="govuk-button govuk-!-margin-top-6" role="button" href="record-entries2">
+              Continue
+          </a>
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}
