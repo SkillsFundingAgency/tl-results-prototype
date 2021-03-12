@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Review address - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="learner-details">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% if data['errors'].length > 0 %}
+<!-- ERROR BOX -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    {% for error in data['errors'] %}
+                    <li>
+                        <a href="{{ error[0] }}">{{ error[1] }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="action-review-address-em" method="post" class="form" id="my_radio_box">
+            {% if data['errors'].length > 0 %}
+                <div class="govuk-form-group govuk-!-margin-bottom-7 govuk-form-group--error">
+                    {% else %}
+                    <div class="govuk-form-group">
+                        {% endif %}
+                <span class="govuk-caption-xl">Request statement of achievement</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Is this the correct postal address?
+                      </h1>
+                      <span id="uln-hint" class="govuk-hint">
+                        <strong>Learner:</strong> {{ data['learner-name'] }}
+                      </span>
+                    </legend>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Building
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Barnsley Sixth Form College</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Street
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">St Mary's Place</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Town/city
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Barnsley</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Postcode
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">S70 2SR</p>
+                        </dd>
+                      </div>
+                      </dl>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7">
+
+                    {% if data['errors'].length > 0 %}
+                    <span id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span>
+                        {{ data['errors'][0][1] }}
+                    </span>
+                    {% endif %}
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="review-address-1" name="review-address" type="radio" value="Yes" {{ checked("review-address", "Yes") }}>
+                          <label class="govuk-label govuk-radios__label" for="review-address-1">
+                              Yes, it's the correct address
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="review-address-2" name="review-address" type="radio" value="No" {{ checked("review-address", "No") }}>
+                          <label class="govuk-label govuk-radios__label" for="review-address-2">
+                              No, it's the wrong address
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

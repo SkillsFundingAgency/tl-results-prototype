@@ -14,7 +14,7 @@ function initialiseVariables(req) {
    req.session.data['has-lrs-data'] = true
    req.session.data['has-search-uln-added'] = true
    req.session.data['uln-already-added'] = false
-   
+
     // T Levels
     req.session.data['tLevels'] = []
     req.session.data['tLevels-ao'] = []
@@ -169,34 +169,39 @@ function initialiseVariables(req) {
 router.get('/1-17/dynamic/action-select-student-results', function (req, res) {
   require('./routes/routes-1-17.js')(router)
   checkIfActive(req)
-  res.redirect('/1-17/dynamic/student-results')      
+  res.redirect('/1-17/dynamic/student-results')
 })
 
+router.get('/1-18/Research/action-select-statement', function (req, res) {
+  require('./routes/routes-1-18.js')(router)
+  checkIfActive(req)
+  res.redirect('/1-18/Research/statement')
+})
 
 // function clearSession(req) {
 //   req.session.data['Uln'] = null
-// }    
+// }
 
 // router.get('/1-17/dynamic/action-select-add-learner', function (req, res) {
 //   clearSession(req);
 //   //loadProviderData(req)
-//   res.redirect('/1-17/dynamic/add-learner-q1-uln')      
+//   res.redirect('/1-17/dynamic/add-learner-q1-uln')
 // })
 
 // router.post('/1-17/dynamic/action-add-learner', function (req, res) {
 
 //   var enteredUln = req.session.data['ULN']
 //   var userInfo = req.session.data['user_info']
-  
-//   if(enteredUln == userInfo[0][1]) 
+
+//   if(enteredUln == userInfo[0][1])
 //   {
-//       res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')  
+//       res.redirect('/1-17/dynamic/add-learner-q1-ulnNotExist')
 //   }
 //   else if(enteredUln == userInfo[1][1])
 //   {
-//       res.redirect('/1-17/dynamic/add-learner-q2-em')  
-//   }        
-// }) 
+//       res.redirect('/1-17/dynamic/add-learner-q2-em')
+//   }
+// })
 
 
 router.get('/1-5/AO/act-ao-view-providers', function (req, res) {

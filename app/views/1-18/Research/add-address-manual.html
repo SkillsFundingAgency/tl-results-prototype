@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Mark core as under review - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your organisation's postal address?
+            </h1>
+          </legend>
+
+          <p class="govuk-body-m">This is where the certificates and statements of achievement will be sent.</p>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-0">
+              Building name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-0" name="address-line-0" type="text" autocomplete="organization">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Street
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+          </div>
+
+        </fieldset>
+      </div>
+
+      <p><a class="govuk-button" role="button" href="check-submit">Continue</a></p>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

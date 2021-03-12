@@ -9,9 +9,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Request sent successfully</h1>
+        <h1 class="govuk-panel__title">Statement of achievement requested successfully</h1>
         <div class="govuk-panel__body">
-          ULN: 1234567890
+          {{ data['learner-name'] }}<br>
+          ULN: {{ data['learner-uln'] }}
         </div>
       </div>
       <p class="govuk-body">The statement of achievement will be sent out to you within 5 working days.</p>

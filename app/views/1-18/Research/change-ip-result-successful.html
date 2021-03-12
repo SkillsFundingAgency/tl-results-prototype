@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Result added successfully
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Industry placement status updated successfully</h1>
+        <div class="govuk-panel__body">
+          {{ data['learner-name'] }}<br>
+          ULN: {{ data['learner-uln'] }}
+        </div>
+      </div>
+
+    <p class="govuk-!-margin-top-8"><a class="govuk-button" role="button" href="learner-details-update2">Continue to request statement of achievement</a></p>
+
+    <div>
+  </div>
+
+{% endblock %}

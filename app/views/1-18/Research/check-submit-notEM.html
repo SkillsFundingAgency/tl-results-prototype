@@ -13,7 +13,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-xl">Request statement</span>
+      <span class="govuk-caption-xl">Request statement of achievement</span>
 
       <h1 class="govuk-heading-l">
         Check and submit
@@ -21,7 +21,7 @@
 
       <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting this request.</p>
 
-      <h3 class="govuk-!-font-size-24 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Personal details</h3>
+      <h3 class="govuk-!-font-size-24 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -29,7 +29,7 @@
             ULN
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">9876543210</p>
+            <p class="govuk-body">{{ data['learner-uln'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -37,7 +37,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">John Smith</p>
+            <p class="govuk-body">{{ data['learner-name'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -45,12 +45,12 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">20/12/2004</p>
+            <p class="govuk-body">{{ data['date-of-birth'] }}</p>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
-            Provider
+            Provider (UKPRN)
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">Barnsley College (12345678)</p>
@@ -101,7 +101,7 @@
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__key">
-                 T Level
+                 T Level title
               </dd>
               <dd class="govuk-summary-list__value">
                  T Level in Design, Surveying and Planning for Construction
@@ -122,38 +122,22 @@
             </div>
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__key">
-                 Specialism
-              </dd>
-              <dd class="govuk-summary-list__value">
-                 Building Services Design (ZTLOS003)
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                Grade: Merit
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__key">
-                 English and maths
-              </dd>
-              <dd class="govuk-summary-list__value">
-                 Achieved minimum standard
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__key">
                  Industry placement
               </dd>
               <dd class="govuk-summary-list__value">
-                 Completed
+                 Placement completed
               </dd>
               <dd class="govuk-summary-list__actions">
               </dd>
             </div>
           </dl>
 
-        <p><a class="govuk-button govuk-!-margin-right-1" role="button" href="request-successful">Submit request</a>
+        <p class="govuk-inset-text">By requesting a statement of achievement you declare that this learner has withdrawn from their T Level programme.</p>
+
+        <div class="govuk-button-group govuk-!-margin-top-7">
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="request-successful">Submit request</a>
+          <a class="govuk-link" href="cancel-request">Cancel</a>
+        </div>
 
     </div>
 </div>
