@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Learner's results
+  Request a statement of achievement
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Request a statement of achievement</li>
   </ol>
 </div>
 {% endblock %}
@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-        <h1 class="govuk-heading-l">Learner T Level record</h1>
+        <h1 class="govuk-heading-l">Request a statement of achievement</h1>
         <h2 class="govuk-heading-m">ULN: {{ data['learner-uln'] }}</h2>
         <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
         <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
@@ -56,6 +56,8 @@
               Grade: C
             </dd>
           </div>
+
+          {% if data['learner-uln'] == '8642135790' %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__key">
                English and maths
@@ -66,6 +68,7 @@
             <dd class="govuk-summary-list__actions">
             </dd>
           </div>
+
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__key">
                Industry placement
@@ -76,6 +79,20 @@
             <dd class="govuk-summary-list__actions">
             </dd>
           </div>
+          {% endif %}
+
+          {% if data['result-ip-answer'] == 'Placement completed' %}
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key">
+               Industry placement
+            </dd>
+            <dd class="govuk-summary-list__value">
+               Placement completed
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          {% endif %}
         </dl>
 
         <h3 class="govuk-!-font-size-24 govuk-hint govuk-!-margin-top-9 govuk-!-font-weight-bold">Information not included</h3>
@@ -92,13 +109,61 @@
                 Grade: Unclassified
               </dd>
             </div>
+
+            {% if data['learner-uln'] !== '8642135790' %}
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__key">
+                 English and maths
+              </dd>
+              <dd class="govuk-summary-list__value">
+                 Not achieved minimum standard
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+
+                {% if data['result-ip-answer'] == null %}
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key">
+                     Industry placement
+                  </dd>
+                      {% if data['learner-uln'] == '4321987650' %}
+                          <dd class="govuk-summary-list__value">
+                             Placement still to be completed
+                          </dd>
+                      {% else %}
+                          <dd class="govuk-summary-list__value">
+                             Staus unknown
+                          </dd>
+                      {% endif %}
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                {% endif %}
+
+            {% endif %}
+
           </dl>
 
-          <div class="govuk-inset-text">
-              If you want to update the English and maths achievement or industry placement status before you request a statement of achievement you need to <a class="govuk-link" href="">update the learner's T Level record</a>.
-          </div>
+          {% if data['learner-uln'] == '5647382910' %}
+            {% if data['result-ip-answer'] == null %}
+                <div class="govuk-inset-text">
+                    If you want to include this learner's English and maths achievement and industry placement status on the statement of achievement, you must add them to the learner's T Level record.
+                </div>
+            {% else %}
+                <div class="govuk-inset-text">
+                    If this learner's English and maths achievement or industry placement status is wrong, you must update the learner's T Level record before requesting a statement of achievement.
+                </div>
+            {% endif %}
+          {% else %}
+            <div class="govuk-inset-text">
+                If this learner's English and maths achievement or industry placement status is wrong, you must update the learner's T Level record before requesting a statement of achievement.
+            </div>
+          {% endif %}
 
-        <p><a class="govuk-button govuk-!-margin-top-6" role="button" href="review-address1">Request statement of achievement</a></p>
+
+
+        <p><a class="govuk-button govuk-!-margin-top-6" role="button" href="review-address">Request statement of achievement</a></p>
 
         <p class="govuk-body"><a class="govuk-link" href="action-search-again">Search again</a></p>
 

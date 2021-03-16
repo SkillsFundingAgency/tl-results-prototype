@@ -48,7 +48,7 @@
             <p class="govuk-body">{{ data['date-of-birth'] }}</p>
           </dd>
         </div>
-          <div class="govuk-summary-list__row">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
             Provider (UKPRN)
           </dt>
@@ -120,6 +120,21 @@
                 Grade: C
               </dd>
             </div>
+
+            {% if data['learner-uln'] == '8642135790' %}
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__key">
+                 English and maths
+              </dd>
+              <dd class="govuk-summary-list__value">
+                 Achieved minimum standard
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if data['result-ip-answer'] !== null %}
             <div class="govuk-summary-list__row">
               <dd class="govuk-summary-list__key">
                  Industry placement
@@ -130,6 +145,7 @@
               <dd class="govuk-summary-list__actions">
               </dd>
             </div>
+            {% endif %}
           </dl>
 
         <p class="govuk-inset-text">By requesting a statement of achievement you declare that this learner has withdrawn from their T Level programme.</p>

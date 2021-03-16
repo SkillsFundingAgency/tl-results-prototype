@@ -24,7 +24,7 @@ module.exports = function (router) {
         req.session.data['learner-name'] = null
         req.session.data['date-of-birth'] = null
         req.session.data['send-answer'] = null
-        req.session.data['result-ip-answer'] = null
+
         req.session.data['result-answer'] = null
         req.session.data['has-lrs-data'] = true
         req.session.data['has-search-uln-added'] = true
@@ -32,6 +32,10 @@ module.exports = function (router) {
         req.session.data['errors'] = []
         req.session.data['review-address'] = null
         req.session.data['review-em-address'] = null
+    }
+
+    function clearIPresult(req) {
+        req.session.data['result-ip-answer'] = null
     }
 
     function setLearnerDetails(req) {
@@ -101,29 +105,39 @@ module.exports = function (router) {
         } else if (hasReultAnswerSelected == 'Yes')
         {
             clearValidationError(req)
-            res.redirect('/1-18/Research/check-submit-notEM')
+            res.redirect('/1-18/Research/check-submit')
         } else {
             clearValidationError(req)
             res.redirect('/1-18/Research/review-address')
         }
     })
 
-    router.post('/1-18/Research/action-review-address-em', function (req, res) {
 
-        var hasReultAnswerSelected = req.session.data['review-address']
+      router.post('/1-18/Research/action-add-learner', function (req, res) {
 
-        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
-        {
-            var sendErrors = ['#review-address-1', "Select 'yes' if this is the correct address"]
-            addValidationError(req,res,sendErrors)
-            res.redirect('/1-18/Research/review-address1')
-          } else if (hasReultAnswerSelected == 'Yes')
-          {
-              clearValidationError(req)
-              res.redirect('/1-18/Research/check-submit-EM')
-          } else {
-              clearValidationError(req)
-              res.redirect('/1-18/Research/review-address1')
+          var isValid = checkUlnValidation(req, res)
+
+          if(isValid) {
+              var enteredUln = req.session.data['learner-uln']
+              var userInfo = req.session.data['user_info']
+
+              if(enteredUln == userInfo[3][1])
+              {
+                setLearnerDetails(req)
+                res.redirect('/1-18/Research/add-learner-q1-ulnAlreadyAdded')
+              }
+              else if(enteredUln == userInfo[4][1])
+              {
+                  setLearnerDetails(req)
+                  res.redirect('/1-18/Research/add-learner-q3-ip')
+              }
+              else
+              {
+                  res.redirect('/1-18/Research/add-learner-q1-ulnNotExist')
+              }
+          }
+          else {
+              res.redirect('/1-18/Research/add-learner-q1-uln')
           }
       })
 
@@ -142,6 +156,22 @@ module.exports = function (router) {
           }
       })
 
+
+      router.get('/1-18/Research/action-select-add-learner', function (req, res) {
+          clearSession(req);
+          res.redirect('/1-18/Research/add-learner-q1-uln')
+      })
+
+      router.get('/1-18/Research/action-select-search-learner', function (req, res) {
+          clearSession(req);
+          res.redirect('/1-18/Research/search-learner-record')
+      })
+
+      router.get('/1-18/Research/action-tlevels-dashboard', function (req, res) {
+          clearIPresult(req);
+          res.redirect('/1-18/Research/tlevels-dashboard')
+      })
+
     // Back Action routes
 
     router.get('/1-18/Research/action-back-to-address', function (req, res) {
@@ -151,7 +181,7 @@ module.exports = function (router) {
 
     // Search Learner
 
-    router.get('/1-18/Research/action-agree-to-terms', function (req, res) {
+    router.get('/1-18/Research/action-agree-to-statement', function (req, res) {
         clearSession(req);
         res.redirect('/1-18/Research/search-learner')
     })
@@ -159,6 +189,12 @@ module.exports = function (router) {
     router.get('/1-18/Research/action-search-again', function (req, res) {
         clearSession(req);
         res.redirect('/1-18/Research/search-learner')
+    })
+
+    router.get('/1-18/Research/action-search-another-record', function (req, res) {
+        clearSession(req);
+        clearIPresult(req);
+        res.redirect('/1-18/Research/search-learner-record')
     })
 
     router.get('/1-18/Research/action-search-learner', function (req, res) {
@@ -183,15 +219,25 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 res.redirect('/1-18/Research/learner-details-noresults')
             }
+            else if(enteredUln == userInfo[3][1] && req.session.data['result-ip-answer'] == null)
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/Research/learner-details')
+            }
             else if(enteredUln == userInfo[3][1])
             {
                 setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details-update1')
+                res.redirect('/1-18/Research/learner-details')
+            }
+            else if(enteredUln == userInfo[4][1] && req.session.data['result-ip-answer'] == null )
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/Research/learner-details')
             }
             else if(enteredUln == userInfo[4][1])
             {
                 setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details-add1')
+                res.redirect('/1-18/Research/learner-details')
             }
             else if(enteredUln == userInfo[5][1])
             {
@@ -206,6 +252,39 @@ module.exports = function (router) {
         else {
             res.redirect('/1-18/Research/search-learner')
         }
+    })
+
+    router.get('/1-18/Research/action-search-learner-record', function (req, res) {
+
+      var isValid = checkUlnValidation(req, res)
+
+      if(isValid) {
+          var enteredUln = req.session.data['learner-uln']
+          var userInfo = req.session.data['user_info']
+
+          if(enteredUln == userInfo[3][1])
+          {
+              setLearnerDetails(req)
+              res.redirect('/1-18/Research/record-entries')
+          }
+          else if(enteredUln == userInfo[4][1])
+          {
+              setLearnerDetails(req)
+              res.redirect('/1-18/Research/search-failed-notadded')
+          }
+          else if(enteredUln == userInfo[5][1])
+          {
+              setLearnerDetails(req)
+              res.redirect('/1-18/Research/record-entries')
+          }
+          else
+          {
+              res.redirect('/1-18/Research/learner-ulnNotExist')
+          }
+      }
+      else {
+          res.redirect('/1-18/Research/search-learner')
+      }
     })
 
 }

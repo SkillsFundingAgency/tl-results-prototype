@@ -166,10 +166,10 @@ function initialiseVariables(req) {
     return
 }
 
-router.get('/1-17/dynamic/action-select-student-results', function (req, res) {
-  require('./routes/routes-1-17.js')(router)
+router.get('/1-18/Research/action-select-learner-records', function (req, res) {
+  require('./routes/routes-1-18.js')(router)
   checkIfActive(req)
-  res.redirect('/1-17/dynamic/student-results')
+  res.redirect('/1-18/Research/learner-records')
 })
 
 router.get('/1-18/Research/action-select-statement', function (req, res) {

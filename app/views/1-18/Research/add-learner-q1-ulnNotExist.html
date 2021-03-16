@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="add-learner-q1-uln">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          ULN ({{ data['learner-uln'] }}) has not been registered by an exam board
+        </h1>
+        <p class="govuk-body">
+          You can only add T Level records for learners registered on a T Level programme by an exam board (also known as an awarding organisation).
+        </p>
+        <p class="govuk-body">
+          If you think this learner should be registered, please contact the exam board responsible for delivering the T Level.
+        </p>
+
+        <p class="govuk-body">
+          <a class="govuk-button govuk-!-margin-top-6" role="button " href="add-learner-q1-uln">
+            Add a different learner
+          </a>
+        </p>
+
+        <p class="govuk-body"><a href="learner-records">Back to manage learner T Level records</a></p>
+
+    </div>
+</div>
+
+
+{% endblock %}
