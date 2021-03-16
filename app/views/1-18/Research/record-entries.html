@@ -75,7 +75,11 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-                Not achieved the minimum standard (data from Learning Records Service - LRS)
+              {% if data['learner-uln'] == '8642135790' %}
+                  Achieved minimum standard (data from Learning Records Service - LRS)
+              {% else %}
+                  Not achieved minimum standard (data from Learning Records Service - LRS)
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="query">
@@ -114,7 +118,11 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-                Placement still to be completed
+              {% if data['result-ip-answer'] == null %}
+                  Placement still to be completed
+              {% else %}
+                  {{ data['result-ip-answer'] }}
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="change-ip-result">
@@ -125,6 +133,8 @@
         </dl>
 
         <hr class="govuk-section-break govuk-section-break--visible">
+
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-search-another-record">Search again</a></p>
 
     </div>
 </div>
