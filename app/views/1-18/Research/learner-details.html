@@ -11,7 +11,7 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="action-search-again">Search for a learner</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Request a statement of achievement</li>
   </ol>
@@ -106,7 +106,7 @@
                  Building Services Design (ZTLOS003)
               </dd>
               <dd class="govuk-summary-list__actions">
-                Grade: Unclassified
+                No result
               </dd>
             </div>
 
@@ -148,16 +148,16 @@
           {% if data['learner-uln'] == '5647382910' %}
             {% if data['result-ip-answer'] == null %}
                 <div class="govuk-inset-text">
-                    If you want to include this learner's English and maths achievement and industry placement status on the statement of achievement, you must add them to the learner's T Level record.
+                    If a learner has completed any components which are showing as 'not included', you must add them to the <a class="govuk-link" href="learner-records">learner's T Level record</a> before requesting a statement of achievement.
                 </div>
             {% else %}
                 <div class="govuk-inset-text">
-                    If this learner's English and maths achievement or industry placement status is wrong, you must update the learner's T Level record before requesting a statement of achievement.
+                    If a learner has completed any components which are showing as 'not included', you must <a class="govuk-link" href="search-learner-record">update the learner's T Level record</a> before requesting a statement of achievement.
                 </div>
             {% endif %}
           {% else %}
             <div class="govuk-inset-text">
-                If this learner's English and maths achievement or industry placement status is wrong, you must update the learner's T Level record before requesting a statement of achievement.
+              If a learner has completed any components which are showing as 'not included', you must <a class="govuk-link" href="search-learner-record">update the learner's T Level record</a> before requesting a statement of achievement.
             </div>
           {% endif %}
 
