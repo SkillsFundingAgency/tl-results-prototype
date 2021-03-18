@@ -131,6 +131,11 @@ module.exports = function (router) {
                   setLearnerDetails(req)
                   res.redirect('/1-18/Research/add-learner-q3-ip')
               }
+              else if(enteredUln == userInfo[5][1])
+              {
+                  setLearnerDetails(req)
+                  res.redirect('/1-18/Research/add-learner-q1-ulnAlreadyAdded')
+              }
               else
               {
                   res.redirect('/1-18/Research/add-learner-q1-ulnNotExist')
@@ -283,7 +288,7 @@ module.exports = function (router) {
           }
       }
       else {
-          res.redirect('/1-18/Research/search-learner')
+          res.redirect('/1-18/Research/search-learner-record')
       }
     })
 

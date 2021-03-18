@@ -46,7 +46,7 @@
       <a class="govuk-breadcrumbs__link" href="learner-records">Manage learner T Level records</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="action-search-another-record">Search for a learner</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
   </ol>
@@ -118,11 +118,16 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              {% if data['result-ip-answer'] == null %}
-                  Placement still to be completed
+              {% if data['learner-uln'] !== '8642135790' %}
+                {% if data['result-ip-answer'] == null %}
+                    Placement still to be completed
+                {% else %}
+                    {{ data['result-ip-answer'] }}
+                {% endif %}
               {% else %}
-                  {{ data['result-ip-answer'] }}
+                  Placement completed
               {% endif %}
+
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="change-ip-result">
