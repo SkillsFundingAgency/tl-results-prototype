@@ -24,9 +24,9 @@
     <div class="govuk-grid-column-three-quarters">
 
               <h1 class="govuk-heading-l">Request a statement of achievement</h1>
-              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
-              <p class="govuk-body">Name: John Smith</p>
-              <p class="govuk-body">Date of birth: 20/12/2004</p>
+              <h2 class="govuk-heading-m">ULN: {{ data['learner-uln'] }}</h2>
+              <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
+              <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
               <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
               <p class="govuk-body">T Level core: Design, Surveying and Planning for Construction</p>
 
