@@ -126,6 +126,11 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 res.redirect('/1-18/Research/add-learner-q1-ulnAlreadyAdded')
               }
+              else if(enteredUln == userInfo[1][1])
+              {
+                  setLearnerDetails(req)
+                  res.redirect('/1-18/Research/add-learner-q1-ulnAlreadyAdded')
+              }
               else if(enteredUln == userInfo[4][1])
               {
                   setLearnerDetails(req)
@@ -135,6 +140,11 @@ module.exports = function (router) {
               {
                   setLearnerDetails(req)
                   res.redirect('/1-18/Research/add-learner-q1-ulnAlreadyAdded')
+              }
+              else if(enteredUln == userInfo[2][1])
+              {
+                  setLearnerDetails(req)
+                  res.redirect('/1-18/Research/add-learner-q3-ip')
               }
               else
               {
@@ -272,7 +282,17 @@ module.exports = function (router) {
               setLearnerDetails(req)
               res.redirect('/1-18/Research/record-entries')
           }
+          else if(enteredUln == userInfo[1][1])
+          {
+              setLearnerDetails(req)
+              res.redirect('/1-18/Research/record-entries')
+          }
           else if(enteredUln == userInfo[4][1])
+          {
+              setLearnerDetails(req)
+              res.redirect('/1-18/Research/search-failed-notadded')
+          }
+          else if(enteredUln == userInfo[2][1])
           {
               setLearnerDetails(req)
               res.redirect('/1-18/Research/search-failed-notadded')
