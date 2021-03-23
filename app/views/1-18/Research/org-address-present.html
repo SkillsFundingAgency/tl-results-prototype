@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Mark core as under review - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage your postal address</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l">
+          Manage your postal address
+        </h1>
+        <p class="govuk-body-m">
+          This is where certificates and statements of achievement will be sent.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Building and street
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">Barnsley Sixth Form College</p>
+              <p class="govuk-body">St Mary's Place</p>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Town or city
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">Barnsley</p>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              County
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">S70 2SR</p>
+            </dd>
+          </div>
+        </dl>
+
+        <p class="govuk-body"><a class="govuk-button" role="button" href="add-address-postcode">Add a new address</a></p>
+
+    </div>
+
+</div>
+
+{% endblock %}
