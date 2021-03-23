@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="q0-search-learner">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="q2-quals" method="post" class="form" id="my_radio_box">
+
+              <div class="govuk-form-group">
+
+                <span class="govuk-caption-xl">Request statement of achievement</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Are these learner details correct?
+                      </h1>
+                    </legend>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          ULN
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">1234567890</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Name
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">John Smith</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Date of birth
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">12/12/2004</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Provider (UKPRN)
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Barnsley College (12345678)</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          T Level core
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Design, Surveying and Planning for Construction (60358300)</p>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7">
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="q1-answer-1" name="q1-answer" type="radio" value="Correct" {{ checked("q1-answer", "Correct") }}>
+                          <label class="govuk-label govuk-radios__label" for="q1-answer-1">
+                              Yes, they're correct
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="q1-answer-2" name="q1-answer" type="radio" value="Incorrect"  {{ checked("q1-answer", "Incorrect") }}>
+                          <label class="govuk-label govuk-radios__label" for="q1-answer-2">
+                              No, they are incorrect
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+
+            </div>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

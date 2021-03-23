@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="q1-learners-details">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="q3-tq-components" method="post" class="form" id="my_radio_box">
+
+              <div class="govuk-form-group">
+
+                <span class="govuk-caption-xl">Request statement of achievement</span>
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Are these achievements correct?
+                      </h1>
+                    </legend>
+
+                    <h2 class="govuk-heading-m">Learner: John Smith</h2>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
+
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          English and maths
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Not achieved minimum standard</p>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key" style="border-bottom:none">
+                          Industry placement
+                        </dt>
+                        <dd class="govuk-summary-list__value" style="border-bottom:none">
+                          <p class="govuk-body">Completed</p>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7">
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="q2-answer-1" name="q2-answer" type="radio" value="Correct" {{ checked("q1-answer", "Correct") }}>
+                          <label class="govuk-label govuk-radios__label" for="q2-answer-1">
+                              Yes, they're correct
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="q2-answer-2" name="q2-answer" type="radio" value="Incorrect"  {{ checked("q1-answer", "Incorrect") }}>
+                          <label class="govuk-label govuk-radios__label" for="q2-answer-2">
+                              No, they are incorrect
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+
+            </div>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
