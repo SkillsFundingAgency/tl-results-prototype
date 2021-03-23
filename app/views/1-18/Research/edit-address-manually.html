@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+  <a class="govuk-back-link" href="org-address-present">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -13,34 +13,35 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Edit address</span>
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is your organisation's postal address?
+              Organisation's postal address
             </h1>
           </legend>
 
-          <p class="govuk-body-m">This is where the certificates and statements of achievement will be sent.</p>
+          <p class="govuk-body-m">This must be a business address.</p>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-line-0">
               Building name
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-0" name="address-line-0" type="text" autocomplete="organization">
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-0" name="address-line-0" type="text" autocomplete="organization" value="Barnsley Sixth Form College">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-line-1">
               Street
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1" value="St Mary's Place">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-town">
               Town or city
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2" value="Barnsley">
           </div>
 
           <div class="govuk-form-group">
@@ -54,13 +55,13 @@
             <label class="govuk-label" for="address-postcode">
               Postcode
             </label>
-            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="S70 2SR">
           </div>
 
         </fieldset>
       </div>
 
-      <p><a class="govuk-button" role="button" href="check-submit">Continue</a></p>
+      <p><a class="govuk-button" role="button" href="edit-address-confirm-address">Continue</a></p>
 
     </form>
   </div>
