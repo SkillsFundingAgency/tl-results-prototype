@@ -31,8 +31,8 @@
               Building and street
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">Barnsley Sixth Form College</p>
-              <p class="govuk-body">St Mary's Place</p>
+              <p class="govuk-body">{{data['added-org-postal-address'][0][2]}}</p>
+              <p class="govuk-body">{{data['added-org-postal-address'][0][3]}}</p>
             </dd>
           </div>
 
@@ -41,29 +41,21 @@
               Town or city
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">Barnsley</p>
+              <p class="govuk-body">{{data['added-org-postal-address'][0][4]}}</p>
             </dd>
           </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="border-bottom:none">
-              County
-            </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
-
-            </dd>
-          </div>
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="border-bottom:none">
               Postcode
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">S70 2SR</p>
+              <p class="govuk-body">{{data['added-org-postal-address'][0][5]}}</p>
             </dd>
           </div>
         </dl>
 
-        <p class="govuk-body"><a class="govuk-button" role="button" href="add-address-postcode">Add a new address</a></p>
+        <p class="govuk-body"><a class="govuk-button" role="button" href="action-add-address-postcode">Add a new address</a></p>
 
     </div>
 
