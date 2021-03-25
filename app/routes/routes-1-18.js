@@ -48,6 +48,8 @@ module.exports = function (router) {
         req.session.data['full-address'] = null
         req.session.data['cancel-address-answer'] = null
 
+        req.session.data['dept-name'] = null
+        req.session.data['manual-dept-name'] = null
         req.session.data['address-line-1'] = null
         req.session.data['address-line-2'] = null
         req.session.data['address-town'] = null
@@ -298,6 +300,13 @@ module.exports = function (router) {
 
     router.get('/1-18/dynamic/action-add-address-confirmation', function (req, res) {
         req.session.data['added-org-postal-address'] = req.session.data['selected-full-address']
+
+        if(req.session.data['is-entry-from-manual-address'] != null) {
+            req.session.data['added-org-postal-address-dept-name'] = req.session.data['manual-dept-name']
+        }
+        else {
+            req.session.data['added-org-postal-address-dept-name'] = req.session.data['dept-name']
+        }
         clearOrgAddressSession(req);
         res.redirect('/1-18/dynamic/add-address-confirmation')
     })

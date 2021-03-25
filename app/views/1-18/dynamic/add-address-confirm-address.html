@@ -24,6 +24,24 @@ Add address - confirm address - Manage T Level results - GOV.UK
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Department name
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            {% if data['is-entry-from-manual-address'] == null %}
+            <p class="govuk-body">{{data['dept-name']}}</p>
+            {% else %}
+            <p class="govuk-body">{{data['manual-dept-name']}}</p>
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <a class="govuk-link" href="action-back-add-address-select-address">
+              Change <span class="govuk-visually-hidden">address </span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
             Building and street
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">

@@ -46,6 +46,13 @@
             </legend>
             <p class="govuk-body-m">This must be a business address.</p>
             
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="manual-dept-name">
+                Department (optional)
+              </label>
+              <input class="govuk-input  govuk-!-width-one-half" id="manual-dept-name" name="manual-dept-name" type="text" value="{{data['manual-dept-name']}}">
+            </div>
+
             {% if data['errors'].length > 0 and data['address-line-1'].length == 0 %}
             <div class="govuk-form-group govuk-form-group--error">
             {% else %}
