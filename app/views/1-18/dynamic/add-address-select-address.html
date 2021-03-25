@@ -88,7 +88,7 @@ Add address - select address - Manage T Level results - GOV.UK
             </select>
           </div>
 
-          <div class="govuk-form-group">
+          <div id="divDepartment" class="govuk-form-group">
             <label class="govuk-label" for="dept-name">
               Department (optional)
             </label>
@@ -114,8 +114,9 @@ Add address - select address - Manage T Level results - GOV.UK
     </form>
   </div>
 </div>
+{% endblock %}
 
-
-
+{% block pageScripts %}
+<script type="text/javascript" src="../../public/javascripts/application.js"></script>
 
 {% endblock %}

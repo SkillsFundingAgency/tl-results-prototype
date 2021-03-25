@@ -8,6 +8,33 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll();
 
+
+  var dlSelectedAddress = $('#full-address')
+
+  if(dlSelectedAddress !== null)
+  {
+    var selectedValue = dlSelectedAddress.val();
+
+    if(selectedValue != null && selectedValue != '')
+    {
+      $('#divDepartment').show();
+    }
+    else{
+      $('#divDepartment').hide();
+    }
+  }
+
+  dlSelectedAddress.click(function() {
+    var selectedValue = $(this).val();
+    if(selectedValue != null && selectedValue != '')
+    {
+      $('#divDepartment').show();
+    }
+    else{
+      $('#divDepartment').hide();
+    }
+  });
+
   var selectedRadio = $('input[type="radio"]:checked');
 
   if(selectedRadio.attr('id') == 'result-answer-1')  {
