@@ -182,7 +182,7 @@ module.exports = function (router) {
 
         if(enteredPostcode == null || enteredPostcode == '')
         {
-            var sendErrors = ['#address-postcode', "Please enter postcode"]
+            var sendErrors = ['#address-postcode', "Enter your postcode"]
             addValidationError(req,res,sendErrors)
             res.redirect('/1-18/dynamic/add-address-postcode')
         }         
@@ -192,7 +192,7 @@ module.exports = function (router) {
 
             if(isPostcodeValid == null || isPostcodeValid == '')
             {
-                var sendErrors = ['#address-postcode', "Please enter a valid postcode"]
+                var sendErrors = ['#address-postcode', "Enter a valid UK postcode"]
                 addValidationError(req,res,sendErrors)
                 res.redirect('/1-18/dynamic/add-address-postcode')
             }
@@ -220,19 +220,19 @@ module.exports = function (router) {
 
         if(enteredAddressLine1 == null || enteredAddressLine1 == '')
         {
-            sendErrors = ['#address-line-1', "Please enter address line 1"];
+            sendErrors = ['#address-line-1', "Enter your building and street"];
             addValidationError(req,res,sendErrors, false)
         }
         
         if(enteredAddressTown == null || enteredAddressTown == '')
         {
-            sendErrors = ['#address-town', "Please enter town"]
+            sendErrors = ['#address-town', "Enter your town or city"]
             addValidationError(req,res,sendErrors, false)
         }
 
         if(enteredAddressPostcode == null || enteredAddressPostcode == '')
         {
-            sendErrors = ['#address-manual-postcode', "Please enter postcode"]
+            sendErrors = ['#address-manual-postcode', "Enter your postcode"]
             addValidationError(req,res,sendErrors, false)
         }
         else {
@@ -245,7 +245,7 @@ module.exports = function (router) {
             if(isPostcodeValid == null || isPostcodeValid == '')
             {
                 req.session.data['address-manual-postcode-invalid'] = "invalid";
-                sendErrors = ['#address-manual-postcode', "Please enter a valid postcode"]
+                sendErrors = ['#address-manual-postcode', "Enter a valid UK postcode"]
                 addValidationError(req,res,sendErrors, false)
             }
             else{
@@ -279,7 +279,7 @@ module.exports = function (router) {
 
         if(selectedAddress == null || selectedAddress == '')
         {
-            var sendErrors = ['#full-address', "Please select address"]
+            var sendErrors = ['#full-address', "Select your address from the list"]
             addValidationError(req,res,sendErrors)
             res.redirect('/1-18/dynamic/add-address-select-address')
         }         
