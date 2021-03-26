@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Mark core as under review - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage your postal address</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l">
+          Manage your postal address
+        </h1>
+        <p class="govuk-body-m">
+          This is where certificates and statements of achievement will be sent.
+        </p>
+
+        <p class="govuk-inset-text">
+          You need to add your organisation's postal address before you can request a statement of achievement or a certificate.
+        </p>
+
+        <p class="govuk-body"><a class="govuk-button" role="button" href="action-add-address-postcode">Add address</a></p>
+
+    </div>
+
+</div>
+
+{% endblock %}

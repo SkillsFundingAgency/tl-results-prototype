@@ -22,6 +22,13 @@
             </legend>
             <p class="govuk-body-m">This must be a business address.</p>
             <div class="govuk-form-group">
+              <label class="govuk-label " for="dept-name">
+                Department (optional)
+              </label>
+              <input class="govuk-input  govuk-!-width-two-thirds" id="dept-name" name="dept-name" type="text">
+            </div>
+
+            <div class="govuk-form-group">
               <label class="govuk-label" for="address-line-1">
                 Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
@@ -40,13 +47,6 @@
                 Town or city
               </label>
               <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
-            </div>
-
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="address-county">
-                County (optional)
-              </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
             </div>
 
             <div class="govuk-form-group">

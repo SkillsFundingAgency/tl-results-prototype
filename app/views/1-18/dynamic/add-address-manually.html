@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Mark core as under review - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="action-back-add-address-postcode">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% if data['errors'].length > 0 %}
+<!-- ERROR BOX -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+            data-module="govuk-error-summary">
+            <h2 class="govuk-error-summary__title" id="error-summary-title">
+                There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                    {% for error in data['errors'] %}
+                    <li>
+                        <a href="{{ error[0] }}">{{ error[1] }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="action-manually-add-address-confirm-address" method="post" class="form" >
+      <div class="govuk-form-group govuk-!-margin-bottom-7">
+        <span class="govuk-caption-xl">Add address</span>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is your organisation's address?
+              </h1>
+            </legend>
+            <p class="govuk-body-m">This must be a business address.</p>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="manual-dept-name">
+                Department (optional)
+              </label>
+              <input class="govuk-input  govuk-!-width-one-half" id="manual-dept-name" name="manual-dept-name" type="text" value="{{data['manual-dept-name']}}">
+            </div>
+
+            {% if data['errors'].length > 0 and data['address-line-1'].length == 0 %}
+            <div class="govuk-form-group govuk-form-group--error">
+            {% else %}
+            <div class="govuk-form-group">
+              {% endif %}
+              <label class="govuk-label" for="address-line-1">
+                Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              {% if data['errors'].length > 0  %}
+                {% for error in data['errors'] %}
+                  {% if error[0] == '#address-line-1' %}
+                  <span class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span>
+                      {{ error[1] }}
+                  </span>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line-1" value="{{data['address-line-1']}}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line-2" value="{{data['address-line-2']}}">
+            </div>
+
+            {% if data['errors'].length > 0 and data['address-town'].length == 0 %}
+            <div class="govuk-form-group govuk-form-group--error">
+            {% else %}
+            <div class="govuk-form-group">
+              {% endif %}
+              <label class="govuk-label" for="address-town">
+                Town or city
+              </label>
+              {% if data['errors'].length > 0 %}
+                {% for error in data['errors'] %}
+                  {% if error[0] == '#address-town' %}
+                  <span class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span>
+                      {{ error[1] }}
+                  </span>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-town" value="{{data['address-town']}}">
+            </div>
+            
+            {% if data['errors'].length > 0 and (data['address-manual-postcode'].length == 0 or data['address-manual-postcode-invalid'] != null)%}
+            <div class="govuk-form-group govuk-form-group--error">
+            {% else %}
+            <div class="govuk-form-group">
+              {% endif %}
+              <label class="govuk-label" for="aaddress-manual-postcode">
+                Postcode
+              </label>
+              {% if data['errors'].length > 0 %}
+                {% for error in data['errors'] %}
+                  {% if error[0] == '#address-manual-postcode' %}
+                  <span class="govuk-error-message">
+                      <span class="govuk-visually-hidden">Error:</span>
+                      {{ error[1] }}
+                  </span>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              <input class="govuk-input govuk-input--width-10" id="address-manual-postcode" name="address-manual-postcode" type="text" autocomplete="address-manual-postcode" value="{{data['address-manual-postcode']}}">
+            </div>
+
+          </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>      
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

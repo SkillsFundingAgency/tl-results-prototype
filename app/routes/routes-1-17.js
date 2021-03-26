@@ -190,7 +190,7 @@ module.exports = function (router) {
     })
 
     router.get('/1-17/dynamic/action-result-entries1', function (req, res) {
-        req.session.data['result-ip-answer'] = "Completed"
+        req.session.data['result-ip-answer'] = "Placement completed"
         req.session.data['uln-already-added'] = true
         res.redirect('/1-17/dynamic/result-entries1')
     })
@@ -209,7 +209,7 @@ module.exports = function (router) {
             res.redirect('/1-17/dynamic/confirmation-send-learner')
         }
     })
-    
+
 
 
     // Back Action routes
@@ -263,8 +263,8 @@ module.exports = function (router) {
 
                 req.session.data['send-answer'] = "No"
                 req.session.data['has-lrs-data'] = true
-                req.session.data['result-answer'] = "Achieved (data from Learning Records Service - LRS)"
-                req.session.data['result-ip-answer'] = "Completed with special consideration"
+                req.session.data['result-answer'] = "Achieved minimum standard (data from Learning Records Service - LRS)"
+                req.session.data['result-ip-answer'] = "Placement completed with special consideration"
 
                 res.redirect('/1-17/dynamic/result-entries1')
             }
@@ -272,8 +272,8 @@ module.exports = function (router) {
             {
                 setLearnerDetails(req)
                 req.session.data['has-lrs-data'] = false
-                req.session.data['result-answer'] = "Achieved"
-                req.session.data['result-ip-answer'] = "Still to be completed"
+                req.session.data['result-answer'] = "Achieved minimum standard"
+                req.session.data['result-ip-answer'] = "Placement still to be completed"
 
                 res.redirect('/1-17/dynamic/result-entries1')
             }
@@ -281,8 +281,8 @@ module.exports = function (router) {
             {
                 setLearnerDetails(req)
                 req.session.data['has-lrs-data'] = true
-                req.session.data['result-answer'] = "Not achieved (data from Learning Records Service - LRS)"
-                req.session.data['result-ip-answer'] = "Still to be completed"
+                req.session.data['result-answer'] = "Not achieved minimum standard (data from Learning Records Service - LRS)"
+                req.session.data['result-ip-answer'] = "Placement still to be completed"
 
                 res.redirect('/1-17/dynamic/result-entries1')
             }

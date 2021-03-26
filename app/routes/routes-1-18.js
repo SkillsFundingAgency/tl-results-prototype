@@ -1,6 +1,10 @@
-const e = require('express')
+const e = require('express');
+const { post } = require('../routes');
 
 module.exports = function (router) {
+
+    var postcodeRegex = "([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})";
+    var whiteSpaceRegex = "[\\x20\\t\\r\\n\\f]"
 
     function loadProviderData(req) {
 
@@ -17,6 +21,41 @@ module.exports = function (router) {
             }
             req.session.save()
         })
+    }
+
+    function loadPostcodesData(req) {
+
+        var fs = require('fs')
+
+        // Accounts
+        req.session.data['postcodes-data'] = []
+        var filename = 'app/views/1-18/data/Postcodes.csv'
+        fs.readFile(filename, function (err, buf) {
+            data = buf.toString().split(/\r?\n/)
+            for (idx = 0; idx < data.length; idx++) {
+                line = data[idx].split('\t')
+                req.session.data['postcodes-data'].push(line)
+            }
+            req.session.save()
+        })
+    }
+
+    function clearOrgAddressSession(req) {
+        req.session.data['errors'] = []
+        req.session.data['selected-postcode-addresses'] = []
+        req.session.data['selected-full-address'] = []
+        req.session.data['address-postcode'] = null        
+        req.session.data['full-address'] = null
+        req.session.data['cancel-address-answer'] = null
+
+        req.session.data['dept-name'] = null
+        req.session.data['manual-dept-name'] = null
+        req.session.data['address-line-1'] = null
+        req.session.data['address-line-2'] = null
+        req.session.data['address-town'] = null
+        req.session.data['address-manual-postcode'] = null
+        req.session.data['address-manual-postcode-invalid'] = null
+        req.session.data['is-entry-from-manual-address'] = null
     }
 
     function clearSession(req) {
@@ -78,9 +117,11 @@ module.exports = function (router) {
         }
     }
 
-    function addValidationError(req, res, errors)
+    function addValidationError(req, res, errors, clearerrors = true)
     {
-        req.session.data['errors'] = [];
+        if(clearerrors){
+            req.session.data['errors'] = [];
+        }
 
         if(errors != null || errors.length > 0)
         {
@@ -93,6 +134,238 @@ module.exports = function (router) {
         req.session.data['errors'] = []
     }
 
+    function removeSpaces(req, value)
+    {
+        var formatedValue = value.replace(new RegExp(whiteSpaceRegex, "g"), "").trim();
+        return formatedValue;
+    }
+
+    function GetAddressesByPostcode(req, enteredPostcode) {
+        var postcodesData = req.session.data['postcodes-data']
+        
+        if(postcodesData != null) {
+
+            req.session.data['selected-postcode-addresses'] = []
+            for (idx = 0; idx < postcodesData.length; idx++) {
+                line = data[idx].split('\t')
+                if (line[1].toLowerCase() === enteredPostcode.toLowerCase()) {
+                    req.session.data['selected-postcode-addresses'].push(line)
+                }
+            }
+        }
+    }
+    
+    // Manage Postal Address Routes
+
+    router.get('/1-18/dynamic/action-manage-organisation-postal-address', function (req, res) {
+        
+        loadPostcodesData(req);
+        
+        var postalAddress = req.session.data['added-org-postal-address']
+
+        if(postalAddress == null || postalAddress == '') {
+            res.redirect('/1-18/dynamic/org-address-missing')
+        }
+        else {
+            res.redirect('/1-18/dynamic/org-address-present')
+        }
+    })  
+
+    router.get('/1-18/dynamic/action-add-address-postcode', function (req, res) {
+        clearValidationError(req);
+        clearOrgAddressSession(req);
+        res.redirect('/1-18/dynamic/add-address-postcode')
+    })
+
+    router.post('/1-18/dynamic/action-add-address-select-address', function (req, res) {        
+        var enteredPostcode = req.session.data['address-postcode']        
+
+        if(enteredPostcode == null || enteredPostcode == '')
+        {
+            var sendErrors = ['#address-postcode', "Enter your postcode"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/add-address-postcode')
+        }         
+        else {
+            var trimmedPostcode = enteredPostcode.replace(new RegExp(whiteSpaceRegex, "g"), "").trim();
+            var isPostcodeValid = trimmedPostcode.match(new RegExp(postcodeRegex));
+
+            if(isPostcodeValid == null || isPostcodeValid == '')
+            {
+                var sendErrors = ['#address-postcode', "Enter a valid UK postcode"]
+                addValidationError(req,res,sendErrors)
+                res.redirect('/1-18/dynamic/add-address-postcode')
+            }
+            else {
+                clearValidationError(req)
+                GetAddressesByPostcode(req, trimmedPostcode)
+
+                var selectedPostcode = req.session.data['selected-postcode-addresses'];
+                req.session.data['address-postcode'] = selectedPostcode[0][5]
+                req.session.data['is-entry-from-manual-address'] = null
+                res.redirect('/1-18/dynamic/add-address-select-address')
+            }
+        }
+    })  
+
+    router.post('/1-18/dynamic/action-manually-add-address-confirm-address', function (req, res) { 
+        
+        var enteredAddressLine1 = req.session.data['address-line-1']
+        var enteredAddressTown = req.session.data['address-town']
+        var enteredAddressPostcode = req.session.data['address-manual-postcode']
+        var sendErrors = [];
+
+        clearValidationError(req)
+        req.session.data['address-manual-postcode-invalid'] = null;
+
+        if(enteredAddressLine1 == null || enteredAddressLine1 == '')
+        {
+            sendErrors = ['#address-line-1', "Enter your building and street"];
+            addValidationError(req,res,sendErrors, false)
+        }
+        
+        if(enteredAddressTown == null || enteredAddressTown == '')
+        {
+            sendErrors = ['#address-town', "Enter your town or city"]
+            addValidationError(req,res,sendErrors, false)
+        }
+
+        if(enteredAddressPostcode == null || enteredAddressPostcode == '')
+        {
+            sendErrors = ['#address-manual-postcode', "Enter your postcode"]
+            addValidationError(req,res,sendErrors, false)
+        }
+        else {
+            var trimmedPostcode = enteredAddressPostcode.replace(new RegExp(whiteSpaceRegex, "g"), "").trim();
+            
+            req.session.data['address-manual-postcode'] = trimmedPostcode
+
+            var isPostcodeValid = trimmedPostcode.match(new RegExp(postcodeRegex));
+
+            if(isPostcodeValid == null || isPostcodeValid == '')
+            {
+                req.session.data['address-manual-postcode-invalid'] = "invalid";
+                sendErrors = ['#address-manual-postcode', "Enter a valid UK postcode"]
+                addValidationError(req,res,sendErrors, false)
+            }
+            else{
+                req.session.data['address-manual-postcode-invalid'] = null;
+            }
+        }
+
+        if(sendErrors.length > 0)
+        {
+            res.redirect('/1-18/dynamic/add-address-manually')
+        }
+        else{
+            var formattedPostcode = removeSpaces(req, req.session.data['address-manual-postcode'])
+            var formattedAddress = ["100000" + "\t" + formattedPostcode + "\t" 
+            + req.session.data['address-line-1'] + "\t" + req.session.data['address-line-2'] + "\t"
+            + req.session.data['address-town'] + "\t" + formattedPostcode]
+
+            address = formattedAddress[0].split('\t')
+            req.session.data['selected-full-address'] = []
+            req.session.data['selected-full-address'].push(address)
+
+            req.session.data['is-entry-from-manual-address'] = "true";
+            res.redirect('/1-18/dynamic/add-address-confirm-address')
+        }
+    })  
+    
+
+    router.post('/1-18/dynamic/action-add-address-confirm-address', function (req, res) {
+
+        var selectedAddress = req.session.data['full-address']        
+
+        if(selectedAddress == null || selectedAddress == '')
+        {
+            var sendErrors = ['#full-address', "Select your address from the list"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/add-address-select-address')
+        }         
+        else {
+            req.session.data['selected-full-address'] = []
+            var postcodesData = req.session.data['postcodes-data'];
+
+            for (idx = 0; idx < postcodesData.length; idx++) {
+                line = data[idx].split('\t')
+                if (line[0] === selectedAddress) {
+                    req.session.data['selected-full-address'].push(line)
+                }
+            }
+
+            res.redirect('/1-18/dynamic/add-address-confirm-address')         
+        }
+    })    
+
+    router.get('/1-18/dynamic/action-add-address-confirmation', function (req, res) {
+        req.session.data['added-org-postal-address'] = req.session.data['selected-full-address']
+
+        if(req.session.data['is-entry-from-manual-address'] != null) {
+            req.session.data['added-org-postal-address-dept-name'] = req.session.data['manual-dept-name']
+        }
+        else {
+            req.session.data['added-org-postal-address-dept-name'] = req.session.data['dept-name']
+        }
+        clearOrgAddressSession(req);
+        res.redirect('/1-18/dynamic/add-address-confirmation')
+    })
+    
+    router.get('/1-18/dynamic/action-cancel-address', function (req, res) {        
+        var cancelAnswer = req.session.data['cancel-address-answer']  
+        if(cancelAnswer == 'Yes'){
+            clearOrgAddressSession(req);
+            res.redirect('/1-18/dynamic/tlevels-dashboard')
+        } else {
+            res.redirect('/1-18/dynamic/add-address-confirm-address')
+        }        
+    })
+
+    router.get('/1-18/dynamic/action-add-address-select-address', function (req, res) {
+        clearValidationError(req);
+        clearOrgAddressSession(req);
+        res.redirect('/1-18/dynamic/add-address-select-address')
+    })
+
+    router.get('/1-18/dynamic/action-add-address-manually', function (req, res) {
+        clearValidationError(req);
+        clearOrgAddressSession(req);
+        res.redirect('/1-18/dynamic/add-address-manually')
+    }) 
+
+    // Manage Address Back Link Actions
+    router.get('/1-18/dynamic/action-back-add-address-journey', function (req, res) {
+        clearValidationError(req);
+        var postalAddress = req.session.data['added-org-postal-address']
+
+        if(postalAddress == null || postalAddress == '') {
+            res.redirect('/1-18/dynamic/org-address-missing')
+        }
+        else {
+            res.redirect('/1-18/dynamic/org-address-present')
+        }
+    })
+
+    router.get('/1-18/dynamic/action-back-add-address-postcode', function (req, res) {
+        clearValidationError(req);        
+        res.redirect('/1-18/dynamic/add-address-postcode')
+    })
+
+    router.get('/1-18/dynamic/action-back-add-address-select-address', function (req, res) {
+        clearValidationError(req);
+        var isManualAddressEntry = req.session.data['is-entry-from-manual-address'];
+
+        if(isManualAddressEntry == null || isManualAddressEntry == '')
+        {
+            res.redirect('/1-18/dynamic/add-address-select-address')
+        }
+        else {
+            res.redirect('/1-18/dynamic/add-address-manually')
+        }
+    })  
+
+       
+    
     router.post('/1-18/Research/action-review-address', function (req, res) {
 
         var hasReultAnswerSelected = req.session.data['review-address']

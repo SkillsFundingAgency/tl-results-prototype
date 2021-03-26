@@ -14,32 +14,32 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
     <div class="govuk-grid-column-two-thirds">
         <form action="action-add-learner-q5-check" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
-                <span class="govuk-caption-xl">Add a new learner record</span>
+                <span class="govuk-caption-xl">Add a new learner T Level record</span>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
                           Has the learner completed their industry placement?
                       </h1>
                       <span id="uln-hint" class="govuk-hint">
-                        <strong>Learner</strong> {{ data['learner-name'] }}
+                        <strong>Learner:</strong> {{ data['learner-name'] }}
                       </span>
                     </legend>
 
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer" type="radio" value="Completed" {{ checked("result-ip-answer", "Completed") }}>
+                            <input class="govuk-radios__input" id="result-ip-answer-1" name="result-ip-answer" type="radio" value="Placement completed" {{ checked("result-ip-answer", "Placement completed") }}>
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-1">
                                 Yes, completed
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer" type="radio" value="Completed with special consideration" {{ checked("result-ip-answer", "Completed with special consideration") }}>
+                            <input class="govuk-radios__input" id="result-ip-answer-2" name="result-ip-answer" type="radio" value="Placement completed with special consideration" {{ checked("result-ip-answer", "Placement completed with special consideration") }}>
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-2">
                                 Yes, completed with special consideration
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer" type="radio" value="Still to be completed"  {{ checked("result-ip-answer", "Still to be completed") }}>
+                            <input class="govuk-radios__input" id="result-ip-answer-3" name="result-ip-answer" type="radio" value="Placement still to be completed"  {{ checked("result-ip-answer", "Placement still to be completed") }}>
                             <label class="govuk-label govuk-radios__label" for="result-ip-answer-3">
                                 No, still to be completed
                             </label>

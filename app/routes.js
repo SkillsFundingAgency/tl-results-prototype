@@ -166,6 +166,18 @@ function initialiseVariables(req) {
     return
 }
 
+router.get('/1-17/dynamic/action-select-student-results', function (req, res) {
+  require('./routes/routes-1-17.js')(router)
+  checkIfActive(req)
+  res.redirect('/1-17/dynamic/student-results')
+})
+
+router.get('/1-18/dynamic/action-manage-postal-address', function (req, res) {
+  require('./routes/routes-1-18.js')(router)
+  checkIfActive(req)
+  res.redirect('/1-18/dynamic/action-manage-organisation-postal-address')
+})
+
 router.get('/1-18/Research/action-select-learner-records', function (req, res) {
   require('./routes/routes-1-18.js')(router)
   checkIfActive(req)
