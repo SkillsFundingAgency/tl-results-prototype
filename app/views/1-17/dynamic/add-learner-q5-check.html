@@ -13,13 +13,13 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <span class="govuk-caption-xl">Add a new learner record</span>
+      <span class="govuk-caption-xl">Add a new learner T Level record</span>
 
       <h1 class="govuk-heading-l">
         Check and submit
       </h1>
 
-      <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
+      <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before you submit. If you need to make changes later on, you can search for and update a learner T Level record from the dashboard.</p>
 
       <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner details</h3>
 
@@ -32,11 +32,6 @@
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">{{ data['learner-uln'] }}</p>
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            <a class="govuk-link" href="action-clear-add-learner-q1-uln">
-
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
@@ -44,9 +39,6 @@
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">{{ data['learner-name'] }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -56,9 +48,6 @@
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">{{ data['date-of-birth'] }}</p>
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
@@ -67,8 +56,13 @@
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">Barnsley College (12345678)</p>
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            T Level core
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">Design, Surveying and Planning for Construction</p>
           </dd>
         </div>
         </dl>
@@ -84,7 +78,7 @@
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               {% if data['has-lrs-data'] == true %}
-                Achieved (data from Learning Records Service - LRS)
+                Achieved minimum standard (data from Learning Records Service - LRS)
               {% else %}
                 {{ data['result-answer'] }}
               {% endif %}
@@ -122,7 +116,7 @@
 
         <hr class="govuk-section-break govuk-section-break--visible">
 
-        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Industry placement</h3>
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's industry placement completion</h3>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">

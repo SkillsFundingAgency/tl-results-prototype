@@ -12,22 +12,20 @@ ULN not registered - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6">
-                  ULN ({{data['learner-uln']}}) has not been registered by the awarding organisation
-              </label>
-          </h1>
-          <p class="govuk-body">
-            You can only update a learner's record once the awarding organisation has registered the learner for a T Level.
-            If you think that this learner should have been registered, please contact the awarding organisation.
-          </p>
-        </div>
-        <p>
-            <a class="govuk-button" role="button " href="search-learner">
-                Back to search
-            </a>
-        </p>
+      <h1 class="govuk-heading-l">
+        ULN ({{data['learner-uln']}}) has not been registered in this service by an exam board
+      </h1>
+      <p class="govuk-body">
+        You can only add T Level records for learners registered on a T Level course by an exam board (also known as an awarding organisation).
+      </p>
+      <p class="govuk-body">
+        If you think this learner should be registered, please contact the exam board responsible for delivering the T Level.
+      </p>
+      <p>
+          <a class="govuk-button" role="button " href="search-learner">
+              Back to search
+          </a>
+      </p>
     </div>
 </div>
 
