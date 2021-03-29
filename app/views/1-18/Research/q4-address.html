@@ -12,7 +12,7 @@ Review address - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="q5-check" method="post" class="form" id="my_radio_box">
+        <form action="action-q4-check" method="post" class="form" id="my_radio_box">
             <div class="govuk-form-group">
                 <span class="govuk-caption-xl">Request statement of achievement</span>
                 <fieldset class="govuk-fieldset">
@@ -67,14 +67,14 @@ Review address - Manage T Level results - GOV.UK
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="review-address-1" name="review-address" type="radio" value="Yes" {{ checked("review-address", "Yes") }}>
-                          <label class="govuk-label govuk-radios__label" for="review-address-1">
+                          <input class="govuk-radios__input" id="q4-answer-1" name="q4-answer" type="radio" value="Yes" {{ checked("q4-answer", "Yes") }}>
+                          <label class="govuk-label govuk-radios__label" for="q4-answer-1">
                               Yes, it's the correct address
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="review-address-2" name="review-address" type="radio" value="No" {{ checked("review-address", "No") }}>
-                          <label class="govuk-label govuk-radios__label" for="review-address-2">
+                          <input class="govuk-radios__input" id="q4-answer-2" name="q4-answer" type="radio" value="No" {{ checked("q4-answer", "No") }}>
+                          <label class="govuk-label govuk-radios__label" for="q4-answer-2">
                               No, it's the wrong address
                           </label>
                       </div>

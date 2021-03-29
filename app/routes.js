@@ -1093,5 +1093,49 @@ router.post('/1-2/Verification/action-my-profile', function (req, res) {
     res.redirect('/1-2/Verification/my-profile')
 })
 
+router.post('/1-18/Research/action-q1-check', function (req, res) {
+
+  let detAnswer = req.session.data['q1-answer']
+
+  if (detAnswer === 'Yes') {
+    res.redirect('q2-quals')
+  } else {
+    res.redirect('q1-learners-details-no')
+  }
+})
+
+router.post('/1-18/Research/action-q2-check', function (req, res) {
+
+  let detAnswer = req.session.data['q2-answer']
+
+  if (detAnswer === 'Yes') {
+    res.redirect('q3-tq-components')
+  } else {
+    res.redirect('q2-quals-no')
+  }
+})
+
+router.post('/1-18/Research/action-q3-check', function (req, res) {
+
+  let detAnswer = req.session.data['q3-answer']
+
+  if (detAnswer === 'Yes') {
+    res.redirect('q4-address')
+  } else {
+    res.redirect('q3-tq-components-no')
+  }
+})
+
+router.post('/1-18/Research/action-q4-check', function (req, res) {
+
+  let detAnswer = req.session.data['q4-answer']
+
+  if (detAnswer === 'Yes') {
+    res.redirect('q5-check')
+  } else {
+    res.redirect('q4-address-no')
+  }
+})
+
 module.exports = router
 //checkIfActive(router.req)

@@ -15,7 +15,7 @@ Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
         <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
                 <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6">
-                    ULN (1234567890) has not been registered in this service by an exam board
+                    ULN ({{ data['learner-uln'] }}) has not been registered in this service by an exam board
                 </label>
             </h1>
             <p class="govuk-body">
@@ -25,9 +25,9 @@ Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
               If you think this learner should be registered, please contact the exam board responsible for delivering the T Level.
             </p>
         </div>
-        <p>
-            <a class="govuk-button" role="button " href="search-learner">
-                Back to search
+        <p class="govuk-body">
+            <a class="govuk-button" role="button" href="tlevels-dashboard">
+                Back to Home
             </a>
         </p>
     </div>

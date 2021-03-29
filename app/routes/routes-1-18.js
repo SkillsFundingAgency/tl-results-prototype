@@ -44,7 +44,7 @@ module.exports = function (router) {
         req.session.data['errors'] = []
         req.session.data['selected-postcode-addresses'] = []
         req.session.data['selected-full-address'] = []
-        req.session.data['address-postcode'] = null        
+        req.session.data['address-postcode'] = null
         req.session.data['full-address'] = null
         req.session.data['cancel-address-answer'] = null
 
@@ -142,7 +142,7 @@ module.exports = function (router) {
 
     function GetAddressesByPostcode(req, enteredPostcode) {
         var postcodesData = req.session.data['postcodes-data']
-        
+
         if(postcodesData != null) {
 
             req.session.data['selected-postcode-addresses'] = []
@@ -154,13 +154,13 @@ module.exports = function (router) {
             }
         }
     }
-    
+
     // Manage Postal Address Routes
 
     router.get('/1-18/dynamic/action-manage-organisation-postal-address', function (req, res) {
-        
+
         loadPostcodesData(req);
-        
+
         var postalAddress = req.session.data['added-org-postal-address']
 
         if(postalAddress == null || postalAddress == '') {
@@ -169,7 +169,7 @@ module.exports = function (router) {
         else {
             res.redirect('/1-18/dynamic/org-address-present')
         }
-    })  
+    })
 
     router.get('/1-18/dynamic/action-add-address-postcode', function (req, res) {
         clearValidationError(req);
@@ -177,15 +177,15 @@ module.exports = function (router) {
         res.redirect('/1-18/dynamic/add-address-postcode')
     })
 
-    router.post('/1-18/dynamic/action-add-address-select-address', function (req, res) {        
-        var enteredPostcode = req.session.data['address-postcode']        
+    router.post('/1-18/dynamic/action-add-address-select-address', function (req, res) {
+        var enteredPostcode = req.session.data['address-postcode']
 
         if(enteredPostcode == null || enteredPostcode == '')
         {
             var sendErrors = ['#address-postcode', "Enter your postcode"]
             addValidationError(req,res,sendErrors)
             res.redirect('/1-18/dynamic/add-address-postcode')
-        }         
+        }
         else {
             var trimmedPostcode = enteredPostcode.replace(new RegExp(whiteSpaceRegex, "g"), "").trim();
             var isPostcodeValid = trimmedPostcode.match(new RegExp(postcodeRegex));
@@ -206,10 +206,10 @@ module.exports = function (router) {
                 res.redirect('/1-18/dynamic/add-address-select-address')
             }
         }
-    })  
+    })
 
-    router.post('/1-18/dynamic/action-manually-add-address-confirm-address', function (req, res) { 
-        
+    router.post('/1-18/dynamic/action-manually-add-address-confirm-address', function (req, res) {
+
         var enteredAddressLine1 = req.session.data['address-line-1']
         var enteredAddressTown = req.session.data['address-town']
         var enteredAddressPostcode = req.session.data['address-manual-postcode']
@@ -223,7 +223,7 @@ module.exports = function (router) {
             sendErrors = ['#address-line-1', "Enter your building and street"];
             addValidationError(req,res,sendErrors, false)
         }
-        
+
         if(enteredAddressTown == null || enteredAddressTown == '')
         {
             sendErrors = ['#address-town', "Enter your town or city"]
@@ -237,7 +237,7 @@ module.exports = function (router) {
         }
         else {
             var trimmedPostcode = enteredAddressPostcode.replace(new RegExp(whiteSpaceRegex, "g"), "").trim();
-            
+
             req.session.data['address-manual-postcode'] = trimmedPostcode
 
             var isPostcodeValid = trimmedPostcode.match(new RegExp(postcodeRegex));
@@ -259,7 +259,7 @@ module.exports = function (router) {
         }
         else{
             var formattedPostcode = removeSpaces(req, req.session.data['address-manual-postcode'])
-            var formattedAddress = ["100000" + "\t" + formattedPostcode + "\t" 
+            var formattedAddress = ["100000" + "\t" + formattedPostcode + "\t"
             + req.session.data['address-line-1'] + "\t" + req.session.data['address-line-2'] + "\t"
             + req.session.data['address-town'] + "\t" + formattedPostcode]
 
@@ -270,19 +270,19 @@ module.exports = function (router) {
             req.session.data['is-entry-from-manual-address'] = "true";
             res.redirect('/1-18/dynamic/add-address-confirm-address')
         }
-    })  
-    
+    })
+
 
     router.post('/1-18/dynamic/action-add-address-confirm-address', function (req, res) {
 
-        var selectedAddress = req.session.data['full-address']        
+        var selectedAddress = req.session.data['full-address']
 
         if(selectedAddress == null || selectedAddress == '')
         {
             var sendErrors = ['#full-address', "Select your address from the list"]
             addValidationError(req,res,sendErrors)
             res.redirect('/1-18/dynamic/add-address-select-address')
-        }         
+        }
         else {
             req.session.data['selected-full-address'] = []
             var postcodesData = req.session.data['postcodes-data'];
@@ -294,9 +294,9 @@ module.exports = function (router) {
                 }
             }
 
-            res.redirect('/1-18/dynamic/add-address-confirm-address')         
+            res.redirect('/1-18/dynamic/add-address-confirm-address')
         }
-    })    
+    })
 
     router.get('/1-18/dynamic/action-add-address-confirmation', function (req, res) {
         req.session.data['added-org-postal-address'] = req.session.data['selected-full-address']
@@ -310,15 +310,15 @@ module.exports = function (router) {
         clearOrgAddressSession(req);
         res.redirect('/1-18/dynamic/add-address-confirmation')
     })
-    
-    router.get('/1-18/dynamic/action-cancel-address', function (req, res) {        
-        var cancelAnswer = req.session.data['cancel-address-answer']  
+
+    router.get('/1-18/dynamic/action-cancel-address', function (req, res) {
+        var cancelAnswer = req.session.data['cancel-address-answer']
         if(cancelAnswer == 'Yes'){
             clearOrgAddressSession(req);
             res.redirect('/1-18/dynamic/tlevels-dashboard')
         } else {
             res.redirect('/1-18/dynamic/add-address-confirm-address')
-        }        
+        }
     })
 
     router.get('/1-18/dynamic/action-add-address-select-address', function (req, res) {
@@ -331,7 +331,7 @@ module.exports = function (router) {
         clearValidationError(req);
         clearOrgAddressSession(req);
         res.redirect('/1-18/dynamic/add-address-manually')
-    }) 
+    })
 
     // Manage Address Back Link Actions
     router.get('/1-18/dynamic/action-back-add-address-journey', function (req, res) {
@@ -347,7 +347,7 @@ module.exports = function (router) {
     })
 
     router.get('/1-18/dynamic/action-back-add-address-postcode', function (req, res) {
-        clearValidationError(req);        
+        clearValidationError(req);
         res.redirect('/1-18/dynamic/add-address-postcode')
     })
 
@@ -362,10 +362,10 @@ module.exports = function (router) {
         else {
             res.redirect('/1-18/dynamic/add-address-manually')
         }
-    })  
+    })
 
-       
-    
+
+
     router.post('/1-18/Research/action-review-address', function (req, res) {
 
         var hasReultAnswerSelected = req.session.data['review-address']
@@ -507,25 +507,15 @@ module.exports = function (router) {
                 setLearnerDetails(req)
                 res.redirect('/1-18/Research/learner-details-noresults')
             }
-            else if(enteredUln == userInfo[3][1] && req.session.data['result-ip-answer'] == null)
-            {
-                setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details')
-            }
             else if(enteredUln == userInfo[3][1])
             {
                 setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details')
-            }
-            else if(enteredUln == userInfo[4][1] && req.session.data['result-ip-answer'] == null )
-            {
-                setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details')
+                res.redirect('/1-18/Research/notify-ao')
             }
             else if(enteredUln == userInfo[4][1])
             {
                 setLearnerDetails(req)
-                res.redirect('/1-18/Research/learner-details')
+                res.redirect('/1-18/Research/q1-learners-details')
             }
             else if(enteredUln == userInfo[5][1])
             {
@@ -582,6 +572,17 @@ module.exports = function (router) {
       }
       else {
           res.redirect('/1-18/Research/search-learner-record')
+      }
+    })
+
+    router.post('/1-18/Research/action-q1-check', function (req, res) {
+
+      let detAnswer = req.session.data['q1-answer']
+
+      if (detAnswer === 'Yes') {
+        res.redirect('q2-quals')
+      } else {
+        res.redirect('q1-learners-details-no')
       }
     })
 
