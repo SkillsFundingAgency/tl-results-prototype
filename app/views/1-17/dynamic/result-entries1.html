@@ -74,11 +74,7 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              {% if data['has-lrs-data'] == false %}
-                {{ data['result-answer'] }}
-              {% else %}
-                Achieved minimum standard (data from Learning Records Service - LRS)
-              {% endif %}
+              {{ data['result-answer'] }}              
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               {% if data['has-lrs-data'] == false %}

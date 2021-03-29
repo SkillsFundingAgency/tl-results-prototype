@@ -54,25 +54,40 @@ Add English and Maths result - Manage T Level results - GOV.UK
                     <div class="govuk-radios">
 
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Achieved minimum standard" {{ checked("result-answer", "Achieved minimum standard") }} />
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                          <input class="govuk-radios__input" id="result-send-answer-1" name="result-answer" type="radio" value="Achieved minimum standard" {{ checked("result-answer", "Achieved minimum standard") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-send-answer-1">
                               Achieved the minimum standard
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Achieved the minimum standard for learners with SEND" {{ checked("result-answer", "Achieved the minimum standard for learners with SEND") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                          <input class="govuk-radios__input" id="result-send-answer-2" name="result-answer" type="radio" value="Achieved minimum standard for learners with SEND" {{ checked("result-answer", "Achieved minimum standard for learners with SEND") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-send-answer-2">
                               Achieved the minimum standard for learners with SEND
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Not achieved minimum standard" {{ checked("result-answer", "Not achieved minimum standard") }} />
-                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                          <input class="govuk-radios__input" id="result-send-answer-3" name="result-answer" type="radio" value="Not achieved minimum standard" {{ checked("result-answer", "Not achieved minimum standard") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-send-answer-3">
                               Not achieved the minimum standard
                           </label>
                       </div>
                     </div>
                 </fieldset>
+
+                <div id="sendDeclaration" class="govuk-inset-text">
+                    <p>
+                      By selecting 'Continue' I declare that:
+                    </p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>
+                        the learner has been assessed by our organisation and meets all the conditions required
+                      </li>
+                      <li>
+                        the learner has met the minimum standard for English and maths as a SEND learner
+                      </li>
+                    </ul>
+                  </div>
+
             </div>
             <button class="govuk-button" data-module="govuk-button">Update</button>
         </form>
