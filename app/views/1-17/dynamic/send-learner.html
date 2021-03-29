@@ -41,11 +41,11 @@ Send Learner - Manage T Level results - GOV.UK
                 {% else %}
                 <div class="govuk-form-group govuk-!-margin-bottom-7">
                     {% endif %}
-              <span class="govuk-caption-xl">Add a new learner record</span>
+              <span class="govuk-caption-xl">Add a new learner T Level record</span>
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                            Does this learner have special educational needs and/or a disability (SEND)?
+                            Has the learner achieved the required minimum standard for English and maths?
                         </h1>
                         <span id="uln-hint" class="govuk-hint">
                           <strong>Learner</strong> Mark Philips
@@ -53,7 +53,15 @@ Send Learner - Manage T Level results - GOV.UK
                     </legend>
 
                     <div class="govuk-inset-text govuk-!-margin-top-0">
-                      <p class="govuk-body">Learning Records Service (LRS) data shows that this learner has an Entry Level 3 qualification in English and maths. We need more information before we can update this learner's record.</p>
+                      <p class="govuk-body">
+                        Data from the Learning Records Service (LRS) shows that this learner has achieved an Entry Level 3 qualification for English and maths.
+                      </p>
+                      <p class="govuk-body">
+                        This only meets the minimum standard in specific circumstances.
+                      </p>
+                      <p class="govuk-body">
+                        You must declare if this learner has met all the conditions required to achieve the minimum standard with this qualification.
+                      </p>
                       <details class="govuk-details" closed>
                           <summary class="govuk-details__summary" style="border-bottom:none">
                               <span class="govuk-details__summary-text">
@@ -65,9 +73,35 @@ Send Learner - Manage T Level results - GOV.UK
 
                           </div>
                       </details>
+                      <details class="govuk-details" closed>
+                          <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                  What are the minimum standards and conditions?
+                              </span>
+                          </summary>
+                          <div class="govuk-details__text">
+                             <p class="govuk-body">The minimum standards are level 2 qualifications (GCSE or equivalent).</p>
+                             <p class="govuk-body govuk-!-font-weight-bold">If the learner has qualifications from outside England and Wales</p>
+                             <p class="govuk-body">You will need to check the learner's grades are equivalent to a level 2 qualification and have met the minimum standard.</p>
+                             <p class="govuk-body govuk-!-font-weight-bold">If the learner has special educational needs and/or a disability (SEND)</p>
+                             <p class="govuk-body">Entry Level 3 qualifications will meet the minimum standard for English and maths provided the following conditions are met:</p>
+                             <ul class="govuk-list govuk-list--bullet">
+                               <li>
+                                 The learner has an Education, Health and Care (EHC) Plan, a statement of Special Educational Need (SEN) or a Learning Difficulty Assessment (LDA)
+                               </li>
+                               <li>
+                                 Your assessment of the learner shows that even with support, reasonable adjustments or stepping stone qualifications, the learner is not able to achieve a level 2 qualification because of their learning difficulty or disability
+                               </li>
+                               <li>
+                                  There are no industry specific minimum entry requirements for their chosen T Level
+                               </li>
+                             </ul>
+                             <p class="govuk-body govuk-!-font-weight-bold">If the learner has SEND and is studying an Entry Level 3 English and Maths qualification at the same time as their T Level</p>
+                             <p class="govuk-body">If the learner has not yet achieved their grade, please select 'Not achieved the minimum standard' and update this record when they have their grade.</p>
+                             <p class="govuk-body">You do not need to upload any evidence, but you should hold supporting documentation in your own records.</p>
+                          </div>
+                      </details>
                     </div>
-
-                    <p class="govuk-body">Select the option which best applies:</p>
 
                     {% if data['errors'].length > 0 %}
                     <span id="passport-issued-error" class="govuk-error-message">
@@ -78,45 +112,40 @@ Send Learner - Manage T Level results - GOV.UK
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="SEND" {{ checked("result-answer", "SEND") }} />
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Achieved the minimum standard for learners with SEND" {{ checked("result-answer", "Achieved the minimum standard for learners with SEND") }} />
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              this learner has SEND
+                              Achieved the minimum standard for learners with SEND
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Wrong" {{ checked("result-answer", "Wrong") }}>
+                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Not achieved the minimum standard" {{ checked("result-answer", "Not achieved the minimum standard") }}>
                           <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                              the LRS data is wrong
+                              Not achieved the minimum standard
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Correct" {{ checked("result-answer", "Correct") }} />
+                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Wrong" {{ checked("result-answer", "Wrong") }} />
                           <label class="govuk-label govuk-radios__label" for="result-answer-3">
-                              the LRS data is correct but this learner does not have SEND
+                              The LRS data is wrong
                           </label>
                       </div>
                     </div>
-                    <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-2" closed>
-                        <summary class="govuk-details__summary" style="border-bottom:none">
-                            <span class="govuk-details__summary-text">
-                              More about SEND
-                            </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p class="govuk-body">SEND learners are supported by one of these documents:</p>
-                          <ul class="govuk-list govuk-list--bullet">
-                            <li>Education, Health and Care (EHC) Plan</li>
-                            <li>Statement of Special Educational Need (SEN)</li>
-                            <li>Learning Difficulty Assessment (LDA)</li>
-                          </ul>
-                          <p class="govuk-body">Both of the following conditions must also be met:</p>
-                          <ul class="govuk-list govuk-list--bullet">
-                            <li>The provider holds an evidenced assessment demonstrating that even with support, reasonable adjustments and stepping stone qualifications the learner is not able to achieve English or maths to the minimum level as a result of their learning difficulty or disability</li>
-                            <li>The learner is deemed able to achieve all other aspects of the T Level and achieve Entry Level 3 Functional Skills in the adjusted subject(s) before the end of their T Level</li>
-                          </ul>
-                        </div>
-                    </details>
                 </fieldset>
+
+                <div id="sendDeclaration" class="govuk-inset-text">
+                  <p>
+                    By selecting 'Continue' I declare that:
+                  </p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                      the learner has been assessed by our organisation and meets all the conditions required
+                    </li>
+                    <li>
+                      the learner has met the minimum standard for English and maths as a SEND learner
+                    </li>
+                  </ul>
+                </div>
+
                 <p class="govuk-body govuk-!-margin-top-6">We'll review your answer offline and get back to you within 3 working days.</p>
             </div>
             <button class="govuk-button" data-module="govuk-button">Submit</button>

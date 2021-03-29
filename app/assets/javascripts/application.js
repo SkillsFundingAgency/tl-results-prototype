@@ -57,6 +57,9 @@ $(document).ready(function () {
         $('#sendDeclaration').hide();
       }
     }
+
+
+
 });
 
   $('input[type="radio"]').click(function() {

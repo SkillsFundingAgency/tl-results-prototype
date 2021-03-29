@@ -87,22 +87,28 @@ Add a new learner - Does the learner have a SEND certificate - Manage T Level re
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Achieved with SEND adjustments" {{ checked("result-answer", "Achieved with SEND adjustments") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                              Achieved the minimum standard with SEND adjustments
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Achieved the minimum standard for learners with SEND" {{ checked("result-answer", "Achieved the minimum standard for learners with SEND") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              Achieved the minimum standard for learners with SEND
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Not achieved" {{ checked("result-answer", "Not achieved") }}>
-                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="Not achieved the minimum standard" {{ checked("result-answer", "Not achieved the minimum standard") }} />
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
                               Not achieved the minimum standard
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="Wrong" {{ checked("result-answer", "Wrong") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                              The LRS data is wrong
                           </label>
                       </div>
                     </div>
                 </fieldset>
             </div>
 
-            <div class="govuk-inset-text">
+            <div id="sendDeclaration" class="govuk-inset-text">
                 By selecting 'Continue' you are declaring that the learner has been assessed by your organisation and meets all the conditions required to adjust the minimum standards.
             </div>
 
