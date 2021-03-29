@@ -11,7 +11,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="q3-tq-components" method="post" class="form" id="my_radio_box">
+        <form action="action-q2-check" method="post" class="form" id="my_radio_box">
 
               <div class="govuk-form-group">
 
@@ -19,11 +19,11 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Are these achievements correct?
+                        Are the details of these T Level component achievements correct?
                       </h1>
                     </legend>
 
-                    <h2 class="govuk-heading-m">Learner: John Smith</h2>
+                    <h2 class="govuk-heading-m">Learner: {{ data['learner-name'] }}</h2>
 
                     <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5">
 
@@ -50,13 +50,13 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="q2-answer-1" name="q2-answer" type="radio" value="Correct" {{ checked("q1-answer", "Correct") }}>
+                          <input class="govuk-radios__input" id="q2-answer-1" name="q2-answer" type="radio" value="Yes" {{ checked("q2-answer", "Yes") }}>
                           <label class="govuk-label govuk-radios__label" for="q2-answer-1">
                               Yes, they're correct
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="q2-answer-2" name="q2-answer" type="radio" value="Incorrect"  {{ checked("q1-answer", "Incorrect") }}>
+                          <input class="govuk-radios__input" id="q2-answer-2" name="q2-answer" type="radio" value="No"  {{ checked("q2-answer", "No") }}>
                           <label class="govuk-label govuk-radios__label" for="q2-answer-2">
                               No, they are incorrect
                           </label>

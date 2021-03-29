@@ -37,21 +37,21 @@ $(document).ready(function () {
 
   var selectedRadio = $('input[type="radio"]:checked');
 
-  if(selectedRadio.attr('id') == 'result-answer-1')  {
+  if(selectedRadio.attr('id') == 'result-answer-1' || selectedRadio.attr('id') == 'result-send-answer-2')  {
     $('#sendDeclaration').show();
   }else {
     $('#sendDeclaration').hide();
   }
 
   $('input[type="radio"]').click(function() {
-    if($(this).attr('id') == 'result-answer-3') {
+    if($(this).attr('id') == 'result-answer-3' || $(this).attr('id') == 'result-send-answer-3') {
       $('#btnUpdate').text('Continue');
       $('#sendDeclaration').hide();
     }
     else {
       $('#btnUpdate').text('Update');
 
-      if($(this).attr('id') == 'result-answer-1') {
+      if($(this).attr('id') == 'result-answer-1' || $(this).attr('id') == 'result-send-answer-2') {
         $('#sendDeclaration').show();
       } else {
         $('#sendDeclaration').hide();

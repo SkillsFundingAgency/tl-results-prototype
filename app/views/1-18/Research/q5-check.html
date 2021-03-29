@@ -32,7 +32,15 @@
             <p class="govuk-body">Yes</p>
           </dd>
           <dd class="govuk-summary-list__action" style="border-bottom:none">
-            <p class="govuk-body"><a class="govuk-body" href="">Change</a></p>
+            <p class="govuk-body"><a class="govuk-body" href="">Change<span class="govuk-visually-hidden"> learner details</span></a></p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">{{ data['learner-uln'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -40,7 +48,7 @@
             Name
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">John Smith</p>
+            <p class="govuk-body">{{ data['learner-name'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -48,7 +56,7 @@
             Date of birth
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">12/12/2004</p>
+            <p class="govuk-body">{{ data['date-of-birth'] }}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -68,13 +76,13 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
-            Are these achievement's correct?
+            Are the details of these T Level component achievements correct?
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">Yes</p>
           </dd>
           <dd class="govuk-summary-list__action" style="border-bottom:none">
-            <p class="govuk-body"><a class="govuk-body" href="">Change</a></p>
+            <p class="govuk-body"><a class="govuk-body" href="">Change<span class="govuk-visually-hidden"> T Level component achievements</span></a></p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -106,13 +114,13 @@
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
-            Are these technical qualifications correct?
+            Are the details of these technical qualification achievements correct?
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
             <p class="govuk-body">Yes</p>
           </dd>
           <dd class="govuk-summary-list__action" style="border-bottom:none">
-            <p class="govuk-body"><a class="govuk-body" href="">Change</a></p>
+            <p class="govuk-body"><a class="govuk-body" href="">Change<span class="govuk-visually-hidden"> technical qualification achievements</span></a></p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -162,7 +170,7 @@
             <p class="govuk-body">Yes</p>
           </dd>
           <dd class="govuk-summary-list__action" style="border-bottom:none">
-            <p class="govuk-body"><a class="govuk-body" href="">Change</a></p>
+            <p class="govuk-body"><a class="govuk-body" href="">Change<span class="govuk-visually-hidden"> postal address</span></a></p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -202,10 +210,8 @@
 
       <hr class="govuk-section-break govuk-section-break--visible">
 
-        <p class="govuk-inset-text">By requesting a statement of achievement you declare that this learner has withdrawn from their T Level course.</p>
-
         <div class="govuk-button-group govuk-!-margin-top-7">
-          <a class="govuk-button govuk-!-margin-right-5" role="button" href="request-successful0">Submit request</a>
+          <a class="govuk-button govuk-!-margin-right-5" role="button" href="request-successful">Submit request</a>
           <a class="govuk-link" href="cancel-request">Cancel</a>
         </div>
 

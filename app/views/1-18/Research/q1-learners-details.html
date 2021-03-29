@@ -12,7 +12,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="q2-quals" method="post" class="form" id="my_radio_box">
+        <form action="action-q1-check" method="post" class="form" id="my_radio_box">
 
               <div class="govuk-form-group">
 
@@ -32,7 +32,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                           ULN
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">1234567890</p>
+                          <p class="govuk-body">{{ data['learner-uln'] }}</p>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -40,7 +40,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                           Name
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">John Smith</p>
+                          <p class="govuk-body">{{ data['learner-name'] }}</p>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -48,7 +48,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                           Date of birth
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">12/12/2004</p>
+                          <p class="govuk-body">{{ data['date-of-birth'] }}</p>
                         </dd>
                       </div>
                       <div class="govuk-summary-list__row">
@@ -73,13 +73,13 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="q1-answer-1" name="q1-answer" type="radio" value="Correct" {{ checked("q1-answer", "Correct") }}>
+                          <input class="govuk-radios__input" id="q1-answer-1" name="q1-answer" type="radio" value="Yes" {{ checked("q1-answer", "Yes") }}>
                           <label class="govuk-label govuk-radios__label" for="q1-answer-1">
                               Yes, they're correct
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="q1-answer-2" name="q1-answer" type="radio" value="Incorrect"  {{ checked("q1-answer", "Incorrect") }}>
+                          <input class="govuk-radios__input" id="q1-answer-2" name="q1-answer" type="radio" value="No"  {{ checked("q1-answer", "No") }}>
                           <label class="govuk-label govuk-radios__label" for="q1-answer-2">
                               No, they are incorrect
                           </label>

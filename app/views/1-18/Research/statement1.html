@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Statement
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Requesting a statement of achievement
+      </h1>
+
+      <p class="govuk-body govuk-!-margin-top-3">You can only request a statement of achievement for a learner who has:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>withdrawn from their T Level course</li>
+        <li>completed at least one T Level component</li>
+      </ul>
+
+      <p><a class="govuk-button" role="button" href="action-agree-to-statement">Continue</a>
+
+    </div>
+</div>
+
+{% endblock %}
