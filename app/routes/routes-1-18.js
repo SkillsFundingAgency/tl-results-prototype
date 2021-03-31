@@ -71,6 +71,11 @@ module.exports = function (router) {
         req.session.data['errors'] = []
         req.session.data['review-address'] = null
         req.session.data['review-em-address'] = null
+
+        req.session.data['q1-answer'] = null
+        req.session.data['q2-answer'] = null
+        req.session.data['q3-answer'] = null
+        req.session.data['q4-answer'] = null
     }
 
     function clearIPresult(req) {
@@ -471,7 +476,7 @@ module.exports = function (router) {
 
     router.get('/1-18/Research/action-agree-to-statement', function (req, res) {
         clearSession(req);
-        res.redirect('/1-18/Research/search-learner')
+        res.redirect('/1-18/Research/q0-search-learner')
     })
 
     router.get('/1-18/Research/action-search-again', function (req, res) {
