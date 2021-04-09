@@ -11,12 +11,12 @@
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="student-results">PRS</a>
+      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Reviews and appeals</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's PRS status</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's status</li>
   </ol>
 </div>
 {% endblock %}
@@ -29,8 +29,10 @@
               <h1 class="govuk-heading-l">Learner's PRS status</h1>
               <h2 class="govuk-heading-m">ULN: 1234567890</h2>
               <p class="govuk-body">Name: John Smith</p>
+              <p class="govuk-body">Date of birth: 12/12/2004</p>
               <p class="govuk-body">Provider: Barnsley College (12345678)</p>
               <hr class="govuk-section-break govuk-section-break--visible">
+              <p class="govuk-inset-text">If there is a review or an appeal on a component then put it 'on hold'. While any component is on hold the 'T Level result' will not be calculated. Once the component is not longer under review or appeal then take it 'off hold' so that the 'T Level result' can be calculated.</p>
 
               <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
 
@@ -51,11 +53,7 @@
                 </div>
               </dl>
 
-              <p class="govuk-body">
-                <a class="govuk-link" href="update-core-reviewed">
-                  Update core status to being reviewed
-                </a>
-              </p>
+              <p class="govuk-inset-text">It is too late to request a review or to appeal this core result.</p>
 
               <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
 
@@ -77,11 +75,8 @@
                   </dd>
                 </div>
               </dl>
-              <p class="govuk-body">
-                <a class="govuk-link" href="">
-                  Update specialism status to being reviewed
-                </a>
-              </p>
+
+              <p class="govuk-inset-text">It is too late to request a review or to appeal this specialism result.</p>
 
               <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
 

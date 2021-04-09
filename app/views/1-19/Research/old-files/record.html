@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Reviews and appeals</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's status</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">Learner's status</h1>
+        <h2 class="govuk-heading-m">ULN: 1234567890</h2>
+        <p class="govuk-body">Name: John Smith</p>
+        <p class="govuk-body">Date of birth: 12/12/2004</p>
+        <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core component</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Core
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+               Design, Surveying and Planning for Construction (60358300)
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              Grade: C
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism component</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Specialism
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+               Building Services Design (ZTLOS003)
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              No result yet
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+        
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">Putting this record on hold</h2>
+        <p class="govuk-body">If this learner has requested their exam or project be reviewed or they have appealed, you can put this learner's record 'on hold'. Once the record is 'on hold' the certificate will not be produced.</p>
+        <p class="govuk-body">Once the review or appeal is completed then you can come back and take the record 'off hold', this will then allow the certificate to be printed.</p>
+
+        <p><a class="govuk-button" role="button" href="put-on-hold">Put on hold</a></p>
+
+        <p class="govuk-body"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

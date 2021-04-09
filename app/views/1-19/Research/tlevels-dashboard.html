@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card-deep {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        T Levels
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Review T Level details and tell us if they are correct
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-2">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Providers
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Tell us which T Levels each provider is offering
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-3">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Registrations
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Add and amend registrations
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-4">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Assessment entries
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Add and amend assessment entries
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card-deep" name="hub-choice-5">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Results
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Add and amend results
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card-deep" name="hub-choice-5">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="reviews-and-appeals">
+                        Reviews and appeals
+                    </a>
+                </h2>
+
+            <p class="govuk-body">
+                Let us know when a learner has requested a review or appealed.
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-6">
+
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Account
+                    </a>
+                </h2>
+
+              <p class="govuk-body">Manage your profile and permissions</p>
+        </div>
+    </div>
+
+{% endblock %}

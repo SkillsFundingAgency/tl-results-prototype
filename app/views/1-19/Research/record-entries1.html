@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Reviews and appeals</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's status</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l">Learner's PRS status</h1>
+              <h2 class="govuk-heading-m">ULN: 1234567890</h2>
+              <p class="govuk-body">Name: John Smith</p>
+              <p class="govuk-body">Date of birth: 12/12/2004</p>
+              <p class="govuk-body">Provider: Barnsley College (12345678)</p>
+              <hr class="govuk-section-break govuk-section-break--visible">
+              <p class="govuk-inset-text">If there is a review or an appeal on a component then put it 'on hold'. While any component is on hold the 'T Level result' will not be calculated. Once the component is not longer under review or appeal then take it 'off hold' so that the 'T Level result' can be calculated.</p>
+
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key" style="border-bottom:none">
+                     Result
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                     <span class="govuk-visually-hidden">for </span>Summer 2021
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                    Grade: C
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+
+                  </dd>
+                </div>
+              </dl>
+
+              <p class="govuk-body">
+                <a class="govuk-link" href="put-on-hold">
+                  Put <span class="govuk-visually-hidden">core </span>component on hold
+                </a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
+
+              <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: Building Services Design (ZTLOS003)</h3>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dd class="govuk-summary-list__key" style="border-bottom:none">
+                     Result
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                     <span class="govuk-visually-hidden">for </span>Summer 2022
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+                    Grade: Merit
+                  </dd>
+                  <dd class="govuk-summary-list__value" style="border-bottom:none">
+
+                  </dd>
+                </div>
+              </dl>
+              <p class="govuk-body">
+                <a class="govuk-link" href="put-on-hold">
+                  Put <span class="govuk-visually-hidden">specialism </span>component on hold
+                </a>
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
+
+              <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

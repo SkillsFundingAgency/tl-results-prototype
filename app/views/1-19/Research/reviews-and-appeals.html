@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Appeals and reviews
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Reviews and appeals</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">Reviews and appeals</h1>
+
+      <p class="govuk-body">If a learner has:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>requested a review of marking and moderation (RoMM); or</li>
+        <li>appealed a review decision</li>
+      </ul>
+      <p class="govuk-body">
+          you must use this service to mark their certification as 'on hold'. This prevents an inaccurate certificate being printed while the review or appeal is in progress.
+      </p>
+      <p class="govuk-body">
+          Once the review or appeal is complete, you must mark their certification as 'off hold' so the certificate can be printed.
+      </p>
+
+      <p><a class="govuk-button" role="button" href="search-learner">Continue</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
