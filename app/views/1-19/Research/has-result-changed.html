@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="q0-search-learner">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="change-core-result" method="post" class="form" id="my_radio_box">
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Has the result changed due to this review or appeal?
+                      </h1>
+                    </legend>
+
+                    <span id="uln-hint" class="govuk-hint">
+                      <strong>Learner:</strong> John Smith
+                    </span>
+
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-1" name="result-answer" type="radio" value="Yes" {{ checked("result-answer", "Yes") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                              Yes, the result has changed
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="No"  {{ checked("result-answer", "No") }}>
+                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                              No, it's the same result
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+
+            </div>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue or Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

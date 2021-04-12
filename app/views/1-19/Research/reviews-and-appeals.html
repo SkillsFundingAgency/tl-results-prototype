@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Appeals and reviews
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Reviews and appeals</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">Reviews and appeals</h1>
+
+      <p class="govuk-body">If a learner has:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>requested a review of marking, moderation or clerical check; or</li>
+        <li>appealed a review decision</li>
+      </ul>
+      <p class="govuk-body">
+          you must use this service to confirm which component is under review or appeal by putting it 'on hold'.
+      </p>
+      <p class="govuk-body">While a component is on hold:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the learner's overall T Level result cannot be calculated</li>
+        <li>a certificate cannot be issued</li>
+      </ul>
+
+      <p class="govuk-body">
+          Once the review or appeal is complete, you must confirm the learner's result and take the component 'off hold'. The learner's overall T Level result can then be calculated and a certificate can be issued.
+      </p>
+
+      <p><a class="govuk-button" role="button" href="search-learner">Continue</a></p>
+
+    </div>
+</div>
+
+{% endblock %}

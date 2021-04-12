@@ -580,15 +580,89 @@ module.exports = function (router) {
       }
     })
 
-    router.post('/1-18/Research/action-q1-check', function (req, res) {
+    router.post('/1-18/Research/action-check-q1-answer', function (req, res) {
 
-      let detAnswer = req.session.data['q1-answer']
+        var hasReultAnswerSelected = req.session.data['q1-answer']
 
-      if (detAnswer === 'Yes') {
-        res.redirect('q2-quals')
-      } else {
-        res.redirect('q1-learners-details-no')
-      }
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q1-answer-1', "Select if the learner's details are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/Research/q1-learners-details')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/Research/q2-quals')
+        }   else {
+              res.redirect('q1-learners-details-no')
+        }
+
+    })
+
+    router.post('/1-18/Research/action-check-q2-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q2-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q2-answer-1', "Select if the learner's achievements are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/Research/q2-quals')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/Research/q3-tq-components')
+        }   else {
+              res.redirect('q2-quals-no')
+        }
+
+    })
+
+    router.post('/1-18/Research/action-check-q3-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q3-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q3-answer-1', "Select if the learner's technical qualifications are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/Research/q3-tq-components')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/Research/q4-address')
+        }   else {
+              res.redirect('q3-tq-components-no')
+        }
+
+    })
+
+    router.post('/1-18/Research/action-check-q4-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q4-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q4-answer-1', "Select if the organisation's postal address is correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/Research/q4-address')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/Research/q5-check')
+        }   else {
+              res.redirect('q4-address-no')
+        }
+
+    })
+
+    router.post('/1-18/Research/action-cancel-request', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['cancel-answer']
+
+        if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/Research/tlevels-dashboard')
+        }   else {
+              res.redirect('q5-check')
+        }
+
     })
 
 }
