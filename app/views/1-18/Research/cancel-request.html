@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="check-submit">Back</a>
+  <a class="govuk-back-link" href="q5-check">Back</a>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="" method="post" class="form" >
+    <form action="action-cancel-request" method="post" class="form" >
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -24,14 +24,14 @@
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="rem-answer-1" name="rem-answer" type="radio" value="Yes" checked>
-              <label class="govuk-label govuk-radios__label" for="rem-answer-1">
+              <input class="govuk-radios__input" id="cancel-answer-1" name="cancel-answer" type="radio" value="Yes" checked>
+              <label class="govuk-label govuk-radios__label" for="cancel-answer-1">
                 Yes, cancel
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="rem-answer-2" name="rem-answer" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="rem-answer-2">
+              <input class="govuk-radios__input" id="cancel-answer-2" name="cancel-answer" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="cancel-answer-2">
                 No, do not cancel
               </label>
             </div>
@@ -40,7 +40,7 @@
 
       </div>
 
-      <p><a class="govuk-button" role="button" href="tlevels-dashboard">Continue</a></p>
+      <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
 
     </form>
   </div>
