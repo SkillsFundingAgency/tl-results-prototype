@@ -479,15 +479,67 @@ module.exports = function (router) {
         res.redirect('/1-18/Research/q0-search-learner')
     })
 
+    router.get('/1-18/dynamic/action-agree-to-statement', function (req, res) {
+        clearSession(req);
+        res.redirect('/1-18/dynamic/q0-search-learner')
+    })
+
     router.get('/1-18/Research/action-search-again', function (req, res) {
         clearSession(req);
-        res.redirect('/1-18/Research/search-learner')
+        res.redirect('/1-18/Research/q0-search-learner')
     })
 
     router.get('/1-18/Research/action-search-another-record', function (req, res) {
         clearSession(req);
         clearIPresult(req);
         res.redirect('/1-18/Research/search-learner-record')
+    })
+
+    router.get('/1-18/dynamic/action-search-learner', function (req, res) {
+
+        var isValid = checkUlnValidation(req, res)
+
+        if(isValid) {
+            var enteredUln = req.session.data['learner-uln']
+            var userInfo = req.session.data['user_info']
+
+            if(enteredUln == userInfo[0][1])
+            {
+                res.redirect('/1-18/dynamic/learner-ulnNotExist')
+            }
+            else if(enteredUln == userInfo[1][1])
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/dynamic/learner-details-requestpending')
+            }
+            else if(enteredUln == userInfo[2][1])
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/dynamic/learner-details-noresults')
+            }
+            else if(enteredUln == userInfo[3][1])
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/dynamic/notify-ao')
+            }
+            else if(enteredUln == userInfo[4][1])
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/dynamic/q1-learners-details')
+            }
+            else if(enteredUln == userInfo[5][1])
+            {
+                setLearnerDetails(req)
+                res.redirect('/1-18/dynamic/learner-details')
+            }
+            else
+            {
+                res.redirect('/1-18/dynamic/learner-ulnNotExist')
+            }
+        }
+        else {
+            res.redirect('/1-18/dynamic/search-learner')
+        }
     })
 
     router.get('/1-18/Research/action-search-learner', function (req, res) {
@@ -659,6 +711,91 @@ module.exports = function (router) {
         if(hasReultAnswerSelected === 'Yes') {
             clearValidationError(req)
             res.redirect('/1-18/Research/tlevels-dashboard')
+        }   else {
+              res.redirect('q5-check')
+        }
+
+    })
+
+    router.post('/1-18/dynamic/action-check-q1-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q1-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q1-answer-1', "Select if the learner's details are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/q1-learners-details')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/dynamic/q2-quals')
+        }   else {
+              res.redirect('q1-learners-details-no')
+        }
+
+    })
+
+    router.post('/1-18/dynamic/action-check-q2-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q2-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q2-answer-1', "Select if the learner's achievements are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/q2-quals')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/dynamic/q3-tq-components')
+        }   else {
+              res.redirect('q2-quals-no')
+        }
+
+    })
+
+    router.post('/1-18/dynamic/action-check-q3-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q3-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q3-answer-1', "Select if the learner's technical qualifications are correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/q3-tq-components')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/dynamic/q4-address')
+        }   else {
+              res.redirect('q3-tq-components-no')
+        }
+
+    })
+
+    router.post('/1-18/dynamic/action-check-q4-answer', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['q4-answer']
+
+        if(hasReultAnswerSelected == null || hasReultAnswerSelected == '')
+        {
+            var sendErrors = ['#q4-answer-1', "Select if the organisation's postal address is correct"]
+            addValidationError(req,res,sendErrors)
+            res.redirect('/1-18/dynamic/q4-address')
+        }   else if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/dynamic/q5-check')
+        }   else {
+              res.redirect('q4-address-no')
+        }
+
+    })
+
+    router.post('/1-18/dynamic/action-cancel-request', function (req, res) {
+
+        var hasReultAnswerSelected = req.session.data['cancel-answer']
+
+        if(hasReultAnswerSelected === 'Yes') {
+            clearValidationError(req)
+            res.redirect('/1-18/dynamic/tlevels-dashboard')
         }   else {
               res.redirect('q5-check')
         }

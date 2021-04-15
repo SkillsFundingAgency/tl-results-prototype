@@ -41,11 +41,11 @@
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                What is your organisation's address?
+                What is your organisation's postal address?
               </h1>
             </legend>
             <p class="govuk-body-m">This must be a business address.</p>
-            
+
             <div class="govuk-form-group">
               <label class="govuk-label" for="manual-dept-name">
                 Department (optional)
@@ -101,7 +101,7 @@
               {% endif %}
               <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-town" value="{{data['address-town']}}">
             </div>
-            
+
             {% if data['errors'].length > 0 and (data['address-manual-postcode'].length == 0 or data['address-manual-postcode-invalid'] != null)%}
             <div class="govuk-form-group govuk-form-group--error">
             {% else %}
@@ -126,7 +126,7 @@
           </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>      
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
   </div>
