@@ -190,6 +190,12 @@ router.get('/1-18/Research/action-select-statement', function (req, res) {
   res.redirect('/1-18/Research/statement')
 })
 
+router.get('/1-18/dynamic/action-select-statement', function (req, res) {
+  require('./routes/routes-1-18.js')(router)
+  checkIfActive(req)
+  res.redirect('/1-18/dynamic/statement')
+})
+
 // function clearSession(req) {
 //   req.session.data['Uln'] = null
 // }

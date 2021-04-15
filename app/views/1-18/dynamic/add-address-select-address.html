@@ -46,7 +46,7 @@ Add address - select address - Manage T Level results - GOV.UK
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is your organisation's address?
+              What is your organisation's postal address?
             </h1>
           </legend>
 
@@ -64,27 +64,27 @@ Add address - select address - Manage T Level results - GOV.UK
             <label class="govuk-label govuk-label--m" for="full-address">
               Select an address
             </label>
-            
+
             {% if data['errors'].length > 0 %}
             <span id="passport-issued-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span>
                 {{ data['errors'][0][1] }}
             </span>
            {% endif %}
-           
+
             <select class="govuk-select" id="full-address" name="full-address">
               <option value>{{data['selected-postcode-addresses'].length}} addresses found</option>
               {% for address in data['selected-postcode-addresses'] %}
                 {% if data['full-address'] == address[0] %}
                 <option value="{{address[0]}}" selected>
-                  {{address[2]}}, {{address[3]}}, {{address[4]}}, {{address[5]}} 
+                  {{address[2]}}, {{address[3]}}, {{address[4]}}, {{address[5]}}
                 </option>
                 {% else %}
                 <option value="{{address[0]}}">
-                  {{address[2]}}, {{address[3]}}, {{address[4]}}, {{address[5]}} 
+                  {{address[2]}}, {{address[3]}}, {{address[4]}}, {{address[5]}}
                 </option>
                 {% endif %}
-              {% endfor %}              
+              {% endfor %}
             </select>
           </div>
 
