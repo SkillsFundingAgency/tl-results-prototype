@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Review address - Manage T Level results - GOV.UK
+Request a SoA - Review address - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -60,11 +60,7 @@ Review address - Manage T Level results - GOV.UK
                         </dt>
 
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          {% if data['is-entry-from-manual-address'] == null %}
-                          <p class="govuk-body">{{data['dept-name']}}</p>
-                          {% else %}
-                          <p class="govuk-body">{{data['manual-dept-name']}}</p>
-                          {% endif %}
+                          <p class="govuk-body">{{data['added-org-postal-address-dept-name']}}</p>
                         </dd>
                       </div>
 
@@ -73,8 +69,8 @@ Review address - Manage T Level results - GOV.UK
                           Building and street
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">{{data['selected-full-address'][0][2]}}</p>
-                          <p class="govuk-body">{{data['selected-full-address'][0][3]}}</p>
+                          <p class="govuk-body">{{data['added-org-postal-address'][0][2]}}</p>
+                          <p class="govuk-body">{{data['added-org-postal-address'][0][3]}}</p>
                         </dd>
                       </div>
 
@@ -83,7 +79,7 @@ Review address - Manage T Level results - GOV.UK
                           Town or city
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">{{data['selected-full-address'][0][4]}}</p>
+                          <p class="govuk-body">{{data['added-org-postal-address'][0][4]}}</p>
                         </dd>
                       </div>
 
@@ -92,7 +88,7 @@ Review address - Manage T Level results - GOV.UK
                           Postcode
                         </dt>
                         <dd class="govuk-summary-list__value" style="border-bottom:none">
-                          <p class="govuk-body">{{data['selected-full-address'][0][5]}}</p>
+                          <p class="govuk-body">{{data['added-org-postal-address'][0][5]}}</p>
                         </dd>
                       </div>
                     </dl>

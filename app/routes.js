@@ -193,8 +193,42 @@ router.get('/1-18/Research/action-select-statement', function (req, res) {
 router.get('/1-18/dynamic/action-select-statement', function (req, res) {
   require('./routes/routes-1-18.js')(router)
   checkIfActive(req)
+
+  var address = req.session.data['added-org-postal-address']
+
+  if(address == null || address == '')
+  {
+    setProviderDefaultAddress(req);
+  }
+
   res.redirect('/1-18/dynamic/statement')
 })
+
+router.get('/1-18/dynamic/action-missing-address', function (req, res) {
+  require('./routes/routes-1-18.js')(router)
+  checkIfActive(req)
+
+  req.session.data['added-org-postal-address'] = []
+  req.session.data['added-org-postal-address-dept-name'] = null
+  res.redirect('/1-18/dynamic/missing-address')
+})
+
+
+function setProviderDefaultAddress(req)
+{
+  var departmentName = "Exams Office"
+  var postCode = "HU17 8QG"
+  var addressLine1 = "Pippins Cottage, Bishop Burton College"
+  var addressLine2 = "York Road, Bishop Burton"
+  var town = "Beverley"  
+
+  var formattedAddress = ["100001" + "\t" + postCode + "\t" + addressLine1 + "\t" + addressLine2 + "\t" + town + "\t" + postCode]
+
+  address = formattedAddress[0].split('\t')
+  req.session.data['added-org-postal-address'] = []
+  req.session.data['added-org-postal-address'].push(address)
+  req.session.data['added-org-postal-address-dept-name'] = departmentName
+}
 
 // function clearSession(req) {
 //   req.session.data['Uln'] = null
