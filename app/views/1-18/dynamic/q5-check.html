@@ -178,7 +178,7 @@
             Department
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Exams Office</p>
+            <p class="govuk-body">{{data['added-org-postal-address-dept-name']}}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -186,8 +186,8 @@
             Building and street
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Barnsley Sixth Form College</p>
-            <p class="govuk-body">St Mary's Place</p>
+            <p class="govuk-body">{{data['added-org-postal-address'][0][2]}}</p>
+            <p class="govuk-body">{{data['added-org-postal-address'][0][3]}}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -195,7 +195,7 @@
             Town or city
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Barnsley</p>
+            <p class="govuk-body">{{data['added-org-postal-address'][0][4]}}</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -203,7 +203,7 @@
             Postcode
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">S70 2SR</p>
+            <p class="govuk-body">{{data['added-org-postal-address'][0][5]}}</p>
           </dd>
         </div>
       </dl>
