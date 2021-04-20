@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const router = express.Router()
 
 // Add your routes here - above the module.exports line
@@ -10,7 +11,6 @@ function initialiseVariables(req) {
     */
 
    //req.session.data['Uln'] = null
-
    req.session.data['has-lrs-data'] = true
    req.session.data['has-search-uln-added'] = true
    req.session.data['uln-already-added'] = false
@@ -1174,6 +1174,105 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
     res.redirect('q5-check')
   } else {
     res.redirect('q4-address-no')
+  }
+})
+
+
+// 1-19 routes
+
+router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
+
+  let uln = req.session.data['uln-search']
+
+  if (uln === '1234567890') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+    'name' : 'John Smith', 
+    'uln' : '1234567890', 
+    'dob' : '12 December 2004', 
+    'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'core' : 'Design, Surveying and Planning for Construction (60358300)',
+    'coreResult' : "Summer 2021",
+    'coreGrade' : 'C',
+    'coreOnHold' : req.session.data['place-on-hold'],
+    'specialism' : 'Building Services Design (ZTLOS003)',
+    'specialismResults' : "Summer 2021",       
+    'specialismGrade' : 'Merit',
+    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+  })
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 December 2004'
+    req.session.data['coreGrade'] = 'C'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+  ;
+
+  } else if (uln === '5678901234') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Tanner Ball', 
+      'uln' : '5678901234', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
+    req.session.data['name'] = 'Tanner Ball'
+    ;
+  } else {
+    res.redirect('no-learner-found')
+  }
+  
+});
+
+router.post('/1-19/dynamic/put-on-hold', function (req, res) {
+
+  let coreOnHold = req.session.data['place-on-hold']
+
+  if (coreOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/specialism-put-on-hold', function (req, res) {
+
+  let specialismOnHold = req.session.data['specialism-place-on-hold']
+
+  if (specialismOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/core-take-off-hold', function (req, res) {
+
+  let coreOnHold = req.session.data['core-take-off-hold']
+
+  if (coreOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/has-result-changed')
+  } else {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/has-result-changed', function (req, res) {
+
+  let resultChanged = req.session.data['result-answer']
+
+  if (resultChanged === 'no') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    res.redirect('/1-19/dynamic/change-core-result')
   }
 })
 

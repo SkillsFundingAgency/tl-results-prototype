@@ -16,7 +16,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's PRS status</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's status</li>
   </ol>
 </div>
 {% endblock %}
@@ -36,7 +36,7 @@
                 <p class="govuk-body">If a component is under review or appeal, you must put the component 'on hold'. While a component is on hold, the learner's overall T Level result cannot be calculated.</p>
                 <p class="govuk-body">Once the review or appeal is complete, you must confirm the learner's result and take the component 'off hold'. The learner's overall T Level result will then be calculated.</p>
               </div>
-
+              
               <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: Design, Surveying and Planning for Construction (60358300)</h3>
 
               <dl class="govuk-summary-list">
@@ -51,16 +51,16 @@
                     Grade: C
                   </dd>
                   <dd class="govuk-summary-list__value" style="border-bottom:none">
-
+                    <span class="govuk-visually-hidden">status </span><strong class="govuk-tag govuk-tag--red govuk-!-margin-right-3">On hold</strong>
                   </dd>
                 </div>
               </dl>
 
-              <p class="govuk-body">
-                <a class="govuk-link" href="put-on-hold">
-                  Put <span class="govuk-visually-hidden">core </span>component on hold
+              <span class="govuk-body">
+                <a class="govuk-link" href="take-off-hold">
+                  Take <span class="govuk-visually-hidden">core </span>component off hold
                 </a>
-              </p>
+              </span>
 
               <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
 
@@ -78,16 +78,15 @@
                     Grade: Merit
                   </dd>
                   <dd class="govuk-summary-list__value" style="border-bottom:none">
-
                   </dd>
                 </div>
               </dl>
-              <p class="govuk-body">
-                <a class="govuk-link" href="put-on-hold">
+
+              <span class="govuk-body">
+                <a class="govuk-link" href="">
                   Put <span class="govuk-visually-hidden">specialism </span>component on hold
                 </a>
-              </p>
-
+              </span>
               <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
 
               <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
