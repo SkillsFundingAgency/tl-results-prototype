@@ -23,139 +23,38 @@ Learner's results
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+{% include "includes/record-entries-success-messages.html" %}
 
-    {% if coreOnHold === "yes"%}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          {% if coreOnHold === "yes"%}
-          <p class="govuk-body">{{ core }} placed on hold </p>
-          {% endif %}
-        </h3>
-      </div>
-    </div>
-    {% elif specialismOnHold === "yes"  %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          {% if specialismOnHold === "yes" %}
-          <p class="govuk-body">{{ specialism }} placed on hold </p>
-          {% endif %}
-        </h3>
-      </div>
-    </div>
-    {% endif %}
-
-    <h1 class="govuk-heading-l">Learner's PRS status</h1>
-    <h2 class="govuk-heading-m">ULN: <span>{{ uln }}</span></h2>
-    <p class="govuk-body">Name: <span>{{ name }}</span></p>
-    <p class="govuk-body">Date of birth: <span>{{ dob }}</span></p>
-    <p class="govuk-body">Provider: <span>{{ provider }}</span></p>
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <div class="govuk-inset-text">
-      <p class="govuk-body">If a component is under review or appeal, you must put the component 'on hold'. While a
-        component is on hold, the learner's overall T Level result cannot be calculated.</p>
-      <p class="govuk-body">Once the review or appeal is complete, you must confirm the learner's result and take the
-        component 'off hold'. The learner's overall T Level result will then be calculated.</p>
-    </div>
-
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: {{ core }}</h3>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
-          Result
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2021
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          Grade: {{ coreGrade }}
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          {% if coreOnHold === "yes" %}
-          <strong class="govuk-tag govuk-tag--red">
-            On hold
-          </strong>
-          {% endif %}
-        </dd>
-      </div>
-    </dl>
-
-    {% if coreOnHold === "yes" %}
-    <p class="govuk-body">
-      <a class="govuk-link" href="core-take-off-hold">
-        Take core component off hold
-      </a>
-    </p>
-    {% else %}
-    <p class="govuk-body">
-      <a class="govuk-link" href="core-put-on-hold">
-        Put core component on hold
-      </a>
-    </p>
-    {% endif %}
-
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
-
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism:
-      {{ specialism }}</h3>
-
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
-          Result
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2022
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          Grade: {{ specialismGrade }}
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          {% if specialismOnHold === "yes" %}
-          <strong class="govuk-tag govuk-tag--red">
-            On hold
-          </strong>
-          {% endif %}
-        </dd>
-      </div>
-    </dl>
-
-    {% if specialismOnHold === "yes" %}
-    <p class="govuk-body">
-      <a class="govuk-link" href="specialism-take-off-hold">
-        Take specialism component off hold
-      </a>
-    </p>
-    {% else %}
-    <p class="govuk-body">
-      <a class="govuk-link" href="specialism-put-on-hold">
-        Put specialism component on hold
-      </a>
-    </p>
-    {% endif %}
-
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
-
-    <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
-
+<section id="learnerDetails">
+  <h1 class="govuk-heading-l">Learner's PRS status</h1>
+  <h2 class="govuk-heading-m">ULN: <span>{{ uln }}</span></h2>
+  <p class="govuk-body">Name: <span>{{ name }}</span></p>
+  <p class="govuk-body">Date of birth: <span>{{ dob }}</span></p>
+  <p class="govuk-body">Provider: <span>{{ provider }}</span></p>
+  <hr class="govuk-section-break govuk-section-break--visible">
+  <div class="govuk-inset-text">
+    <p class="govuk-body">If a component is under review or appeal, you must put the component 'on hold'. While a
+      component is on hold, the learner's overall T Level result cannot be calculated.</p>
+    <p class="govuk-body">Once the review or appeal is complete, you must confirm the learner's result and take the
+      component 'off hold'. The learner's overall T Level result will then be calculated.</p>
   </div>
+</section>
+
+{% if uln === '1234567890'%}
+{% include "includes/reviews-appeals/record-entry-full-results.html" %}
+{% elif uln === '5678901234' %}
+{% include "includes/reviews-appeals/record-entry-no-core-specialism.html" %}
+{% elif uln === '4321987650' %}
+{% include "includes/reviews-appeals/record-entry-no-core-specialism-not-specified.html" %}
+{% elif uln === '5647382910' %}
+{% include "includes/reviews-appeals/record-entry-core-specialism-late.html" %}
+{% endif %}
+
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
+<p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
+
+</div>
 </div>
 
 {% endblock %}

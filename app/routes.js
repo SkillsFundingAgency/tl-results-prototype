@@ -1186,15 +1186,14 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
 
   if (uln === '1234567890') {
     res.render('1-19/dynamic/record-entries-routes', 
-    { 
-    'name' : 'John Smith', 
-    'uln' : '1234567890', 
-    'dob' : '12 December 2004', 
+    {
+    'uln' : uln,
+    'name' : 'John Smith',
+    'dob' : '12 December 2005',
     'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'coreGrade' : 'C',
     'core' : 'Design, Surveying and Planning for Construction (60358300)',
     'coreResult' : "Summer 2021",
-    'coreGrade' : 'C',
-    'coreOnHold' : req.session.data['place-on-hold'],
     'specialism' : 'Building Services Design (ZTLOS003)',
     'specialismResults' : "Summer 2021",       
     'specialismGrade' : 'Merit',
@@ -1206,6 +1205,11 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['coreGrade'] = 'C'
     req.session.data['uln'] = uln
     req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+    req.session.data['coreOnHold'] = ""
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismGrade'] = 'C'
+
   ;
 
   } else if (uln === '5678901234') {
@@ -1224,9 +1228,45 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'specialismGrade' : 'Merit',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
+    ;
+  } else if (uln === '4321987650') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Batman', 
+      'uln' : '4321987650', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
     req.session.data['name'] = 'Tanner Ball'
     ;
-  } else {
+  } else if (uln === '5647382910') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Joker', 
+      'uln' : '5647382910', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
+    req.session.data['name'] = 'Tanner Ball'
+    ;
+  }
+  else {
     res.redirect('no-learner-found')
   }
   
@@ -1235,10 +1275,12 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
 router.post('/1-19/dynamic/put-on-hold', function (req, res) {
 
   let coreOnHold = req.session.data['place-on-hold']
-
+  
   if (coreOnHold === 'yes') {
+    req.session.data['coreOnHold'] = 'yes'
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
+    req.session.data['coreOnHold'] = 'no'
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
 })
@@ -1248,8 +1290,10 @@ router.post('/1-19/dynamic/specialism-put-on-hold', function (req, res) {
   let specialismOnHold = req.session.data['specialism-place-on-hold']
 
   if (specialismOnHold === 'yes') {
+    req.session.data['specialismOnHold'] = 'yes'
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
+    req.session.data['specialismOnHold'] = 'no'
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
 })
@@ -1261,6 +1305,19 @@ router.post('/1-19/dynamic/core-take-off-hold', function (req, res) {
   if (coreOnHold === 'yes') {
     res.redirect('/1-19/dynamic/has-result-changed')
   } else {
+    req.session.data['coreOnHold'] = 'yes'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/specialism-take-off-hold', function (req, res) {
+
+  let specialismOnHold = req.session.data['specialism-take-off-hold']
+
+  if (specialismOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/specialism-has-result-changed')
+  } else {
+    req.session.data['specialismOnHold'] = 'yes'
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
 })
@@ -1272,8 +1329,37 @@ router.post('/1-19/dynamic/has-result-changed', function (req, res) {
   if (resultChanged === 'no') {
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
+    req.session.data['resultChanged'] = 'yes'
     res.redirect('/1-19/dynamic/change-core-result')
   }
+})
+
+router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
+
+  let resultChanged = req.session.data['specialism-result-answer']
+
+  if (resultChanged === 'no') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    req.session.data['specialismResultChanged'] = 'yes'
+    res.redirect('/1-19/dynamic/change-specialism-result')
+  }
+})
+
+router.post('/1-19/dynamic/confirm-result-change', function (req, res) {
+  
+  let newResult = req.session.data['result-answer']
+  req.session.data['coreGrade'] = newResult
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
+})
+
+router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res) {
+  
+  let newResult = req.session.data['specialism-result-answer']
+  req.session.data['specialismGrade'] = newResult
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
 })
 
 module.exports = router

@@ -5,55 +5,48 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+<a class="govuk-back-link" href="record-entries2">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="put-on-hold" method="post" class="form" novalidate data-validate="core-put-on-hold">
+        <form action="specialism-take-off-hold" method="post" class="form" id="my_radio_box">
 
               <div class="govuk-form-group">
+
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Are you sure you want to put this core component on hold?
+                          Are you sure you want to take this specialism component off hold?
                       </h1>
                     </legend>
 
+                    <span id="uln-hint" class="govuk-hint">
+                      <strong>Learner:</strong> {{ data['name'] }}
+                    </span>
+
+
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="hold-answer-1" name="place-on-hold" type="radio" value="yes" >
+                          <input class="govuk-radios__input" id="hold-answer-1" name="specialism-take-off-hold" type="radio" value="yes">
                           <label class="govuk-label govuk-radios__label" for="hold-answer-1">
-                              Yes, put this component on hold
+                              Yes, take this component off hold
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="hold-answer-2" name="place-on-hold" type="radio" value="no"  >
+                          <input class="govuk-radios__input" id="hold-answer-2" name="specialism-take-off-hold" type="radio" value="no">
                           <label class="govuk-label govuk-radios__label" for="hold-answer-2">
-                              No, do not put this component on hold
+                              No, do not take this component off hold
                           </label>
                       </div>
                     </div>
                 </fieldset>
 
             </div>
-            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
         </form>
     </div>
 </div>
-
-<script type="application/json" id="core-put-on-hold">
-  {
-
-    "place-on-hold": {
-      "presence": {
-        "message": "^Please select an option"
-      }
-
-    }
-
-  }
-</script>
 {% endblock %}
