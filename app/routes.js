@@ -1209,7 +1209,6 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismOnHold'] = ""
     req.session.data['specialismGrade'] = 'C'
-
   ;
 
   } else if (uln === '5678901234') {
@@ -1245,7 +1244,6 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'specialismGrade' : 'Merit',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
-    req.session.data['name'] = 'Tanner Ball'
     ;
   } else if (uln === '5647382910') {
     res.render('1-19/dynamic/record-entries-routes', 
@@ -1263,7 +1261,6 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'specialismGrade' : 'Merit',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
-    req.session.data['name'] = 'Tanner Ball'
     ;
   }
   else {
