@@ -179,6 +179,7 @@ module.exports = function (router) {
     router.get('/1-18/dynamic/action-add-address-postcode', function (req, res) {
         clearValidationError(req);
         clearOrgAddressSession(req);
+        loadPostcodesData(req);
         res.redirect('/1-18/dynamic/add-address-postcode')
     })
 
