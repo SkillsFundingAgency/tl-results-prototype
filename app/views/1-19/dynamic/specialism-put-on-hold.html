@@ -12,7 +12,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="specialism-put-on-hold" method="post" class="form" id="my_radio_box">
+        <form action="specialism-put-on-hold" method="post" class="form" novalidate data-validate="specialism-place-on-hold">
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
@@ -43,4 +43,17 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
         </form>
     </div>
 </div>
+
+<script type="application/json" id="specialism-place-on-hold">
+  {
+
+    "specialism-place-on-hold": {
+      "presence": {
+        "message": "^Please select an option"
+      }
+
+    }
+
+  }
+</script>
 {% endblock %}

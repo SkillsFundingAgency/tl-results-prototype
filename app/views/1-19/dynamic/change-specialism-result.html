@@ -12,7 +12,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="specialism-check-result-change" method="post" class="form" id="my_radio_box">
+        <form action="specialism-check-result-change" method="post" class="form" novalidate data-validate="change-specialism-result">
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -23,7 +23,7 @@ Change assessment entry - Manage T Level results - GOV.UK
                     </legend>
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="None" >
+                          <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="Not received" >
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
                               Not received
                           </label>
@@ -65,7 +65,7 @@ Change assessment entry - Manage T Level results - GOV.UK
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer" type="radio" value="U">
+                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer" type="radio" value="Unclassified">
                             <label class="govuk-label govuk-radios__label" for="result-answer-7">
                                 Unclassified
                             </label>
@@ -77,5 +77,18 @@ Change assessment entry - Manage T Level results - GOV.UK
         </form>
     </div>
 </div>
+
+<script type="application/json" id="change-specialism-result">
+  {
+
+    "specialism-result-answer": {
+      "presence": {
+        "message": "^Please select an option"
+      }
+
+    }
+
+  }
+</script>
 
 {% endblock %}

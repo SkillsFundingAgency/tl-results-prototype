@@ -12,7 +12,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="has-result-changed" method="post" class="form" id="my_radio_box">
+        <form action="has-result-changed" method="post" class="form" novalidate data-validate="has-result-changed">
 
               <div class="govuk-form-group">
 
@@ -49,4 +49,17 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
         </form>
     </div>
 </div>
+
+<script type="application/json" id="has-result-changed">
+  {
+
+    "result-answer": {
+      "presence": {
+        "message": "^Please select an option"
+      }
+
+    }
+
+  }
+</script>
 {% endblock %}
