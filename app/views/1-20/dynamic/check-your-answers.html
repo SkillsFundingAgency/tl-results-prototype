@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="statement.html">Request a statement</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner.html">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Check and submit</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <span class="govuk-caption-xl">Request a statement of achievement</span>
+      <h1 class="govuk-heading-xl">Check your answers before sending your request</h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Learner's details</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <span class="govuk-!-padding-left-9, govuk-body govuk-!-font-weight-regular, govuk-!-font-size-24"><a href="learners-details-change.html">
+            Change
+            <span class="govuk-visually-hidden"> learner details</span>
+          </a></span>
+        </div>
+      </div> 
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ uln }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ name }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ dob }}
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ provider }}
+          </dd>
+
+        </div>
+      </dl>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Learners T level component achievements</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <span class="govuk-!-padding-left-9, govuk-body govuk-!-font-weight-regular, govuk-!-font-size-24"><a href="learner-component-change.html">
+            Change
+            <span class="govuk-visually-hidden"> t level component achievements</span>
+          </a></span>
+        </div>
+      </div> 
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            English and maths
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ engMaths }}
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Industry Placement
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ industryPlacement }}
+          </dd>
+
+        </div>
+      </dl>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Learner's technical qualification details</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <span class="govuk-!-padding-left-9, govuk-body govuk-!-font-weight-regular, govuk-!-font-size-24"><a href="learners-tq-change.html">
+            Change
+            <span class="govuk-visually-hidden"> technical qualification details</span>
+          </a></span>
+        </div>
+      </div> 
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T level title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ tlevelTitle }}
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Core
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ core }}</p>
+            <p>Grade: {{ coreGrade }}</p> 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Specialism
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ specialism }}</p>
+            <p>{{ specialismGrade }}</p>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <h2 class="govuk-heading-m">Your organisation's postal address</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <span class="govuk-!-padding-left-9, govuk-body govuk-!-font-weight-regular, govuk-!-font-size-24"><a href="org-address-change.html">
+            Change
+            <span class="govuk-visually-hidden"> organisation postal address</span>
+          </a></span>
+        </div>
+      </div>   
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Department
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ department }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisations address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ orgBuilding }}
+            <br>{{ orgStreet }}
+            <br>{{ orgCity}}
+            <br>{{ orgPostcode }}
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Now send your request</h2>
+
+      <p>By submitting this request you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <form action="confirmation" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+    
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Accept and send request
+            </button>
+          </form>
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <a href="cancel-request">Cancel</a>
+        </div>
+      </div>  
+    </div>
+  </div>
+{% endblock %}
+
+Barnsley Sixth Form Office
+<br>St Mary's Place
+<br>Barnsley
+<br>S70 2SR

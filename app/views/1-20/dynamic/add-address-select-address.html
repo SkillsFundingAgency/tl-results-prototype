@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add address - select address - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="add-address-postcode">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="add-address-confirm-address" method="post" class="form" >
+      <div class="govuk-form-group">
+      <span class="govuk-caption-xl">Add address</span>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your organisation's postal address?
+            </h1>
+          </legend>
+
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+            Postcode
+          </p>
+          <p class="govuk-body-m govuk-!-font-weight-bold ">
+            AB1 2RT
+            <a class="govuk-body govuk-!-margin-left-3" href="add-address-postcode">
+              Change
+            </a>
+          </p>
+
+          <div class="govuk-form-group govuk-!-margin-top-6">
+            <label class="govuk-label govuk-label--m" for="full-address">
+              Select an address
+            </label>
+            <select class="govuk-select" id="Full-address" name="full-address">
+              <option value="default" selected>3 addresses found</option>
+              <option value="add1">Address 1</option>
+              <option value="add2">Address 2</option>
+              <option value="add3">Address 3</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label " for="dept-name">
+              Department (optional)
+            </label>
+            <input class="govuk-input  govuk-!-width-one-half" id="dept-name" name="dept-name" type="text">
+          </div>
+
+          <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0" closed>
+              <summary class="govuk-details__summary" style="border-bottom:none">
+                  <span class="govuk-details__summary-text">
+                      I can't find my organisation's address in the list
+                  </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">If you can't find the address in the list check that you have the correct postcode. </p>
+                <p class="govuk-body">If you still can't find the address then <a class="govuk-link" href="add-address-manually">add it manually</a>.</p>
+              </div>
+          </details>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

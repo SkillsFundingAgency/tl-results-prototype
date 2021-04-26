@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - ULN is not registered - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="search-learner">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l govuk-!-margin-bottom-6">
+                    ULN ({{ data['uln'] }}) has not been withdrawn by the exam board
+                </label>
+            </h1>
+            <p class="govuk-body">
+              Our records show that this learner has not withdrawn from their T level course.
+            </p>
+            <p class="govuk-body">
+              You must tell the exam board that this learner has withdrawn. They will then update the learner's registration status.
+            </p>
+            <p class="govuk-body">
+                After this learner's status has updated, you can come back and request their statement of achievement.
+              </p>
+        </div>
+        <p class="govuk-body">
+            <a class="govuk-button" role="button" href="tlevels-dashboard">
+                Back to Home
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
