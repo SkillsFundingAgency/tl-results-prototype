@@ -1566,42 +1566,53 @@ router.get('/1-20/dynamic/org-address-present', function(req, res) {
   
 });
 
-router.post('/1-20/dynamic/add-address-select-address', function (req, res) {
+router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
 
   let addressChoice = req.session.data['full-address']
 
+  req.session.data['newAddress'] = "yes"
+
   if (addressChoice === 'add1') {
     
-    req.session.data['orgBuilding'] = "Barnsley College"
-    req.session.data['orgStreet'] = "Church St"
-    req.session.data['orgCity'] = 'Barnsley'
-    req.session.data['orgPostcode'] = 'S70 2AX'
+    req.session.data['neworgBuilding'] = "Barnsley College"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
     ;
 
     res.redirect('/1-20/dynamic/add-address-confirm-address')
   
   }else if (addressChoice === 'add2'){
-    req.session.data['orgBuilding'] = "The Open Kitchen"
-    req.session.data['orgStreet'] = "Church St"
-    req.session.data['orgCity'] = 'Barnsley'
-    req.session.data['orgPostcode'] = 'S70 2AX'
+    req.session.data['neworgBuilding'] = "The Open Kitchen"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
     ;
 
     res.redirect('/1-20/dynamic/add-address-confirm-address')
   
   
   } else if (addressChoice === 'add3'){
-    req.session.data['orgBuilding'] = "Jobshop"
-    req.session.data['orgStreet'] = "Church St"
-    req.session.data['orgCity'] = 'Barnsley'
-    req.session.data['orgPostcode'] = 'S70 2AX'
+    req.session.data['neworgBuilding'] = "Jobshop"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
     ;
 
     res.redirect('/1-20/dynamic/add-address-confirm-address')
   }
 })
 
+// router.post('/1-20/dynamic/add-address-manually', function (req, res) {
+  
+//   let newResult = req.session.data['specialism-result-answer']
+//   req.session.data['specialismGrade'] = newResult
+//   res.redirect('/1-19/dynamic/record-entries-routes')
 
+// })
+
+
+//Update Learner Records
 
 
 
