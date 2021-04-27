@@ -1603,18 +1603,83 @@ router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
   }
 })
 
-// router.post('/1-20/dynamic/add-address-manually', function (req, res) {
+router.post('/1-20/dynamic/add-address-manually', function (req, res) {
   
-//   let newResult = req.session.data['specialism-result-answer']
-//   req.session.data['specialismGrade'] = newResult
-//   res.redirect('/1-19/dynamic/record-entries-routes')
+  let newmanualBuilding = req.session.data['address-line-1']
+  let newmanualStreet = req.session.data['address-line-2']
+  let newmanualCity = req.session.data['address-town']
+  let newmanualPostcode = req.session.data['address-postcode']
 
-// })
+  req.session.data['neworgBuilding'] = newmanualBuilding
+  req.session.data['neworgStreet'] = newmanualStreet
+  req.session.data['neworgCity'] = newmanualCity 
+  req.session.data['neworgPostcode'] = newmanualPostcode
+  
+  res.redirect('/1-20/dynamic/add-address-confirm-address')
+
+})
 
 
 //Update Learner Records
 
+router.get('/1-20/dynamic/result-entries1', function(req, res) {
 
+  let uln = req.session.data['uln-search']
+
+  if (uln === '1234567890') {
+    res.render('1-20/dynamic/result-entries1', 
+    {
+    'uln' : uln,
+    'name' : 'John Smith',
+    'dob' : '12 June 2004',
+    'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'engMaths' : 'Achieved minimum standard',
+    'industryPlacement' : 'Not completed',
+    'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+
+  })
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 June 2004'
+    req.session.data['engMaths'] = 'Achieved minimum standard'
+    req.session.data['industry'] = 'Not completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['uln'] = uln
+
+    
+  ;
+
+} else if (uln === '5678901234') {
+  res.render('1-20/dynamic/result-entries1', 
+  {
+  'uln' : uln,
+  'name' : 'Tanner Ball',
+  'dob' : '15 April 2004',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'engMaths' : 'Not achieved minimum standard',
+  'industryPlacement' : 'Not completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  })
+
+  req.session.data['name'] = 'Tanner Ball'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  req.session.data['dob'] = '15 April 2004'
+  req.session.data['engMaths'] = 'Not achieved minimum standard'
+  req.session.data['industry'] = 'Not completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['uln'] = uln
+  ;
+} 
+
+
+  else {
+    
+    req.session.data['uln'] = uln
+    res.redirect('learner-ulnNotExist')
+    
+  }
+  
+});
 
 
 module.exports = router

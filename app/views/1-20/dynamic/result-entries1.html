@@ -59,11 +59,11 @@
     <div class="govuk-grid-column-three-quarters">
 
         <h1 class="govuk-heading-l">Learner T Level record</h1>
-        <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
-        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
-        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
-        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
-        <p class="govuk-body">T Level core: Design, Surveying and Planning for Construction</p>
+        <h2 class="govuk-heading-m">ULN: {{ uln }}</h2>
+        <p class="govuk-body">Name: {{ name }}</p>
+        <p class="govuk-body">Date of birth: {{ dob }}</p>
+        <p class="govuk-body">Provider (UKPRN): {{ provider }}</p>
+        <p class="govuk-body">T Level core: {{ tlevelTitle }}</p>
         <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's English and maths achievement</h3>
@@ -74,7 +74,7 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              {{ data['result-answer'] }}              
+              {{ engMaths }}             
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               {% if data['has-lrs-data'] == false %}
@@ -125,7 +125,7 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              {{ data['result-ip-answer'] }}
+              {{ industry }}
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="change-ip-result">
