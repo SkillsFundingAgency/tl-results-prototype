@@ -1610,7 +1610,6 @@ router.post('/1-20/dynamic/add-address-manually', function (req, res) {
   let newmanualCity = req.session.data['address-town']
   let newmanualPostcode = req.session.data['address-postcode']
 
-  req.session.data['newAddress'] = "yes"
   req.session.data['neworgBuilding'] = newmanualBuilding
   req.session.data['neworgStreet'] = newmanualStreet
   req.session.data['neworgCity'] = newmanualCity 
@@ -1672,7 +1671,6 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
   ;
 } 
 
-
   else {
     
     req.session.data['uln'] = uln
@@ -1681,6 +1679,21 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
   }
   
 });
+
+//Change Industry Placement
+
+router.post('/1-20/dynamic/change-ip-result', function (req, res) {
+  
+  req.session.data['newplacementResult'] = "yes"
+
+  let newResult = req.session.data['result-ip-answer']
+
+
+  req.session.data['newindustryPlacement'] = newResult
+  res.redirect('/1-20/dynamic/change-ip-result-successful')
+
+});
+
 
 
 module.exports = router

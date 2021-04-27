@@ -77,42 +77,11 @@
               {{ engMaths }}             
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
-              {% if data['has-lrs-data'] == false %}
               <a class="govuk-link" href="change-em-status">
                 Update <span class="govuk-visually-hidden"> achieved status</span>
               </a>
-              {% elseif data['learner-uln'] == 8878653767 %}
-              <a class="govuk-link" href="action-change-em-status1">
-                Update <span class="govuk-visually-hidden"> achieved status</span>
-              </a>
-              {% else %}
-              <a class="govuk-link" href="dispute">
-                Query <span class="govuk-visually-hidden"> achieved status</span>
-              </a>
-              {% endif %}
             </dd>
           </div>
-          {% if data['has-lrs-data'] == true %}
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__key" style="border-bottom:none">
-            </dd>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <details class="govuk-details" closed>
-                  <summary class="govuk-details__summary" style="border-bottom:none">
-                      <span class="govuk-details__summary-text">
-                          What's LRS?
-                      </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <p class="govuk-body">The Learning Records Service (LRS) collects data relating to learners' post-14 qualifications, including GCSEs.</p>
-                    <p class="govuk-body">If you disagree with the achievement status, please contact your awarding organisation who may be able to update the results. If you still need help, please <a class="govuk-link" href="dispute">raise a query</a> with us.</p>
-                  </div>
-              </details>
-            </dd>
-            <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            </dd>
-          </div>
-          {% endif %}
         </dl>
 
         <hr class="govuk-section-break govuk-section-break--visible">
@@ -125,7 +94,16 @@
                Status
             </dd>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              {{ industry }}
+              
+              {% if data['newplacementResult'] === 'yes'%}
+
+              {{ data['newindustryPlacement'] }}
+              
+              {% else %}
+                {{ industryPlacement }}
+              {% endif %}
+    
+
             </dd>
             <dd class="govuk-summary-list__actions" style="border-bottom:none">
               <a class="govuk-link" href="change-ip-result">
@@ -143,7 +121,10 @@
         <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-select-search-learner">Search again</a></p>
         {% endif %}
 
+        <p>{{ data['newindustryPlacement'] }}</p>
+
     </div>
 </div>
 
 {% endblock %}
+
