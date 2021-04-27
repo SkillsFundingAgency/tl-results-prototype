@@ -1610,6 +1610,7 @@ router.post('/1-20/dynamic/add-address-manually', function (req, res) {
   let newmanualCity = req.session.data['address-town']
   let newmanualPostcode = req.session.data['address-postcode']
 
+  req.session.data['newAddress'] = "yes"
   req.session.data['neworgBuilding'] = newmanualBuilding
   req.session.data['neworgStreet'] = newmanualStreet
   req.session.data['neworgCity'] = newmanualCity 
