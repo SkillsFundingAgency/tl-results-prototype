@@ -11,7 +11,7 @@ Add address - enter postcode - Manage T Level results - GOV.UK
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="add-address-select-address" method="post" class="form" >
+    <form action="add-address-select-address" method="post" class="form" novalidate data-validate="search-for-postcode-validation" >
       <div class="govuk-form-group">
       <span class="govuk-caption-xl">Add address</span>
         <fieldset class="govuk-fieldset">
@@ -35,6 +35,26 @@ Add address - enter postcode - Manage T Level results - GOV.UK
   </div>
 </div>
 
+
+<script type="application/json" id="search-for-postcode-validation">
+  {
+
+    "address-postcode": {
+
+      "presence": {
+      
+      "message": "^Enter your postcode for this application"
+      
+      },
+      
+      "postcode":false
+      
+      }
+      
+      }
+
+  }
+</script>
 
 
 

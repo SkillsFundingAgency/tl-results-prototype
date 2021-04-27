@@ -1361,12 +1361,12 @@ router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res
 
 
 // 1-20 routes
-router.get('/1-20/SoA/check-your-answers', function(req, res) {
+router.get('/1-20/dynamic/check-your-answers', function(req, res) {
 
   let uln = req.session.data['uln-search']
 
   if (uln === '1234567890') {
-    res.render('1-20/SoA/check-your-answers', 
+    res.render('1-20/dynamic/check-your-answers', 
     {
     'uln' : uln,
     'name' : 'John Smith',
@@ -1380,10 +1380,10 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
     'specialism' : 'Building Services Design (ZTLOS003)',     
     'specialismGrade' : 'No result yet',
     'department' : 'Exams Office',
-    'orgBuilding' : 'Barnsley College',
-    'orgStreet' : 'Church St',
+    'orgBuilding' : 'Barnsley Academy',
+    'orgStreet' : 'Farm Rd',
     'orgCity' : 'Barnsley',
-    'orgPostcode' : 'S70 2AX',
+    'orgPostcode' : 'S70 3DL',
   })
     req.session.data['name'] = 'John Smith'
     req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
@@ -1396,10 +1396,16 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
     req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismGrade'] = 'No result yet'
+    req.session.data['department'] = 'Exams Office'
+    req.session.data['orgBuilding'] = "Barnsley Academy"
+    req.session.data['orgStreet'] = "Farm Rd"
+    req.session.data['orgCity'] = 'Barnsley'
+    req.session.data['orgPostcode'] = 'S70 3DL'
+    
   ;
 
 } else if (uln === '5678901234') {
-  res.render('1-20/SoA/check-your-answers', 
+  res.render('1-20/dynamic/check-your-answers', 
   {
   'uln' : uln,
   'name' : 'Tanner Ball',
@@ -1422,7 +1428,7 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   ;
 } else if (uln === '4321987650') {
-  res.render('1-20/SoA/check-your-answers', 
+  res.render('1-20/dynamic/check-your-answers', 
   {
   'uln' : uln,
   'name' : 'Adele Crossley',
@@ -1446,7 +1452,7 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   ;
 } else if (uln === '5647382910') {
-  res.render('1-20/SoA/check-your-answers', 
+  res.render('1-20/dynamic/check-your-answers', 
   {
   'uln' : uln,
   'name' : 'Sheldon Maxwell',
@@ -1478,7 +1484,7 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
  ;
 
-  res.redirect('/1-20/SoA/learner-details-requestpending')
+  res.redirect('/1-20/dynamic/learner-details-requestpending')
 
 } else if (uln === '8642135790') {
 
@@ -1489,7 +1495,7 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
  ;
 
-  res.redirect('/1-20/SoA/learner-details-noresults')
+  res.redirect('/1-20/dynamic/learner-details-noresults')
 
 } else if (uln === '1231231234') {
 
@@ -1500,7 +1506,7 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
  ;
 
-  res.redirect('/1-20/SoA/learner-ulnWithdrawn')
+  res.redirect('/1-20/dynamic/learner-ulnWithdrawn')
 
 }
 
@@ -1516,28 +1522,87 @@ router.get('/1-20/SoA/check-your-answers', function(req, res) {
 
 
 //Cancel Request Page
-router.post('/1-20/SoA/cancel-request', function (req, res) {
+router.post('/1-20/dynamic/cancel-request', function (req, res) {
 
   let cancelRequest = req.session.data['cancel-request-answer']
 
   if (cancelRequest === 'no') {
-    res.redirect('/1-20/SoA/check-your-answers')
+    res.redirect('/1-20/dynamic/check-your-answers')
   } else {
-    res.redirect('/1-20/SoA/tlevels-dashboard')
+    res.redirect('/1-20/dynamic/tlevels-dashboard')
   }
 })
 
 //Cancel Address Page
-router.post('/1-20/SoA/cancel-address', function (req, res) {
+router.post('/1-20/dynamic/cancel-address', function (req, res) {
 
   let cancelAddress = req.session.data['cancel-address-answer']
 
   if (cancelAddress === 'no') {
-    res.redirect('/1-20/SoA/add-address-confirm-address')
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
   } else {
-    res.redirect('/1-20/SoA/tlevels-dashboard')
+    res.redirect('/1-20/dynamic/tlevels-dashboard')
   }
 })
+
+
+//Manage Postal Address
+
+router.get('/1-20/dynamic/org-address-present', function(req, res) {
+
+    res.render('1-20/dynamic/org-address-present', 
+    {
+      'department' : 'Exams Office',
+      'orgBuilding' : 'Barnsley Academy',
+      'orgStreet' : 'Farm Rd',
+      'orgCity' : 'Barnsley',
+      'orgPostcode' : 'S70 3DL',
+  })
+  req.session.data['department'] = 'Exams Office'
+  req.session.data['orgBuilding'] = "Barnsley Academy"
+  req.session.data['orgStreet'] = "Farm Rd"
+  req.session.data['orgCity'] = 'Barnsley'
+  req.session.data['orgPostcode'] = 'S70 3DL'
+  
+});
+
+router.post('/1-20/dynamic/add-address-select-address', function (req, res) {
+
+  let addressChoice = req.session.data['full-address']
+
+  if (addressChoice === 'add1') {
+    
+    req.session.data['orgBuilding'] = "Barnsley College"
+    req.session.data['orgStreet'] = "Church St"
+    req.session.data['orgCity'] = 'Barnsley'
+    req.session.data['orgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  
+  }else if (addressChoice === 'add2'){
+    req.session.data['orgBuilding'] = "The Open Kitchen"
+    req.session.data['orgStreet'] = "Church St"
+    req.session.data['orgCity'] = 'Barnsley'
+    req.session.data['orgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  
+  
+  } else if (addressChoice === 'add3'){
+    req.session.data['orgBuilding'] = "Jobshop"
+    req.session.data['orgStreet'] = "Church St"
+    req.session.data['orgCity'] = 'Barnsley'
+    req.session.data['orgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  }
+})
+
+
+
 
 
 

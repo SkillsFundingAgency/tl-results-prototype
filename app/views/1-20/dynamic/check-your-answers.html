@@ -196,20 +196,22 @@
 
             <input type="hidden" name="answers-checked" value="true">
     
-            <button type="submit" class="govuk-button" data-module="govuk-button">
-              Accept and send request
-            </button>
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">
+                Accept and send request
+              </button>
+              <a class="govuk-link" href="#">Cancel</a>
+            </div>
           </form>
-        </div>
-        <div class="govuk-grid-column-one-half">
-          <a href="cancel-request">Cancel</a>
         </div>
       </div>  
     </div>
   </div>
 {% endblock %}
 
-Barnsley Sixth Form Office
-<br>St Mary's Place
-<br>Barnsley
-<br>S70 2SR
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  <a class="govuk-link" href="#">Cancel</a>
+</div>

@@ -25,7 +25,7 @@ Add address - select address - Manage T Level results - GOV.UK
             Postcode
           </p>
           <p class="govuk-body-m govuk-!-font-weight-bold ">
-            AB1 2RT
+            {{ data['address-postcode'] }}
             <a class="govuk-body govuk-!-margin-left-3" href="add-address-postcode">
               Change
             </a>
@@ -37,9 +37,9 @@ Add address - select address - Manage T Level results - GOV.UK
             </label>
             <select class="govuk-select" id="Full-address" name="full-address">
               <option value="default" selected>3 addresses found</option>
-              <option value="add1">Address 1</option>
-              <option value="add2">Address 2</option>
-              <option value="add3">Address 3</option>
+              <option value="add1">Barnsley College, Church St, Barnsley, S70 2AX</option>
+              <option value="add2">The Open Kitchen, Church St, Barnsley, S70 2AX</option>
+              <option value="add3">Jobshop, Church St, Barnsley, S70 2AX</option>
             </select>
           </div>
 

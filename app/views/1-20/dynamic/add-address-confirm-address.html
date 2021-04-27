@@ -27,7 +27,7 @@ Add address - confirm address - Manage T Level results - GOV.UK
             Department
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Exams Office</p>
+            <p class="govuk-body">{{ data['dept-name'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
             <a class="govuk-link" href="add-address-select-address">
@@ -41,8 +41,8 @@ Add address - confirm address - Manage T Level results - GOV.UK
             Building and street
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Barnsley Sixth Form College</p>
-            <p class="govuk-body">St Mary's Place</p>
+            <p class="govuk-body">{{ data['orgBuilding'] }}</p>
+            <p class="govuk-body">{{ data['orgStreet'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
           </dd>
@@ -53,7 +53,7 @@ Add address - confirm address - Manage T Level results - GOV.UK
             Town or city
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">Barnsley</p>
+            <p class="govuk-body">{{ data['orgCity'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
 
@@ -65,7 +65,7 @@ Add address - confirm address - Manage T Level results - GOV.UK
             Postcode
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
-            <p class="govuk-body">S70 2SR</p>
+            <p class="govuk-body">{{ data['address-postcode'] }}</p>
           </dd>
           <dd class="govuk-summary-list__actions" style="border-bottom:none">
 
