@@ -103,15 +103,13 @@
           <dt class="govuk-summary-list__key">
             Industry Placement
           </dt>
-          {% if data['newplacementResult'] === 'yes'%}
-          
-          {{ data['newindustryPlacement'] }}
-
-          {% else %}
           <dd class="govuk-summary-list__value">
+          {% if data['newplacementResult'] === 'yes'%}
+          {{ data['newindustryPlacement'] }}
+          {% else %}
             {{ industryPlacement }}
-          </dd>
           {% endif %}
+          </dd>
 
         </div>
       </dl>
