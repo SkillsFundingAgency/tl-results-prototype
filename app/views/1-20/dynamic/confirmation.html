@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Request complete</h1>
+        <div class="govuk-panel__body">
+          {{ data['name'] }}
+        </div>
+        <div class="govuk-panel__body">
+          ULN: <strong>{{ data['uln'] }}</strong>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>The statement of achievement will be sent to you by post within 5 working days.</p>
+      <p>If the statement of achievement does not arrive within 15 working days, <a href="https://manage-tlevel-results.tlevels.gov.uk/contact-us">contact us</a> or submit a new request.</p>
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+     
+      <p class="govuk-body">
+        <a class="govuk-button" role="button" href="tlevels-dashboard">
+            Back to Home
+        </a>
+    </p>
+    
+    
+    
+    </div>
+     
+  </div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<section id="coreComponent">
+
+    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: {{ core }}</h3>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key" style="border-bottom:none">
+          Result
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <span class="govuk-visually-hidden">for </span>Summer 2021
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+        {% if data['resultChanged'] === "yes" %}
+          Grade: {{ data['coreGrade'] }}
+        {% else %}
+          Grade: {{ coreGrade }}
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+          {% if data['coreOnHold'] === "yes" %}
+          <strong class="govuk-tag govuk-tag--red">
+            On hold
+          </strong>
+          {% else %}
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['coreOnHold'] === "yes" %}
+    <p class="govuk-body">
+      <a class="govuk-link" href="core-take-off-hold">
+        Take core component off hold
+      </a>
+    </p>
+    {% else %}
+    <p class="govuk-body">
+      <a class="govuk-link" href="core-put-on-hold">
+        Put core component on hold
+      </a>
+    </p>
+    {% endif %}
+
+</section>
+    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
+ <section id="specialismComponent">
+
+    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: {{ specialism }}</h3>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key" style="border-bottom:none">
+          Result
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+          <span class="govuk-visually-hidden">for </span>Summer 2022
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+        {% if data['specialismResultChanged'] === "yes" %}
+          Grade: {{ data['specialismGrade'] }}
+        {% else %}
+          Grade: {{ specialismGrade }}
+        {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__value" style="border-bottom:none">
+          {% if data['specialismOnHold'] === "yes" %}
+          <strong class="govuk-tag govuk-tag--red">
+            On hold
+          </strong>
+          {% else %}
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['specialismOnHold'] === "yes" %}
+    <p class="govuk-body">
+      <a class="govuk-link" href="specialism-take-off-hold">
+        Take specialism component off hold
+      </a>
+    </p>
+    {% else %}
+    <p class="govuk-body">
+      <a class="govuk-link" href="specialism-put-on-hold">
+        Put specialism component on hold
+      </a>
+    </p>
+    {% endif %}
+
+</section>

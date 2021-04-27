@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const router = express.Router()
 
 // Add your routes here - above the module.exports line
@@ -10,7 +11,6 @@ function initialiseVariables(req) {
     */
 
    //req.session.data['Uln'] = null
-
    req.session.data['has-lrs-data'] = true
    req.session.data['has-search-uln-added'] = true
    req.session.data['uln-already-added'] = false
@@ -1176,6 +1176,446 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
     res.redirect('q4-address-no')
   }
 })
+
+
+// 1-19 routes
+
+router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
+
+  let uln = req.session.data['uln-search']
+
+  if (uln === '1234567890') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    {
+    'uln' : uln,
+    'name' : 'John Smith',
+    'dob' : '12 December 2005',
+    'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'coreGrade' : 'C',
+    'core' : 'Design, Surveying and Planning for Construction (60358300)',
+    'coreResult' : "Summer 2021",
+    'specialism' : 'Building Services Design (ZTLOS003)',
+    'specialismResults' : "Summer 2021",       
+    'specialismGrade' : 'Merit',
+    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+  })
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 December 2004'
+    req.session.data['coreGrade'] = 'C'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+    req.session.data['coreOnHold'] = ""
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismGrade'] = 'C'
+  ;
+
+  } else if (uln === '5678901234') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Tanner Ball', 
+      'uln' : '5678901234', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
+    ;
+  } else if (uln === '4321987650') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Batman', 
+      'uln' : '4321987650', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
+    ;
+  } else if (uln === '5647382910') {
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'name' : 'Joker', 
+      'uln' : '5647382910', 
+      'dob' : '15 April 2004', 
+      'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'coreResult' : "Summer 2021",
+      'coreGrade' : 'C',
+      'coreOnHold' : req.session.data['place-on-hold'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",    
+      'specialismGrade' : 'Merit',
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
+    ;
+  }
+  else {
+    res.redirect('no-learner-found')
+  }
+  
+});
+
+router.post('/1-19/dynamic/put-on-hold', function (req, res) {
+
+  let coreOnHold = req.session.data['place-on-hold']
+  
+  if (coreOnHold === 'yes') {
+    req.session.data['coreOnHold'] = 'yes'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    req.session.data['coreOnHold'] = 'no'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/specialism-put-on-hold', function (req, res) {
+
+  let specialismOnHold = req.session.data['specialism-place-on-hold']
+
+  if (specialismOnHold === 'yes') {
+    req.session.data['specialismOnHold'] = 'yes'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    req.session.data['specialismOnHold'] = 'no'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/core-take-off-hold', function (req, res) {
+
+  let coreOnHold = req.session.data['core-take-off-hold']
+
+  if (coreOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/has-result-changed')
+  } else {
+    req.session.data['coreOnHold'] = 'yes'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/specialism-take-off-hold', function (req, res) {
+
+  let specialismOnHold = req.session.data['specialism-take-off-hold']
+
+  if (specialismOnHold === 'yes') {
+    res.redirect('/1-19/dynamic/specialism-has-result-changed')
+  } else {
+    req.session.data['specialismOnHold'] = 'yes'
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+router.post('/1-19/dynamic/has-result-changed', function (req, res) {
+
+  let resultChanged = req.session.data['result-answer']
+
+  if (resultChanged === 'no') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    req.session.data['resultChanged'] = 'yes'
+    res.redirect('/1-19/dynamic/change-core-result')
+  }
+})
+
+router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
+
+  let resultChanged = req.session.data['specialism-result-answer']
+
+  if (resultChanged === 'no') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  } else {
+    req.session.data['specialismResultChanged'] = 'yes'
+    res.redirect('/1-19/dynamic/change-specialism-result')
+  }
+})
+
+router.post('/1-19/dynamic/confirm-result-change', function (req, res) {
+  
+  let newResult = req.session.data['result-answer']
+  req.session.data['coreGrade'] = newResult
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
+})
+
+router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res) {
+  
+  let newResult = req.session.data['specialism-result-answer']
+  req.session.data['specialismGrade'] = newResult
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
+})
+
+
+// 1-20 routes
+router.get('/1-20/dynamic/check-your-answers', function(req, res) {
+
+  let uln = req.session.data['uln-search']
+
+  if (uln === '1234567890') {
+    res.render('1-20/dynamic/check-your-answers', 
+    {
+    'uln' : uln,
+    'name' : 'John Smith',
+    'dob' : '12 June 2004',
+    'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'coreGrade' : 'A',
+    'engMaths' : 'Achieved minimum standard',
+    'industryPlacement' : 'Not completed',
+    'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+    'core' : 'Design, Surveying and Planning for Construction (60358300)',
+    'specialism' : 'Building Services Design (ZTLOS003)',     
+    'specialismGrade' : 'No result yet',
+    'department' : 'Exams Office',
+    'orgBuilding' : 'Barnsley Academy',
+    'orgStreet' : 'Farm Rd',
+    'orgCity' : 'Barnsley',
+    'orgPostcode' : 'S70 3DL',
+  })
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 June 2004'
+    req.session.data['coreGrade'] = 'A'
+    req.session.data['engMaths'] = 'Achieved minimum standard'
+    req.session.data['industry'] = 'Not completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismGrade'] = 'No result yet'
+    req.session.data['department'] = 'Exams Office'
+    req.session.data['orgBuilding'] = "Barnsley Academy"
+    req.session.data['orgStreet'] = "Farm Rd"
+    req.session.data['orgCity'] = 'Barnsley'
+    req.session.data['orgPostcode'] = 'S70 3DL'
+    
+  ;
+
+} else if (uln === '5678901234') {
+  res.render('1-20/dynamic/check-your-answers', 
+  {
+  'uln' : uln,
+  'name' : 'Tanner Ball',
+  'dob' : '15 April 2004',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'coreGrade' : 'C',
+  'engMaths' : 'Not achieved minimum standard',
+  'industryPlacement' : 'Not completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  'core' : 'Design, Surveying and Planning for Construction (60358300)',
+  'specialism' : 'Building Services Design (ZTLOS003)',     
+  'specialismGrade' : 'No result yet',
+  'orgBuilding' : 'Barnsley College',
+  'orgStreet' : 'Church St',
+  'orgCity' : 'Barnsley',
+  'orgPostcode' : 'S70 2AX',
+  })
+
+  req.session.data['name'] = 'Tanner Ball'
+  req.session.data['uln'] = uln
+  ;
+} else if (uln === '4321987650') {
+  res.render('1-20/dynamic/check-your-answers', 
+  {
+  'uln' : uln,
+  'name' : 'Adele Crossley',
+  'dob' : '19 March 2004',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'coreGrade' : 'A',
+  'engMaths' : 'Achieved minimum standard',
+  'industryPlacement' : 'Completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  'core' : 'Design, Surveying and Planning for Construction (60358300)',
+  'specialism' : 'Building Services Design (ZTLOS003)',     
+  'specialismGrade' : 'No result yet',
+  'department': 'Exams office',
+  'orgBuilding' : 'Barnsley College',
+  'orgStreet' : 'Church St',
+  'orgCity' : 'Barnsley',
+  'orgPostcode' : 'S70 2AX',
+  })
+
+  req.session.data['name'] = 'Adele Crossley'
+  req.session.data['uln'] = uln
+  ;
+} else if (uln === '5647382910') {
+  res.render('1-20/dynamic/check-your-answers', 
+  {
+  'uln' : uln,
+  'name' : 'Sheldon Maxwell',
+  'dob' : '24 December 2003',
+  'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+  'coreGrade' : 'C',
+  'engMaths' : 'Not achieved minimum standard',
+  'industryPlacement' : 'Completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  'core' : 'Design, Surveying and Planning for Construction (60358300)',
+  'specialism' : 'Building Services Design (ZTLOS003)',     
+  'specialismGrade' : 'No result yet',
+  'department': 'Exams office',
+  'orgBuilding' : 'Abingdon Campus',
+  'orgStreet' : 'Wooton Road',
+  'orgCity' : 'Abingdon',
+  'orgPostcode' : 'OX14 1GG',
+  })
+
+  req.session.data['name'] = 'Sheldon Maxwell'
+  req.session.data['uln'] = uln
+  ;
+} else if (uln === '9876543210') {
+
+  req.session.data['name'] = 'Jane Barrow'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '23 October 2004'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+ ;
+
+  res.redirect('/1-20/dynamic/learner-details-requestpending')
+
+} else if (uln === '8642135790') {
+
+  req.session.data['name'] = 'Karen Fleming'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '2 January 2004'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+ ;
+
+  res.redirect('/1-20/dynamic/learner-details-noresults')
+
+} else if (uln === '1231231234') {
+
+  req.session.data['name'] = 'Steve Arnott'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '12 January 2003'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+ ;
+
+  res.redirect('/1-20/dynamic/learner-ulnWithdrawn')
+
+}
+
+
+  else {
+    
+    req.session.data['uln'] = uln
+    res.redirect('learner-ulnNotExist')
+    
+  }
+  
+});
+
+
+//Cancel Request Page
+router.post('/1-20/dynamic/cancel-request', function (req, res) {
+
+  let cancelRequest = req.session.data['cancel-request-answer']
+
+  if (cancelRequest === 'no') {
+    res.redirect('/1-20/dynamic/check-your-answers')
+  } else {
+    res.redirect('/1-20/dynamic/tlevels-dashboard')
+  }
+})
+
+//Cancel Address Page
+router.post('/1-20/dynamic/cancel-address', function (req, res) {
+
+  let cancelAddress = req.session.data['cancel-address-answer']
+
+  if (cancelAddress === 'no') {
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  } else {
+    res.redirect('/1-20/dynamic/tlevels-dashboard')
+  }
+})
+
+
+//Manage Postal Address
+
+router.get('/1-20/dynamic/org-address-present', function(req, res) {
+
+    res.render('1-20/dynamic/org-address-present', 
+    {
+      'department' : 'Exams Office',
+      'orgBuilding' : 'Barnsley Academy',
+      'orgStreet' : 'Farm Rd',
+      'orgCity' : 'Barnsley',
+      'orgPostcode' : 'S70 3DL',
+  })
+  req.session.data['department'] = 'Exams Office'
+  req.session.data['orgBuilding'] = "Barnsley Academy"
+  req.session.data['orgStreet'] = "Farm Rd"
+  req.session.data['orgCity'] = 'Barnsley'
+  req.session.data['orgPostcode'] = 'S70 3DL'
+  
+});
+
+router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
+
+  let addressChoice = req.session.data['full-address']
+
+  req.session.data['newAddress'] = "yes"
+
+  if (addressChoice === 'add1') {
+    
+    req.session.data['neworgBuilding'] = "Barnsley College"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  
+  }else if (addressChoice === 'add2'){
+    req.session.data['neworgBuilding'] = "The Open Kitchen"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  
+  
+  } else if (addressChoice === 'add3'){
+    req.session.data['neworgBuilding'] = "Jobshop"
+    req.session.data['neworgStreet'] = "Church St"
+    req.session.data['neworgCity'] = 'Barnsley'
+    req.session.data['neworgPostcode'] = 'S70 2AX'
+    ;
+
+    res.redirect('/1-20/dynamic/add-address-confirm-address')
+  }
+})
+
+// router.post('/1-20/dynamic/add-address-manually', function (req, res) {
+  
+//   let newResult = req.session.data['specialism-result-answer']
+//   req.session.data['specialismGrade'] = newResult
+//   res.redirect('/1-19/dynamic/record-entries-routes')
+
+// })
+
+
+//Update Learner Records
+
+
+
 
 module.exports = router
 //checkIfActive(router.req)

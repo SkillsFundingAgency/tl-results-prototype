@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+<style>
+    .Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+</style>
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Manage learner T Level records</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="action-select-search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">Learner T Level record</h1>
+        <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
+        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
+        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
+        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
+        <p class="govuk-body">T Level core: Design, Surveying and Planning for Construction</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's English and maths achievement</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              {{ data['result-answer'] }}              
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              {% if data['has-lrs-data'] == false %}
+              <a class="govuk-link" href="change-em-status">
+                Update <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% elseif data['learner-uln'] == 8878653767 %}
+              <a class="govuk-link" href="action-change-em-status1">
+                Update <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% else %}
+              <a class="govuk-link" href="dispute">
+                Query <span class="govuk-visually-hidden"> achieved status</span>
+              </a>
+              {% endif %}
+            </dd>
+          </div>
+          {% if data['has-lrs-data'] == true %}
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <details class="govuk-details" closed>
+                  <summary class="govuk-details__summary" style="border-bottom:none">
+                      <span class="govuk-details__summary-text">
+                          What's LRS?
+                      </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">The Learning Records Service (LRS) collects data relating to learners' post-14 qualifications, including GCSEs.</p>
+                    <p class="govuk-body">If you disagree with the achievement status, please contact your awarding organisation who may be able to update the results. If you still need help, please <a class="govuk-link" href="dispute">raise a query</a> with us.</p>
+                  </div>
+              </details>
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's industry placement completion</h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__key" style="border-bottom:none">
+               Status
+            </dd>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              {{ data['result-ip-answer'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions" style="border-bottom:none">
+              <a class="govuk-link" href="change-ip-result">
+                Update <span class="govuk-visually-hidden"> completed status</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+
+        {% if data['uln-already-added'] == true %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-clear-add-learner-q1-uln">Add another learner</a></p>
+        {% else %}
+        <p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="action-select-search-learner">Search again</a></p>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

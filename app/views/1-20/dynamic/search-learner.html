@@ -11,7 +11,7 @@ Search for a learner page
       <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="reviews-and-appeals">Reviews and appeals</a>
+      <a class="govuk-breadcrumbs__link" href="statement.html">Request a statement</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Search for a learner</li>
   </ol>
@@ -22,7 +22,7 @@ Search for a learner page
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="record-entries-routes" method="get" novalidate data-validate="search-for-learner-validation">
+    <form class="form" action="check-your-answers" method="post" novalidate data-validate="search-for-learner-validation">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
@@ -30,7 +30,7 @@ Search for a learner page
               Search for a learner
             </h1>
           </legend>
-          <p class="govuk-body">Search for the learner who has requested the review or appeal.</p>
+          <p class="govuk-body">Search for the learner who's statement of achievement you are requesting.</p>
           <div class="govuk-form-group">
             <label class="govuk-label" for="uln-search">
               Enter the Unique Learner Number (ULN)
@@ -59,11 +59,11 @@ Search for a learner page
       },
       "numericality": {
         "onlyInteger": true,
-        "message": "^Uniqure learner number must be a number"
+        "message": "^Unique learner number must be a number"
       },
       "length": {
         "is": 10,
-        "message": "^Uniqure learner number must be 10 numbers long"
+        "message": "^Unique learner number must be 10 numbers long"
       }
     }
 

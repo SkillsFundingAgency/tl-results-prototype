@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Request a statement of achievement - No results
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="statement.html">Request a statement</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner.html">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">No component results</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l">Statement of achievement not available for a learner with no component achievements</h1>
+              <h2 class="govuk-heading-m">ULN: {{ data['uln'] }}</h2>
+              <p class="govuk-body">Name: {{ data['name'] }}</p>
+              <p class="govuk-body">Date of birth: {{ data['dob'] }}</p>
+              <p class="govuk-body">Provider (UKPRN): {{ data['provider'] }}</p>
+              <p class="govuk-body">T Level title: {{ data['tlevelTitle'] }}</p>
+
+              <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+
+              <div class="govuk-inset-text">
+                <p class="govuk-body">No component results have been recorded for this learner so you cannot request a statement of achievement.</p>
+                <p class="govuk-body">If this learner has completed an industry placement, you must <a class="govuk-link" href="learner-records">add a new T Level record</a> to their registration.</p>
+                <p class="govuk-body">If the learner has completed a technical qualification component, contact the exam board responsible for delivering the T Level and ask them to add the result.</p>
+              </div>
+
+              <p class="govuk-body">
+                  <a class="govuk-button" role="button" href="tlevels-dashboard">
+                      Back to Home
+                  </a>
+              </p>
+    </div>
+</div>
+
+{% endblock %}

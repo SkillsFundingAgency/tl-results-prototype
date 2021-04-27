@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Request sent successfully
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Core component has been put on hold</h1>
+        <div class="govuk-panel__body">
+          John Smith<br>
+          ULN: 1234567890
+        </div>
+      </div>
+      <p class="govuk-!-margin-top-8">
+        <a class="govuk-button" role="button" href="record-entries2">
+          View this learner's status
+        </a>
+      </p>
+      <p >
+        <a class="govuk-link" href="tlevels-dashboard">
+          Back to Home
+        </a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="#" onclick="goBack()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="put-on-hold" method="post" class="form" novalidate data-validate="core-put-on-hold">
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
+                          Are you sure you want to put this core component on hold?
+                      </h1>
+                    </legend>
+
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="hold-answer-1" name="place-on-hold" type="radio" value="yes" >
+                          <label class="govuk-label govuk-radios__label" for="hold-answer-1">
+                              Yes, put this component on hold
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="hold-answer-2" name="place-on-hold" type="radio" value="no"  >
+                          <label class="govuk-label govuk-radios__label" for="hold-answer-2">
+                              No, do not put this component on hold
+                          </label>
+                      </div>
+                    </div>
+                </fieldset>
+
+            </div>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="core-put-on-hold">
+  {
+
+    "place-on-hold": {
+      "presence": {
+        "message": "^Please select an option"
+      }
+
+    }
+
+  }
+</script>
+{% endblock %}

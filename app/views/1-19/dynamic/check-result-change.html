@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check and submit result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="change-core-result">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Check and submit
+    </h1>
+    <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting the result.</p>
+
+    <form action="confirm-result-change" method="post" class="form">
+      <h2 class="govuk-heading-m">ULN: {{ data['uln'] }}</h2>
+      <p class="govuk-body">Name: {{ data['name'] }}</p>
+      <p class="govuk-body">Date of birth: {{ data['dob'] }}</p>
+      <p class="govuk-body">Provider: {{ data['provider'] }}</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">{{ data['core'] }}</h3>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Result
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            {{ data['result-answer'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+            <a class="govuk-link" href="change-core-result">
+              Change<span class="govuk-visually-hidden"> result</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <p class="govuk-inset-text">Selecting 'Submit' will change the core result and also take the core component 'off
+        hold'.</p>
+
+      <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

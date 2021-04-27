@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        height: 100%;
+        margin-bottom: 10px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">
+                Manage T Level results
+            </h1>
+        </div>
+        <p class="govuk-body">
+          Providers, for example, schools and colleges, can use this service to record a T Level learner's English and maths achievements and industry placement completion. These records will be added to the learner's T Level registration.
+        </p>
+        <p class="govuk-body">
+          Exam boards, also known as awarding organisations, are responsible for registering each learner onto a T Level course and recording their technical qualification results.
+        </p>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+        <div class="govuk-form-group card" name="hub-choice-4">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="student-results">
+                        Manage learner T Level records
+                    </a>
+                </h2>
+            <p class="govuk-body">
+                Add or change your learners' English and maths achievements and industry placement status
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+        <div class="govuk-form-group card" name="hub-choice-2">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="statement">
+                        Request statement of achievement
+                    </a>
+                </h2>
+            <p class="govuk-body">
+                Learners who withdraw from their T Level course must be issued with a statement of achievement
+            </p>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+        <div class="govuk-form-group card" name="hub-choice-2">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="org-address-present.html">
+                        Manage your organisation's postal address
+                    </a>
+                </h2>
+            <p class="govuk-body">
+                Add or update the address you want certificates and statements of achievement sent to
+            </p>
+        </div>
+    </div>
+
+
+    <div class="govuk-grid-column-one-half govuk-!-margin-top-4">
+        <div class="govuk-form-group card" name="hub-choice-5">
+                <h2 class="govuk-heading-m">
+                    <a class="govuk-link--no-visited-state" href="">
+                        Manage your account
+                    </a>
+                </h2>
+              <p class="govuk-body">View your account profile and permissions</p>
+        </div>
+    </div>
+
+{% endblock %}
