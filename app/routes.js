@@ -1683,13 +1683,11 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
 //Change Industry Placement
 
 router.post('/1-20/dynamic/change-ip-result', function (req, res) {
-  
-  req.session.data['newplacementResult'] = "yes"
-
   let newResult = req.session.data['result-ip-answer']
 
-
+  req.session.data['newplacementResult'] = "yes"
   req.session.data['newindustryPlacement'] = newResult
+  
   res.redirect('/1-20/dynamic/change-ip-result-successful')
 
 });
