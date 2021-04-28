@@ -1418,6 +1418,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'core' : 'Design, Surveying and Planning for Construction (60358300)',
   'specialism' : 'Building Services Design (ZTLOS003)',     
   'specialismGrade' : 'No result yet',
+  'department' : 'Exams Office',
   'orgBuilding' : 'Barnsley College',
   'orgStreet' : 'Church St',
   'orgCity' : 'Barnsley',
@@ -1426,6 +1427,19 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
 
   req.session.data['name'] = 'Tanner Ball'
   req.session.data['uln'] = uln
+  req.session.data['coreGrade'] = 'A'
+  req.session.data['engMaths'] = 'Achieved minimum standard'
+  req.session.data['industry'] = 'Not completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['uln'] = uln
+  req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+  req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+  req.session.data['specialismGrade'] = 'No result yet'
+  req.session.data['department'] = 'Exams Office'
+  req.session.data['orgBuilding'] = "Barnsley College"
+  req.session.data['orgStreet'] = "Church St"
+  req.session.data['orgCity'] = 'Barnsley'
+  req.session.data['orgPostcode'] = 'S70 2AX'
   ;
 } else if (uln === '4321987650') {
   res.render('1-20/dynamic/check-your-answers', 
