@@ -39,6 +39,32 @@ Org address present - Manage T Level results - GOV.UK
             <dt class="govuk-summary-list__key" style="border-bottom:none">
               Building and street
             </dt>
+
+            {% if data['newAddress'] === 'yes'%}
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">{{ data['neworgBuilding'] }}</p>
+              <p class="govuk-body">{{ data['neworgStreet'] }}</p>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Town or city
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">{{ data['neworgCity'] }}</p>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">{{ data['neworgPostcode'] }}</p>
+            </dd>
+
+            {% else %}
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               <p class="govuk-body">{{ orgBuilding }}</p>
               <p class="govuk-body">{{ orgStreet }}</p>
@@ -61,7 +87,10 @@ Org address present - Manage T Level results - GOV.UK
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               <p class="govuk-body">{{ orgPostcode }}</p>
             </dd>
+            {% endif %}
+
           </div>
+          
         </dl>
 
         <p class="govuk-body"><a class="govuk-button" role="button" href="add-address-postcode">Change address</a></p>

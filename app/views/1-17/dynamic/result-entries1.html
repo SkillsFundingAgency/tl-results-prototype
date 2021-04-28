@@ -46,7 +46,7 @@
       <a class="govuk-breadcrumbs__link" href="student-results">Manage learner T Level records</a>
     </li>
     <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="action-select-search-learner">Search for a learner</a>
+      <a class="govuk-breadcrumbs__link" href="search-learner-tlevel">Search for a learner</a>
     </li>
     <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner T Level record</li>
   </ol>
@@ -59,11 +59,11 @@
     <div class="govuk-grid-column-three-quarters">
 
         <h1 class="govuk-heading-l">Learner T Level record</h1>
-        <h2 class="govuk-heading-m">ULN: {{data['learner-uln']}}</h2>
-        <p class="govuk-body">Name: {{ data['learner-name'] }}</p>
-        <p class="govuk-body">Date of birth: {{ data['date-of-birth'] }}</p>
-        <p class="govuk-body">Provider (UKPRN): Barnsley College (12345678)</p>
-        <p class="govuk-body">T Level core: Design, Surveying and Planning for Construction</p>
+        <h2 class="govuk-heading-m">ULN: {{ uln }}</h2>
+        <p class="govuk-body">Name: {{ name }}</p>
+        <p class="govuk-body">Date of birth: {{ dob }}</p>
+        <p class="govuk-body">Provider (UKPRN): {{ provider }})</p>
+        <p class="govuk-body">T Level core: {{ tlevelTitle }}</p>
         <hr class="govuk-section-break govuk-section-break--visible">
 
         <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Learner's English and maths achievement</h3>
