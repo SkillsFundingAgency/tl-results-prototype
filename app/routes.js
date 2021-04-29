@@ -1707,6 +1707,60 @@ router.post('/1-20/dynamic/change-ip-result', function (req, res) {
 });
 
 
+// Add learner record 
+
+router.get('/1-20/dynamic/add-learner-q2-em', function(req, res) {
+
+  let uln = req.session.data['uln-search']
+
+  if (uln === '1234567890') {
+
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 June 2004'
+    req.session.data['engMaths'] = 'Achieved minimum standard'
+    req.session.data['industry'] = 'Not completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['uln'] = uln
+
+    res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
+
+} else if (uln === '5678901234') {
+
+    req.session.data['name'] = 'Tanner Ball'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '15 April 2004'
+    req.session.data['engMaths'] = 'Not achieved minimum standard'
+    req.session.data['industry'] = 'Not completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['uln'] = uln
+
+    res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
+
+// } else if (uln === '8642135790') {
+
+//   req.session.data['name'] = 'Karen Fleming'
+//   req.session.data['uln'] = uln
+//   req.session.data['dob'] = '2 January 2004'
+//   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+//   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+//  ;
+
+//   res.redirect('/1-20/dynamic/add-learner-q2-em')
+
+// }
+
+
+}else {
+    
+    req.session.data['uln'] = uln
+    res.redirect('/1-20/dynamic/add-learner-q1-ulnNotExist')
+    
+  }
+  
+});
+
+
 
 module.exports = router
 //checkIfActive(router.req)
