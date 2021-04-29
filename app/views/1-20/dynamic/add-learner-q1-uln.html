@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - enter Unique Learner Number page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="student-results">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="add-learner-q2-em" method="post" novalidate data-validate="search-for-learner-validation">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl ">
+            <span class="govuk-caption-xl">Add a new learner T Level record</span>
+            <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-5">
+              Enter the Unique Learner Number (ULN)
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <div class="govuk-inset-text" style="margin-top: 0px;">
+                You can only add T Level records for learners registered on a T Level course by an exam board (also known as an awarding organisation).
+            </div>
+            <span class="govuk-hint">
+              ULN must be 10 digits long
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="uln-search" name="uln-search">
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Search</button>
+
+    </form>
+  </div>
+</div>
+
+
+<script type="application/json" id="search-for-learner-validation">
+  {
+
+    "uln-search": {
+      "presence": {
+        "message": "^Enter a unique learner number"
+      },
+      "numericality": {
+        "onlyInteger": true,
+        "message": "^Unique learner number must be a number"
+      },
+      "length": {
+        "is": 10,
+        "message": "^Unique learner number must be 10 numbers long"
+      }
+    }
+
+  }
+</script>
+
+{% endblock %}
