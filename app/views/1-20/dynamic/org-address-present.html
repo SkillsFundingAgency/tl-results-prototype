@@ -27,11 +27,12 @@ Org address present - Manage T Level results - GOV.UK
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
+            {% if data['newAddress'] === 'yes'%}
             <dt class="govuk-summary-list__key" style="border-bottom:none">
               Department
             </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">{{ department }}</p>
+              <p class="govuk-body">{{ data['dept-name'] }}</p>
             </dd>
           </div>
 
@@ -40,7 +41,7 @@ Org address present - Manage T Level results - GOV.UK
               Building and street
             </dt>
 
-            {% if data['newAddress'] === 'yes'%}
+            
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               <p class="govuk-body">{{ data['neworgBuilding'] }}</p>
               <p class="govuk-body">{{ data['neworgStreet'] }}</p>
@@ -65,6 +66,18 @@ Org address present - Manage T Level results - GOV.UK
             </dd>
 
             {% else %}
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Department
+            </dt>
+            <dd class="govuk-summary-list__value" style="border-bottom:none">
+              <p class="govuk-body">{{ department }}</p>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="border-bottom:none">
+              Building and street
+            </dt>
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               <p class="govuk-body">{{ orgBuilding }}</p>
               <p class="govuk-body">{{ orgStreet }}</p>

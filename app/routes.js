@@ -1480,10 +1480,10 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'specialism' : 'Building Services Design (ZTLOS003)',     
   'specialismGrade' : 'No result yet',
   'department': 'Exams office',
-  'orgBuilding' : 'Abingdon Campus',
-  'orgStreet' : 'Wooton Road',
-  'orgCity' : 'Abingdon',
-  'orgPostcode' : 'OX14 1GG',
+  'orgBuilding' : 'Barnsley College',
+  'orgStreet' : 'Church St',
+  'orgCity' : 'Barnsley',
+  'orgPostcode' : 'S70 2AX',
   })
 
   req.session.data['name'] = 'Sheldon Maxwell'
@@ -1683,6 +1683,48 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['uln'] = uln
   ;
+
+} else if (uln === '1231231234') {
+  res.render('1-20/dynamic/result-entries1', 
+  {
+  'uln' : uln,
+  'name' : 'Steve Arnott',
+  'dob' : '12 January 2003',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'engMaths' : 'Not achieved minimum standard',
+  'industryPlacement' : 'Not completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  })
+
+  req.session.data['name'] = 'Steve Arnott'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '12 January 2003'
+  req.session.data['engMaths'] = 'Not achieved minimum standard'
+  req.session.data['industry'] = 'Not completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  ;
+ 
+} else if (uln === '9876543210') {
+  res.render('1-20/dynamic/result-entries1', 
+  {
+  'uln' : uln,
+  'name' : 'Jane Barrow',
+  'dob' : '23 October 2004',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'engMaths' : 'Not achieved minimum standard',
+  'industryPlacement' : 'Not completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  })
+
+  req.session.data['name'] = 'Jane Barrow'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '23 October 2004'
+  req.session.data['engMaths'] = 'Not achieved minimum standard'
+  req.session.data['industry'] = 'Placement completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  ;
 } 
 
   else {
@@ -1737,18 +1779,30 @@ router.get('/1-20/dynamic/add-learner-q2-em', function(req, res) {
 
     res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
 
-// } else if (uln === '8642135790') {
+  } else if (uln === '1231231234') {
 
-//   req.session.data['name'] = 'Karen Fleming'
-//   req.session.data['uln'] = uln
-//   req.session.data['dob'] = '2 January 2004'
-//   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-//   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
-//  ;
+    req.session.data['name'] = 'Steve Arnott'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['dob'] = '12 January 2003'
+    req.session.data['engMaths'] = 'Not achieved minimum standard'
+    req.session.data['industry'] = 'Not completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['uln'] = uln
 
-//   res.redirect('/1-20/dynamic/add-learner-q2-em')
+    res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
 
-// }
+  } else if (uln === '9876543210') {
+
+    req.session.data['name'] = 'Jane Barrow'
+    req.session.data['uln'] = uln
+    req.session.data['dob'] = '23 October 2004'
+    req.session.data['engMaths'] = 'Not achieved minimum standard'
+    req.session.data['industry'] = 'Placement completed'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+
+    res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
+
 
 
 }else {
