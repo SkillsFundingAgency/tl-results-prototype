@@ -1231,7 +1231,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   } else if (uln === '4321987650') {
     res.render('1-19/dynamic/record-entries-routes', 
     { 
-      'name' : 'Batman', 
+      'name' : 'Stephen Jenkins', 
       'uln' : '4321987650', 
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
@@ -1248,7 +1248,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   } else if (uln === '5647382910') {
     res.render('1-19/dynamic/record-entries-routes', 
     { 
-      'name' : 'Joker', 
+      'name' : 'Steve Rogers', 
       'uln' : '5647382910', 
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
@@ -1264,6 +1264,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     ;
   }
   else {
+    req.session.data['uln'] = uln
     res.redirect('no-learner-found')
   }
   

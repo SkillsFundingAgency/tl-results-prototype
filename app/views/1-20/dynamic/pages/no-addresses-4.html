@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  No Addresses Found
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        No addresses found for S70 3DL
+      </h1>
+
+      <p>If you typed the postcode, check it is correct.</p>
+
+      <p>If you pasted the postcode, check you copied the entire postcode.</p>
+
+      <p>If the postcode is correct,<a href=""> add your address in manually</a>.</p>
+
+    </div>
+  </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Try another postcode
+  </button>
+
+{% endblock %}

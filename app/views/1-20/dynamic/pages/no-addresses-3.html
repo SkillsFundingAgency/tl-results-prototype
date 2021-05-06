@@ -5,13 +5,29 @@ Add address - select address - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="add-address-postcode">Back</a>
+  <a class="govuk-back-link" href="">Back</a>
 {% endblock %}
 
 {% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#change-postcode">No addresses found. Check you've entered the correct postcode</a>
+      </li>
+      <li><a href="#manual">or add your address manually.</a></li>
+
+    </ul>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="add-address-confirm-address" method="post" class="form" >
+    <form action="" method="post" class="form" >
       <div class="govuk-form-group">
       <span class="govuk-caption-xl">Add address</span>
         <fieldset class="govuk-fieldset">
@@ -25,8 +41,8 @@ Add address - select address - Manage T Level results - GOV.UK
             Postcode
           </p>
           <p class="govuk-body-m govuk-!-font-weight-bold ">
-            {{ data['address-postcode'] }}
-            <a class="govuk-body govuk-!-margin-left-3" href="add-address-postcode">
+            {{ 'S72 2QA'}}
+            <a class="govuk-body govuk-!-margin-left-3" href="add-address-postcode" id="change-postcode">
               Change
             </a>
           </p>
@@ -36,35 +52,27 @@ Add address - select address - Manage T Level results - GOV.UK
               Select an address
             </label>
             <select class="govuk-select" id="Full-address" name="full-address">
-              <option value="default" selected>3 addresses found</option>
-              <option value="add1">Barnsley College, Church St, Barnsley, S70 2AX</option>
-              <option value="add2">The Open Kitchen, Church St, Barnsley, S70 2AX</option>
-              <option value="add3">Jobshop, Church St, Barnsley, S70 2AX</option>
+              <option value="default" selected>0 addresses found</option>
             </select>
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label " for="dept-name">
-              Department (optional)
+              Department
             </label>
             <input class="govuk-input  govuk-!-width-one-half" id="dept-name" name="dept-name" type="text">
           </div>
 
-          <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0" closed>
-              <summary class="govuk-details__summary" style="border-bottom:none">
-                  <span class="govuk-details__summary-text">
-                      I can't find my organisation's address
-                  </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p class="govuk-body">If you can't find the address in the list check that you have the correct postcode. </p>
-                <p class="govuk-body">If you still can't find the address then <a class="govuk-link" href="add-address-manually">add it manually</a>.</p>
-              </div>
-          </details>
-
         </fieldset>
       </div>
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      <p><a class="govuk-body govuk-!-font-size-19, govuk-link" href="add-address-manually" id="manual">Add your organisation's address manually</a></p>
+
+
+      <button disabled="disabled" aria-disabled="true" class="govuk-button govuk-button--disabled" data-module="govuk-button">
+        Continue
+      </button>
+
 
     </form>
   </div>

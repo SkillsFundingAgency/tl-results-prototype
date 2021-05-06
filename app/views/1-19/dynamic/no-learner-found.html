@@ -17,8 +17,17 @@ Search for a learner page
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">No learner found</h1>
-        <p class="govuk-body">Needs content and design</p>
+        <h1 class="govuk-heading-xl">ULN ({{ data['uln'] }}) cannot be found</h1>
+        <p class="govuk-body">If you think that the ULN should exist it may be that it:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>is registered with another awarding organisation</li>
+            <li>is not registered with us</li>
+        </ul>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+            Back to search
+          </button>    
     </div>
 </div>
 
