@@ -38,8 +38,23 @@ Add address - enter postcode - Manage T Level results - GOV.UK
   </div>
 </div>
 
+<script type="application/json" id="search-for-postcode-validation">
+  {
 
+    "address-postcode": {
+      "presence": {
+        "message": "^Enter your postcode"
+      },
 
+      "length": {
+        "minimum": 6,
+        "maximum": 8,
+        "message": "^Enter a valid UK postcode"
+      }
+    }
+      
+  }
+</script>
 
 
 {% endblock %}
