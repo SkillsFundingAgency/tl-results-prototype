@@ -1372,7 +1372,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
     'uln' : uln,
     'name' : 'John Smith',
     'dob' : '12 June 2004',
-    'provider' : 'Barnsley College (UKRPN: 10000536)',
+    'provider' : 'Barnsley College (10000536)',
     'coreGrade' : 'A',
     'engMaths' : 'Achieved minimum standard',
     'industryPlacement' : 'Not completed',
@@ -1387,7 +1387,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
     'orgPostcode' : 'S70 3DL',
   })
     req.session.data['name'] = 'John Smith'
-    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['provider'] = 'Barnsley College (10000536)'
     req.session.data['dob'] = '12 June 2004'
     req.session.data['coreGrade'] = 'A'
     req.session.data['engMaths'] = 'Achieved minimum standard'
@@ -1411,7 +1411,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'uln' : uln,
   'name' : 'Tanner Ball',
   'dob' : '15 April 2004',
-  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'provider' : 'Barnsley College (10000536)',
   'coreGrade' : 'C',
   'engMaths' : 'Not achieved minimum standard',
   'industryPlacement' : 'Not completed',
@@ -1448,7 +1448,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'uln' : uln,
   'name' : 'Adele Crossley',
   'dob' : '19 March 2004',
-  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'provider' : 'Barnsley College (10000536)',
   'coreGrade' : 'A',
   'engMaths' : 'Achieved minimum standard',
   'industryPlacement' : 'Completed',
@@ -1472,7 +1472,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'uln' : uln,
   'name' : 'Sheldon Maxwell',
   'dob' : '24 December 2003',
-  'provider' : 'Abingdon and Witney College (UKRPN: 10000055)',
+  'provider' : 'Abingdon and Witney College (10000055)',
   'coreGrade' : 'C',
   'engMaths' : 'Not achieved minimum standard',
   'industryPlacement' : 'Completed',
@@ -1496,7 +1496,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   req.session.data['dob'] = '23 October 2004'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
   res.redirect('/1-20/dynamic/learner-details-requestpending')
@@ -1507,7 +1507,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   req.session.data['dob'] = '2 January 2004'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
   res.redirect('/1-20/dynamic/learner-details-noresults')
@@ -1518,7 +1518,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   req.session.data['dob'] = '12 January 2003'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-  req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+  req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
   res.redirect('/1-20/dynamic/learner-ulnWithdrawn')

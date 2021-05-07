@@ -11,7 +11,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="add-address-manually" method="post" class="form" >
+    <form action="add-address-manually" method="post" class="form" novalidate data-validate="manual-address-validation">
       <div class="govuk-form-group govuk-!-margin-bottom-7">
         <span class="govuk-caption-xl">Add address</span>
           <fieldset class="govuk-fieldset">
@@ -64,7 +64,42 @@
     </form>
   </div>
 </div>
+<script type="application/json" id="manual-address-validation">
+  {
 
+    "address-line-1": {
+    
+    "presence": {
+    
+    "message": "^Enter a building and street name"
+    
+    }
+    
+    },
+
+    "address-town": {
+    
+      "presence": {
+      
+      "message": "^Enter a town or city"
+      
+      }
+      
+      },
+
+      "address-postcode": {
+    
+        "presence": {
+        
+        "message": "^Enter a postcode"
+        
+        }
+        
+        }
+    
+    
+  }
+</script>
 
 
 
