@@ -23,3 +23,7 @@ $govuk-assets-path: '/govuk/assets/';
 .bordered {
   display:none;
 }
+
+.govuk-list-number--spaced li{
+  margin-bottom: 15px;
+}

@@ -1362,24 +1362,24 @@ router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res
 
 
 // 1-20 routes
-router.get('/1-20/dynamic/check-your-answers', function(req, res) {
+router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', function(req, res) {
 
   let uln = req.session.data['uln-search']
 
   if (uln === '1234567890') {
-    res.render('1-20/dynamic/check-your-answers', 
+    res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
     {
     'uln' : uln,
     'name' : 'John Smith',
     'dob' : '12 June 2004',
     'provider' : 'Barnsley College (10000536)',
-    'coreGrade' : 'A',
+    'coreGrade' : 'Grade: A',
     'engMaths' : 'Achieved minimum standard',
     'industryPlacement' : 'Not completed',
     'tlevelTitle' : 'Design, Surveying and Planning for Construction',
     'core' : 'Design, Surveying and Planning for Construction (60358300)',
     'specialism' : 'Building Services Design (ZTLOS003)',     
-    'specialismGrade' : 'No result yet',
+    'specialismGrade' : 'Grade: No result yet',
     'department' : 'Exams Office',
     'orgBuilding' : 'Barnsley Academy',
     'orgStreet' : 'Farm Rd',
@@ -1389,14 +1389,14 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
     req.session.data['name'] = 'John Smith'
     req.session.data['provider'] = 'Barnsley College (10000536)'
     req.session.data['dob'] = '12 June 2004'
-    req.session.data['coreGrade'] = 'A'
+    req.session.data['coreGrade'] = 'Grade: A'
     req.session.data['engMaths'] = 'Achieved minimum standard'
     req.session.data['industry'] = 'Not completed'
     req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
     req.session.data['uln'] = uln
     req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-    req.session.data['specialismGrade'] = 'No result yet'
+    req.session.data['specialismGrade'] = 'Grade: No result yet'
     req.session.data['department'] = 'Exams Office'
     req.session.data['orgBuilding'] = "Barnsley Academy"
     req.session.data['orgStreet'] = "Farm Rd"
@@ -1406,19 +1406,19 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   ;
 
 } else if (uln === '5678901234') {
-  res.render('1-20/dynamic/check-your-answers', 
+  res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
   {
   'uln' : uln,
   'name' : 'Tanner Ball',
   'dob' : '15 April 2004',
   'provider' : 'Barnsley College (10000536)',
-  'coreGrade' : 'C',
+  'coreGrade' : '',
   'engMaths' : 'Not achieved minimum standard',
   'industryPlacement' : 'Not completed',
   'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-  'core' : 'Design, Surveying and Planning for Construction (60358300)',
-  'specialism' : 'Building Services Design (ZTLOS003)',     
-  'specialismGrade' : 'No result yet',
+  'core' : 'Not Enrolled',
+  'specialism' : 'Not Enrolled',     
+  'specialismGrade' : '',
   'department' : 'Exams Office',
   'orgBuilding' : 'Barnsley College',
   'orgStreet' : 'Church St',
@@ -1428,14 +1428,13 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
 
   req.session.data['name'] = 'Tanner Ball'
   req.session.data['uln'] = uln
-  req.session.data['coreGrade'] = 'A'
+  req.session.data['coreGrade'] = 'Grade: C'
   req.session.data['engMaths'] = 'Achieved minimum standard'
   req.session.data['industry'] = 'Not completed'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-  req.session.data['uln'] = uln
   req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
   req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-  req.session.data['specialismGrade'] = 'No result yet'
+  req.session.data['specialismGrade'] = 'Grade: No result yet'
   req.session.data['department'] = 'Exams Office'
   req.session.data['orgBuilding'] = "Barnsley College"
   req.session.data['orgStreet'] = "Church St"
@@ -1443,7 +1442,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['orgPostcode'] = 'S70 2AX'
   ;
 } else if (uln === '4321987650') {
-  res.render('1-20/dynamic/check-your-answers', 
+  res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
   {
   'uln' : uln,
   'name' : 'Adele Crossley',
@@ -1455,7 +1454,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'tlevelTitle' : 'Design, Surveying and Planning for Construction',
   'core' : 'Design, Surveying and Planning for Construction (60358300)',
   'specialism' : 'Building Services Design (ZTLOS003)',     
-  'specialismGrade' : 'No result yet',
+  'specialismGrade' : 'Not received',
   'department': 'Exams office',
   'orgBuilding' : 'Barnsley College',
   'orgStreet' : 'Church St',
@@ -1467,7 +1466,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['uln'] = uln
   ;
 } else if (uln === '5647382910') {
-  res.render('1-20/dynamic/check-your-answers', 
+  res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
   {
   'uln' : uln,
   'name' : 'Sheldon Maxwell',
@@ -1479,7 +1478,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   'tlevelTitle' : 'Design, Surveying and Planning for Construction',
   'core' : 'Design, Surveying and Planning for Construction (60358300)',
   'specialism' : 'Building Services Design (ZTLOS003)',     
-  'specialismGrade' : 'No result yet',
+  'specialismGrade' : 'Not received',
   'department': 'Exams office',
   'orgBuilding' : 'Barnsley College',
   'orgStreet' : 'Church St',
@@ -1493,24 +1492,36 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
 } else if (uln === '9876543210') {
 
   req.session.data['name'] = 'Jane Barrow'
-  req.session.data['uln'] = uln
-  req.session.data['dob'] = '23 October 2004'
-  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['provider'] = 'Barnsley College (10000536)'
+  req.session.data['dob'] = '23 October 2004'
+  req.session.data['coreGrade'] = 'A'
+  req.session.data['engMaths'] = 'Achieved minimum standard'
+  req.session.data['industry'] = 'Placement completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['uln'] = uln
+  req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+  req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+  req.session.data['specialismGrade'] = 'Not received'
+  req.session.data['department'] = 'Exams Office'
+  req.session.data['orgBuilding'] = "Barnsley College"
+  req.session.data['orgStreet'] = "Church St"
+  req.session.data['orgCity'] = 'Barnsley'
+  req.session.data['orgPostcode'] = 'S70 2AX'
+
  ;
 
-  res.redirect('/1-20/dynamic/learner-details-requestpending')
+  res.redirect('/1-20/dynamic/request-statement-of-achievement-already-requested')
 
 } else if (uln === '8642135790') {
 
-  req.session.data['name'] = 'Karen Fleming'
+  req.session.data['name'] = 'Kate Fleming'
   req.session.data['uln'] = uln
   req.session.data['dob'] = '2 January 2004'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
-  res.redirect('/1-20/dynamic/learner-details-noresults')
+  res.redirect('/1-20/dynamic/request-statement-of-achievement-not-available-no-results')
 
 } else if (uln === '1231231234') {
 
@@ -1521,7 +1532,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
-  res.redirect('/1-20/dynamic/learner-ulnWithdrawn')
+  res.redirect('/1-20/dynamic/request-statement-of-achievement-ULN-not-withdrawn')
 
 }
 
@@ -1529,7 +1540,7 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
   else {
     
     req.session.data['uln'] = uln
-    res.redirect('learner-ulnNotExist')
+    res.redirect('/1-20/dynamic/request-statement-of-achievement-ULN-not-registered')
     
   }
   
@@ -1537,12 +1548,12 @@ router.get('/1-20/dynamic/check-your-answers', function(req, res) {
 
 
 //Cancel Request Page
-router.post('/1-20/dynamic/cancel-request', function (req, res) {
+router.post('/1-20/dynamic/request-statement-of-achievement-cancel', function (req, res) {
 
   let cancelRequest = req.session.data['cancel-request-answer']
 
   if (cancelRequest === 'no') {
-    res.redirect('/1-20/dynamic/check-your-answers')
+    res.redirect('/1-20/dynamic/request-statement-of-achievement-check-and-submit')
   } else {
     res.redirect('/1-20/dynamic/tlevels-dashboard')
   }
@@ -1731,7 +1742,7 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
   else {
     
     req.session.data['uln'] = uln
-    res.redirect('learner-ulnNotExist')
+    res.redirect('request-statement-of-achievement-ULN-not-registered')
     
   }
   
