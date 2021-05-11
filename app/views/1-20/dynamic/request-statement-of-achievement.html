@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Requesting a statement of achievement page - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="tlevels-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Request statement of achievement
+      </h1>
+
+      <p class="govuk-body">Use this service to request a statement of achievement for a learner who has withdrawn from their T Level course.</p>   <p class="govuk-body govuk-!-margin-bottom-6">The statement of achievement will show which T Level components the learner completed. They will not receive a T Level certificate.</p>
+  
+
+      <p><a class="govuk-button" role="button" href="request-statement-of-achievement-unique-learner-number.html">Continue</a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <ol class="govuk-list govuk-list--number govuk-list-number--spaced">
+        <li>Tell the exam board (also known as the awarding organisation) that the learner has withdrawn from their T Level course.</li>
+        <li>Use the 'Manage learner T Level records' part of this service to confirm the learner's:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>English and maths achievements; and </li>
+            <li>industry placement completion status.</li>
+          </ul>
+        </li>
+      </ol>
+
+
+    </div>
+</div>
+
+{% endblock %}
