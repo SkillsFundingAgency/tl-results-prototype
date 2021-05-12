@@ -27,3 +27,17 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-list-number--spaced li{
   margin-bottom: 15px;
 }
+
+.app-float-right{
+  float:right;
+}
+
+@media screen and (max-width: 801px) {
+  .check-submit-change{
+    margin-bottom:20px;
+  }
+  .app-float-right{
+    float:none;
+  }
+
+}

@@ -1379,7 +1379,7 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
     'tlevelTitle' : 'Design, Surveying and Planning for Construction',
     'core' : 'Design, Surveying and Planning for Construction (60358300)',
     'specialism' : 'Building Services Design (ZTLOS003)',     
-    'specialismGrade' : 'Grade: No result yet',
+    'specialismGrade' : 'Grade: None',
     'department' : 'Exams Office',
     'orgBuilding' : 'Barnsley Academy',
     'orgStreet' : 'Farm Rd',
@@ -1396,7 +1396,7 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
     req.session.data['uln'] = uln
     req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-    req.session.data['specialismGrade'] = 'Grade: No result yet'
+    req.session.data['specialismGrade'] = 'Grade: None'
     req.session.data['department'] = 'Exams Office'
     req.session.data['orgBuilding'] = "Barnsley Academy"
     req.session.data['orgStreet'] = "Farm Rd"
@@ -1412,13 +1412,13 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   'name' : 'Tanner Ball',
   'dob' : '15 April 2004',
   'provider' : 'Barnsley College (10000536)',
-  'coreGrade' : '',
   'engMaths' : 'Not achieved minimum standard',
   'industryPlacement' : 'Not completed',
   'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-  'core' : 'No result available',
-  'specialism' : 'No result available',     
-  'specialismGrade' : '',
+  'core' : 'Design, Surveying and Planning for Construction (60358300)',
+  'coreGrade' : 'None',
+  'specialism' : 'Not specified',     
+  'specialismGrade' : 'Grade: None',
   'department' : 'Exams Office',
   'orgBuilding' : 'Barnsley College',
   'orgStreet' : 'Church St',
@@ -1433,8 +1433,9 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['industry'] = 'Not completed'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
-  req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-  req.session.data['specialismGrade'] = 'Grade: No result yet'
+  req.session.data['coreGrade'] = 'Grade: None'
+  req.session.data['specialism'] = "Not specified"
+  req.session.data['specialismGrade'] = 'Grade: None'
   req.session.data['department'] = 'Exams Office'
   req.session.data['orgBuilding'] = "Barnsley College"
   req.session.data['orgStreet'] = "Church St"
@@ -1466,29 +1467,19 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['uln'] = uln
   ;
 } else if (uln === '5647382910') {
-  res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
-  {
-  'uln' : uln,
-  'name' : 'Sheldon Maxwell',
-  'dob' : '24 December 2003',
-  'provider' : 'Abingdon and Witney College (10000055)',
-  'coreGrade' : 'C',
-  'engMaths' : 'Not achieved minimum standard',
-  'industryPlacement' : 'Completed',
-  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-  'core' : 'Design, Surveying and Planning for Construction (60358300)',
-  'specialism' : 'Building Services Design (ZTLOS003)',     
-  'specialismGrade' : 'Not received',
-  'department': 'Exams office',
-  'orgBuilding' : 'Barnsley College',
-  'orgStreet' : 'Church St',
-  'orgCity' : 'Barnsley',
-  'orgPostcode' : 'S70 2AX',
-  })
 
   req.session.data['name'] = 'Sheldon Maxwell'
   req.session.data['uln'] = uln
-  ;
+  req.session.data['dob'] = '24 December 2003'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  req.session.data['provider'] = 'Barnsley College (10000536)'
+  req.session.data['engMaths'] = 'Achieved minimum standard'
+  req.session.data['industry'] = 'Placement completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+ ;
+
+  res.redirect('/1-20/dynamic/request-statement-of-achievement-not-available-no-results')
+
 } else if (uln === '9876543210') {
 
   req.session.data['name'] = 'Jane Barrow'
@@ -1501,7 +1492,7 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['uln'] = uln
   req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
   req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-  req.session.data['specialismGrade'] = 'Not received'
+  req.session.data['specialismGrade'] = 'None'
   req.session.data['department'] = 'Exams Office'
   req.session.data['orgBuilding'] = "Barnsley College"
   req.session.data['orgStreet'] = "Church St"
@@ -1521,7 +1512,7 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['provider'] = 'Barnsley College (10000536)'
  ;
 
-  res.redirect('/1-20/dynamic/request-statement-of-achievement-not-available-no-results')
+  res.redirect('/1-20/dynamic/request-statement-of-achievement-not-available-no-ip-status')
 
 } else if (uln === '1231231234') {
 
@@ -1737,7 +1728,30 @@ router.get('/1-20/dynamic/result-entries1', function(req, res) {
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
   ;
+
+} else if (uln === '5647382910') {
+  res.render('1-20/dynamic/result-entries1', 
+  {
+  'uln' : uln,
+  'name' : 'Sheldon Maxwell',
+  'dob' : '24 December 2004',
+  'provider' : 'Barnsley College (UKRPN: 10000536)',
+  'engMaths' : 'Achieved minimum standard',
+  'industryPlacement' : 'Not completed',
+  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+  })
+
+  req.session.data['name'] = 'Sheldon Maxwell'
+  req.session.data['uln'] = uln
+  req.session.data['dob'] = '24 December 2003'
+  req.session.data['provider'] = 'Barnsley College (10000536)'
+  req.session.data['engMaths'] = 'Achieved minimum standard'
+  req.session.data['industry'] = 'Not completed'
+  req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+  ;
 } 
+
+
 
   else {
     
@@ -1763,7 +1777,7 @@ router.post('/1-20/dynamic/change-ip-result', function (req, res) {
 
 // Add learner record 
 
-router.get('/1-20/dynamic/add-learner-q2-em', function(req, res) {
+router.get('/1-20/dynamic/add-learner-q4-ip', function(req, res) {
 
   let uln = req.session.data['uln-search']
 
@@ -1816,15 +1830,15 @@ router.get('/1-20/dynamic/add-learner-q2-em', function(req, res) {
     res.redirect('/1-20/dynamic/add-learner-q1-ulnAlreadyAdded')
     
     
-  // } else if (uln === '8642135790') {
+  } else if (uln === '8642135790') {
 
-  //   req.session.data['name'] = 'Kate Fleming'
-  //   req.session.data['uln'] = uln
-  //   req.session.data['dob'] = '2 January 2004'
-  //   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
-  //   req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
+    req.session.data['name'] = 'Kate Fleming'
+    req.session.data['uln'] = uln
+    req.session.data['dob'] = '2 January 2004'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['provider'] = 'Barnsley College (UKRPN: 10000536)'
 
-  //   res.redirect('/1-20/dynamic/add-learner-q2-em')
+    res.redirect('/1-20/dynamic/add-learner-q2-em')
 
 
 }else {
