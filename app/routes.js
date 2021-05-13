@@ -1381,7 +1381,8 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
     'specialism' : 'Building Services Design (ZTLOS003)',     
     'specialismGrade' : 'Grade: None',
     'department' : 'Exams Office',
-    'orgBuilding' : 'Barnsley Academy',
+    'orgName' : 'Barnsley Academy',
+    'orgBuilding' : 'Cheylesmore House',
     'orgStreet' : 'Farm Rd',
     'orgCity' : 'Barnsley',
     'orgPostcode' : 'S70 3DL',
@@ -1398,7 +1399,8 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismGrade'] = 'Grade: None'
     req.session.data['department'] = 'Exams Office'
-    req.session.data['orgBuilding'] = "Barnsley Academy"
+    req.session.data['orgName'] = "Barnsley Academy"
+    req.session.data['orgBuilding'] = "Main Block"
     req.session.data['orgStreet'] = "Farm Rd"
     req.session.data['orgCity'] = 'Barnsley'
     req.session.data['orgPostcode'] = 'S70 3DL'
@@ -1420,7 +1422,8 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   'specialism' : 'Not specified',     
   'specialismGrade' : 'Grade: None',
   'department' : 'Exams Office',
-  'orgBuilding' : 'Barnsley College',
+  'orgName' : 'Barnsley College',
+  'orgBuilding' : 'Cheylesmore House',
   'orgStreet' : 'Church St',
   'orgCity' : 'Barnsley',
   'orgPostcode' : 'S70 2AX',
@@ -1437,34 +1440,11 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['specialism'] = "Not specified"
   req.session.data['specialismGrade'] = 'Grade: None'
   req.session.data['department'] = 'Exams Office'
-  req.session.data['orgBuilding'] = "Barnsley College"
+  req.session.data['orgName'] = "Barnsley College"
+  req.session.data['orgBuilding'] = "Cheylesmore House"
   req.session.data['orgStreet'] = "Church St"
   req.session.data['orgCity'] = 'Barnsley'
   req.session.data['orgPostcode'] = 'S70 2AX'
-  ;
-} else if (uln === '4321987650') {
-  res.render('1-20/dynamic/request-statement-of-achievement-check-and-submit', 
-  {
-  'uln' : uln,
-  'name' : 'Adele Crossley',
-  'dob' : '19 March 2004',
-  'provider' : 'Barnsley College (10000536)',
-  'coreGrade' : 'A',
-  'engMaths' : 'Achieved minimum standard',
-  'industryPlacement' : 'Completed',
-  'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-  'core' : 'Design, Surveying and Planning for Construction (60358300)',
-  'specialism' : 'Building Services Design (ZTLOS003)',     
-  'specialismGrade' : 'Not received',
-  'department': 'Exams office',
-  'orgBuilding' : 'Barnsley College',
-  'orgStreet' : 'Church St',
-  'orgCity' : 'Barnsley',
-  'orgPostcode' : 'S70 2AX',
-  })
-
-  req.session.data['name'] = 'Adele Crossley'
-  req.session.data['uln'] = uln
   ;
 } else if (uln === '5647382910') {
 
@@ -1494,7 +1474,8 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
   req.session.data['specialismGrade'] = 'None'
   req.session.data['department'] = 'Exams Office'
-  req.session.data['orgBuilding'] = "Barnsley College"
+  req.session.data['orgName'] = "Barnsley College"
+  req.session.data['orgBuilding'] = "Cheylesmore House"
   req.session.data['orgStreet'] = "Church St"
   req.session.data['orgCity'] = 'Barnsley'
   req.session.data['orgPostcode'] = 'S70 2AX'
@@ -1570,7 +1551,8 @@ router.get('/1-20/dynamic/org-address-present', function(req, res) {
     res.render('1-20/dynamic/org-address-present', 
     {
       'department' : 'Exams Office',
-      'orgBuilding' : 'Barnsley Academy',
+      'orgName' : 'Barnsley Academy',
+      'orgBuilding' : 'Main Block',
       'orgStreet' : 'Farm Rd',
       'orgCity' : 'Barnsley',
       'orgPostcode' : 'S70 3DL',
@@ -1591,7 +1573,8 @@ router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
 
   if (addressChoice === 'add1') {
     
-    req.session.data['neworgBuilding'] = "Barnsley College"
+    req.session.data['neworgName'] = "Barnsley College"
+    req.session.data['neworgBuilding'] = "Cheylesmore House"
     req.session.data['neworgStreet'] = "Church St"
     req.session.data['neworgCity'] = 'Barnsley'
     req.session.data['neworgPostcode'] = 'S70 2AX'
@@ -1600,7 +1583,8 @@ router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
     res.redirect('/1-20/dynamic/add-address-confirm-address')
   
   }else if (addressChoice === 'add2'){
-    req.session.data['neworgBuilding'] = "The Open Kitchen"
+    req.session.data['neworgName'] = "The Open Kitchen"
+    req.session.data['neworgBuilding'] = "Eaton House"
     req.session.data['neworgStreet'] = "Church St"
     req.session.data['neworgCity'] = 'Barnsley'
     req.session.data['neworgPostcode'] = 'S70 2AX'
@@ -1610,7 +1594,8 @@ router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
   
   
   } else if (addressChoice === 'add3'){
-    req.session.data['neworgBuilding'] = "Jobshop"
+    req.session.data['neworgName'] = "Jobshop"
+    req.session.data['neworgBuilding'] = "Friarsgate"
     req.session.data['neworgStreet'] = "Church St"
     req.session.data['neworgCity'] = 'Barnsley'
     req.session.data['neworgPostcode'] = 'S70 2AX'
@@ -1622,11 +1607,14 @@ router.post('/1-20/dynamic/add-address-confirm-address', function (req, res) {
 
 router.post('/1-20/dynamic/add-address-manually', function (req, res) {
   
+  let newmanualOrganisation = req.session.data['org-name']
   let newmanualBuilding = req.session.data['address-line-1']
   let newmanualStreet = req.session.data['address-line-2']
   let newmanualCity = req.session.data['address-town']
   let newmanualPostcode = req.session.data['address-postcode']
 
+  
+  req.session.data['neworgName'] = newmanualOrganisation
   req.session.data['neworgBuilding'] = newmanualBuilding
   req.session.data['neworgStreet'] = newmanualStreet
   req.session.data['neworgCity'] = newmanualCity 

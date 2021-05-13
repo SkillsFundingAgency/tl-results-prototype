@@ -28,7 +28,7 @@ Request statement of achievement - Check the learner’s details page - Manage T
       <span class="govuk-caption-xl">Request statement of achievement</span>
       <h1 class="govuk-heading-xl">Check the learner's details before sending your request</h1>
       <p class="govuk-body, govuk-!-margin-bottom-9"> Please check this data is correct or make any changes before submitting your request.
-      </p>
+</p>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
@@ -199,14 +199,16 @@ Request statement of achievement - Check the learner’s details page - Manage T
           </dt>
           {% if data['newAddress'] === 'yes'%}
           <dd class="govuk-summary-list__value">
-            {{ data['neworgBuilding'] }}
+            {{ data['neworgName'] }}
+            <br>{{ data['neworgBuilding'] }}
             <br>{{ data['neworgStreet'] }}
             <br>{{ data['neworgCity']}}
             <br>{{ data['neworgPostcode'] }}
           </dd>
           {% else %}
           <dd class="govuk-summary-list__value">
-            {{ orgBuilding }}
+            {{ orgName }}
+            <br>{{ orgBuilding }}
             <br>{{ orgStreet }}
             <br>{{ orgCity}}
             <br>{{ orgPostcode }}
