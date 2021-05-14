@@ -73,27 +73,29 @@ Org address present - Manage T Level results - GOV.UK
             <dd class="govuk-summary-list__value" style="border-bottom:none">
               <p class="govuk-body">{{ data['neworgPostcode'] }}</p>
             </dd>
+        </div>
 
-          </div>
 
             {% else %}
-          <div>
-            <dt class="govuk-summary-list__key" style="border-bottom:none">
-              Department
-            </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">{{ department }}</p>
-            </dd>
-          </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="border-bottom:none">
+                Department
+              </dt>
+              <dd class="govuk-summary-list__value" style="border-bottom:none">
+                <p class="govuk-body">{{ department }}</p>
+              </dd>
+            </div>
+  
 
-          <div>
-            <dt class="govuk-summary-list__key" style="border-bottom:none">
-              Organisation's Name
-            </dt>
-            <dd class="govuk-summary-list__value" style="border-bottom:none">
-              <p class="govuk-body">{{ orgName }}</p>
-            </dd>
-          </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="border-bottom:none">
+                Organisation's Name
+              </dt>
+              <dd class="govuk-summary-list__value" style="border-bottom:none">
+                <p class="govuk-body">{{ orgName }}</p>
+              </dd>
+            </div>
+  
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key" style="border-bottom:none">
@@ -126,9 +128,9 @@ Org address present - Manage T Level results - GOV.UK
           </div>
           
         </dl>
-
+        <a class="govuk-button" role="button" href="add-address-postcode">Change address</a>
     </div>
-    <a class="govuk-button" role="button" href="add-address-postcode">Change address</a>
+    
 </div>
 
 {% endblock %}
