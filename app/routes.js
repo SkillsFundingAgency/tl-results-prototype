@@ -1382,7 +1382,7 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
     'specialismGrade' : 'Grade: None',
     'department' : 'Exams Office',
     'orgName' : 'Barnsley Academy',
-    'orgBuilding' : 'Cheylesmore House',
+    'orgBuilding' : 'Main Block',
     'orgStreet' : 'Farm Rd',
     'orgCity' : 'Barnsley',
     'orgPostcode' : 'S70 3DL',
@@ -1465,14 +1465,14 @@ router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', fu
   req.session.data['name'] = 'Jane Barrow'
   req.session.data['provider'] = 'Barnsley College (10000536)'
   req.session.data['dob'] = '23 October 2004'
-  req.session.data['coreGrade'] = 'A'
+  req.session.data['coreGrade'] = 'Grade: A'
   req.session.data['engMaths'] = 'Achieved minimum standard'
   req.session.data['industry'] = 'Placement completed'
   req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
   req.session.data['uln'] = uln
   req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
   req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
-  req.session.data['specialismGrade'] = 'None'
+  req.session.data['specialismGrade'] = 'Grade: None'
   req.session.data['department'] = 'Exams Office'
   req.session.data['orgName'] = "Barnsley College"
   req.session.data['orgBuilding'] = "Cheylesmore House"
