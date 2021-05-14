@@ -38,6 +38,17 @@ Add address - confirm address - Manage T Level results - GOV.UK
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="border-bottom:none">
+            Organisation's Name
+          </dt>
+          <dd class="govuk-summary-list__value" style="border-bottom:none">
+            <p class="govuk-body">{{ data['neworgName'] }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions" style="border-bottom:none">
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="border-bottom:none">
             Building and street
           </dt>
           <dd class="govuk-summary-list__value" style="border-bottom:none">
@@ -79,7 +90,7 @@ Add address - confirm address - Manage T Level results - GOV.UK
           By selecting 'Submit' you are confirming that this is a business address.
         </p>
 
-        <div class="govuk-button-group govuk-!-margin-top-7">
+        <div class="govuk-button-group govuk-!-margin-top-6">
           <a class="govuk-button govuk-!-margin-right-5" role="button" href="add-address-confirmation">Submit</a>
           <a class="govuk-link" href="cancel-address">Cancel</a>
         </div>
