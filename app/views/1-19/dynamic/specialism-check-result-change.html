@@ -16,35 +16,74 @@ Check and submit result - Manage T Level results - GOV.UK
     <h1 class="govuk-heading-l">
       Check and submit
     </h1>
-    <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting the result.</p>
+    <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the result.</p>
 
     <form action="specialism-confirm-result-change" method="post" class="form">
-      <h2 class="govuk-heading-m">ULN: {{ data['uln'] }}</h2>
-      <p class="govuk-body">Name: {{ data['name'] }}</p>
-      <p class="govuk-body">Date of birth: {{ data['dob'] }}</p>
-      <p class="govuk-body">Provider: {{ data['provider'] }}</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-
-      <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">{{ data['specialism'] }}</h3>
-
-      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+      <h2 class="govuk-heading-m">Learner's details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="border-bottom:none">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['name'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['provider'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T level title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tlevelTitle'] }}
+            
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Specialism: {{ data['specialism'] }}</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Result
           </dt>
-          <dd class="govuk-summary-list__value" style="border-bottom:none">
-            {{ data['specialism-result-answer'] }}
+          <dd class="govuk-summary-list__value">
+            Grade: {{ data['specialism-result-answer'] }}
           </dd>
-          <dd class="govuk-summary-list__actions" style="border-bottom:none">
-            <a class="govuk-link" href="change-core-result">
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-specialism-result">
               Change<span class="govuk-visually-hidden"> result</span>
             </a>
           </dd>
         </div>
       </dl>
-
-      <hr class="govuk-section-break govuk-section-break--visible">
-      <p class="govuk-inset-text">Selecting 'Submit' will change the core result and also take the core component 'off
+      
+      <p class="govuk-inset-text">Selecting 'Submit' will change the specialism result and also take the specialism component 'off
         hold'.</p>
 
       <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>

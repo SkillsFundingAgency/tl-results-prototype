@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+Change specialism component to under review - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,31 +13,77 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-put-on-hold" method="post" class="form" novalidate data-validate="specialism-place-on-hold">
+          <h1 class="govuk-heading-l">Change component to under review</h1> 
+        
+          <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['name'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Component
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['specialism'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Exam Period
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['provider'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Grade
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['specialismGrade'] }}
+                
+              </dd>
+            </div>
+          </dl>
 
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-3">
-                          Are you sure you want to put this specialism component on hold?
-                      </h1>
-                    </legend>
+                    <label class="govuk-label govuk-label--m" for="specialism-place-on-hold">
+                      Is this component under review?
+                    </label>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="hold-answer-1" name="specialism-place-on-hold" type="radio" value="yes" >
                           <label class="govuk-label govuk-radios__label" for="hold-answer-1">
-                              Yes, put this component on hold
+                            Yes, it is under review
                           </label>
                       </div>
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="hold-answer-2" name="specialism-place-on-hold" type="radio" value="no"  >
                           <label class="govuk-label govuk-radios__label" for="hold-answer-2">
-                              No, do not put this component on hold
+                            No, leave it as it is
                           </label>
                       </div>
                     </div>
                 </fieldset>
 
+            </div>
+            <div class="govuk-inset-text govuk-!-margin-top-9">
+              While a component is under review, we cannot calculate the learner’s overall T Level result
             </div>
             <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
         </form>

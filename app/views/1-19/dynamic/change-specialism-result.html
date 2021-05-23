@@ -13,21 +13,47 @@ Change assessment entry - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-check-result-change" method="post" class="form" novalidate data-validate="change-specialism-result">
+            <h1 class="govuk-heading-l">Select the specialism result</h1> 
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['name'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Component
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['specialism'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Exam Period
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['provider'] }}
+                </dd>
+              </div>
+            </dl>
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                      <h1 class="govuk-fieldset__heading">
-                          Select the specialism result
-                          <p class="govuk-body-l govuk-!-font-weight-regular govuk-!-margin-top-4">{{ data['specialism'] }}</p>
-                      </h1>
-                    </legend>
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer">
+                        What is the new core result?
+                      </label>
                     <div class="govuk-radios">
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="Not received" >
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                              Not received
-                          </label>
-                      </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-answer-2a" name="specialism-result-answer" type="radio" value="Distinction">
                             <label class="govuk-label govuk-radios__label" for="result-answer-2a">
@@ -49,7 +75,7 @@ Change assessment entry - Manage T Level results - GOV.UK
                     </div>
                 </fieldset>
             </div>
-            <button class="govuk-button" role="button">Continue</button>
+            <button class="govuk-button" role="button">Submit</button>
         </form>
     </div>
 </div>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Search for a learner page
+ULN not found page - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,18 +17,16 @@ Search for a learner page
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">ULN ({{ data['uln'] }}) cannot be found</h1>
-        <p class="govuk-body">If you think that the ULN should exist it may be that it:</p>
-        <ul class="govuk-list govuk-list--bullet">
-            <li>is registered with another awarding organisation</li>
-            <li>is not registered with us</li>
-        </ul>
+        <h1 class="govuk-heading-l">ULN ({{ data['uln'] }}) not found</h1>
+        <p class="govuk-body">We cannot find a learner for the ULN you provided. This might be because the ULN is wrong or that they are not registered with us.</p>
+        <p class="govuk-body">Check that you’ve entered the correct ULN. If you have, you will need to contact your organisation’s registrations editor for help.</p>
 
+        <p class="govuk-!-margin-top-6"><a class="govuk-button" role="button" href="search-learner.html">Search again</a></p>
 
-        <button class="govuk-button" data-module="govuk-button">
-            Back to search
-          </button>    
+        <a href="tlevels-dashboard.html" class="govuk-link">Back to Manage T Level results dashboard</a>
+        
     </div>
+    
 </div>
 
 {% endblock %}

@@ -1,44 +1,76 @@
 <section id="coreComponent">
 
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: {{ core }}</h3>
-
-    <dl class="govuk-summary-list">
+  <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
+  
+  <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+      
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
+        <dt class="govuk-summary-list__key">
           Result
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2021
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Series: Summer 2021<br>
           Grade: {{ coreGrade }}
         </dd>
       </div>
-    </dl>
 
-    <p class="govuk-inset-text">It is too late to request a review or to appeal this core result.</p>
-
-
-</section>
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
- <section id="specialismComponent">
-
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: {{ specialism }}</h3>
-
-    <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
-          Result
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--grey">
+            final
+          </strong>
         </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2022
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          Grade: {{ specialismGrade }}
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last updated
+        </dt>
+        <dd class="govuk-summary-list__value">
+          5 January 1978
         </dd>
       </div>
     </dl>
+</section>
 
-    <p class="govuk-inset-text">It is too late to request a review or to appeal this specialism result.</p>
 
+<section id="specialismComponent">
+
+  <h2 class="govuk-heading-m">Specialism (code): {{ specialism }}</h2>
+  
+  <dl class="govuk-summary-list">
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Result
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Series: Summer 2021<br>
+          Grade: {{ specialismGrade }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--grey">
+            final
+          </strong>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last updated
+        </dt>
+        <dd class="govuk-summary-list__value">
+          5 January 1978
+        </dd>
+      </div>
+    </dl>
 </section>

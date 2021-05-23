@@ -12,7 +12,7 @@
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
           {% if data['coreOnHold'] === "yes"%}
-          <p class="govuk-body">{{ core }} placed on hold </p>
+          <p class="govuk-body">{{ core }} placed under review </p>
           {% elif data['resultChanged'] === "yes"%}
           <p class="govuk-body">{{ core }} result has been updated</p>
           {% endif %}
@@ -30,7 +30,7 @@
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
           {% if data['specialismOnHold'] === "yes"%}
-          <p class="govuk-body">{{ specialism }} placed on hold </p>
+          <p class="govuk-body">{{ specialism }} placed under review </p>
           {% elif data['specialismResultChanged'] === "yes"%}
           <p class="govuk-body">{{ specialism }} result has been updated</p>
           {% endif %}
