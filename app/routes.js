@@ -1222,6 +1222,43 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['specialismGrade'] = 'Merit'
   ;
 
+} else if (uln === '0987654321') {
+  res.render('1-19/dynamic/record-entries-routes', 
+  { 
+    'uln' : uln,
+    'name' : 'Ted Hastings',
+    'dob' : '24 December 2002',
+    'provider' : 'Barnsley College (10000536)',
+    'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+    'coreGrade' : 'C',
+    'core' : 'Design, Surveying and Planning (60358300)',
+    'coreOnHold' : req.session.data['core-place-on-hold'],
+    'coreResult' : "Winter 2021",
+    'coreUpdate' : "4 May 2021",
+    'coreReviewed' : req.session.data['coreReviewed'],
+    'specialism' : 'Building Services Design (ZTLOS003)',
+    'specialismResults' : "Winter 2021",       
+    'specialismGrade' : 'Merit',
+    'specialismUpdate' : "4 May 2021",
+    'specialismReviewed' : req.session.data['specialismReviewed'],
+    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+  })
+    req.session.data['name'] = 'John Smith'
+    req.session.data['provider'] = 'Barnsley College (10000536)'
+    req.session.data['dob'] = '12 December 2004'
+    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['coreGrade'] = 'C'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning (60358300)"
+    req.session.data['coreResult'] = "Winter 2021"
+    req.session.data['coreOnHold'] = ""
+    req.session.data['coreReviewed'] = ""
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismResults'] = "Winter 2021"
+    req.session.data['specialismReviewed'] = ""
+    req.session.data['specialismGrade'] = 'Merit'
+  ;
   } else if (uln === '5678901234') {
     res.render('1-19/dynamic/record-entries-routes', 
     { 
@@ -1230,7 +1267,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning',
+      'core' : 'Design, Surveying and Planning (60358300)',
       'coreResult' : "Summer 2021",
       'coreGrade' : '-',
       'coreOnHold' : req.session.data['core-place-on-hold'],
@@ -1248,7 +1285,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning',
+      'core' : 'Design, Surveying and Planning (60358300)',
       'coreResult' : "Summer 2021",
       'coreGrade' : '-',
       'coreOnHold' : req.session.data['core-place-on-hold'],
@@ -1268,7 +1305,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning',
+      'core' : 'Design, Surveying and Planning (60358300)',
       'coreResult' : "Winter 2021",
       'coreGrade' : 'C',
       'specialism' : 'Building Services Design (ZTLOS003)',

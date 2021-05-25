@@ -28,11 +28,11 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             {% if data['coreOnHold'] === "yes" %}
-            <strong class="govuk-tag govuk-tag--orange">
+            <strong class="govuk-tag govuk-tag--orange tag-no-wrap">
               under review
             </strong>
             {% elseif data['coreOnHold'] === "appealed"  %}
-            <strong class="govuk-tag govuk-tag--purple">
+            <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
               being appealed
             </strong>
             {% elseif data['coreOnHold'] === "corrected"  %}
@@ -106,67 +106,49 @@
 
 <section id="specialismComponent"> 
 
-
       <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Exam Period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{specialismResults}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Grade
-          </dt>
-          <dd class="govuk-summary-list__value ">
-            {% if data['specialismChanged'] === "yes" %}
+      <table class="govuk-table">
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"> Exam Period</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-weight-regular"> {{ coreResult }}</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Grade</th>
+            <td class="govuk-table__cell">
+              {% if data['specialismChanged'] === "yes" %}
             {{ data['specialismGrade'] }}
             {% else %}
             {{ specialismGrade }}
             {% endif %}
-          </dd>
-
-          <!-- <dd class="govuk-summary-list__actions">
-            {% if data['specialismOnHold'] === "yes" %}
-              <strong class="govuk-tag govuk-tag--orange">
-                On hold
+            </td>
+            <td class="govuk-table__cell align-item-right">
+              {% if data['specialismOnHold'] === "yes" %}
+              <strong class="govuk-tag govuk-tag--orange tag-no-wrap">
+                under review
+              </strong>
+              {% elseif data['specialismOnHold'] === "appealed"  %}
+              <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
+                being appealed
+              </strong>
+              {% elseif data['specialismOnHold'] === "corrected"  %}
+              <strong class="govuk-tag govuk-tag--green">
+                corrected
+              </strong>
+              {% elseif data['specialismOnHold'] === "final"  %}
+              <strong class="govuk-tag govuk-tag--red">
+                final
               </strong>
               {% else %}
               {% endif %}
-          </dd> -->
-          <dd class="govuk-summary-list__actions">
-
-            <span>
-              {% if data['specialismOnHold'] === "yes" %}
-            <strong class="govuk-tag govuk-tag--orange">
-              under review
-            </strong>
-            {% elseif data['specialismOnHold'] === "appealed"  %}
-            <strong class="govuk-tag govuk-tag--purple">
-              being appealed
-            </strong>
-            {% elseif data['specialismOnHold'] === "corrected"  %}
-            <strong class="govuk-tag govuk-tag--green">
-              corrected
-            </strong>
-            {% elseif data['specialismOnHold'] === "final"  %}
-            <strong class="govuk-tag govuk-tag--red">
-              final
-            </strong>
-            {% else %}
-            {% endif %}
-            </span>
-
-            <span>
-                       
+            </td>
+            <td class="govuk-table__cell align-text-right">
               {% if data['specialismOnHold'] === "yes" %}
         
               <a class="govuk-link" href="specialism-take-off-hold">
@@ -197,30 +179,22 @@
               </a>
             
             {% endif %}
-            </span>
-
-          </dd>
-        
-
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last updated
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['specialismdateChanged'] === "yes" %}
-            <span id = "update-day"></span>
-            {% else %}
-            {{ specialismUpdate }}
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              
-            </a>
-          </dd>
-        </div>
-      </dl>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Last updated</th>
+            <td class="govuk-table__cell">
+              {% if data['specialismdateChanged'] === "yes" %}
+              <span id = "update-day"></span>
+              {% else %}
+              {{ specialismUpdate }}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
 
 </section> 
 
