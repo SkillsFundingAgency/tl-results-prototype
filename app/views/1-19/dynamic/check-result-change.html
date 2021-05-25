@@ -70,10 +70,10 @@ Check and submit result - Manage T Level results - GOV.UK
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Result
+            Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            Grade: {{ data['result-answer'] }}
+            {{ data['result-answer'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="change-core-result">
@@ -83,8 +83,7 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
       </dl>
             
-      <p class="govuk-inset-text">Selecting 'Submit' will change the core result and also take the core component 'off
-        hold'.</p>
+      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer under review</p>
 
       <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
     </form>

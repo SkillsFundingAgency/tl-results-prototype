@@ -2,75 +2,101 @@
 
   <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
   
-  <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Result
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Series: Summer 2021<br>
-          Grade: {{ coreGrade }}
-        </dd>
-      </div>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam Period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{coreResult}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Grade
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ coreGrade }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--grey">
-            final
-          </strong>
-        </dd>
-      </div>
+        <strong class="govuk-tag govuk-tag--red">
+          final
+        </strong>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last updated
-        </dt>
-        <dd class="govuk-summary-list__value">
-          5 January 1978
-        </dd>
-      </div>
-    </dl>
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        4 May 2021
+
+      </dd>
+      <!-- action value added and empty to keep line extended to match above rows  -->
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">         
+        </a>
+      </dd>
+    </div>
+  </dl>
 </section>
 
 
 <section id="specialismComponent">
 
-  <h2 class="govuk-heading-m">Specialism (code): {{ specialism }}</h2>
+  <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
   
   <dl class="govuk-summary-list">
-      
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Result
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Series: Summer 2021<br>
-          Grade: {{ specialismGrade }}
-        </dd>
-      </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam Period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{specialismResults}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Grade
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ specialismGrade }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag govuk-tag--grey">
-            final
-          </strong>
-        </dd>
-      </div>
+        <strong class="govuk-tag govuk-tag--red">
+          final
+        </strong>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Last updated
-        </dt>
-        <dd class="govuk-summary-list__value">
-          5 January 1978
-        </dd>
-      </div>
-    </dl>
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        4 May 2021
+
+      </dd>
+      <!-- action value added and empty to keep line extended to match above rows  -->
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">         
+        </a>
+      </dd>
+    </div>
+  </dl>
 </section>

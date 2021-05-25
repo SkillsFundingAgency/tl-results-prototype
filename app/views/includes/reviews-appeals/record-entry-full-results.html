@@ -39,6 +39,10 @@
             <strong class="govuk-tag govuk-tag--green">
               corrected
             </strong>
+            {% elseif data['coreOnHold'] === "final"  %}
+            <strong class="govuk-tag govuk-tag--red">
+              final
+            </strong>
             {% else %}
             {% endif %}
           </dd>
@@ -50,7 +54,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['dateChanged'] === "yes" %}
-            {{ data['coreUpdate'] }}
+            <span id = "update-day"></span>
             {% else %}
             {{ coreUpdate }}
             {% endif %}
@@ -82,6 +86,10 @@
           <a class="govuk-link" href="core-put-on-appeal">
             Update
           </a>
+          {% elseif data['coreOnHold'] === "final" and data['coreReviewed'] === "appealed"  %}
+          <a class="govuk-link" href="#">
+            
+          </a>
 
         {% else %}
         
@@ -99,7 +107,7 @@
 <section id="specialismComponent"> 
 
 
-      <h2 class="govuk-heading-m">Specialism (code): {{ specialism }}</h2>
+      <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -149,6 +157,10 @@
             <strong class="govuk-tag govuk-tag--green">
               corrected
             </strong>
+            {% elseif data['specialismOnHold'] === "final"  %}
+            <strong class="govuk-tag govuk-tag--red">
+              final
+            </strong>
             {% else %}
             {% endif %}
             </span>
@@ -172,6 +184,11 @@
               <a class="govuk-link" href="specialism-put-on-appeal">
                 Update
               </a>
+
+            {% elseif data['specialismOnHold'] === "final" and data['specialismReviewed'] === "appealed"  %}
+              <a class="govuk-link" href="#">
+                
+              </a>
     
             {% else %}
             
@@ -192,7 +209,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['specialismdateChanged'] === "yes" %}
-            {{ data['specialismUpdate'] }}
+            <span id = "update-day"></span>
             {% else %}
             {{ specialismUpdate }}
             {% endif %}
@@ -208,9 +225,14 @@
 </section> 
 
 <script>
-  var d = new Date();
-  document.getElementById("demo").innerHTML = d;
-  </script>
+    window.onload = function () {
+
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day').innerHTML = dateFormat
+    }
+</script>
 
 
 

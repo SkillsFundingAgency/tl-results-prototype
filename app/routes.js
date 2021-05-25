@@ -1193,7 +1193,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'provider' : 'Barnsley College (10000536)',
     'tlevelTitle' : 'Design, Surveying and Planning for Construction',
     'coreGrade' : 'C',
-    'core' : 'Design, Surveying and Planning for Construction (60358300)',
+    'core' : 'Design, Surveying and Planning',
     'coreOnHold' : req.session.data['core-place-on-hold'],
     'coreResult' : "Winter 2021",
     'coreUpdate' : "4 May 2021",
@@ -1211,11 +1211,13 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
     req.session.data['coreGrade'] = 'C'
     req.session.data['uln'] = uln
-    req.session.data['core'] = "Design, Surveying and Planning for Construction (60358300)"
+    req.session.data['core'] = "Design, Surveying and Planning"
+    req.session.data['coreResult'] = "Winter 2021"
     req.session.data['coreOnHold'] = ""
     req.session.data['coreReviewed'] = ""
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismResults'] = "Winter 2021"
     req.session.data['specialismReviewed'] = ""
     req.session.data['specialismGrade'] = 'Merit'
   ;
@@ -1228,13 +1230,13 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'core' : 'Design, Surveying and Planning',
       'coreResult' : "Summer 2021",
-      'coreGrade' : 'None',
+      'coreGrade' : '-',
       'coreOnHold' : req.session.data['core-place-on-hold'],
       'specialism' : 'Building Services Design (ZTLOS003)',
       'specialismResults' : "Summer 2021",    
-      'specialismGrade' : 'None',
+      'specialismGrade' : '-',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
     ;
@@ -1246,17 +1248,18 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning for Construction (60358300)',
+      'core' : 'Design, Surveying and Planning',
       'coreResult' : "Summer 2021",
-      'coreGrade' : 'None',
+      'coreGrade' : '-',
       'coreOnHold' : req.session.data['core-place-on-hold'],
-      'specialism' : 'Not specified',
-      'specialismResults' : "None",    
-      'specialismGrade' : 'None',
+      'specialism' : 'Not yet specified',
+      'specialismResults' : "-",    
+      'specialismGrade' : '-',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
     ;
 
+  //late
   } else if (uln === '5647382910') {
     res.render('1-19/dynamic/record-entries-routes', 
     { 
@@ -1265,11 +1268,11 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'dob' : '15 April 2004', 
       'provider' : 'Abingdon and Witney College (10000055)',
       'tlevelTitle' : 'Design, Surveying and Planning for Construction',
-      'core' : 'Design, Surveying and Planning for Construction (60358300)',
-      'coreResult' : "Summer 2021",
+      'core' : 'Design, Surveying and Planning',
+      'coreResult' : "Winter 2021",
       'coreGrade' : 'C',
       'specialism' : 'Building Services Design (ZTLOS003)',
-      'specialismResults' : "Summer 2021",    
+      'specialismResults' : "Winter 2021",    
       'specialismGrade' : 'Merit',
       'coreOnHold' : req.session.data['core-place-on-hold'],
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
@@ -1299,7 +1302,6 @@ router.post('/1-19/dynamic/core-put-on-hold', function (req, res) {
   if (coreOnHold === 'yes') {
     req.session.data['coreOnHold'] = 'yes'
     req.session.data['dateChanged'] = 'yes'
-    req.session.data['coreUpdate'] = new Date(Date.now())
     
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
@@ -1315,7 +1317,6 @@ router.post('/1-19/dynamic/specialism-put-on-hold', function (req, res) {
   if (specialismOnHold === 'yes') {
     req.session.data['specialismOnHold'] = 'yes'
     req.session.data['specialismdateChanged'] = 'yes'
-    req.session.data['specialismUpdate'] = new Date(Date.now())
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
@@ -1331,7 +1332,6 @@ router.post('/1-19/dynamic/core-put-on-appeal', function (req, res) {
   if (coreOnHold === 'yes') {
     req.session.data['coreOnHold'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
-    req.session.data['coreUpdate'] = new Date(Date.now())
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   
@@ -1348,7 +1348,6 @@ router.post('/1-19/dynamic/specialism-put-on-appeal', function (req, res) {
   if (specialismOnHold === 'yes') {
     req.session.data['specialismOnHold'] = 'appealed'
     req.session.data['specialismdateChanged'] = 'yes'
-    req.session.data['specialismUpdate'] = new Date(Date.now())
 
     res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1392,13 +1391,12 @@ router.post('/1-19/dynamic/core-take-off-appeal', function (req, res) {
   let coreOnHold = req.session.data['core-take-off-appeal']
 //I need to update status
   if (coreOnHold === 'update') {
-    res.redirect('/1-19/dynamic/change-core-result')
-//Result the same - back to record - no tag   
+    res.redirect('/1-19/dynamic/change-core-result-appeal')
+//Result the same - back to record - final tag   
   } else {
-    req.session.data['coreOnHold'] = 'no'
-    req.session.data['coreReviewed'] = 'yes'
+    req.session.data['coreOnHold'] = 'final'
+    req.session.data['coreReviewed'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
-    req.session.data['coreUpdate'] = new Date(Date.now())
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1410,13 +1408,13 @@ router.post('/1-19/dynamic/specialism-take-off-appeal', function (req, res) {
   let specialismOnHold = req.session.data['specialism-take-off-appeal']
 //I need to update status
   if (specialismOnHold === 'update') {
-    res.redirect('/1-19/dynamic/change-specialism-result')
-//Result the same - back to record - no tag    
+    res.redirect('/1-19/dynamic/change-specialism-result-appeal')
+//Result the same - back to record - final tag    
   } else {
-    req.session.data['specialismOnHold'] = 'no'
-    req.session.data['specialismReviewed'] = 'yes'
+    req.session.data['specialismOnHold'] = 'final'
+    req.session.data['specialismReviewed'] = 'appealed'
     req.session.data['specialismdateChanged'] = 'yes'
-    req.session.data['specialismUpdate'] = new Date(Date.now())
+ 
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
 })
@@ -1431,7 +1429,7 @@ router.post('/1-19/dynamic/has-result-changed', function (req, res) {
     req.session.data['coreOnHold'] = 'no'
     req.session.data['coreReviewed'] = 'yes'
     req.session.data['dateChanged'] = 'yes'
-    req.session.data['coreUpdate'] = new Date(Date.now())
+
 
     res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1439,7 +1437,7 @@ router.post('/1-19/dynamic/has-result-changed', function (req, res) {
   } else if (resultChanged === 'option3') {  
     req.session.data['coreOnHold'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
-    req.session.data['coreUpdate'] = new Date(Date.now())
+  
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   
@@ -1459,7 +1457,7 @@ router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
   req.session.data['specialismOnHold'] = 'no'
   req.session.data['specialismReviewed'] = 'yes'
   req.session.data['specialismdateChanged'] = 'yes'
-  req.session.data['specialismUpdate'] = new Date(Date.now())
+  
 
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1467,7 +1465,7 @@ router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
 } else if (resultChanged === 'option3') {  
   req.session.data['specialismOnHold'] = 'appealed'
   req.session.data['specialismdateChanged'] = 'yes'
-  req.session.data['specialismUpdate'] = new Date(Date.now())
+ 
 
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1485,7 +1483,7 @@ router.post('/1-19/dynamic/confirm-result-change', function (req, res) {
   req.session.data['coreOnHold'] = 'corrected'
   req.session.data['coreReviewed'] = 'yes'
   req.session.data['dateChanged'] = 'yes'
-  req.session.data['coreUpdate'] = new Date(Date.now())
+ 
   res.redirect('/1-19/dynamic/record-entries-routes')
 
 })
@@ -1497,11 +1495,36 @@ router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res
   req.session.data['specialismOnHold'] = 'corrected'
   req.session.data['specialismReviewed'] = 'yes'
   req.session.data['specialismdateChanged'] = 'yes'
-  req.session.data['specialismUpdate'] = new Date(Date.now())
+ 
   res.redirect('/1-19/dynamic/record-entries-routes')
 
 })
 
+router.post('/1-19/dynamic/confirm-result-change-appeal', function (req, res) {
+  
+  let newResult = req.session.data['result-answer']
+  req.session.data['resultChanged'] = 'yes'
+  req.session.data['coreGrade'] = newResult
+  req.session.data['coreOnHold'] = 'final'
+  req.session.data['coreReviewed'] = 'appealed'
+  req.session.data['dateChanged'] = 'yes'
+ 
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
+})
+
+router.post('/1-19/dynamic/specialism-confirm-result-change-appeal', function (req, res) {
+  
+  let newResult = req.session.data['specialism-result-answer']
+  req.session.data['specialismResultChanged'] = 'yes'
+  req.session.data['specialismGrade'] = newResult
+  req.session.data['specialismOnHold'] = 'final'
+  req.session.data['specialismReviewed'] = 'appealed'
+  req.session.data['specialismdateChanged'] = 'yes'
+ 
+  res.redirect('/1-19/dynamic/record-entries-routes')
+
+})
 
 // 1-20 routes
 router.get('/1-20/dynamic/request-statement-of-achievement-check-and-submit', function(req, res) {

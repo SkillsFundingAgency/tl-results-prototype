@@ -2,38 +2,38 @@
 <section id="coreComponent">
   
           <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
-          <p class="govuk-inset-text">Core result must be added before it can be put on hold.</p>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-8">
-              
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Result
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Series: Summer 2021<br>
-                  Grade: {{ coreGrade }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Status
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--blue">
-                    pending
-                  </strong>
-                </dd>
-              </div>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Exam Period
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{coreResult}}
+              </dd>
   
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Last updated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Not available
-                </dd>
-              </div>
-            </dl>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Grade
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ coreGrade }}
+              </dd>
+  
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Last updated
+              </dt>
+              <dd class="govuk-summary-list__value">
+        
+                -
+        
+              </dd>
+  
+            </div>
+          </dl>
   
 </section>
   
@@ -41,40 +41,39 @@
   
 <section id="specialismComponent">
   
-          <h2 class="govuk-heading-m">Specialism (code): {{ specialism }}</h2>
-          <p class="govuk-inset-text">Specialism must be added before it can be put on hold.</p>
-          <dl class="govuk-summary-list">
-              
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Result
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Series: Not available<br>
-                  Grade: {{ specialismGrade }}
-                </dd>
-              </div>
+  <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
+        
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam Period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{specialismResults}}
+      </dd>
 
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Status
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <strong class="govuk-tag govuk-tag--grey">
-                    inactive
-                  </strong>
-                </dd>
-              </div>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Grade
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ specialismGrade }}
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        -
+
+      </dd>
+
   
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Last updated
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Not available
-                </dd>
-              </div>
-            </dl>
-  
+    </div>
+  </dl>
 </section>
   
