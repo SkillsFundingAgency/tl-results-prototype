@@ -124,9 +124,9 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Grade</th>
             <td class="govuk-table__cell">
-              {% if data['specialismChanged'] === "yes" %}
+              {% if data['specialismResultChanged'] === "yes" %}
               {{ data['newspecialismGrade'] }}
-              {% elseif data['specialismChanged'] === "appeal" %}
+              {% elseif data['specialismResultChanged'] === "appeal" %}
               {{ data['appealspecialismGrade'] }}
               {% else %}
               {{ specialismGrade }}

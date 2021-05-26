@@ -1409,7 +1409,7 @@ router.post('/1-19/dynamic/core-put-on-appeal-2021', function (req, res) {
 //yes is being appealed
   if (coreOnHold === 'yes') {
     req.session.data['newcoreOnHold2021'] = 'appealed'
-    req.session.data['dateChanged'] = 'yes'
+    req.session.data['dateChanged2021'] = 'yes'
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   
@@ -1427,7 +1427,7 @@ router.post('/1-19/dynamic/specialism-put-on-appeal-2021', function (req, res) {
 //yes is being appealed
   if (specialismOnHold === 'yes') {
     req.session.data['newspecialismOnHold2021'] = 'appealed'
-    req.session.data['specialismdateChanged'] = 'yes'
+    req.session.data['specialismdateChanged2021'] = 'yes'
 
     res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1512,7 +1512,7 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
   } else {
     req.session.data['newcoreOnHold2021'] = 'final'
     req.session.data['coreReviewed2021'] = 'appealed'
-    req.session.data['dateChanged'] = 'yes'
+    req.session.data['dateChanged2021'] = 'yes'
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1529,7 +1529,7 @@ router.post('/1-19/dynamic/specialism-take-off-appeal-2021', function (req, res)
   } else {
     req.session.data['newspecialismOnHold2021'] = 'final'
     req.session.data['specialismReviewed2021'] = 'appealed'
-    req.session.data['specialismdateChanged'] = 'yes'
+    req.session.data['specialismdateChanged2021'] = 'yes'
  
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1609,6 +1609,7 @@ router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res
   
   let newResult = req.session.data['specialism-result-answer']
   req.session.data['newspecialismGrade'] = newResult
+  req.session.data['specialismResultChanged'] = 'yes'
   req.session.data['newspecialismOnHold'] = 'corrected'
   req.session.data['specialismReviewed'] = 'yes'
   req.session.data['specialismdateChanged'] = 'yes'
@@ -1652,7 +1653,7 @@ router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, re
   req.session.data['appealcoreGrade2021'] = newResult
   req.session.data['newcoreOnHold2021'] = 'final'
   req.session.data['coreReviewed2021'] = 'appealed'
-  req.session.data['dateChanged'] = 'yes'
+  req.session.data['dateChanged2021'] = 'yes'
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1666,13 +1667,11 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal-2021', functi
   req.session.data['appealspecialismGrade2021'] = newResult
   req.session.data['newspecialismOnHold2021'] = 'final'
   req.session.data['specialismReviewed2021'] = 'appealed'
-  req.session.data['specialismdateChanged'] = 'yes'
+  req.session.data['specialismdateChanged2021'] = 'yes'
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
 })
-
-
 
 
 

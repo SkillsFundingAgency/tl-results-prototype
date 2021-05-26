@@ -1,4 +1,4 @@
-{% if data['coreOnHold'] === "yes" or data['resultChanged'] === "yes"%}
+{% if data['newcoreOnHold'] === "yes" or data['newresultChanged'] === "yes"%}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -11,7 +11,7 @@
       {% if data['coreOnHold'] === "yes"%}
       <p class="govuk-body">{{ core }} status has been updated </p>
       {% elif data['resultChanged'] === "yes"%}
-      <p class="govuk-body">{{ core }} result has been updated</p>
+      <p class="govuk-body">{{ core }} grade has been updated</p>
       {% endif %}
     </h3>
   </div>
@@ -30,7 +30,7 @@
       {% if data['specialismOnHold'] === "yes"%}
       <p class="govuk-body">{{ specialism }} status has been updated </p>
       {% elif data['specialismResultChanged'] === "yes"%}
-      <p class="govuk-body">{{ specialism }} result has been updated</p>
+      <p class="govuk-body">{{ specialism }} grade has been updated</p>
       {% endif %}
     </h3>
   </div>
