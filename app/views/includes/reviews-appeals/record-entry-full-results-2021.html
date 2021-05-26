@@ -46,8 +46,8 @@
             Last updated
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['dateChanged'] === "yes" %}
-            <span id = "update-day"></span>
+            {% if data['dateChanged2021'] === "yes" %}
+            <span id = "update-day-2021"></span>
             {% else %}
             {{ coreUpdate }}
             {% endif %}
@@ -103,7 +103,7 @@
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Grade</th>
         <td class="govuk-table__cell">
-        {% if data['specialismChanged2021'] === "appeal" %}
+        {% if data['specialismResultChanged2021'] === "appeal" %}
         {{ data['appealspecialismGrade2021'] }}
         {% else %}
         {{ specialismGrade }}
@@ -146,8 +146,8 @@
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Last updated</th>
         <td class="govuk-table__cell">
-          {% if data['specialismdateChanged'] === "yes" %}
-          <span id = "update-day"></span>
+          {% if data['specialismdateChanged2021'] === "yes" %}
+          <span id = "specialism-update-day-2021"></span>
           {% else %}
           {{ specialismUpdate }}
           {% endif %}
@@ -166,7 +166,15 @@
     var date = new Date()
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-    document.getElementById('update-day').innerHTML = dateFormat
+    document.getElementById('specialism-update-day-2021').innerHTML = dateFormat
+    }
+
+    window.onload = function () {
+
+    var date = new Date()
+    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
+    document.getElementById('update-day-2021').innerHTML = dateFormat
     }
 </script>
 
