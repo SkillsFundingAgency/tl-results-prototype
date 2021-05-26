@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new learner - status of Industry placement - Manage T Level results - GOV.UK
+Review component status- Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,8 +12,9 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form action="specialism-has-result-changed" method="post" class="form" novalidate data-validate="specialism-has-result-changed">
-          <h1 class="govuk-heading-l">Add outcome of review</h1> 
+        <form action="specialism-take-off-appeal-2021" method="post" class="form" novalidate data-validate="specialism-take-off-appeal-2021">
+          <h1 class="govuk-heading-l">Add outcome of appeal</h1> 
+        
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -52,7 +53,9 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                 Grade
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialismGrade'] }}
+
+                {{ data['specialismGrade']  }}
+
                 
               </dd>
             </div>
@@ -60,28 +63,21 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
               <div class="govuk-form-group">
 
                 <fieldset class="govuk-fieldset">
-                  <fieldset class="govuk-fieldset">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer">
-                      What was the outcome of the review?
-                    </label>
+                  <label class="govuk-label govuk-label--m" for="specialism-take-off-appeal-2021">
+                    What was the outcome of the appeal?
+                  </label>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="option1">
-                          <label class="govuk-label govuk-radios__label" for="result-answer-1">
+                          <input class="govuk-radios__input" id="appeal-answer-1" name="specialism-take-off-appeal-2021" type="radio" value="same">
+                          <label class="govuk-label govuk-radios__label" for="appeal-answer-1">
                             The result is the same
                           </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="option2">
-                        <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                          I need to update the result
-                        </label>
-                    </div>
-                      <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-2" name="specialism-result-answer" type="radio" value="option3">
-                          <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                            The result is being appealed
+                          <input class="govuk-radios__input" id="appeal-answer-2" name="specialism-take-off-appeal-2021" type="radio" value="update">
+                          <label class="govuk-label govuk-radios__label" for="appeal-answer-2">
+                            No, I need to update the result
                           </label>
                       </div>
                     </div>
@@ -93,10 +89,10 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
     </div>
 </div>
 
-<script type="application/json" id="specialism-has-result-changed">
+<script type="application/json" id="specialism-take-off-appeal-2021">
   {
 
-    "specialism-result-answer": {
+    "specialism-take-off-appeal-2021": {
       "presence": {
         "message": "^Please select an option"
       }

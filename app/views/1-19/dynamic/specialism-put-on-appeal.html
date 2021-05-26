@@ -53,8 +53,12 @@ Change specialism component to under review - Manage T Level results - GOV.UK
                 Grade
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialismGrade'] }}
-                
+                {% if data['specialismChanged'] === "yes" %}
+                {{ data['newspecialismGrade'] }}
+                {% else %}
+                {{ data['specialismGrade']  }}
+                {% endif %}
+                  
               </dd>
             </div>
           </dl>

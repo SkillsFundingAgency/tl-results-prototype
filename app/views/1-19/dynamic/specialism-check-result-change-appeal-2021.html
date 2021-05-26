@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check and submit result - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Check and submit
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the result.</p>
+
+    <form action="specialism-confirm-result-change-appeal-2021" method="post" class="form">
+      <h2 class="govuk-heading-m">Learner's details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['name'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['dob'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Provider (UKPRN)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['provider'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T level title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['tlevelTitle'] }}
+            
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Occupational specialism: {{ data['specialism'] }}</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['specialism-result-answer-2021'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-specialism-result-appeal-2021">
+              Change<span class="govuk-visually-hidden"> grade</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      
+      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer being appealed</p>
+
+      <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

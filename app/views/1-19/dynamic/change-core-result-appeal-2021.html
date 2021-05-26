@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change assessment entry - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="check-result-change-appeal-2021" method="post" class="form" novalidate data-validate="change-core-result-appeal-2021">
+            <h1 class="govuk-heading-l">Select the core component result</h1> 
+          <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['name'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Component
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['core'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Exam Period
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['coreResult'] }}
+              </dd>
+            </div>
+          </dl>
+            <div class="govuk-form-group govuk-!-margin-bottom-7">
+                <fieldset class="govuk-fieldset">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="result-answer-2021">
+                        What is the new core component result?
+                      </label>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-2a" name="result-answer-2021" type="radio" value="A*">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-2a">
+                                A*
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-2" name="result-answer-2021" type="radio" value="A" >
+                            <label class="govuk-label govuk-radios__label" for="result-answer-2">
+                                A
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-3" name="result-answer-2021" type="radio" value="B">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-3">
+                                B
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-4" name="result-answer-2021" type="radio" value="C" >
+                            <label class="govuk-label govuk-radios__label" for="result-answer-4">
+                                C
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-5" name="result-answer-2021" type="radio" value="D">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-5">
+                                D
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-6" name="result-answer-2021" type="radio" value="E">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-6">
+                                E
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer-2021" type="radio" value="U">
+                            <label class="govuk-label govuk-radios__label" for="result-answer-7">
+                                Unclassified
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" role="button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="change-core-result-appeal-2021">
+  {
+
+    "result-answer-2021": {
+      "presence": {
+        "message": "^Please select an option"
+      }
+
+    }
+
+  }
+</script>
+
+{% endblock %}

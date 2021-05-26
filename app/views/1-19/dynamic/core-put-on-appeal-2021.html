@@ -12,7 +12,7 @@ Change core component to under review - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="core-put-on-appeal" method="post" class="form" novalidate data-validate="core-place-on-appeal">
+      <form action="core-put-on-appeal-2021" method="post" class="form" novalidate data-validate="core-place-on-appeal-2021">
 
         <h1 class="govuk-heading-l">Change component to being appealed</h1> 
         
@@ -54,30 +54,28 @@ Change core component to under review - Manage T Level results - GOV.UK
               Grade
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['resultChanged'] === "yes" %}
-              {{ data['newcoreGrade'] }}
-              {% else %}
+
               {{ data['coreGrade']  }}
-              {% endif %}
+
             </dd>
           </div>
         </dl>
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="core-place-on-appeal">
+                <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="core-place-on-appeal-2021">
                   Is this component being appealed?
                 </label>
 
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="appeal-answer-1" name="core-place-on-appeal" type="radio" value="yes" >
+                        <input class="govuk-radios__input" id="appeal-answer-1" name="core-place-on-appeal-2021" type="radio" value="yes" >
                         <label class="govuk-label govuk-radios__label" for="appeal-answer-1">
                           Yes, it is being appealed
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="appeal-answer-2" name="core-place-on-appeal" type="radio" value="no"  >
+                        <input class="govuk-radios__input" id="appeal-answer-2" name="core-place-on-appeal-2021" type="radio" value="no"  >
                         <label class="govuk-label govuk-radios__label" for="appeal-answer-2">
                           No, leave it as it is
                         </label>
@@ -95,10 +93,10 @@ Change core component to under review - Manage T Level results - GOV.UK
   </div>
 </div>
 
-<script type="application/json" id="core-place-on-appeal">
+<script type="application/json" id="core-place-on-appeal-2021">
 {
 
-  "core-place-on-appeal": {
+  "core-place-on-appeal-2021": {
     "presence": {
       "message": "^Please select an option"
     }

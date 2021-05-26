@@ -21,25 +21,27 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {% if data['resultChanged'] === "yes" %}
-            {{ data['coreGrade'] }}
+            {{ data['newcoreGrade'] }}
+            {% elseif data['resultChanged'] === "appeal" %}
+            {{ data['appealcoreGrade'] }}
             {% else %}
             {{ coreGrade }}
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            {% if data['coreOnHold'] === "yes" %}
+            {% if data['newcoreOnHold'] === "yes" %}
             <strong class="govuk-tag govuk-tag--orange tag-no-wrap">
               under review
             </strong>
-            {% elseif data['coreOnHold'] === "appealed"  %}
+            {% elseif data['newcoreOnHold'] === "appealed"  %}
             <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
               being appealed
             </strong>
-            {% elseif data['coreOnHold'] === "corrected"  %}
+            {% elseif data['newcoreOnHold'] === "corrected"  %}
             <strong class="govuk-tag govuk-tag--green">
               corrected
             </strong>
-            {% elseif data['coreOnHold'] === "final"  %}
+            {% elseif data['newcoreOnHold'] === "final"  %}
             <strong class="govuk-tag govuk-tag--red">
               final
             </strong>
@@ -69,24 +71,24 @@
 
        <div class="govuk-!-margin-bottom-9">
 
-        {% if data['coreOnHold'] === "yes" %}
+        {% if data['newcoreOnHold'] === "yes" %}
         
           <a class="govuk-link" href="core-take-off-hold">
             Update
           </a>
-        {% elseif data['coreOnHold'] === "appealed"  %}
+        {% elseif data['newcoreOnHold'] === "appealed"  %}
         <a class="govuk-link" href="core-take-off-appeal">
           Update
         </a>
-        {% elseif data['coreOnHold'] === "no" and data['coreReviewed'] === "yes" %}
+        {% elseif data['newcoreOnHold'] === "" and data['coreReviewed'] === "yes" %}
           <a class="govuk-link" href="core-put-on-appeal">
             Update
           </a> 
-        {% elseif data['coreOnHold'] === "corrected" and data['coreReviewed'] === "yes" %}
+        {% elseif data['newcoreOnHold'] === "corrected" and data['coreReviewed'] === "yes" %}
           <a class="govuk-link" href="core-put-on-appeal">
             Update
           </a>
-          {% elseif data['coreOnHold'] === "final" and data['coreReviewed'] === "appealed"  %}
+          {% elseif data['newcoreOnHold'] === "final" %}
           <a class="govuk-link" href="#">
             
           </a>
@@ -123,25 +125,27 @@
             <th scope="row" class="govuk-table__header">Grade</th>
             <td class="govuk-table__cell">
               {% if data['specialismChanged'] === "yes" %}
-            {{ data['specialismGrade'] }}
-            {% else %}
-            {{ specialismGrade }}
-            {% endif %}
+              {{ data['newspecialismGrade'] }}
+              {% elseif data['specialismChanged'] === "appeal" %}
+              {{ data['appealspecialismGrade'] }}
+              {% else %}
+              {{ specialismGrade }}
+              {% endif %}
             </td>
             <td class="govuk-table__cell align-item-right">
-              {% if data['specialismOnHold'] === "yes" %}
+              {% if data['newspecialismOnHold'] === "yes" %}
               <strong class="govuk-tag govuk-tag--orange tag-no-wrap">
                 under review
               </strong>
-              {% elseif data['specialismOnHold'] === "appealed"  %}
+              {% elseif data['newspecialismOnHold'] === "appealed"  %}
               <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
                 being appealed
               </strong>
-              {% elseif data['specialismOnHold'] === "corrected"  %}
+              {% elseif data['newspecialismOnHold'] === "corrected"  %}
               <strong class="govuk-tag govuk-tag--green">
                 corrected
               </strong>
-              {% elseif data['specialismOnHold'] === "final"  %}
+              {% elseif data['newspecialismOnHold'] === "final"  %}
               <strong class="govuk-tag govuk-tag--red">
                 final
               </strong>
@@ -149,25 +153,25 @@
               {% endif %}
             </td>
             <td class="govuk-table__cell align-text-right">
-              {% if data['specialismOnHold'] === "yes" %}
+              {% if data['newspecialismOnHold'] === "yes" %}
         
               <a class="govuk-link" href="specialism-take-off-hold">
                 Update
               </a>
-            {% elseif data['specialismOnHold'] === "appealed"  %}
+            {% elseif data['newspecialismOnHold'] === "appealed"  %}
             <a class="govuk-link" href="specialism-take-off-appeal">
               Update
             </a>
-            {% elseif data['specialismOnHold'] === "no" and data['specialismReviewed'] === "yes" %}
+            {% elseif data['newspecialismOnHold'] === "" and data['specialismReviewed'] === "yes" %}
               <a class="govuk-link" href="specialism-put-on-appeal">
                 Update
               </a> 
-            {% elseif data['specialismOnHold'] === "corrected" and data['specialismReviewed'] === "yes" %}
+            {% elseif data['newspecialismOnHold'] === "corrected" and data['specialismReviewed'] === "yes" %}
               <a class="govuk-link" href="specialism-put-on-appeal">
                 Update
               </a>
 
-            {% elseif data['specialismOnHold'] === "final" and data['specialismReviewed'] === "appealed"  %}
+            {% elseif data['newspecialismOnHold'] === "final" %}
               <a class="govuk-link" href="#">
                 
               </a>
