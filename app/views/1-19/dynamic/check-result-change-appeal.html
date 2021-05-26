@@ -18,7 +18,7 @@ Check and submit result - Manage T Level results - GOV.UK
     </h1>
     <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the result.</p>
 
-    <form action="specialism-confirm-result-change" method="post" class="form">
+    <form action="confirm-result-change-appeal" method="post" class="form">
       <h2 class="govuk-heading-m">Learner's details</h2>
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -64,7 +64,7 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Occupational specialism: {{ data['specialism'] }}</h2>
+      <h2 class="govuk-heading-m">Core: {{ data['core'] }}</h2>
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -73,17 +73,17 @@ Check and submit result - Manage T Level results - GOV.UK
             Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['specialism-result-answer'] }}
+            {{ data['result-answer'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-specialism-result">
-              Change<span class="govuk-visually-hidden"> grade</span>
+            <a class="govuk-link" href="change-core-result-appeal">
+              Change<span class="govuk-visually-hidden"> result</span>
             </a>
           </dd>
         </div>
       </dl>
-      
-      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer under review</p>
+            
+      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer being appealed</p>
 
       <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
     </form>

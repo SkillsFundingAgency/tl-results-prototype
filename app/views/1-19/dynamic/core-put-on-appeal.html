@@ -12,9 +12,9 @@ Change core component to under review - Manage T Level results - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="core-put-on-hold" method="post" class="form" novalidate data-validate="core-place-on-hold">
+      <form action="core-put-on-appeal" method="post" class="form" novalidate data-validate="core-place-on-appeal">
 
-        <h1 class="govuk-heading-l">Change component to under review</h1> 
+        <h1 class="govuk-heading-l">Change component to being appealed</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           <div class="govuk-summary-list__row">
@@ -54,30 +54,31 @@ Change core component to under review - Manage T Level results - GOV.UK
               Grade
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['coreGrade'] }}
-              
+              {% if data['resultChanged'] === "yes" %}
+              {{ data['newcoreGrade'] }}
+              {% else %}
+              {{ data['coreGrade']  }}
+              {% endif %}
             </dd>
           </div>
         </dl>
-  
-        
         
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="core-place-on-hold">
-                  Is this component under review?
+                <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="core-place-on-appeal">
+                  Is this component being appealed?
                 </label>
 
                   <div class="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="hold-answer-1" name="core-place-on-hold" type="radio" value="yes" >
-                        <label class="govuk-label govuk-radios__label" for="hold-answer-1">
-                          Yes, it is under review
+                        <input class="govuk-radios__input" id="appeal-answer-1" name="core-place-on-appeal" type="radio" value="yes" >
+                        <label class="govuk-label govuk-radios__label" for="appeal-answer-1">
+                          Yes, it is being appealed
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="hold-answer-2" name="core-place-on-hold" type="radio" value="no"  >
-                        <label class="govuk-label govuk-radios__label" for="hold-answer-2">
+                        <input class="govuk-radios__input" id="appeal-answer-2" name="core-place-on-appeal" type="radio" value="no"  >
+                        <label class="govuk-label govuk-radios__label" for="appeal-answer-2">
                           No, leave it as it is
                         </label>
                     </div>
@@ -86,7 +87,7 @@ Change core component to under review - Manage T Level results - GOV.UK
 
           </div>
           <div class="govuk-inset-text govuk-!-margin-top-9">
-            While a component is under review, we cannot calculate the learner’s overall T Level result
+            While a component is being appealed, we cannot calculate the learner’s overall T Level result
           </div>
 
           <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
@@ -94,10 +95,10 @@ Change core component to under review - Manage T Level results - GOV.UK
   </div>
 </div>
 
-<script type="application/json" id="core-place-on-hold">
+<script type="application/json" id="core-place-on-appeal">
 {
 
-  "core-place-on-hold": {
+  "core-place-on-appeal": {
     "presence": {
       "message": "^Please select an option"
     }

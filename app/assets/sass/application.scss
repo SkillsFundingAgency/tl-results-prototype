@@ -32,6 +32,23 @@ $govuk-assets-path: '/govuk/assets/';
   float:right;
 }
 
+.align-text-right{
+  text-align: right;
+}
+
+.tag-no-wrap{
+  white-space:nowrap;
+}
+// .dd-left{
+//   float: left;
+//   width: 50%;
+// }
+
+// .dd-right{
+//   float: right;
+//   width: 50%;
+// }
+
 @media screen and (max-width: 801px) {
   .check-submit-change{
     margin-bottom:20px;

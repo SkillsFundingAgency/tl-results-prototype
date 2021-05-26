@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Learner has been withdrawn - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "search-learner"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l"> Learner has been withdrawn by the exam board</h1>
+
+              <div class="govuk-inset-text">
+                <p class="govuk-body">
+                  This learner's registration has been withdrawn. A review cannot be requested. 
+                </p>
+            
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['uln']}}
+                  </dd>
+                </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['name']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['dob']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider (UKPRN)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['provider']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['tlevelTitle'] }}
+                </dd>
+              </div>
+            </dl>
+
+
+              
+
+              <p class="govuk-body">
+                  <a class="govuk-button" role="button" href="tlevels-dashboard">
+                      Back to Home
+                  </a>
+              </p>
+    </div>
+</div>
+{% endblock %}

@@ -23,38 +23,90 @@ Learner's results
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
 {% include "includes/record-entries-success-messages.html" %}
 
-<section id="learnerDetails">
-  <h1 class="govuk-heading-l">Learner's PRS status</h1>
-  <h2 class="govuk-heading-m">ULN: <span>{{ uln }}</span></h2>
-  <p class="govuk-body">Name: <span>{{ name }}</span></p>
-  <p class="govuk-body">Date of birth: <span>{{ dob }}</span></p>
-  <p class="govuk-body">Provider: <span>{{ provider }}</span></p>
-  <hr class="govuk-section-break govuk-section-break--visible">
-  <div class="govuk-inset-text">
-    <p class="govuk-body">If a component is under review or appeal, you must put the component 'on hold'. While a
-      component is on hold, the learner's overall T Level result cannot be calculated.</p>
-    <p class="govuk-body">Once the review or appeal is complete, you must confirm the learner's result and take the
-      component 'off hold'. The learner's overall T Level result will then be calculated.</p>
-  </div>
-</section>
-
-{% if uln === '1234567890'%}
-{% include "includes/reviews-appeals/record-entry-full-results.html" %}
-{% elif uln === '5678901234' %}
-{% include "includes/reviews-appeals/record-entry-no-core-specialism.html" %}
-{% elif uln === '4321987650' %}
-{% include "includes/reviews-appeals/record-entry-no-core-specialism-not-specified.html" %}
-{% elif uln === '5647382910' %}
-{% include "includes/reviews-appeals/record-entry-core-specialism-late.html" %}
-{% endif %}
-
-
-<hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
-<p class="govuk-body govuk-!-margin-top-8"><a class="govuk-link" href="search-learner">Search again</a></p>
-
 </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Learner’s component grades status</h1>
+
+    {% if uln === '5647382910' %}
+    <div class="govuk-inset-text">
+      The results for this learner are final. If you need to change them for any reason, you will need to email us at <a href=#>contact@tlevels.co.uk</a> to tell us why. Changes will only be made in exceptional circumstances.
+    </div>
+    {% else %}
+    {% endif %}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's registration details</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ uln }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ name }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ dob }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Provider (UKPRN)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ provider }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          T level title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ tlevelTitle }}
+        </dd>
+      </div>
+    </dl>
+
+
+    {% if uln === '1234567890'%}
+    {% include "includes/reviews-appeals/record-entry-full-results.html" %}
+    {% elif uln === '0987654321' %}
+    {% include "includes/reviews-appeals/record-entry-full-results-2021.html" %}
+    {% elif uln === '5678901234' %}
+    {% include "includes/reviews-appeals/record-entry-no-core-specialism.html" %}
+    {% elif uln === '4321987650' %}
+    {% include "includes/reviews-appeals/record-entry-no-core-specialism-not-specified.html" %}
+    {% elif uln === '5647382910' %}
+    {% include "includes/reviews-appeals/record-entry-core-specialism-late.html" %}
+    {% endif %}
+
+
+
+    <a class="govuk-button govuk-!-margin-top-9" role="button" href="search-learner">Search again</a>
+
+  </div>
+
 </div>
 
 {% endblock %}

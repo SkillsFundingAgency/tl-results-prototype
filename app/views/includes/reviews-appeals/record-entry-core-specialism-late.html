@@ -1,44 +1,102 @@
 <section id="coreComponent">
 
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Core: {{ core }}</h3>
+  <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
+  
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam Period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{coreResult}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Grade
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ coreGrade }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
-          Result
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2021
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          Grade: {{ coreGrade }}
-        </dd>
-      </div>
-    </dl>
+        <strong class="govuk-tag govuk-tag--red">
+          final
+        </strong>
 
-    <p class="govuk-inset-text">It is too late to request a review or to appeal this core result.</p>
+      </dd>
 
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
 
+        4 May 2021
+
+      </dd>
+      <!-- action value added and empty to keep line extended to match above rows  -->
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">         
+        </a>
+      </dd>
+    </div>
+  </dl>
 </section>
-    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-7">
- <section id="specialismComponent">
 
-    <h3 class="govuk-!-font-size-19 govuk-hint govuk-!-margin-top-7 govuk-!-font-weight-bold">Specialism: {{ specialism }}</h3>
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__key" style="border-bottom:none">
-          Result
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          <span class="govuk-visually-hidden">for </span>Summer 2022
-        </dd>
-        <dd class="govuk-summary-list__value" style="border-bottom:none">
-          Grade: {{ specialismGrade }}
-        </dd>
-      </div>
-    </dl>
+<section id="specialismComponent">
 
-    <p class="govuk-inset-text">It is too late to request a review or to appeal this specialism result.</p>
+  <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
+  
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Exam Period
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{specialismResults}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Grade
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ specialismGrade }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
 
+        <strong class="govuk-tag govuk-tag--red">
+          final
+        </strong>
+
+      </dd>
+
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Last updated
+      </dt>
+      <dd class="govuk-summary-list__value">
+
+        4 May 2021
+
+      </dd>
+      <!-- action value added and empty to keep line extended to match above rows  -->
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">         
+        </a>
+      </dd>
+    </div>
+  </dl>
 </section>
