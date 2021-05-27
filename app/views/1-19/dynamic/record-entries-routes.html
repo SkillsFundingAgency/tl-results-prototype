@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Learner's results
+Learner’s component grades status
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@ Learner's results
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's PRS status</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner’s component grades status</li>
   </ol>
 </div>
 {% endblock %}
@@ -25,8 +25,13 @@ Learner's results
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if data['showBanner'] === 'yes' %}
+    {% include "includes/record-entries-success-messages.html" %}
+    {% else %}
+    
+    {% endif %}
 
-{% include "includes/record-entries-success-messages.html" %}
+
 
 </div>
 </div>

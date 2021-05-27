@@ -1194,7 +1194,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'provider' : 'Barnsley College (10000536)',
     'tlevelTitle' : 'Design, Surveying and Planning for Construction',
     'coreGrade' : 'C',
-    'core' : 'Design, Surveying and Planning',
+    'core' : 'Design, Surveying and Planning (60358300)',
     'coreOnHold' : req.session.data['core-place-on-hold'],
     'coreResult' : "Winter 2021",
     'coreUpdate' : "4 May 2021",
@@ -1211,13 +1211,13 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
     req.session.data['coreGrade'] = "C"
     req.session.data['uln'] = uln
-    req.session.data['core'] = "Design, Surveying and Planning"
+    req.session.data['core'] = "Design, Surveying and Planning (60358300)"
     req.session.data['coreResult'] = "Winter 2021"
     req.session.data['coreOnHold'] = ""
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismOnHold'] = ""
     req.session.data['specialismResults'] = "Winter 2021"
- 
+    req.session.data['showBanner'] = "no"
     req.session.data['specialismGrade'] = 'Merit'
   ;
 
@@ -1243,9 +1243,9 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'specialismReviewed' : req.session.data['specialismReviewed'],
     'specialismOnHold' : req.session.data['specialism-place-on-hold'],
   })
-    req.session.data['name'] = 'John Smith'
+    req.session.data['name'] = 'Ted Hastings'
     req.session.data['provider'] = 'Barnsley College (10000536)'
-    req.session.data['dob'] = '12 December 2004'
+    req.session.data['dob'] = '24 December 2002'
     req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
     req.session.data['coreGrade'] = 'C'
     req.session.data['uln'] = uln
@@ -1258,6 +1258,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['specialismResults'] = "Winter 2021"
     req.session.data['specialismReviewed'] = ""
     req.session.data['specialismGrade'] = 'Merit'
+    req.session.data['showBanner'] = "no"
   ;
 
   // core and specialism specified but no grades yet
@@ -1345,6 +1346,7 @@ router.post('/1-19/dynamic/core-put-on-hold', function (req, res) {
   if (coreOnHold === 'yes') {
     req.session.data['newcoreOnHold'] = 'yes'
     req.session.data['dateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
     
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
@@ -1356,10 +1358,14 @@ router.post('/1-19/dynamic/core-put-on-hold', function (req, res) {
 router.post('/1-19/dynamic/specialism-put-on-hold', function (req, res) {
 
   let specialismOnHold = req.session.data['specialism-place-on-hold']
-
+  
   if (specialismOnHold === 'yes') {
     req.session.data['newspecialismOnHold'] = 'yes'
     req.session.data['specialismdateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
+    req.session.data['showspecialismBanner'] = "yes"
+ 
+    
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   } else {
@@ -1375,6 +1381,7 @@ router.post('/1-19/dynamic/core-put-on-appeal', function (req, res) {
   if (coreOnHold === 'yes') {
     req.session.data['newcoreOnHold'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   
@@ -1391,6 +1398,7 @@ router.post('/1-19/dynamic/specialism-put-on-appeal', function (req, res) {
   if (specialismOnHold === 'yes') {
     req.session.data['newspecialismOnHold'] = 'appealed'
     req.session.data['specialismdateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1410,6 +1418,7 @@ router.post('/1-19/dynamic/core-put-on-appeal-2021', function (req, res) {
   if (coreOnHold === 'yes') {
     req.session.data['newcoreOnHold2021'] = 'appealed'
     req.session.data['dateChanged2021'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   
@@ -1428,6 +1437,7 @@ router.post('/1-19/dynamic/specialism-put-on-appeal-2021', function (req, res) {
   if (specialismOnHold === 'yes') {
     req.session.data['newspecialismOnHold2021'] = 'appealed'
     req.session.data['specialismdateChanged2021'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1478,6 +1488,7 @@ router.post('/1-19/dynamic/core-take-off-appeal', function (req, res) {
     req.session.data['newcoreOnHold'] = 'final'
     req.session.data['coreReviewed'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1495,6 +1506,7 @@ router.post('/1-19/dynamic/specialism-take-off-appeal', function (req, res) {
     req.session.data['newspecialismOnHold'] = 'final'
     req.session.data['specialismReviewed'] = 'appealed'
     req.session.data['specialismdateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
  
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1513,6 +1525,7 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
     req.session.data['newcoreOnHold2021'] = 'final'
     req.session.data['coreReviewed2021'] = 'appealed'
     req.session.data['dateChanged2021'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1530,6 +1543,7 @@ router.post('/1-19/dynamic/specialism-take-off-appeal-2021', function (req, res)
     req.session.data['newspecialismOnHold2021'] = 'final'
     req.session.data['specialismReviewed2021'] = 'appealed'
     req.session.data['specialismdateChanged2021'] = 'yes'
+    req.session.data['showBanner'] = "yes"
  
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
@@ -1546,6 +1560,7 @@ router.post('/1-19/dynamic/has-result-changed', function (req, res) {
     req.session.data['newcoreOnHold'] = ''
     req.session.data['coreReviewed'] = 'yes'
     req.session.data['dateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
 
 
     res.redirect('/1-19/dynamic/record-entries-routes')
@@ -1554,6 +1569,7 @@ router.post('/1-19/dynamic/has-result-changed', function (req, res) {
   } else if (resultChanged === 'option3') {  
     req.session.data['newcoreOnHold'] = 'appealed'
     req.session.data['dateChanged'] = 'yes'
+    req.session.data['showBanner'] = "yes"
   
 
     res.redirect('/1-19/dynamic/record-entries-routes')
@@ -1574,6 +1590,7 @@ router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
   req.session.data['newspecialismOnHold'] = ''
   req.session.data['specialismReviewed'] = 'yes'
   req.session.data['specialismdateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
   
 
   res.redirect('/1-19/dynamic/record-entries-routes')
@@ -1582,6 +1599,7 @@ router.post('/1-19/dynamic/specialism-has-result-changed', function (req, res) {
 } else if (resultChanged === 'option3') {  
   req.session.data['newspecialismOnHold'] = 'appealed'
   req.session.data['specialismdateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
 
   res.redirect('/1-19/dynamic/record-entries-routes')
@@ -1600,6 +1618,7 @@ router.post('/1-19/dynamic/confirm-result-change', function (req, res) {
   req.session.data['newcoreOnHold'] = 'corrected'
   req.session.data['coreReviewed'] = 'yes'
   req.session.data['dateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1613,6 +1632,7 @@ router.post('/1-19/dynamic/specialism-confirm-result-change', function (req, res
   req.session.data['newspecialismOnHold'] = 'corrected'
   req.session.data['specialismReviewed'] = 'yes'
   req.session.data['specialismdateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1626,6 +1646,7 @@ router.post('/1-19/dynamic/confirm-result-change-appeal', function (req, res) {
   req.session.data['newcoreOnHold'] = 'final'
   req.session.data['coreReviewed'] = 'appealed'
   req.session.data['dateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1639,6 +1660,7 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal', function (r
   req.session.data['newspecialismOnHold'] = 'final'
   req.session.data['specialismReviewed'] = 'appealed'
   req.session.data['specialismdateChanged'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1652,8 +1674,9 @@ router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, re
   req.session.data['resultChanged2021'] = 'appeal'
   req.session.data['appealcoreGrade2021'] = newResult
   req.session.data['newcoreOnHold2021'] = 'final'
-  req.session.data['coreReviewed2021'] = 'appealed'
+  req.session.data['coreReviewed2021'] = 'appealedgrade'
   req.session.data['dateChanged2021'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
@@ -1666,8 +1689,9 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal-2021', functi
   req.session.data['specialismResultChanged2021'] = 'appeal'
   req.session.data['appealspecialismGrade2021'] = newResult
   req.session.data['newspecialismOnHold2021'] = 'final'
-  req.session.data['specialismReviewed2021'] = 'appealed'
+  req.session.data['specialismReviewed2021'] = 'appealedgrade'
   req.session.data['specialismdateChanged2021'] = 'yes'
+  req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 

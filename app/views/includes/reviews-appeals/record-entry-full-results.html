@@ -189,7 +189,7 @@
             <th scope="row" class="govuk-table__header">Last updated</th>
             <td class="govuk-table__cell">
               {% if data['specialismdateChanged'] === "yes" %}
-              <span id = "update-day"></span>
+              <span id = "update-day-core"></span>
               {% else %}
               {{ specialismUpdate }}
               {% endif %}
@@ -210,6 +210,11 @@
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
     document.getElementById('update-day').innerHTML = dateFormat
     }
+
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-core').innerHTML = dateFormatcore
 </script>
 
 
