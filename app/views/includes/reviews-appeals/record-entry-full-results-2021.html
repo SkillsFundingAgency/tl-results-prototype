@@ -162,20 +162,22 @@
 
 <script>
     window.onload = function () {
-
+    
+    var datecore = new Date()
+    var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
+    var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
+    document.getElementById('update-day-2021').innerHTML = dateFormatcore
+    
     var date = new Date()
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
     document.getElementById('specialism-update-day-2021').innerHTML = dateFormat
-    }
 
-    window.onload = function () {
-
-    var date = new Date()
-    var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
-    var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-    document.getElementById('update-day-2021').innerHTML = dateFormat
+    
     }
+  
+
+    
 </script>
 
 
