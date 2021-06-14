@@ -13,17 +13,9 @@ Change specialism component to under review - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-put-on-appeal" method="post" class="form" novalidate data-validate="specialism-place-on-appeal">
-          <h1 class="govuk-heading-l">Change component to being appealed</h1> 
+          <h1 class="govuk-heading-l">Appeal grade</h1> 
         
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['uln'] }}
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Name
@@ -34,7 +26,23 @@ Change specialism component to under review - Manage T Level results - GOV.UK
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Component
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['specialism'] }}
@@ -66,7 +74,7 @@ Change specialism component to under review - Manage T Level results - GOV.UK
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-place-on-appeal">
-                    Is this component being appealed?
+                    Is this grade being appealed?
                   </label>
 
                     <div class="govuk-radios">
@@ -87,8 +95,7 @@ Change specialism component to under review - Manage T Level results - GOV.UK
 
             </div>
             <div class="govuk-inset-text govuk-!-margin-top-9">
-              While a component is being appealed, we cannot calculate the learner’s overall T Level result
-            </div>
+              While this grade is being appealed, we cannot calculate this learner’s overall T Level result
             <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
         </form>
     </div>

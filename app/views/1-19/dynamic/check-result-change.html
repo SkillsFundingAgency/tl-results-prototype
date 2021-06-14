@@ -23,18 +23,18 @@ Check and submit result - Manage T Level results - GOV.UK
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            ULN
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['uln'] }}
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
             Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['name'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -50,12 +50,13 @@ Check and submit result - Manage T Level results - GOV.UK
             Provider (UKPRN)
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['provider'] }}
+            {{ data['provider'] }} <br>
+            {{ data['ukprn'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            T level title
+            T level 
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tlevelTitle'] }}
@@ -64,7 +65,7 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Core: {{ data['core'] }}</h2>
+      <h2 class="govuk-heading-m">Core (code): {{ data['core'] }}</h2>
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">

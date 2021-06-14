@@ -13,16 +13,8 @@ Change assessment entry - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="check-result-change-appeal-2021" method="post" class="form" novalidate data-validate="change-core-result-appeal-2021">
-            <h1 class="govuk-heading-l">Select the core component result</h1> 
+            <h1 class="govuk-heading-l">Select the core component grade</h1> 
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['uln'] }}
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Name
@@ -33,7 +25,23 @@ Change assessment entry - Manage T Level results - GOV.UK
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Component
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Core <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['core'] }}
@@ -47,11 +55,21 @@ Change assessment entry - Manage T Level results - GOV.UK
                 {{ data['coreResult'] }}
               </dd>
             </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Old grade
+              </dt>
+              <dd class="govuk-summary-list__value">
+  
+                {{ data['coreGrade']  }}
+  
+              </dd>
+            </div>
           </dl>
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="result-answer-2021">
-                        What is the new core component result?
+                        What is the new core component grade?
                       </label>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
@@ -99,7 +117,7 @@ Change assessment entry - Manage T Level results - GOV.UK
                     </div>
                 </fieldset>
             </div>
-            <button class="govuk-button" role="button">Submit</button>
+            <button class="govuk-button" role="button">Continue</button>
         </form>
     </div>
 </div>

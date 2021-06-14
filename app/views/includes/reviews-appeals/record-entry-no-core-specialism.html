@@ -1,77 +1,104 @@
-<section id="coreComponent">
+<section id="coreComponent" class="govuk-!-margin-bottom-9">
 
-        <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
-        
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Exam Period
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{coreResult}}
-            </dd>
+  <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
+  
+  <table class="govuk-table">
+  
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> Exam Period</th>
+        <th scope="col" class="govuk-table__header govuk-!-font-weight-regular"> {{ coreResult }}</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Grade</th>
+        <td class="govuk-table__cell">
+          {{ coreGrade }}
+          
+        </td>
+        <td class="govuk-table__cell align-item-right">
 
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Grade
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ coreGrade }}
-            </dd>
+        </td>
+        <td class="govuk-table__cell align-text-right">
+          <a class="govuk-link" href="#">
+            
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Last updated</th>
+        <td class="govuk-table__cell">
+          Not yet available
+        </td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Updated by</th>
+        <td class="govuk-table__cell">
 
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Last updated
-            </dt>
-            <dd class="govuk-summary-list__value">
-      
-              -
-      
-            </dd>
+          Not yet available
 
-          </div>
-        </dl>
+        </td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+    </tbody>
+  </table>
 
 </section>
 
 <section id="specialismComponent">
 
-      <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
+  <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
+  <table class="govuk-table">
         
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Exam Period
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{specialismResults}}
-          </dd>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"> Exam Period</th>
+        <th scope="col" class="govuk-table__header govuk-!-font-weight-regular"> {{ specialismResults }}</th>
+        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Grade</th>
+        <td class="govuk-table__cell">
+          {{ specialismGrade }}
+        </td>
+        <td class="govuk-table__cell align-item-right">
+         
+        </td>
+        <td class="govuk-table__cell align-text-right">
+          <a class="govuk-link" href="#">          
+          </a>
+        </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Last updated</th>
+        <td class="govuk-table__cell">
+          Not yet available
+        </td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Updated by</th>
+        <td class="govuk-table__cell">
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Grade
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ specialismGrade }}
-          </dd>
+          Not yet available
 
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Last updated
-          </dt>
-          <dd class="govuk-summary-list__value">
+        </td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+    </tbody>
+  </table>
 
-            -
-
-          </dd>
-
-      
-        </div>
-      </dl>
 
 </section>
 

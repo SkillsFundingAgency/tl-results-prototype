@@ -13,17 +13,9 @@ Review component status- Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-take-off-hold" method="post" class="form" novalidate data-validate="specialism-take-off-hold">
-          <h1 class="govuk-heading-l">Review component status</h1> 
+          <h1 class="govuk-heading-l">Update grade status</h1> 
         
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['uln'] }}
-              </dd>
-            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Name
@@ -34,7 +26,23 @@ Review component status- Manage T Level results - GOV.UK
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Component
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['specialism'] }}

@@ -18,14 +18,6 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['uln'] }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
@@ -34,7 +26,23 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Component
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Core <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['core'] }}
@@ -89,7 +97,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                 </fieldset>
 
             </div>
-            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+            <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
         </form>
     </div>
 </div>
