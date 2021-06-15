@@ -41,7 +41,7 @@
     
               {% if data['newcoreOnHold2021'] === "appealed"  %}
                 <a class="govuk-link" href="core-take-off-appeal-2021">
-                  Update
+                  Update <span class="govuk-visually-hidden"> grade</span>
                 </a>
       
               {% elseif data['newcoreOnHold2021'] === "final" %}
@@ -52,7 +52,7 @@
               {% else %}
               
                 <a class="govuk-link" href="core-put-on-appeal-2021">
-                  Update
+                  Update <span class="govuk-visually-hidden"> grade</span>
                 </a>
               
               {% endif %}
