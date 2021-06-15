@@ -1,8 +1,91 @@
 <section id="coreComponent">
 
       <h2 class="govuk-heading-m">Core (code): {{ core }}</h2>
+      <table class="govuk-table">
+    
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class-30 "> Exam Period</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-weight-regular app-custom-class-30"> {{ coreResult }}</th>
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Grade</th>
+            <td class="govuk-table__cell">
+              {% if data['resultChanged2021'] === "appeal" and data['core-result-changed-2021'] === 'no' %}
+              {{ coreGrade }}
+              {% elseif data['resultChanged2021'] === "appeal" %}
+              {{ data['appealcoreGrade2021'] }}
+              {% else %}
+              {{ coreGrade }}
+              {% endif %}
+            </td>
 
-      <dl class="govuk-summary-list">
+            <td class="govuk-table__cell align-item-right">
+              {% if data['newcoreOnHold2021'] === "appealed"  %}
+              <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
+                being appealed
+              </strong>
+  
+              {% elseif data['newcoreOnHold2021'] === "final"  %}
+              <strong class="govuk-tag govuk-tag--red">
+                final
+              </strong>
+              {% else %}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell align-text-right">
+    
+            {% if data['newcoreOnHold2021'] === "appealed"  %}
+              <a class="govuk-link" href="core-take-off-appeal-2021">
+                Update
+              </a>
+    
+            {% elseif data['newcoreOnHold2021'] === "final" %}
+              <a class="govuk-link" href="#">
+                
+              </a>
+    
+            {% else %}
+            
+              <a class="govuk-link" href="core-put-on-appeal-2021">
+                Update
+              </a>
+            
+            {% endif %}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Last updated</th>
+            <td class="govuk-table__cell">
+              {% if data['dateChanged2021'] === "yes" %}
+              <span id = "update-day-2021"></span>
+              {% else %}
+              {{ coreUpdate }}
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Updated by</th>
+            <td class="govuk-table__cell">
+              {% if data['dateChanged2021'] === "yes" %}
+              Pat Carmicheal
+              {% else %}
+              Tony Gates
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Exam Period
@@ -51,9 +134,9 @@
             {% else %}
             {{ coreUpdate }}
             {% endif %}
-          </dd>
+          </dd> -->
           <!-- action value added and empty to keep line extended to match above rows  -->
-          <dd class="govuk-summary-list__actions">
+          <!-- <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">         
             </a>
           </dd>
@@ -81,12 +164,12 @@
         {% endif %}
 
 
-      </div>
+      </div> -->
 
 </section>
 
-<section id="specialismComponent"> 
-
+<!-- <section id="specialismComponent">
+  
   <h2 class="govuk-heading-m">Occupational specialism (code): {{ specialism }}</h2>
 
   <table class="govuk-table">
@@ -147,9 +230,21 @@
         <th scope="row" class="govuk-table__header">Last updated</th>
         <td class="govuk-table__cell">
           {% if data['specialismdateChanged2021'] === "yes" %}
-          <span id = "specialism-update-day-2021"></span>
+          <span id = "os-update-day-2021"></span>
           {% else %}
           {{ specialismUpdate }}
+          {% endif %}
+        </td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Updated by</th>
+        <td class="govuk-table__cell">
+          {% if data['specialismdateChanged2021'] === "yes" %}
+          Patricia Carmicheal
+          {% else %}
+          Tony Gates
           {% endif %}
         </td>
         <td class="govuk-table__cell"></td>
@@ -158,25 +253,20 @@
     </tbody>
   </table>
 
-</section> 
+</section>  -->
 
 <script>
-    window.onload = function () {
+  window.onload = function () {
     
     var datecore = new Date()
     var dateOptionscore = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormatcore = datecore.toLocaleDateString('en-GB', dateOptionscore)
     document.getElementById('update-day-2021').innerHTML = dateFormatcore
-    
+    }
     var date = new Date()
     var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
     var dateFormat = date.toLocaleDateString('en-GB', dateOptions)
-    document.getElementById('specialism-update-day-2021').innerHTML = dateFormat
-
-    
-    }
-  
-
+    document.getElementById('os-update-day-2021').innerHTML = dateFormat
     
 </script>
 

@@ -22,7 +22,7 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
 
               <div class="govuk-inset-text">
                 <p class="govuk-body">
-                  This learner's registration has been withdrawn. A review cannot be requested. 
+                  This learner's registration has been withdrawn. An appeal cannot be requested. 
                 </p>
             
             </div>
@@ -31,14 +31,6 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
 
 
             <dl class="govuk-summary-list govuk-summary-list--no-border">
-              <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    ULN
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{data['uln']}}
-                  </dd>
-                </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Name
@@ -49,6 +41,14 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['uln']}}
+                </dd>
+            </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -57,15 +57,16 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Provider (UKPRN)
+                  Provider <br>(UKPRN)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['provider']}}
+                  {{data['provider']}} <br>
+                  {{data ['ukprn']}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  T Level title
+                  T level
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['tlevelTitle'] }}

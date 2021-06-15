@@ -16,25 +16,25 @@ Check and submit result - Manage T Level results - GOV.UK
     <h1 class="govuk-heading-l">
       Check and submit
     </h1>
-    <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the result.</p>
+    <p class="govuk-body govuk-!-margin-bottom-9">Check the information is correct before submitting the grade.</p>
 
     <form action="confirm-result-change-appeal-2021" method="post" class="form">
       <h2 class="govuk-heading-m">Learner's details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            ULN
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['uln'] }}
-          </dd>
-        </div>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['name'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ULN
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['uln'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -50,12 +50,13 @@ Check and submit result - Manage T Level results - GOV.UK
             Provider (UKPRN)
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['provider'] }}
+            {{ data['provider'] }} <br>
+            {{ data['ukprn'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            T level title
+            T Level
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['tlevelTitle'] }}
@@ -64,26 +65,43 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
       </dl>
 
-      <h2 class="govuk-heading-m">Core: {{ data['core'] }}</h2>
+      <h2 class="govuk-heading-m">Core (code): {{ data['core'] }}</h2>
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Grade
+            Old grade
           </dt>
           <dd class="govuk-summary-list__value">
+            {{ data['coreGrade'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            New grade
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            {% if data['core-result-changed-2021'] === "no" %}
+            {{ data['coreGrade'] }}
+            {% else %}
             {{ data['result-answer-2021'] }}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="change-core-result-appeal-2021">
-              Change<span class="govuk-visually-hidden"> result</span>
+              Change<span class="govuk-visually-hidden"> grade</span>
             </a>
           </dd>
         </div>
       </dl>
             
-      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer being appealed</p>
+      <p class="govuk-inset-text">Selecting 'Submit' will update the grade and mean the grade is no longer being appealed</p>
 
       <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
     </form>

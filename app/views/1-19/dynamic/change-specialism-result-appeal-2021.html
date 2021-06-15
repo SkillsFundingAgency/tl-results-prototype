@@ -13,16 +13,8 @@ Change assessment entry - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-check-result-change-appeal-2021" method="post" class="form" novalidate data-validate="change-specialism-result-appeal-2021">
-            <h1 class="govuk-heading-l">Select the specialism component result</h1> 
+            <h1 class="govuk-heading-l">Select the specialism component grade</h1> 
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Name
@@ -33,7 +25,23 @@ Change assessment entry - Manage T Level results - GOV.UK
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Component
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['uln'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['dob'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Occupational specialism  <br>(code)
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data['specialism'] }}
@@ -51,7 +59,7 @@ Change assessment entry - Manage T Level results - GOV.UK
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
                     <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer-2021">
-                        What is the new specialism component result?
+                        What is the new specialism component grade?
                       </label>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
@@ -72,10 +80,16 @@ Change assessment entry - Manage T Level results - GOV.UK
                                 Pass
                             </label>
                         </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="result-answer-4" name="specialism-result-answer-2021" type="radio" value="Pass">
+                          <label class="govuk-label govuk-radios__label" for="result-answer-4">
+                              Unclassified
+                          </label>
+                      </div>
                     </div>
                 </fieldset>
             </div>
-            <button class="govuk-button" role="button">Submit</button>
+            <button class="govuk-button" role="button">Continue</button>
         </form>
     </div>
 </div>

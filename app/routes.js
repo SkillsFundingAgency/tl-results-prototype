@@ -1191,15 +1191,16 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'uln' : uln,
     'name' : 'John Smith',
     'dob' : '12 December 2005',
-    'provider' : 'Barnsley College (10000536)',
-    'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+    'provider' : 'Barnsley College',
+    'ukprn': '(10000536)',
+    'tlevelTitle' : 'T level in Design, Surveying and Planning for Construction',
     'coreGrade' : 'C',
     'core' : 'Design, Surveying and Planning (60358300)',
     'coreOnHold' : req.session.data['core-place-on-hold'],
-    'coreResult' : "Winter 2021",
+    'coreResult' : "Summer 2021",
     'coreUpdate' : "4 May 2021",
     'specialism' : 'Building Services Design (ZTLOS003)',
-    'specialismResults' : "Winter 2021",       
+    'specialismResults' : "Summer 2021",       
     'specialismGrade' : 'Merit',
     'specialismUpdate' : "4 May 2021",
 
@@ -1207,16 +1208,17 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   })
     req.session.data['name'] = 'John Smith'
     req.session.data['provider'] = 'Barnsley College (10000536)'
+    req.session.data['ukprn'] = '(10000536)'
     req.session.data['dob'] = '12 December 2004'
-    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
     req.session.data['coreGrade'] = "C"
     req.session.data['uln'] = uln
     req.session.data['core'] = "Design, Surveying and Planning (60358300)"
-    req.session.data['coreResult'] = "Winter 2021"
+    req.session.data['coreResult'] = "Summer 2021"
     req.session.data['coreOnHold'] = ""
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismOnHold'] = ""
-    req.session.data['specialismResults'] = "Winter 2021"
+    req.session.data['specialismResults'] = "Summer 2021"
     req.session.data['showBanner'] = "no"
     req.session.data['specialismGrade'] = 'Merit'
   ;
@@ -1228,34 +1230,36 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'uln' : uln,
     'name' : 'Ted Hastings',
     'dob' : '24 December 2002',
-    'provider' : 'Barnsley College (10000536)',
-    'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+    'provider' : 'Barnsley College',
+    'ukprn': '(10000536)',
+    'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
     'coreGrade' : 'C',
     'core' : 'Design, Surveying and Planning (60358300)',
     'coreOnHold' : req.session.data['core-place-on-hold'],
-    'coreResult' : "Winter 2021",
+    'coreResult' : "Summer 2021",
     'coreUpdate' : "4 May 2021",
     'coreReviewed' : req.session.data['coreReviewed'],
     'specialism' : 'Building Services Design (ZTLOS003)',
-    'specialismResults' : "Winter 2021",       
+    'specialismResults' : "Summer 2021",       
     'specialismGrade' : 'Merit',
     'specialismUpdate' : "4 May 2021",
     'specialismReviewed' : req.session.data['specialismReviewed'],
     'specialismOnHold' : req.session.data['specialism-place-on-hold'],
   })
     req.session.data['name'] = 'Ted Hastings'
-    req.session.data['provider'] = 'Barnsley College (10000536)'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
     req.session.data['dob'] = '24 December 2002'
-    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['tlevelTitle'] = 'T Level in  Design, Surveying and Planning for Construction'
     req.session.data['coreGrade'] = 'C'
     req.session.data['uln'] = uln
     req.session.data['core'] = "Design, Surveying and Planning (60358300)"
-    req.session.data['coreResult'] = "Winter 2021"
+    req.session.data['coreResult'] = "Summer 2021"
     req.session.data['coreOnHold'] = ""
     req.session.data['coreReviewed'] = ""
     req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
     req.session.data['specialismOnHold'] = ""
-    req.session.data['specialismResults'] = "Winter 2021"
+    req.session.data['specialismResults'] = "Summer 2021"
     req.session.data['specialismReviewed'] = ""
     req.session.data['specialismGrade'] = 'Merit'
     req.session.data['showBanner'] = "no"
@@ -1268,15 +1272,16 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'name' : 'Tanner Ball', 
       'uln' : '5678901234', 
       'dob' : '15 April 2004', 
-      'provider' : 'Abingdon and Witney College (10000055)',
-      'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+      'provider' : 'Abingdon and Witney College',
+      'ukprn' : '(10000055)',
+      'tlevelTitle' : 'T level in Design, Surveying and Planning for Construction',
       'core' : 'Design, Surveying and Planning (60358300)',
       'coreResult' : "Summer 2021",
-      'coreGrade' : '-',
+      'coreGrade' : 'Not yet available',
       'coreOnHold' : req.session.data['core-place-on-hold'],
       'specialism' : 'Building Services Design (ZTLOS003)',
       'specialismResults' : "Summer 2021",    
-      'specialismGrade' : '-',
+      'specialismGrade' : 'Not yet available',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
     ;
@@ -1288,15 +1293,16 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'name' : 'Ian Buckells', 
       'uln' : '4321987650', 
       'dob' : '15 April 2004', 
-      'provider' : 'Abingdon and Witney College (10000055)',
-      'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+      'provider' : 'Abingdon and Witney College',
+      'ukprn' : '(10000055)',
+      'tlevelTitle' : 'T level in Design, Surveying and Planning for Construction',
       'core' : 'Design, Surveying and Planning (60358300)',
       'coreResult' : "Summer 2021",
-      'coreGrade' : '-',
+      'coreGrade' : 'Not yet available',
       'coreOnHold' : req.session.data['core-place-on-hold'],
       'specialism' : 'Not yet specified',
       'specialismResults' : "-",    
-      'specialismGrade' : '-',
+      'specialismGrade' : 'Not yet available',
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
     })
     ;
@@ -1308,13 +1314,14 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'name' : 'Steve Rogers', 
       'uln' : '5647382910', 
       'dob' : '15 April 2004', 
-      'provider' : 'Abingdon and Witney College (10000055)',
-      'tlevelTitle' : 'Design, Surveying and Planning for Construction',
+      'provider' : 'Abingdon and Witney College',
+      'ukprn' : '(10000055)',
+      'tlevelTitle' : 'T level in Design, Surveying and Planning for Construction',
       'core' : 'Design, Surveying and Planning (60358300)',
-      'coreResult' : "Winter 2021",
+      'coreResult' : "Summer 2021",
       'coreGrade' : 'C',
       'specialism' : 'Building Services Design (ZTLOS003)',
-      'specialismResults' : "Winter 2021",    
+      'specialismResults' : "Summer 2021",    
       'specialismGrade' : 'Merit',
       'coreOnHold' : req.session.data['core-place-on-hold'],
       'specialismOnHold' : req.session.data['specialism-place-on-hold'],
@@ -1325,9 +1332,10 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   } else if (uln === '1231231234') {
     req.session.data['uln'] = uln
     req.session.data['name'] = 'Jo Davidson'
-    req.session.data['provider'] = 'Barnsley College (10000536)'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
     req.session.data['dob'] = '24 December 2004'
-    req.session.data['tlevelTitle'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
     res.redirect('learner-withdrawn')
   
   //learner not found 
@@ -1522,12 +1530,9 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
     res.redirect('/1-19/dynamic/change-core-result-appeal-2021')
 //Result the same - back to record - final tag   
   } else {
-    req.session.data['newcoreOnHold2021'] = 'final'
-    req.session.data['coreReviewed2021'] = 'appealed'
-    req.session.data['dateChanged2021'] = 'yes'
-    req.session.data['showBanner'] = "yes"
+    req.session.data['core-result-changed-2021'] = 'no'
 
-    res.redirect('/1-19/dynamic/record-entries-routes')
+    res.redirect('/1-19/dynamic/check-result-change-appeal-2021')
   }
 })
 
@@ -1548,7 +1553,6 @@ router.post('/1-19/dynamic/specialism-take-off-appeal-2021', function (req, res)
     res.redirect('/1-19/dynamic/record-entries-routes')
   }
 })
-
 
 
 router.post('/1-19/dynamic/has-result-changed', function (req, res) {
@@ -1671,9 +1675,11 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal', function (r
 router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, res) {
   
   let newResult = req.session.data['result-answer-2021']
+  let newResultchanged = req.session.data['core-result-changed-2021']
   req.session.data['resultChanged2021'] = 'appeal'
   req.session.data['appealcoreGrade2021'] = newResult
   req.session.data['newcoreOnHold2021'] = 'final'
+  req.session.data['core-result-changed-2021'] = newResultchanged
   req.session.data['coreReviewed2021'] = 'appealedgrade'
   req.session.data['dateChanged2021'] = 'yes'
   req.session.data['showBanner'] = "yes"
@@ -1681,6 +1687,16 @@ router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, re
   res.redirect('/1-19/dynamic/record-entries-routes')
 
 })
+
+//2021 core grade changed - after clicking result the same 
+router.post('1-19/dynamic/change-core-result-appeal-2021', function (req, res) {
+  
+  req.session.data['core-result-changed-2021'] = ''
+ 
+  res.redirect('/1-19/dynamic/confirm-result-change-appeal-2021')
+
+})
+
 
 //2021 specialism grade changed appeal
 router.post('/1-19/dynamic/specialism-confirm-result-change-appeal-2021', function (req, res) {
