@@ -5,10 +5,10 @@
     
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class-30 "> Exam Period</th>
-            <th scope="col" class="govuk-table__header govuk-!-font-weight-regular app-custom-class-30"> {{ coreResult }}</th>
-            <th scope="col" class="govuk-table__header app-custom-class"></th>
-            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header">Exam Period</th>
+            <th scope="col" class="govuk-table__header govuk-!-font-weight-regular"> {{coreResult}}</th>
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -37,25 +37,25 @@
               {% else %}
               {% endif %}
             </td>
-            <td class="govuk-table__cell align-text-right">
+            <td class="govuk-table__cell">
     
-            {% if data['newcoreOnHold2021'] === "appealed"  %}
-              <a class="govuk-link" href="core-take-off-appeal-2021">
-                Update
-              </a>
-    
-            {% elseif data['newcoreOnHold2021'] === "final" %}
-              <a class="govuk-link" href="#">
-                
-              </a>
-    
-            {% else %}
-            
-              <a class="govuk-link" href="core-put-on-appeal-2021">
-                Update
-              </a>
-            
-            {% endif %}
+              {% if data['newcoreOnHold2021'] === "appealed"  %}
+                <a class="govuk-link" href="core-take-off-appeal-2021">
+                  Update
+                </a>
+      
+              {% elseif data['newcoreOnHold2021'] === "final" %}
+                <a class="govuk-link" href="#">
+                  
+                </a>
+      
+              {% else %}
+              
+                <a class="govuk-link" href="core-put-on-appeal-2021">
+                  Update
+                </a>
+              
+              {% endif %}
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -85,6 +85,7 @@
         </tbody>
       </table>
 
+      
       <!-- <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
