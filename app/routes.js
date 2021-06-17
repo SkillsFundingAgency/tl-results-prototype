@@ -1228,7 +1228,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   res.render('1-19/dynamic/record-entries-routes', 
   { 
     'uln' : uln,
-    'name' : 'Ted Hastings',
+    'name' : 'Danny Waldron',
     'dob' : '24 December 2002',
     'provider' : 'Barnsley College',
     'ukprn': '(10000536)',
@@ -1246,7 +1246,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     'specialismReviewed' : req.session.data['specialismReviewed'],
     'specialismOnHold' : req.session.data['specialism-place-on-hold'],
   })
-    req.session.data['name'] = 'Ted Hastings'
+    req.session.data['name'] = 'Danny Waldron'
     req.session.data['provider'] = 'Barnsley College'
     req.session.data['ukprn'] = '(10000536)'
     req.session.data['dob'] = '24 December 2002'
