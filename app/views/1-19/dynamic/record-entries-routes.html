@@ -42,9 +42,9 @@ Learner’s component grades status - Manage T Level results - GOV.UK
 
     <h1 class="govuk-heading-l">Learner’s component grades status</h1>
 
-    {% if uln === '5647382910' %}
+    {% if uln === '5647382910' or data['newcoreOnHold2021'] === "final"  %}
     <div class="govuk-inset-text">
-      The results for this learner are final. If you need to change them for any reason, you will need to email us at <a href=#>tlevel.resultsandcertification@education.gov.uk</a> to tell us why. Changes will only be made in exceptional circumstances.
+      The results for this learner are final. If you need to change them for any reason, you will need to email us at <a href=#>tlevel.resultsandcertification@education.gov.uk</a>. Changes will only be made in exceptional circumstances.
     </div>
     {% else %}
     {% endif %}
@@ -77,7 +77,7 @@ Learner’s component grades status - Manage T Level results - GOV.UK
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Provider (UKPRN)
+          Provider <br>(UKPRN)
         </dt>
         <dd class="govuk-summary-list__value">
           {{ provider }} <br>
