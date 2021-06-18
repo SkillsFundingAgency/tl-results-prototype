@@ -67,6 +67,7 @@ Check and submit result - Manage T Level results - GOV.UK
 
       <h2 class="govuk-heading-m">Core (code): {{ data['core'] }}</h2>
 
+      <p>core result changed: {{data['core-result-changed-2021']}}</p>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
@@ -87,10 +88,10 @@ Check and submit result - Manage T Level results - GOV.UK
           </dt>
 
           <dd class="govuk-summary-list__value">
-            {% if data['core-result-changed-2021'] === "no" %}
-            {{ data['coreGrade'] }}
-            {% else %}
+            {% if data['core-result-changed-2021'] === "yes" %}
             {{ data['result-answer-2021'] }}
+            {% else %}
+            {{ data['coreGrade'] }}
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">

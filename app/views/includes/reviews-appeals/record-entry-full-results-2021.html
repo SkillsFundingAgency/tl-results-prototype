@@ -13,10 +13,13 @@
         <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value govuk-!-font-weight-bold">Grade</dd>
             <dd class="govuk-summary-list__value">
-              {% if data['resultChanged2021'] === "appeal" and data['core-result-changed-2021'] === 'no' %}
-              {{ coreGrade }}
-              {% elseif data['resultChanged2021'] === "appeal" %}
+              
+              {% if data['resultChanged2021'] === "appeal" and data['core-result-changed-2021'] === 'yes'%}
               {{ data['appealcoreGrade2021'] }}
+              
+              {% elseif data['resultChanged2021'] === "appeal" %}
+              {{ coreGrade }}
+              
               {% else %}
               {{ coreGrade }}
               {% endif %}
@@ -24,7 +27,7 @@
             <dd class="govuk-summary-list__value">
               
               {% if data['newcoreOnHold2021'] === "appealed"  %}
-              <strong class="govuk-tag govuk-tag--purple tag-no-wrap">
+              <strong class="govuk-tag govuk-tag--purple">
                 being appealed
               </strong>
   

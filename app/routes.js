@@ -1530,8 +1530,6 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
     res.redirect('/1-19/dynamic/change-core-result-appeal-2021')
 //Result the same - back to record - final tag   
   } else {
-    req.session.data['core-result-changed-2021'] = 'no'
-
     res.redirect('/1-19/dynamic/check-result-change-appeal-2021')
   }
 })
@@ -1670,7 +1668,14 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal', function (r
 
 })
 
+//2021 core grade changed - after clicking result the same 
+router.post('/1-19/dynamic/check-result-change-appeal-2021', function(req, res) {
+  
+  req.session.data['core-result-changed-2021'] = 'yes'
+ 
+  res.redirect('/1-19/dynamic/check-result-change-appeal-2021')
 
+})
 //2021 core grade changed appeal
 router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, res) {
   
@@ -1685,15 +1690,6 @@ router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, re
   req.session.data['showBanner'] = "yes"
  
   res.redirect('/1-19/dynamic/record-entries-routes')
-
-})
-
-//2021 core grade changed - after clicking result the same 
-router.post('1-19/dynamic/change-core-result-appeal-2021', function (req, res) {
-  
-  req.session.data['core-result-changed-2021'] = ''
- 
-  res.redirect('/1-19/dynamic/confirm-result-change-appeal-2021')
 
 })
 
