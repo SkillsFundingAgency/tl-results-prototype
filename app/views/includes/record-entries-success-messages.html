@@ -2,7 +2,7 @@
 <!-- 
 Success Messages logic 
 
-if core or specialism is on hold success message " core/specialism status has been updated"
+if core or specialism is under review success message " core/specialism status has been updated"
 
 if core or specialism grade taken off hold (reviewed once) - " core/specialism status has been updated"
 
@@ -20,7 +20,7 @@ else no message shown
 
 -->
 
-<!-- if core or specialism is on hold success message " core/specialism status has been updated" -->
+<!-- if core or specialism is under review success message " core/specialism status has been updated" -->
 
 {% if data['newcoreOnHold'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
@@ -39,7 +39,7 @@ else no message shown
   </div>
 </div>
 
-{% elseif data['newspecialismOnHold'] === "yes" and data['showspecialismBanner'] === "yes" %}
+{% elseif data['newspecialismOnHold'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -56,10 +56,8 @@ else no message shown
   </div>
 </div>
 
-
-<!-- if core grade taken off hold (reviewed once) - " core status has been updated" -->
-
-{% elseif data['newcoreOnHold'] === "" and data['coreReviewed'] === "yes" %}
+<!-- if core or specialism is being appealed - " core/specialism status has been updated" *NEED TO BE UPDATED-->
+{% elseif data['newcoreAppeal'] === "yes" or data['newspecialismAppeal'] === "yes"%}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -69,34 +67,17 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-
+      {% if data['newcoreAppeal'] === "yes"%}
       Core (code): {{ core }} status has been updated 
-
-    </h3>
-  </div>
-</div>
-
-<!-- if specialism grade taken off hold (reviewed once) - " specialism status has been updated" -->
-
-{% elseif data['newspecialismOnHold'] === "" and data['specialismReviewed'] === "yes" %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-
-      Occupational specialism (code): {{ specialism }} status has been updated 
-
+      {% elseif data['newspecialismAppeal'] === "yes"%}
+      Occupational specialism (code): {{ specialism }} status has been updated
+      {% endif %}
     </h3>
   </div>
 </div>
 
 <!-- if core taken off hold (reviewed once) and grade changed - "core grade has been updated" -->
-{% elseif data['newcoreOnHold'] === "corrected" and data['coreReviewed'] === "yes" %}
+{% elseif data['newcoreOnHold'] === "corrected" and data['coreResultChanged'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -115,7 +96,7 @@ else no message shown
 
 <!-- if specialism taken off hold (reviewed once) and grade changed - "specialism grade has been updated" -->
 
-{% elseif data['newspecialismOnHold'] === "corrected" and data['specialismReviewed'] === "yes" %}
+{% elseif data['newspecialismOnHold'] === "corrected" and data['specialismResultChanged'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -132,11 +113,9 @@ else no message shown
   </div>
 </div>
 
+<!-- if core grade taken off hold (reviewed once) grade the same - " core status has been updated" NEEDS TO BE UPDATED-->
 
-
-
-<!-- if core or specialism is being appealed - " core/specialism status has been updated" -->
-{% elseif data['newcoreOnHold'] === "appealed" or data['newspecialismOnHold'] === "appealed"%}
+{% elseif data['coreResultChanged'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -146,34 +125,16 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
-      {% if data['newcoreOnHold'] === "appealed"%}
+
       Core (code): {{ core }} status has been updated 
-      {% elseif data['newspecialismOnHold'] === "appealed"%}
-      Occupational specialism (code): {{ specialism }} status has been updated
-      {% endif %}
+
     </h3>
   </div>
 </div>
 
-<!-- if core taken off appeal and no grade change - " core status has been updated" -->
-{% elseif data['newcoreOnHold'] === "final" and data['coreReviewed'] === "appealed"%}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
+<!-- if specialism grade taken off hold (reviewed once) grade the same - " specialism status has been updated" -->
 
-      Core (code): {{ core }} status has been updated 
-
-    </h3>
-  </div>
-
-<!-- if specialism taken off appeal and no grade change - " specialism status has been updated" -->
-{% elseif data['newspecialismOnHold'] === "final" and data['specialismReviewed'] === "appealed"%}
+{% elseif data['specialismResultChanged'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -188,10 +149,11 @@ else no message shown
 
     </h3>
   </div>
+</div>
 
   <!-- if core taken off appeal and grade change - "core grade has been updated"    -->
 
-  {% elseif data['newcoreOnHold'] === "final" and data['resultChanged'] === "appeal" %}
+  {% elseif data['newcoreAppeal'] === "final" and data['core-result-changed-appeal'] === "yes" %}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -209,7 +171,7 @@ else no message shown
 
     <!-- if specialism taken off appeal and grade change - "specialism grade has been updated"    -->
 
-    {% elseif data['newspecialismOnHold'] === "final" and data['specialismResultChanged'] === "appeal" %}
+    {% elseif data['newspecialismAppeal'] === "final" and data['specialism-result-changed-appeal'] === "yes" %}
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
       aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
@@ -224,6 +186,41 @@ else no message shown
     
         </h3>
       </div>
+
+    
+<!-- if core taken off appeal and no grade change - " core status has been updated" -->
+{% elseif data['newcoreAppeal'] === "final"%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+
+      Core (code): {{ core }} status has been updated 
+
+    </h3>
+  </div>
+
+<!-- if specialism taken off appeal and no grade change - " specialism status has been updated" -->
+{% elseif data['newspecialismAppeal'] === "final"%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+
+      Occupational specialism (code): {{ specialism }} status has been updated 
+
+    </h3>
+  </div>  
 
 
 

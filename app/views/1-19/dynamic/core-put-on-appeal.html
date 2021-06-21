@@ -62,10 +62,14 @@ Change core component to under review - Manage T Level results - GOV.UK
               Grade
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['resultChanged'] === "yes" %}
+              {% if data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" %}
               {{ data['newcoreGrade'] }}
+              {% elseif data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" and data['newcoreAppeal'] === "yes"  %}
+              {{ data['newcoreGrade'] }}
+              {% elseif data['coreResultChanged'] === "yes"%}
+              {{ data['coreGrade'] }}
               {% else %}
-              {{ data['coreGrade']  }}
+              {{ data['coreGrade'] }}
               {% endif %}
             </dd>
           </div>

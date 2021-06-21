@@ -45,7 +45,7 @@ Change specialism component to under review - Manage T Level results - GOV.UK
                 Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialism'] }}
+                Building Services Design <br>(ZTLOS003)
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -61,21 +61,24 @@ Change specialism component to under review - Manage T Level results - GOV.UK
                 Grade
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['specialismChanged'] === "yes" %}
+                {% if data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" %}
                 {{ data['newspecialismGrade'] }}
+                {% elseif data['specialismResultChanged'] === "yes"  %}
+                {{ data['specialismGrade'] }}
                 {% else %}
-                {{ data['specialismGrade']  }}
+                {{ data['specialismGrade'] }}
                 {% endif %}
                   
               </dd>
             </div>
           </dl>
-
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                  <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-place-on-appeal">
-                    Is this grade being appealed?
-                  </label>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-place-on-appeal">
+                    <h2 class="govuk-fieldset__heading">
+                      Is this grade being appealed?
+                    </h2>
+                  </legend>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
@@ -96,6 +99,7 @@ Change specialism component to under review - Manage T Level results - GOV.UK
             </div>
             <div class="govuk-inset-text govuk-!-margin-top-9">
               While this grade is being appealed, we cannot calculate this learner’s overall T Level result
+            </div>
             <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
         </form>
     </div>

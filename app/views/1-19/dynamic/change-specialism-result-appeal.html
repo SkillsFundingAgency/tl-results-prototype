@@ -55,33 +55,51 @@ Change assessment entry - Manage T Level results - GOV.UK
                   {{ data['provider'] }}
                 </dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Old grade
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" %}
+                  {{ data['newspecialismGrade'] }}
+                  {% elseif data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" and data['newspecialismAppeal'] === "yes"  %}
+                  {{ data['newspecialismGrade'] }}
+                  {% elseif data['specialismResultChanged'] === "yes"%}
+                  {{ data['specialismGrade'] }}
+                  {% else %}
+                  {{ data['specialismGrade'] }}
+                  {% endif %}
+                </dd>
+              </div>
             </dl>
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer">
-                        What is the new specialism component grade?
-                      </label>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-result-answer-appeal">
+                    <h2 class="govuk-fieldset__heading">
+                      What is the new specialism component grade?
+                    </h2>
+                  </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2a" name="specialism-result-answer" type="radio" value="Distinction">
+                            <input class="govuk-radios__input" id="result-answer-2a" name="specialism-result-answer-appeal" type="radio" value="Distinction">
                             <label class="govuk-label govuk-radios__label" for="result-answer-2a">
                                 Distinction
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2" name="specialism-result-answer" type="radio" value="Merit" >
+                            <input class="govuk-radios__input" id="result-answer-2" name="specialism-result-answer-appeal" type="radio" value="Merit" >
                             <label class="govuk-label govuk-radios__label" for="result-answer-2">
                                 Merit
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-3" name="specialism-result-answer" type="radio" value="Pass">
+                            <input class="govuk-radios__input" id="result-answer-3" name="specialism-result-answer-appeal" type="radio" value="Pass">
                             <label class="govuk-label govuk-radios__label" for="result-answer-3">
                                 Pass
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="result-answer-4" name="specialism-result-answer-2021" type="radio" value="Pass">
+                          <input class="govuk-radios__input" id="result-answer-4" name="specialism-result-answer-appeal" type="radio" value="Pass">
                           <label class="govuk-label govuk-radios__label" for="result-answer-4">
                               Unclassified
                           </label>
@@ -97,7 +115,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 <script type="application/json" id="change-specialism-result">
   {
 
-    "specialism-result-answer": {
+    "specialism-result-answer-appeal": {
       "presence": {
         "message": "^Please select an option"
       }

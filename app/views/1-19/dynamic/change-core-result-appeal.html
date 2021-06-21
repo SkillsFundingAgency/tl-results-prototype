@@ -61,55 +61,63 @@ Change assessment entry - Manage T Level results - GOV.UK
               </dt>
               <dd class="govuk-summary-list__value">
   
-                {{ data['coreGrade']  }}
+                {% if data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" %}
+                {{ data['newcoreGrade'] }}
+                {% elseif data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" and data['newcoreAppeal'] === "yes"  %}
+                {{ data['newcoreGrade'] }}
+                {% elseif data['coreResultChanged'] === "yes"%}
+                {{ data['coreGrade'] }}
+                {% else %}
+                {{ data['coreGrade'] }}
+                {% endif %}
   
               </dd>
             </div>
           </dl>
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="result-answer">
+                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="result-answer-appeal">
                         What is the new core component grade?
                       </label>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2a" name="result-answer" type="radio" value="A*">
+                            <input class="govuk-radios__input" id="result-answer-2a" name="result-answer-appeal" type="radio" value="A*">
                             <label class="govuk-label govuk-radios__label" for="result-answer-2a">
                                 A*
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-2" name="result-answer" type="radio" value="A" >
+                            <input class="govuk-radios__input" id="result-answer-2" name="result-answer-appeal" type="radio" value="A" >
                             <label class="govuk-label govuk-radios__label" for="result-answer-2">
                                 A
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-3" name="result-answer" type="radio" value="B">
+                            <input class="govuk-radios__input" id="result-answer-3" name="result-answer-appeal" type="radio" value="B">
                             <label class="govuk-label govuk-radios__label" for="result-answer-3">
                                 B
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-4" name="result-answer" type="radio" value="C" >
+                            <input class="govuk-radios__input" id="result-answer-4" name="result-answer-appeal" type="radio" value="C" >
                             <label class="govuk-label govuk-radios__label" for="result-answer-4">
                                 C
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-5" name="result-answer" type="radio" value="D">
+                            <input class="govuk-radios__input" id="result-answer-5" name="result-answer-appeal" type="radio" value="D">
                             <label class="govuk-label govuk-radios__label" for="result-answer-5">
                                 D
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-6" name="result-answer" type="radio" value="E">
+                            <input class="govuk-radios__input" id="result-answer-6" name="result-answer-appeal" type="radio" value="E">
                             <label class="govuk-label govuk-radios__label" for="result-answer-6">
                                 E
                             </label>
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer" type="radio" value="U">
+                            <input class="govuk-radios__input" id="result-answer-7" name="result-answer-appeal" type="radio" value="U">
                             <label class="govuk-label govuk-radios__label" for="result-answer-7">
                                 Unclassified
                             </label>
@@ -125,7 +133,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 <script type="application/json" id="change-core-result">
   {
 
-    "result-answer": {
+    "result-answer-appeal": {
       "presence": {
         "message": "^Please select an option"
       }

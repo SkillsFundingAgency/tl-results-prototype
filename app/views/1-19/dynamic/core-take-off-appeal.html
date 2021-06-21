@@ -61,11 +61,15 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
                 Grade
               </dt>
               <dd class="govuk-summary-list__value">
-              {% if data['resultChanged'] === "yes" %}
-              {{ data['newcoreGrade'] }}
-              {% else %}
-              {{ data['coreGrade']  }}
-              {% endif %}
+                {% if data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" %}
+                {{ data['newcoreGrade'] }}
+                {% elseif data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" and data['newcoreAppeal'] === "yes"  %}
+                {{ data['newcoreGrade'] }}
+                {% elseif data['coreResultChanged'] === "yes"%}
+                {{ data['coreGrade'] }}
+                {% else %}
+                {{ data['coreGrade'] }}
+                {% endif %}
                 
               </dd>
             </div>

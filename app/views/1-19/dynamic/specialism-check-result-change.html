@@ -50,7 +50,8 @@ Check and submit result - Manage T Level results - GOV.UK
             Provider (UKPRN)
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['provider'] }}
+            {{ data['provider'] }} <br>
+            {{ data['ukprn'] }}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -66,14 +67,30 @@ Check and submit result - Manage T Level results - GOV.UK
 
       <h2 class="govuk-heading-m">Occupational specialism (code): {{ data['specialism'] }}</h2>
 
-
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Grade
+            Old grade
           </dt>
           <dd class="govuk-summary-list__value">
+            {{ data['specialismGrade'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            New grade
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            {% if data['specialism-result-changed'] === "corrected" %}
             {{ data['specialism-result-answer'] }}
+            {% else %}
+            {{ data['specialismGrade'] }}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="change-specialism-result">
@@ -83,7 +100,7 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
       </dl>
       
-      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the component is no longer under review</p>
+      <p class="govuk-inset-text">Selecting 'Submit' will update the result and mean the grade is no longer under review</p>
 
       <button class="govuk-button govuk-!-margin-right-1" role="button">Submit</button>
     </form>

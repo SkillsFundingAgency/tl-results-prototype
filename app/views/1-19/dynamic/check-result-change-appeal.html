@@ -74,7 +74,15 @@ Check and submit result - Manage T Level results - GOV.UK
             Old grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['coreGrade'] }}
+              {% if data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" %}
+              {{ data['newcoreGrade'] }}
+              {% elseif data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" and data['newcoreAppeal'] === "yes"  %}
+              {{ data['newcoreGrade'] }}
+              {% elseif data['coreResultChanged'] === "yes"%}
+              {{ data['coreGrade'] }}
+              {% else %}
+              {{ data['coreGrade'] }}
+              {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="">
@@ -86,7 +94,16 @@ Check and submit result - Manage T Level results - GOV.UK
             Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['result-answer'] }}
+            
+            {% if data['core-result-changed-appeal'] === "yes" %}
+            {{ data['result-answer-appeal'] }}
+            {% elseif data['coreResultChanged'] === "yes" and data['newcoreOnHold'] === "corrected" and data['newcoreAppeal'] === "yes"  %}
+            {{ data['newcoreGrade'] }}
+            {% elseif data['coreResultChanged'] === "yes"%}
+            {{ data['coreGrade'] }}
+            {% else %}
+            {{ data['coreGrade'] }}
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="change-core-result-appeal">

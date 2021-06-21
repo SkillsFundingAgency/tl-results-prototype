@@ -73,7 +73,16 @@ Check and submit result - Manage T Level results - GOV.UK
             Old grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['specialismGrade'] }}
+              
+              {% if data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" %}
+              {{ data['newspecialismGrade'] }}
+              {% elseif data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" and data['newspecialismAppeal'] === "yes"  %}
+              {{ data['newspecialismGrade'] }}
+              {% elseif data['specialismResultChanged'] === "yes"%}
+              {{ data['specialismGrade'] }}
+              {% else %}
+              {{ data['specialismGrade'] }}
+              {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="">
@@ -82,10 +91,19 @@ Check and submit result - Manage T Level results - GOV.UK
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Grade
+            New grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['specialism-result-answer'] }}
+            {% if data['specialism-result-changed-appeal'] === "yes" %}
+            {{ data['specialism-result-answer-appeal'] }}
+            {% elseif data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" and data['newspecialismAppeal'] === "yes"  %}
+            {{ data['newspecialismGrade'] }}
+            {% elseif data['specialismResultChanged'] === "yes"%}
+            {{ data['specialismGrade'] }}
+            {% else %}
+            {{ data['specialismGrade'] }}
+            {% endif %}
+            
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="change-specialism-result-appeal">

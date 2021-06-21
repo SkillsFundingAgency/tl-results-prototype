@@ -17,14 +17,6 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                ULN
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['uln'] }}
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
@@ -33,10 +25,27 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                ULN
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['uln'] }}
+              </dd>
+            </div>  
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['dob'] }}
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialism'] }}
+                Building Services Design <br>(ZTLOS003)
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -61,27 +70,29 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
                 <fieldset class="govuk-fieldset">
                   <fieldset class="govuk-fieldset">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer">
-                      What was the outcome of the review?
-                    </label>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-result-answer">
+                      <h2 class="govuk-fieldset__heading">
+                        What was the outcome of the review?
+                      </h2>
+                    </legend>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="option1">
                           <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                            The result is the same
+                            The grade is the same
                           </label>
                       </div>
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="result-answer-1" name="specialism-result-answer" type="radio" value="option2">
                         <label class="govuk-label govuk-radios__label" for="result-answer-1">
-                          I need to update the result
+                          I need to update the grade
                         </label>
                     </div>
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="result-answer-2" name="specialism-result-answer" type="radio" value="option3">
                           <label class="govuk-label govuk-radios__label" for="result-answer-2">
-                            The result is being appealed
+                            The grade is being appealed
                           </label>
                       </div>
                     </div>
@@ -98,7 +109,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
     "specialism-result-answer": {
       "presence": {
-        "message": "^Please select an option"
+        "message": "^Please select the outcome of the review"
       }
 
     }
