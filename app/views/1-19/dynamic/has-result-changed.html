@@ -17,6 +17,14 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
           <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['name'] }}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 ULN
               </dt>
               <dd class="govuk-summary-list__value">
@@ -25,10 +33,10 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name
+                Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['name'] }}
+                {{ data['dob'] }}
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -99,7 +107,7 @@ Add a new learner - status of Industry placement - Manage T Level results - GOV.
 
     "result-answer": {
       "presence": {
-        "message": "^Please select an option"
+        "message": "^Please select the outcome of the review"
       }
 
     }

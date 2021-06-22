@@ -17,14 +17,6 @@ Change assessment entry - Manage T Level results - GOV.UK
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  ULN
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['uln'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
                   Name
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -33,10 +25,26 @@ Change assessment entry - Manage T Level results - GOV.UK
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Component
+                  ULN
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['specialism'] }}
+                  {{ data['uln'] }}
+                </dd>
+              </div>  
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['dob'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Occupational specialism (code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Building Services Design <br>(ZTLOS003)
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -44,15 +52,27 @@ Change assessment entry - Manage T Level results - GOV.UK
                   Exam Period
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['provider'] }}
+                  {{ data['specialismResults'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Old grade
+                </dt>
+                <dd class="govuk-summary-list__value">
+    
+                  {{ data['specialismGrade']  }}
+    
                 </dd>
               </div>
             </dl>
             <div class="govuk-form-group govuk-!-margin-bottom-7">
                 <fieldset class="govuk-fieldset">
-                    <label class="govuk-label govuk-label--m govuk-!-margin-bottom-6" for="specialism-result-answer">
-                        What is the new specialism component grade?
-                      </label>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-result-answer">
+                    <h2 class="govuk-fieldset__heading">
+                      What is the new specialism component grade?
+                    </h2>
+                  </legend>
                     <div class="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="result-answer-2a" name="specialism-result-answer" type="radio" value="Distinction">

@@ -45,7 +45,7 @@ Review component status- Manage T Level results - GOV.UK
                 Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialism'] }}
+                Building Services Design <br>(ZTLOS003)
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -61,10 +61,15 @@ Review component status- Manage T Level results - GOV.UK
                 Grade
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['specialismChanged'] === "yes" %}
+                
+                {% if data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" %}
                 {{ data['newspecialismGrade'] }}
+                {% elseif data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === "corrected" and data['newspecialismAppeal'] === "yes"  %}
+                {{ data['newspecialismGrade'] }}
+                {% elseif data['specialismResultChanged'] === "yes" and data['newspecialismOnHold'] === ""%}
+                {{ data['specialismGrade'] }}
                 {% else %}
-                {{ data['specialismGrade']  }}
+                {{ data['specialismGrade'] }}
                 {% endif %}
                 
               </dd>
@@ -73,21 +78,23 @@ Review component status- Manage T Level results - GOV.UK
               <div class="govuk-form-group">
 
                 <fieldset class="govuk-fieldset">
-                  <label class="govuk-label govuk-label--m" for="specialism-take-off-appeal">
-                    What was the outcome of the appeal?
-                  </label>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-take-off-appeal">
+                    <h2 class="govuk-fieldset__heading">
+                      What was the outcome of the appeal?
+                    </h2>
+                  </legend>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="appeal-answer-1" name="specialism-take-off-appeal" type="radio" value="same">
                           <label class="govuk-label govuk-radios__label" for="appeal-answer-1">
-                            The result is the same
+                            The grade is the same
                           </label>
                       </div>
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="appeal-answer-2" name="specialism-take-off-appeal" type="radio" value="update">
                           <label class="govuk-label govuk-radios__label" for="appeal-answer-2">
-                            No, I need to update the result
+                            No, I need to update the grade
                           </label>
                       </div>
                     </div>

@@ -45,7 +45,7 @@ Review component status- Manage T Level results - GOV.UK
                 Occupational Specialism <br>(code)
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['specialism'] }}
+                Building Services Design <br>(ZTLOS003)
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -69,9 +69,11 @@ Review component status- Manage T Level results - GOV.UK
               <div class="govuk-form-group">
 
                 <fieldset class="govuk-fieldset">
-                  <label class="govuk-label govuk-label--m" for="specialism-take-off-hold">
-                    Is this component still under review?
-                  </label>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-take-off-hold">
+                    <h2 class="govuk-fieldset__heading">
+                      Is this grade still under review?
+                    </h2>
+                  </legend>
 
                     <div class="govuk-radios">
                       <div class="govuk-radios__item">
@@ -100,7 +102,7 @@ Review component status- Manage T Level results - GOV.UK
 
     "specialism-take-off-hold": {
       "presence": {
-        "message": "^Please select an option"
+        "message": "^Please select whether a grade is still under review"
       }
 
     }
