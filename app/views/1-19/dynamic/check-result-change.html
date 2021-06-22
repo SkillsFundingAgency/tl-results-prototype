@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Check and submit result - Manage T Level results - GOV.UK
+Check and submit outcome of core review - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@ Check and submit result - Manage T Level results - GOV.UK
 
     <form action="confirm-result-change" method="post" class="form">
       <h2 class="govuk-heading-m">Learner's details</h2>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Name
@@ -69,13 +69,7 @@ Check and submit result - Manage T Level results - GOV.UK
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Grade
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['result-answer'] }}
-          </dd> -->
+       
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Old grade
