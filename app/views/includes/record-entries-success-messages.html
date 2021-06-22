@@ -220,15 +220,7 @@ else no message shown
       Occupational specialism (code): {{ specialism }} status has been updated 
 
     </h3>
-  </div>  
-
-
-
-
-
-
-
-
+  </div>
 
 <!-- (Summer 2021) if core or specialism is being appealed - " core/specialism status has been updated" -->
 {% elseif data['newcoreOnHold2021'] === "appealed" or data['newspecialismOnHold2021'] === "appealed"%}
@@ -248,12 +240,10 @@ else no message shown
       {% endif %}
     </h3>
   </div>
-</div>
+</div> 
 
-
-
-<!-- (Summer 2021) if core taken off appeal and no grade change - " core status has been updated" -->
-{% elseif data['newcoreOnHold2021'] === "final" and data['coreReviewed2021'] === "appealed"%}
+<!-- (Summer 2021) if core or specialism taken off appeal - grade change FINAL - " core/specialism status has been updated" -->
+{% elseif data['newcoreOnHold2021'] === "final" and data['core-result-changed-2021'] === 'yes'%}
 <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -263,63 +253,36 @@ else no message shown
   </div>
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
+ 
+      Core (code): {{ core }} grade has been updated 
+     
+    </h3>
+  </div>
+</div>   
 
+<!-- (Summer 2021) if core or specialism taken off appeal - no grade change FINAL - " core/specialism status has been updated" -->
+{% elseif data['newcoreOnHold2021'] === "final" or data['newspecialismOnHold2021'] === "final"%}
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      {% if data['newcoreOnHold2021'] === "final"%}
       Core (code): {{ core }} status has been updated 
-
+      {% elseif data['newspecialismOnHold2021'] === "final"%}
+      Occupational specialism (code): {{ specialism }} status has been updated
+      {% endif %}
     </h3>
   </div>
+</div>    
 
-<!-- (Summer 2021) if specialism taken off appeal and no grade change - " specialism status has been updated" -->
-{% elseif data['newspecialismOnHold2021'] === "final" and data['specialismReviewed2021'] === "appealed" %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-
-      Occupational specialism (code): {{ specialism }} status has been updated 
-
-    </h3>
-  </div>
-
-  <!-- (Summer 2021) if core taken off appeal and grade change - "core grade has been updated"    -->
-
-  {% elseif data['newcoreOnHold2021'] === "final" and data['resultChanged2021'] === "appeal" %}
-  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-    aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <h3 class="govuk-notification-banner__heading">
-  
-        Core (code): {{ core }} grade has been updated 
-  
-      </h3>
-    </div>
-
-    <!-- (Summer 2021) if specialism taken off appeal and grade change - "specialism grade has been updated"    -->
-
-    {% elseif data['newspecialismOnHold2021'] === "final" and data['specialismResultChanged2021'] === "appeal" %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-    
-          Occupational specialism (code): {{ specialism }} grade has been updated 
-    
-        </h3>
-      </div>
+ 
 
 {% endif %}
+
+
+
