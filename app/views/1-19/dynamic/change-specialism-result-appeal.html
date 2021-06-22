@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Change assessment entry - Manage T Level results - GOV.UK
+Select occupational specialism grade - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <form action="specialism-check-result-change-appeal" method="post" class="form" novalidate data-validate="change-specialism-result">
-            <h1 class="govuk-heading-l">Select the specialism component grade</h1> 
+            <h1 class="govuk-heading-l">Select the occupational specialism grade</h1> 
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -76,7 +76,7 @@ Change assessment entry - Manage T Level results - GOV.UK
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="specialism-result-answer-appeal">
                     <h2 class="govuk-fieldset__heading">
-                      What is the new specialism component grade?
+                      What is the new occupational specialism grade?
                     </h2>
                   </legend>
                     <div class="govuk-radios">
@@ -117,7 +117,7 @@ Change assessment entry - Manage T Level results - GOV.UK
 
     "specialism-result-answer-appeal": {
       "presence": {
-        "message": "^Please select an option"
+        "message": "^Please select the new occupational specialism grade"
       }
 
     }
