@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select exam period
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="select-exam-period" method="post" class="form" novalidate data-validate="select-exam-period">
+
+        <h1 class="govuk-heading-l">Select exam period</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['name'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dob'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider <br>(UKPRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['provider'] }} <br>
+              {{ data['ukprn'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tlevelTitle'] }}
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="exam-period">
+                  <h2 class="govuk-fieldset__heading">
+                    Which exam period is the component in?
+                  </h2>
+                </legend>
+                <div id="exam-period-hint" class="govuk-hint">
+                  There is more than one exam period available for this learner.
+                </div>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exam-period-answer-1" name="exam-period" type="radio" value="autumn" >
+                        <label class="govuk-label govuk-radios__label" for="exam-period-answer-1">
+                          Autumn 2021
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exam-period-answer-2" name="exam-period" type="radio" value="summer"  >
+                        <label class="govuk-label govuk-radios__label" for="exam-period-answer-2">
+                          Summer 2021
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="select-exam-period">
+{
+
+  "exam-period": {
+    "presence": {
+      "message": "^Please select the exam period "
+    }
+
+  }
+
+}
+</script>
+{% endblock %}
+

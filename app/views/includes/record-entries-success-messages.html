@@ -68,9 +68,9 @@ else no message shown
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
       {% if data['newcoreAppeal'] === "yes"%}
-      Core (code): {{ core }} status has been updated 
+      Core (code): {{ core }} is being appealed 
       {% elseif data['newspecialismAppeal'] === "yes"%}
-      Occupational specialism (code): {{ specialism }} status has been updated
+      Occupational specialism (code): {{ specialism }} is being appealed 
       {% endif %}
     </h3>
   </div>
@@ -234,9 +234,9 @@ else no message shown
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
       {% if data['newcoreOnHold2021'] === "appealed"%}
-      Core (code): {{ core }} status has been updated 
+      Core (code): {{ core }} is being appealed 
       {% elseif data['newspecialismOnHold2021'] === "appealed"%}
-      Occupational specialism (code): {{ specialism }} status has been updated
+      Occupational specialism (code): {{ specialism }} is being appealed 
       {% endif %}
     </h3>
   </div>
@@ -254,7 +254,7 @@ else no message shown
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
  
-      Core (code): {{ core }} grade has been updated 
+      Core (code): {{ core }} grade is final
      
     </h3>
   </div>
@@ -272,9 +272,9 @@ else no message shown
   <div class="govuk-notification-banner__content">
     <h3 class="govuk-notification-banner__heading">
       {% if data['newcoreOnHold2021'] === "final"%}
-      Core (code): {{ core }} status has been updated 
+      Core (code): {{ core }} grade is final
       {% elseif data['newspecialismOnHold2021'] === "final"%}
-      Occupational specialism (code): {{ specialism }} status has been updated
+      Occupational specialism (code): {{ specialism }} grade is final
       {% endif %}
     </h3>
   </div>

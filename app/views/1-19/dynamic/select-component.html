@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select component
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="select-component" method="post" class="form" novalidate data-validate="select-component">
+
+        <h1 class="govuk-heading-l">Select component for summer 2021</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['name'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dob'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider <br>(UKPRN)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['provider'] }} <br>
+              {{ data['ukprn'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tlevelTitle'] }}
+            </dd>
+          </div>
+        </dl>
+        
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="component">
+                  <h2 class="govuk-fieldset__heading">
+                    Which component is being appealed?
+                  </h2>
+                </legend>
+                <div id="exam-period-hint" class="govuk-hint">
+                  There is more than one component available for the summer 2021 exam period.
+                </div>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="component-answer-1" name="component" type="radio" value="core" >
+                        <label class="govuk-label govuk-radios__label" for="component-answer-1">
+                          Core (code): {{ data['core'] }}
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="component-answer-2" name="component" type="radio" value="specialism"  >
+                        <label class="govuk-label govuk-radios__label" for="component-answer-2">
+                          Occupational specialism (code): {{ data['specialism'] }}
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="select-component">
+{
+
+  "component": {
+    "presence": {
+      "message": "^Please select the component"
+    }
+
+  }
+
+}
+</script>
+{% endblock %}

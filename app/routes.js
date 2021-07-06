@@ -1223,7 +1223,30 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['specialismGrade'] = 'Merit'
   ;
 
-// appeals process only (2021)  
+// Multiple assessment entries and multiple components  
+} else if (uln === '1234098765') {
+
+    req.session.data['name'] = 'Jackie Laverty'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
+    req.session.data['dob'] = '24 December 2002'
+    req.session.data['tlevelTitle'] = 'T Level in  Design, Surveying and Planning for Construction'
+    req.session.data['coreGrade'] = 'C'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning (60358300)"
+    req.session.data['coreResult'] = "Summer 2021"
+    req.session.data['coreOnHold'] = ""
+    req.session.data['coreReviewed'] = ""
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismResults'] = "Summer 2021"
+    req.session.data['specialismReviewed'] = ""
+    req.session.data['specialismGrade'] = 'Merit'
+    req.session.data['showBanner'] = "no"
+    res.redirect('select-exam-period')
+  ;
+
+  // appeals process only (2021)  
 } else if (uln === '0987654321') {
   res.render('1-19/dynamic/record-entries-routes', 
   { 
@@ -1264,6 +1287,7 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['specialismGrade'] = 'Merit'
     req.session.data['showBanner'] = "no"
   ;
+
 
   // core and specialism specified but no grades yet
   } else if (uln === '5678901234') {
@@ -1338,6 +1362,63 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
     req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
     res.redirect('learner-withdrawn')
   
+  // learner no assessment entry  
+
+  } else if (uln === '1122334455') {
+    req.session.data['uln'] = uln
+    req.session.data['name'] = 'Betty Davidson'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
+    req.session.data['dob'] = '24 December 2004'
+    req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
+    res.redirect('no-assessment-entry') 
+    
+  // learner no grades to appeal (no results have been registered on system against the only exam period learner has)  
+
+  } else if (uln === '0099887766') {
+    req.session.data['uln'] = uln
+    req.session.data['name'] = 'David Davidson'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
+    req.session.data['dob'] = '24 December 2004'
+    req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
+    res.redirect('no-grades-to-appeal')
+  
+  // learner has multiple assessments and no grades for either
+
+  } else if (uln === '0987612345') {
+    req.session.data['uln'] = uln
+    req.session.data['name'] = 'David Bowie'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
+    req.session.data['dob'] = '24 December 2004'
+    req.session.data['tlevelTitle'] = 'T level in Design, Surveying and Planning for Construction'
+    req.session.data['componentChoice'] = ''
+    
+    res.redirect('select-exam-period')   
+  // learner has one assessment entry and one component 
+  } else if (uln === '5432167890') {
+    req.session.data['uln'] = uln
+    req.session.data['name'] = 'Guiseppe Expo'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(10000536)'
+    req.session.data['dob'] = '24 December 2004'
+    req.session.data['tlevelTitle'] = 'T Level in  Design, Surveying and Planning for Construction'
+    req.session.data['coreGrade'] = 'C'
+    req.session.data['uln'] = uln
+    req.session.data['core'] = "Design, Surveying and Planning (60358300)"
+    req.session.data['coreResult'] = "Summer 2021"
+    req.session.data['coreOnHold'] = ""
+    req.session.data['coreReviewed'] = ""
+    req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+    req.session.data['specialismOnHold'] = ""
+    req.session.data['specialismResults'] = "Summer 2021"
+    req.session.data['specialismReviewed'] = ""
+    req.session.data['specialismGrade'] = 'Merit'
+    req.session.data['showBanner'] = "no"
+    
+    res.redirect('select-component')       
+  
   //learner not found 
   }else {
     req.session.data['uln'] = uln
@@ -1345,6 +1426,85 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
   }
   
 });
+
+// select exam period 
+router.post('/1-19/dynamic/select-exam-period', function (req, res) {
+
+  let examPeriodChoice = req.session.data['exam-period']
+  let uln = req.session.data['uln-search']
+
+  if (examPeriodChoice === 'summer' && uln ==='0987612345') {
+    req.session.data['examPeriodChoice'] = 'summer'
+    res.redirect('/1-19/dynamic/no-grades-to-appeal')
+  
+  }else if (examPeriodChoice === 'summer') {
+    req.session.data['examPeriodChoice'] = 'summer'
+    res.redirect('/1-19/dynamic/select-component')
+  } else {
+    req.session.data['examPeriodChoice'] = 'autumn'
+    res.redirect('/1-19/dynamic/no-grades-to-appeal')
+  }
+})
+
+// select component
+router.post('/1-19/dynamic/select-component', function (req, res) {
+
+  let componentChoice = req.session.data['component']
+  let uln = req.session.data['uln-search']
+  
+
+  if (componentChoice === 'core' && uln === '1234098765') {
+    
+    res.render('1-19/dynamic/record-entries-routes', 
+  { 
+    'uln' : uln,
+    'name' : 'Jackie Laverty',
+    'dob' : '24 December 2002',
+    'provider' : 'Barnsley College',
+    'ukprn': '(10000536)',
+    'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
+    'coreGrade' : 'C',
+    'core' : 'Design, Surveying and Planning (60358300)',
+    'coreOnHold' : req.session.data['core-place-on-hold'],
+    'coreResult' : "Summer 2021",
+    'coreUpdate' : "4 May 2021",
+    'coreReviewed' : req.session.data['coreReviewed'],
+    'specialism' : 'Building Services Design (ZTLOS003)',
+    'specialismResults' : "Summer 2021",       
+    'specialismGrade' : 'Merit',
+    'specialismUpdate' : "4 May 2021",
+    'specialismReviewed' : req.session.data['specialismReviewed'],
+    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+  })
+ } else if (componentChoice === 'core' && uln === '5432167890') {
+    
+    res.render('1-19/dynamic/record-entries-routes', 
+  { 
+    'uln' : uln,
+    'name' : 'Guiseppe Expo',
+    'dob' : '24 January 2001',
+    'provider' : 'Barnsley College',
+    'ukprn': '(10000536)',
+    'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
+    'coreGrade' : 'C',
+    'core' : 'Design, Surveying and Planning (60358300)',
+    'coreOnHold' : req.session.data['core-place-on-hold'],
+    'coreResult' : "Summer 2021",
+    'coreUpdate' : "4 May 2021",
+    'coreReviewed' : req.session.data['coreReviewed'],
+    'specialism' : 'Building Services Design (ZTLOS003)',
+    'specialismResults' : "Summer 2021",       
+    'specialismGrade' : 'Merit',
+    'specialismUpdate' : "4 May 2021",
+    'specialismReviewed' : req.session.data['specialismReviewed'],
+    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+  })
+
+  } else {
+    req.session.data['componentChoice'] = 'specialism'
+    res.redirect('/1-19/dynamic/no-grades-to-appeal')
+  }
+})
 
 router.post('/1-19/dynamic/core-put-on-hold', function (req, res) {
 
@@ -1756,6 +1916,19 @@ router.post('/1-19/dynamic/specialism-confirm-result-change-appeal-2021', functi
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
+})
+
+// 2021 core cancel grade change
+router.post('/1-19/dynamic/cancel-grade-update', function (req, res) {
+
+  let cancelUpdate = req.session.data['cancel-grade-update']
+
+  if (cancelUpdate === 'yes') {
+    res.redirect('/1-19/dynamic/record-entries-routes')
+
+  } else if (cancelUpdate === 'no') {
+    res.redirect('/1-19/dynamic/check-result-change-appeal-2021')
+  }
 })
 
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Learner’s component grades status - Manage T Level results - GOV.UK
+Learner’s component grade status - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,7 +16,7 @@ Learner’s component grades status - Manage T Level results - GOV.UK
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner’s component grades status</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner’s component grade status</li>
   </ol>
 </div>
 {% endblock %}
@@ -40,7 +40,7 @@ Learner’s component grades status - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    <h1 class="govuk-heading-l">Learner’s component grades status</h1>
+    <h1 class="govuk-heading-l">Learner’s component grade status</h1>
 
     {% if uln === '5647382910' %}
     <div class="govuk-inset-text">
@@ -53,18 +53,18 @@ Learner’s component grades status - Manage T Level results - GOV.UK
     <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list--no-border">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          ULN
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ uln }}
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
           Name
         </dt>
         <dd class="govuk-summary-list__value">
           {{ name }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ULN
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ uln }}
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -97,7 +97,7 @@ Learner’s component grades status - Manage T Level results - GOV.UK
 
     {% if uln === '1234567890'%}
     {% include "includes/reviews-appeals/record-entry-full-results.html" %}
-    {% elif uln === '0987654321' %}
+    {% elif uln === '0987654321' or uln === '1234098765' or uln === '5432167890'%}
     {% include "includes/reviews-appeals/record-entry-full-results-2021.html" %}
     {% elif uln === '5678901234' %}
     {% include "includes/reviews-appeals/record-entry-no-core-specialism.html" %}
