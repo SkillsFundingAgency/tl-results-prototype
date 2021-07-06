@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Cancel [tk]
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,44 +10,53 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="cancel-grade-update" method="post" class="form" novalidate data-validate="cancel-update">
 
-      <h1 class="govuk-heading-xl">Heading or question goes here</h1>
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Question to go here?
-              </h1>
-            </legend>
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancel-change-grade" name="cancel-change-grade" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="cancel-change-grade">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancel-change-grade-no" name="cancel-change-grade" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="cancel-change-grade">
-                  No
-                </label>
-              </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-grade-update">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to cancel recording a new grade?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-grade-update" name="cancel-grade-update" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel-grade-update">
+                Yes, I want to cancel
+              </label>
             </div>
-        
-          </fieldset>
-        </div>
-        
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-grade-update-2" name="cancel-grade-update" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel-grade-update-2">
+                No, I do not want to cancel
+              </label>
+            </div>
+          </div>
 
-   
+        </fieldset>
+      </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-    </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
   </div>
+</div>
 
+<script type="application/json" id="cancel-update">
+  {
+
+    "cancel-grade-update": {
+      "presence": {
+        "message": "^Please select whether you want to cancel recording a new grade"
+      }
+
+    }
+
+  }
+</script>
 {% endblock %}
 
-<!-- Add validation -->
