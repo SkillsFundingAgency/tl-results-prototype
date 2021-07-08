@@ -1437,9 +1437,29 @@ router.post('/1-19/dynamic/select-exam-period', function (req, res) {
     req.session.data['examPeriodChoice'] = 'summer'
     res.redirect('/1-19/dynamic/no-grades-to-appeal')
   
-  }else if (examPeriodChoice === 'summer') {
+  }else if (examPeriodChoice === 'summer' && uln === '1234098765') {
     req.session.data['examPeriodChoice'] = 'summer'
-    res.redirect('/1-19/dynamic/select-component')
+    res.render('1-19/dynamic/record-entries-routes', 
+    { 
+      'uln' : uln,
+      'name' : 'Jackie Laverty',
+      'dob' : '24 December 2002',
+      'provider' : 'Barnsley College',
+      'ukprn': '(10000536)',
+      'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
+      'coreGrade' : 'C',
+      'core' : 'Design, Surveying and Planning (60358300)',
+      'coreOnHold' : req.session.data['core-place-on-hold'],
+      'coreResult' : "Summer 2021",
+      'coreUpdate' : "4 May 2021",
+      'coreReviewed' : req.session.data['coreReviewed'],
+      'specialism' : 'Building Services Design (ZTLOS003)',
+      'specialismResults' : "Summer 2021",       
+      'specialismGrade' : 'Merit',
+      'specialismUpdate' : "4 May 2021",
+      'specialismReviewed' : req.session.data['specialismReviewed'],
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+    })
   } else {
     req.session.data['examPeriodChoice'] = 'autumn'
     res.redirect('/1-19/dynamic/no-grades-to-appeal')
@@ -1453,30 +1473,33 @@ router.post('/1-19/dynamic/select-component', function (req, res) {
   let uln = req.session.data['uln-search']
   
 
-  if (componentChoice === 'core' && uln === '1234098765') {
+//   if (componentChoice === 'core' && uln === '1234098765') {
     
-    res.render('1-19/dynamic/record-entries-routes', 
-  { 
-    'uln' : uln,
-    'name' : 'Jackie Laverty',
-    'dob' : '24 December 2002',
-    'provider' : 'Barnsley College',
-    'ukprn': '(10000536)',
-    'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
-    'coreGrade' : 'C',
-    'core' : 'Design, Surveying and Planning (60358300)',
-    'coreOnHold' : req.session.data['core-place-on-hold'],
-    'coreResult' : "Summer 2021",
-    'coreUpdate' : "4 May 2021",
-    'coreReviewed' : req.session.data['coreReviewed'],
-    'specialism' : 'Building Services Design (ZTLOS003)',
-    'specialismResults' : "Summer 2021",       
-    'specialismGrade' : 'Merit',
-    'specialismUpdate' : "4 May 2021",
-    'specialismReviewed' : req.session.data['specialismReviewed'],
-    'specialismOnHold' : req.session.data['specialism-place-on-hold'],
-  })
- } else if (componentChoice === 'core' && uln === '5432167890') {
+//     res.render('1-19/dynamic/record-entries-routes', 
+//   { 
+//     'uln' : uln,
+//     'name' : 'Jackie Laverty',
+//     'dob' : '24 December 2002',
+//     'provider' : 'Barnsley College',
+//     'ukprn': '(10000536)',
+//     'tlevelTitle' : 'T Level in Design, Surveying and Planning for Construction',
+//     'coreGrade' : 'C',
+//     'core' : 'Design, Surveying and Planning (60358300)',
+//     'coreOnHold' : req.session.data['core-place-on-hold'],
+//     'coreResult' : "Summer 2021",
+//     'coreUpdate' : "4 May 2021",
+//     'coreReviewed' : req.session.data['coreReviewed'],
+//     'specialism' : 'Building Services Design (ZTLOS003)',
+//     'specialismResults' : "Summer 2021",       
+//     'specialismGrade' : 'Merit',
+//     'specialismUpdate' : "4 May 2021",
+//     'specialismReviewed' : req.session.data['specialismReviewed'],
+//     'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+//   })
+//  } else 
+
+  
+  if (componentChoice === 'core' && uln === '5432167890') {
     
     res.render('1-19/dynamic/record-entries-routes', 
   { 
