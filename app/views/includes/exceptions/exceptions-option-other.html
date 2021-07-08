@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Select exam period
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="" method="post" class="form" novalidate data-validate="">
+
+        <h1 class="govuk-heading-l">Heading needed</h1> 
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['name'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              ULN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['uln'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dob'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Core <br>(code)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['core'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Exam period
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['coreResult'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Grade
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['coreGrade'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--purple">
+                being appealed
+              </strong>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+                  Can you provide more detail?
+                </label>
+              </h1>
+              <div id="more-detail-hint" class="govuk-hint">
+                Do not include personal or financial information, like your National Insurance number or credit card details.
+              </div>
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            
+
+              </fieldset>
+
+          </div>
+
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="select-exam-period">
+{
+
+  "exam-period": {
+    "presence": {
+      "message": "^Please select the exam period "
+    }
+
+  }
+
+}
+</script>
+{% endblock %}
+
