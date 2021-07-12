@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Learner has been withdrawn - Manage T Level results - GOV.UK
+Learner has requested an appeal - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,10 +18,10 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-              <h1 class="govuk-heading-l"> Learner has been withdrawn by the exam board</h1>
+              <h1 class="govuk-heading-l"> Learner has requested an appeal</h1>
 
               <div class="govuk-inset-text">
-                  This learner's registration has been withdrawn. An appeal cannot be requested. 
+                This learner's results cannot be changed because they are appealing a grade
                 
             
             </div>
@@ -35,7 +35,8 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
                   Name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['name']}}
+                  <!-- {{data['name']}} -->
+                  Danny Waldron
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -43,7 +44,8 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
                   ULN
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['uln']}}
+                  <!-- {{data['uln']}} -->
+                  0987654321
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -51,7 +53,8 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['dob']}}
+                  <!-- {{data['dob']}} -->
+                  24 December 2002
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -59,8 +62,11 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
                   Provider <br>(UKPRN)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['provider']}} <br>
-                  {{data ['ukprn']}}
+                  <!-- {{data['provider']}} <br>
+                  {{data ['ukprn']}} -->
+                  Barnsley College <br>
+                  (10000536)
+
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -68,7 +74,8 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
                   T Level
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['tlevelTitle'] }}
+                  <!-- {{ data['tlevelTitle'] }} -->
+                  T Level in Design, Surveying and Planning for Construction
                 </dd>
               </div>
             </dl>
@@ -78,7 +85,7 @@ Learner has been withdrawn - Manage T Level results - GOV.UK
 
             <div class="govuk-button-group">
               <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
-              <a class="govuk-button govuk-button--secondary" role="button" href="tlevels-dashboard.html">Back to home</a>
+              <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back to home</a>
             </div>
     </div>
 </div>
