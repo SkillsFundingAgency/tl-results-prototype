@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Learner's results
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="tlevels-dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-results">Results</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="search-learner">Search for a learner</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Learner's results</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+              <h1 class="govuk-heading-l">Learner's results</h1>
+
+              <div class="govuk-inset-text">
+                The learners result is now final as the deadline for uploading results has passed. If you need to change the grade please contact us here___. Changes will only be made in exceptional circumstances.
+              </div>
+
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Sarah Philips
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    1234567890
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date of birth
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    5 January 2002
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Provider<br>(UKPRN)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Barnsley College<br>(10000536)
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    T Level title
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    T Level in Design, Surveying and Planning for Construction
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Core (code): Design, Surveying and Planning (60358300)</h2>
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Exam period
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Summer 2021
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Grade
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    A*
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <strong class="govuk-tag govuk-tag--red">
+                      final
+                    </strong>
+                  </dd>
+                </div>
+              </dl>
+
+              <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
+    </div>
+</div>
+
+{% endblock %}
