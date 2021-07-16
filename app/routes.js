@@ -1181,7 +1181,25 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
 // 1-19 routes
 
 //RESULTS
+router.post('/1-19/dynamic/results/search-learner', function (req, res) {
 
+  let uln = req.session.data['search']
+
+  if (uln === '0987654321') {
+    
+    res.redirect('/1-19/dynamic/results/learner-results-cannot-edit')
+
+  } else if (uln === '1234509876'){
+    req.session.data['name'] = 'John Smith'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/learner-results-option-1')
+    
+  } else {
+    req.session.data['name'] = 'Andrew Lop'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/learner-results-option-2')
+  }
+})
 
 //REVIEWS & APPEALS
 // full results - reviews and appeals 2022 onwards
