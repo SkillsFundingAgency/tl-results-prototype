@@ -16,15 +16,18 @@ Learner has requested an appeal - Manage T Level results - GOV.UK
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-three-quarters">
 
-            <h1 class="govuk-heading-l">Learner's results</h1>
+              <h1 class="govuk-heading-l"> Learner has requested an appeal</h1>
 
-            <div class="govuk-inset-text">
-              This learner's results cannot be changed because they are appealing a grade.
+              <div class="govuk-inset-text">
+                This learner's results cannot be changed because they are appealing a grade
+                
+            
             </div>
 
-            <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
+            <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+
 
             <dl class="govuk-summary-list govuk-summary-list--no-border">
               <div class="govuk-summary-list__row">
@@ -32,6 +35,7 @@ Learner has requested an appeal - Manage T Level results - GOV.UK
                   Name
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  <!-- {{data['name']}} -->
                   Danny Waldron
                 </dd>
               </div>
@@ -40,6 +44,7 @@ Learner has requested an appeal - Manage T Level results - GOV.UK
                   ULN
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  <!-- {{data['uln']}} -->
                   0987654321
                 </dd>
               </div>
@@ -48,57 +53,40 @@ Learner has requested an appeal - Manage T Level results - GOV.UK
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  5 January 2002
+                  <!-- {{data['dob']}} -->
+                  24 December 2002
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Provider<br>(UKPRN)
+                  Provider <br>(UKPRN)
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Barnsley College<br>(10000536)
+                  <!-- {{data['provider']}} <br>
+                  {{data ['ukprn']}} -->
+                  Barnsley College <br>
+                  (10000536)
+
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  T Level title
+                  T Level
                 </dt>
                 <dd class="govuk-summary-list__value">
+                  <!-- {{ data['tlevelTitle'] }} -->
                   T Level in Design, Surveying and Planning for Construction
                 </dd>
               </div>
             </dl>
 
-            <h2 class="govuk-heading-m">Core (code): Design, Surveying and Planning (60358300)</h2>
 
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Exam period
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Summer 2021
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Grade
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  A*
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <strong class="govuk-tag govuk-tag--purple no-wrap">
-                    being appealed
-                  </strong>
-                </dd>
-              </div>
-            </dl>
+              
 
-            <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
-  </div>
+            <div class="govuk-button-group">
+              <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
+              <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back to home</a>
+            </div>
+    </div>
 </div>
-
 {% endblock %}
