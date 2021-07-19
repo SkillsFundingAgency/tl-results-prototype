@@ -28,10 +28,6 @@
 
               <h1 class="govuk-heading-l">Learner's results</h1>
 
-              <div class="govuk-inset-text">
-                This result is final and cannot be changed here, as the outcome of an appeal has been recorded. If you need to change the grade please <a href="#">contact us</a>.
-              </div>
-
               <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
 
               <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -40,7 +36,7 @@
                     Name
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Sarah Philips
+                    {{ data['name'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -48,7 +44,7 @@
                     ULN
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    1234567890
+                    {{ data['uln'] }}
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -95,17 +91,18 @@
                     Grade
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    A*
+                    Not received
                   </dd>
                   <dd class="govuk-summary-list__actions">
-                    <strong class="govuk-tag govuk-tag--red">
-                      final
-                    </strong>
+                    <a class="govuk-link" href="#">
+                      Add result <span class="govuk-visually-hidden">core result</span>
+                    </a>
                   </dd>
                 </div>
               </dl>
 
               <a class="govuk-button govuk-!-margin-top-7" href="search-learner">Search again</a>
+
     </div>
 </div>
 

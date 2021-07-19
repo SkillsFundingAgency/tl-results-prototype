@@ -1192,12 +1192,22 @@ router.post('/1-19/dynamic/results/search-learner', function (req, res) {
   } else if (uln === '1234509876'){
     req.session.data['name'] = 'John Smith'
     req.session.data['uln'] = uln
-    res.redirect('/1-19/dynamic/results/learner-results-option-1')
+    res.redirect('/1-19/dynamic/results/learner-results')
+  
+  } else if (uln === '1212343456'){
+    req.session.data['name'] = 'Jean Jeffery'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/learner-results-no-grade') 
+  
+  } else if (uln === '1122334455'){
+    req.session.data['name'] = 'Bob Jeffery'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/learner-results-no-assessment')    
     
   } else {
     req.session.data['name'] = 'Andrew Lop'
     req.session.data['uln'] = uln
-    res.redirect('/1-19/dynamic/results/learner-results-option-2')
+    res.redirect('/1-19/dynamic/results/learner-results-final')
   }
 })
 
