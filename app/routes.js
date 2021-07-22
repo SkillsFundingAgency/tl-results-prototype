@@ -1202,7 +1202,12 @@ router.post('/1-19/dynamic/results/search-learner', function (req, res) {
   } else if (uln === '1122334455'){
     req.session.data['name'] = 'Bob Jeffery'
     req.session.data['uln'] = uln
-    res.redirect('/1-19/dynamic/results/learner-results-no-assessment')    
+    res.redirect('/1-19/dynamic/results/learner-results-no-assessment')
+  
+  } else if (uln === '1231231234'){
+    req.session.data['name'] = 'Steve Arnott'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/learner-results-withdrawn')       
     
   } else {
     req.session.data['name'] = 'Andrew Lop'
@@ -1743,6 +1748,19 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
 //I need to update status
   if (coreOnHold === 'update') {
     res.redirect('/1-19/dynamic/change-core-result-appeal-2021')
+// I need to withdraw the appeal 
+} else if (coreOnHold === 'withdraw') {  
+  req.session.data['newcoreOnHold2021'] = ''
+  req.session.data['appealWithdrawn'] = 'yes'
+
+  
+
+  // req.session.data['newcoreOnHold'] = ''
+  // req.session.data['dateChanged'] = 'yes'
+  // req.session.data['showBanner'] = "yes"
+
+
+  res.redirect('/1-19/dynamic/record-entries-routes')
 //Result the same - check and submit confirm   
   } else {
     res.redirect('/1-19/dynamic/check-result-change-appeal-2021')

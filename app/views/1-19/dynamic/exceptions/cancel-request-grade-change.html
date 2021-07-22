@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Cancel appeal update
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="cancel-grade-update" method="post" class="form" novalidate data-validate="cancel-update">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-grade-update">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to cancel the update to this appeal?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-grade-update" name="cancel-grade-update" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel-grade-update">
+                Yes, I want to cancel
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-grade-update-2" name="cancel-grade-update" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel-grade-update-2">
+                No, I do not want to cancel
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="cancel-update">
+  {
+
+    "cancel-grade-update": {
+      "presence": {
+        "message": "^Please select whether you want to cancel the update to this appeal"
+      }
+
+    }
+
+  }
+</script>
+{% endblock %}
+
