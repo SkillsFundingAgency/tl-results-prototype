@@ -44,9 +44,12 @@ Learner’s component grade status - Manage T Level results - GOV.UK
 
     {% if uln === '5647382910' %}
     <div class="govuk-inset-text">
-      The results for this learner are final. If you need to change them for any reason, you will need to email us at <a href=#>tlevel.resultsandcertification@education.gov.uk</a>. Changes will only be made in exceptional circumstances.
+      The results for this learner are final. If you need to appeal the grade, you will need to <a href="/1-19/dynamic/exceptions/exceptions-process">contact us</a>.
     </div>
-    {% else %}
+    {% elif uln === '0987654321' and data['newcoreOnHold2021'] === "final" %}
+    <div class="govuk-inset-text">
+      The results for this learner are final. If you need to change them for any reason, you will need to <a href="/1-19/dynamic/exceptions/request-grade-change">contact us</a>.
+    </div>
     {% endif %}
 
     <h2 class="govuk-heading-m govuk-!-margin-top-7">Learner's details</h2>
