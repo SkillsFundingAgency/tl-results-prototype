@@ -12,7 +12,7 @@ Page title needed
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="/1-19/dynamic/exceptions/request-grade-change-confirmation" method="post" class="form" novalidate data-validate="">
+      <form action="/1-19/dynamic/exceptions/request-grade-change-confirmation" method="post" class="form" novalidate data-validate="request-grade-change-input">
 
         <h1 class="govuk-heading-l">Request a change to this learner's grade</h1> 
         
@@ -95,17 +95,21 @@ Page title needed
   </div>
 </div>
 
-<script type="application/json" id="select-exam-period">
+<script type="application/json" id="request-grade-change-input">
 {
 
-  "exam-period": {
-    "presence": {
-      "message": "^Please select the exam period "
-    }
-
-  }
+  "more-detail": {
+	
+		"presence": {
+		
+		"message": "^Please enter what you need to change and why"
+		
+		}
+	
+	}
 
 }
+
 </script>
 {% endblock %}
 

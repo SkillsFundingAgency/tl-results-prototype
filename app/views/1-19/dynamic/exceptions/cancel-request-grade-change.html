@@ -12,25 +12,25 @@ Cancel appeal update
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="cancel-grade-update" method="post" class="form" novalidate data-validate="cancel-update">
+    <form action="cancel-grade-change-request" method="post" class="form" novalidate data-validate="cancel-request">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-grade-update">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-grade-change-request">
             <h1 class="govuk-fieldset__heading">
-              Are you sure you want to cancel the update to this appeal?
+              Are you sure you want to cancel the request for a grade change?
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancel-grade-update" name="cancel-grade-update" type="radio" value="yes">
+              <input class="govuk-radios__input" id="cancel-grade-change-request" name="cancel-grade-change-request" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="cancel-grade-update">
                 Yes, I want to cancel
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancel-grade-update-2" name="cancel-grade-update" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="cancel-grade-update-2">
+              <input class="govuk-radios__input" id="cancel-grade-change-request-2" name="cancel-grade-change-request" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel-grade-change-request-2">
                 No, I do not want to cancel
               </label>
             </div>
@@ -46,12 +46,12 @@ Cancel appeal update
   </div>
 </div>
 
-<script type="application/json" id="cancel-update">
+<script type="application/json" id="cancel-request">
   {
 
-    "cancel-grade-update": {
+    "cancel-grade-change-request": {
       "presence": {
-        "message": "^Please select whether you want to cancel the update to this appeal"
+        "message": "^Please select whether you want to cancel the request for a grade change"
       }
 
     }

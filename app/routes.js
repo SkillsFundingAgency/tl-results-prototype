@@ -1180,6 +1180,40 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
 
 // 1-19 routes
 
+//EXCEPTIONS & CONTACT US
+router.post('/1-19/dynamic/exceptions/request-grade-change-routes', function (req, res) {
+
+  let gradeChangeconfirmation = req.session.data['request-grade-change']
+  let uln = req.session.data['search']
+
+  if (gradeChangeconfirmation === 'learner-page') {
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/record-entries-routes')
+
+  } else if (gradeChangeconfirmation === 'search'){
+
+    res.redirect('/1-19/dynamic/search-learner')
+  
+  } else {
+    res.redirect('/1-19/dynamic/tlevels-dashboard')
+  }
+})
+
+// 2021 cancel request grade change
+router.post('/1-19/dynamic/exceptions/cancel-grade-change-request', function (req, res) {
+
+  let cancelRequest = req.session.data['cancel-grade-change-request']
+  let uln = req.session.data['search']
+
+  if (cancelRequest === 'yes') {
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/record-entries-routes')
+
+  } else{
+    res.redirect('/1-19/dynamic/exceptions/request-grade-change')
+  }
+})
+
 //RESULTS
 router.post('/1-19/dynamic/results/search-learner', function (req, res) {
 
@@ -1385,8 +1419,26 @@ router.get('/1-19/dynamic/record-entries-routes', function(req, res) {
       'specialismResults' : "Summer 2021",    
       'specialismGrade' : 'Merit',
       'coreOnHold' : req.session.data['core-place-on-hold'],
-      'specialismOnHold' : req.session.data['specialism-place-on-hold'],
+      'specialismOnHold' : req.session.data['specialism-place-on-hold'],  
     })
+      req.session.data['name'] = 'Steve Rogers'
+      req.session.data['provider'] = 'Abingdon and Witney College'
+      req.session.data['ukprn'] = '(10000055)'
+      req.session.data['dob'] = '15 April 2004'
+      req.session.data['tlevelTitle'] = 'T Level in  Design, Surveying and Planning for Construction'
+      req.session.data['coreGrade'] = 'C'
+      req.session.data['uln'] = uln
+      req.session.data['core'] = "Design, Surveying and Planning (60358300)"
+      req.session.data['coreResult'] = "Summer 2021"
+      req.session.data['coreOnHold'] = ""
+      req.session.data['coreReviewed'] = ""
+      req.session.data['specialism'] = "Building Services Design (ZTLOS003)"
+      req.session.data['specialismOnHold'] = ""
+      req.session.data['specialismResults'] = "Summer 2021"
+      req.session.data['specialismReviewed'] = ""
+      req.session.data['specialismGrade'] = 'Merit'
+      req.session.data['showBanner'] = "no"
+  ;
     ;
   // learner withdrawn  
 
@@ -1645,6 +1697,7 @@ router.post('/1-19/dynamic/core-put-on-appeal-2021', function (req, res) {
 //yes is being appealed
   if (coreOnHold === 'yes') {
     req.session.data['newcoreOnHold2021'] = 'appealed'
+    req.session.data['appealWithdrawn'] = 'no'
     req.session.data['dateChanged2021'] = 'yes'
     req.session.data['showBanner'] = "yes"
 
@@ -1748,19 +1801,16 @@ router.post('/1-19/dynamic/core-take-off-appeal-2021', function (req, res) {
 //I need to update status
   if (coreOnHold === 'update') {
     res.redirect('/1-19/dynamic/change-core-result-appeal-2021')
+
 // I need to withdraw the appeal 
 } else if (coreOnHold === 'withdraw') {  
-  req.session.data['newcoreOnHold2021'] = ''
+  req.session.data['newcoreOnHold2021'] = 'no'
   req.session.data['appealWithdrawn'] = 'yes'
-
-  
-
-  // req.session.data['newcoreOnHold'] = ''
-  // req.session.data['dateChanged'] = 'yes'
-  // req.session.data['showBanner'] = "yes"
+  req.session.data['showBanner'] = "yes"
 
 
   res.redirect('/1-19/dynamic/record-entries-routes')
+
 //Result the same - check and submit confirm   
   } else {
     res.redirect('/1-19/dynamic/check-result-change-appeal-2021')
@@ -1970,6 +2020,7 @@ router.post('/1-19/dynamic/confirm-result-change-appeal-2021', function (req, re
   req.session.data['coreReviewed2021'] = 'appealedgrade'
   req.session.data['dateChanged2021'] = 'yes'
   req.session.data['showBanner'] = "yes"
+  req.session.data['appealWithdrawn'] = 'no'
  
   res.redirect('/1-19/dynamic/record-entries-routes')
 
