@@ -9,7 +9,7 @@
 <style>
     .card {
         background-color: #f3f2f1;
-        padding-left: 10px;
+        padding-left: 20px;
         padding-right: 10px;
         padding-bottom: 10px;
         padding-top: 10px;
@@ -19,12 +19,15 @@
 
     .card-deep {
         background-color: #f3f2f1;
-        padding-left: 10px;
+        padding-left: 20px;
         padding-right: 10px;
         padding-bottom: 10px;
         padding-top: 10px;
         height: 120px;
         margin-bottom: 10px;
+    }
+    .card-padding {
+        padding-bottom: 69px; 
     }
 </style>
 
@@ -47,7 +50,7 @@
 <!-- MAIN ROW -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card" name="hub-choice-1">
+        <div class="govuk-form-group card card-padding" name="hub-choice-1">
 
                 <h2 class="govuk-heading-m">
                     <a class="govuk-link--no-visited-state" href="reviews-and-appeals">
@@ -55,8 +58,7 @@
                     </a>
                 </h2>
 
-                <ul class="govuk-list govuk-list--bullet">
-                    <p></p>
+                <ul class="govuk-list govuk-list--bullet gov-uk-!-padding-bottom-3">
                     <li>Tell us when a learner has appealed a grade</li>
                     <li>Tell us the result of an appeal</li>
                 </ul>
