@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ULN not found - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Unique Learner Number (ULN) {{ data['uln'] }} not found</h1>
+        <p class="govuk-body">We cannot find a learner for the ULN you provided. This might be because the ULN is wrong or that they are not registered with us.</p>
+        <p class="govuk-body">Check that you’ve entered the correct ULN. If you have, you will need to contact your organisation’s registrations editor for help.</p>
+
+        
+        <div class="govuk-button-group govuk-!-margin-top-6">
+            <a class="govuk-button" role="button" href="search-learner.html">Search again</a>
+            <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back to home</a>
+          </div>
+    </div>
+    
+</div>
+
+{% endblock %}
