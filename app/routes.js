@@ -1188,6 +1188,7 @@ router.post('/1-19/dynamic/exceptions/request-grade-change-routes', function (re
 
   if (gradeChangeconfirmation === 'learner-page') {
     req.session.data['uln'] = uln
+    req.session.data['newcoreOnHold2021'] = 'locked'
     res.redirect('/1-19/dynamic/record-entries-routes')
 
   } else if (gradeChangeconfirmation === 'search'){
