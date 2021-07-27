@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirmation page example
+Grade change request sent
 {% endblock %}
 
 {% block content %}
@@ -10,17 +10,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Request for a grade change complete</h1>
+        <h1 class="govuk-panel__title">Request for a grade change has been sent</h1>
       </div>
 
-      <p>
-        We have sent you a confirmation email.
-      </p>
-
+ 
       <h2 class="govuk-heading-m">What happens now</h2>
-      <p>We've sent your application to Hackney Electoral Register Office.</p>
-      <p>They will contact you either to confirm your registration, or to ask for more information.</p>
-      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>We will send you a confirmation email containing a reference number for your records</li>
+        <li>We will contact you within 3 working days to let you know the outcome of your request</li>
+      </ul>
+    </li>
+      <p class="govuk-body">If you have not heard from us by 2 August 2021 please <a class="govuk-link"href="#">contact us</a>.</p>
 
 
       
@@ -29,14 +29,14 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              What's next
+              What's would you like to do next?
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="request-grade-change" name="request-grade-change" type="radio" value="learner-page">
               <label class="govuk-label govuk-radios__label" for="grade-change-option-1">
-                Back to learner's component grade status page
+                Back to learner's page
               </label>
             </div>
             <div class="govuk-radios__item">

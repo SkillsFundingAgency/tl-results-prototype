@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register a new learner - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Register a new learner</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Register a new learner
+    </h1>
+
+    <p class="govuk-body">You can register one learner using this service, or <a class="govuk-link" href="#">upload multiple registrations</a> instead.</p>
+    
+    <a class="govuk-button govuk-!-margin-top-4" role="button" href="search-learner">Continue</a>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p class="govuk-body">You need to know the learner's:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>unique learner number (ULN) </li>
+          <li>first and last name</li>
+          <li>date of birth</li>
+          <li>education provider</li>
+          <li>T Level core</li>
+          <li>occupational specialism (only if chosen - you can add this later)</li>
+        </ul>
+      </li>
+      <p class="govuk-body">You should also check your Providers Editor has added the <a class="govuk-link" href="#">T Level</a> and <a class="govuk-link" href="#">provider</a>.</p>
+  </div>
+</div>
+
+{% endblock %}
