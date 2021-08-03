@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload registrations file - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="student-registrations">Registrations</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Upload multiple registrations</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Upload registrations file
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">You can add or change registration details for more than one learner by uploading CSV files.</p>
+   
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="file-upload-1">
+        Upload a file
+      </label>
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+    </div>
+    <a class="govuk-button" role="button" href="">Submit</a>
+
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p class="govuk-body">If you export data from another system, you must check the data is in the right format. You can download a format and rules guide to help you.</p>
+
+    <div class=" box govuk-!-margin-bottom-5">
+      <img src="/public/images/download-file-icon.png" alt="File icon">
+      <span class="govuk-!-margin-left-4"><a href="https://test.manage-tlevel-results.tlevels.gov.uk/download-registration-data-format-and-rules-guide-file" class="govuk-link">Download T Levels registrations data format and rules guide (XSLX, 167KB)</a>
+    </span>
+    </div>
+    <p class="govuk-body">If a ULN doesn't already exist in our service, we will add a new registration.</p>
+    <p class="govuk-body">If a ULN already has an active registration, we will update the data, unless:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the registration is active with another awarding organisation</li>
+      <li>the core code is different - you cannot change the core code here</li>
+    </ul>
+    <p class="govuk-body">If the data is not correctly formatted, nothing will be uploaded. You will be able to download an error report which tells you what's wrong.</p> 
+  </div>  
+</div>  
+
+{% endblock %}

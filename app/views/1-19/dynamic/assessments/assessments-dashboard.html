@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Results page - Manage T Level results - GOV.UK
+  Assessments - Manage T Level results - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,7 +10,7 @@
     <li class="govuk-breadcrumbs__list-item">
       <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
     </li>
-    <li class="govuk-breadcrumbs__list-item" aria-current="page">Results</li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Assessments</li>
   </ol>
 </div>
 {% endblock %}
@@ -25,10 +25,8 @@
         padding-bottom: 10px;
         padding-top: 0px;
         height: 100%;
-        margin-bottom: 30px;  
-    }
-    .card-padding {
-        padding-bottom: 20px; 
+        min-height: 140px;
+        margin-bottom: 30px;
     }
 </style>
 
@@ -36,8 +34,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-l">Results</h1>
-            <p class="govuk-body-l">Tell us what your learners have achieved</p>
+            <h1 class="govuk-heading-l">Assessments
+            </h1>
+            <p class="govuk-body-l">Tell us when your learners will be assessed</p>
         </div>
     </div>
 </div>
@@ -47,14 +46,14 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-1">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                <a class="govuk-link--no-visited-state" href="upload-results-file">
-                    Upload multiple results
+                <a class="govuk-link--no-visited-state" href="upload-assessment-file">
+                    Upload multiple assessments
                 </a>
             </h2>
 
             <ul class="govuk-list govuk-list--bullet">
-                <li>Add or change results for more than one learner</li>
-                <li class="card-padding">Download bulk results template (XLSX)</li>
+                <li>Add or change assessment periods for more than one learner</li>
+                <li>Download bulk assessments template (XLSX)</li>
             </ul>
         </div>
     </div>
@@ -62,20 +61,20 @@
     <div class="govuk-grid-column-one-half">
         <div class="govuk-form-group card" name="hub-choice-1">
             <h2 class="govuk-heading-m govuk-!-padding-top-3">
-                <a class="govuk-link--no-visited-state" href="search-learner">
-                    Manage a result
+                <a class="govuk-link--no-visited-state" href="">
+                    Manage an assessment
                 </a>
             </h2>
 
             <ul class="govuk-list govuk-list--bullet">
-                <li>View a learner's results</li>
-                <li>Add a result for one learner</li>
-                <li>Change a result for one learner</li>
+                <li>View a learner's assessment period</li>
+                <li>Add an assessment period for one learner</li>
+                <li>Change an assessment period for one learner</li>
             </ul>
         </div>
     </div>
+
   </div>
 
 
 {% endblock %}
-
