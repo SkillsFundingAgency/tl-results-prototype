@@ -1180,7 +1180,25 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
 
 // 1-19 routes
 
-//EXCEPTIONS & CONTACT US
+//EXCEPTIONS
+
+router.post('/1-19/dynamic/exceptions/exceptions-process-put-on-appeal', function (req, res) {
+
+  let appealGrade = req.session.data['exceptions-appeal']
+  let uln = req.session.data['search']
+
+  if (appealGrade === 'appeal-record') {
+    
+    res.redirect('/1-19/dynamic/exceptions/exceptions-process-confirmation')
+
+  } else{
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/record-entries-routes')
+  }
+})
+
+//CONTACT US
+
 router.post('/1-19/dynamic/exceptions/request-grade-change-routes', function (req, res) {
 
   let gradeChangeconfirmation = req.session.data['request-grade-change']
