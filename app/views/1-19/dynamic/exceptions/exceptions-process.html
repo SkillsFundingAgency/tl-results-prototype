@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Select exam period
+Appeal a grade after the deadline
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,109 +10,22 @@ Select exam period
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-      <form action="" method="post" class="form" novalidate data-validate="">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Heading needed</h1> 
-        
-        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['name'] }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              ULN
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['uln'] }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['dob'] }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Core <br>(code)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['core'] }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Exam period
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['coreResult'] }}
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Grade
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['coreGrade'] }}
-            </dd>
-          </div>
-        </dl>
+      <h1 class="govuk-heading-xl">
+        Appeal a grade after the deadline
+      </h1>
 
-        <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="exam-period">
-                  <h2 class="govuk-fieldset__heading">
-                    Question?
-                  </h2>
-                </legend>
-                <div id="exam-period-hint" class="govuk-hint">
-                  gov hint text
-                </div>
+      <p>We mark all results as final once the appeal deadline has passed, so that we can calculate the learner's overall grade.</p>
 
-                  <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="exam-period-answer-1" name="exam-period" type="radio" value="autumn" >
-                        <label class="govuk-label govuk-radios__label" for="exam-period-answer-1">
-                          Appeal record (past deadline)
-                        </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="exam-period-answer-2" name="exam-period" type="radio" value="summer"  >
-                        <label class="govuk-label govuk-radios__label" for="exam-period-answer-2">
-                          Error on appeal outcome
-                        </label>
-                    </div>
-                  </div>
-              </fieldset>
+      <p>If a grade is being appealed after the deadline for appeals, we need to make a manual change to the grade record.</p>
 
-          </div>
+      <p>This change will take up to 3 working days.</p>
 
-          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
-      </form>
+      <a class="govuk-button govuk-!-margin-top-6" role="button" href="exceptions-process-put-on-appeal.html">Continue</a>
+
+    </div>
   </div>
-</div>
 
-<script type="application/json" id="select-exam-period">
-{
-
-  "exam-period": {
-    "presence": {
-      "message": "^Please select the exam period "
-    }
-
-  }
-
-}
-</script>
 {% endblock %}
-

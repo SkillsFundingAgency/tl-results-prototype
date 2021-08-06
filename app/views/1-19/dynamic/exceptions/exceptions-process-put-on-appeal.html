@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Request grade change
+Confirm appeal
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,9 +12,9 @@ Request grade change
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="/1-19/dynamic/exceptions/request-grade-change-confirmation" method="post" class="form" novalidate data-validate="request-grade-change-input">
+      <form action="exceptions-process-put-on-appeal" method="post" class="form" novalidate data-validate="select-exceptions">
 
-        <h1 class="govuk-heading-l">Request a change to this learner's grade</h1> 
+        <h1 class="govuk-heading-l">Appeal the grade after the deadline</h1> 
         
         <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
           
@@ -63,57 +63,56 @@ Request grade change
               Grade
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['resultChanged2021'] === "appeal" and data['core-result-changed-2021'] === 'yes'%}
-              {{ data['appealcoreGrade2021'] }}
-              {% else %}
               {{ data['coreGrade'] }}
-              {% endif %}
             </dd>
           </div>
         </dl>
 
         <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-                  Please tell us what you need to change and why
-                </label>
-              </h1>
-              <div id="more-detail-hint" class="govuk-hint">
-                Please do not add any details here that identify the learner, for example their name, date of birth or unique learner number.
-              </div>
-              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-            
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="exceptions-appeal">
+                  <h2 class="govuk-fieldset__heading">
+                    Is this grade being appealed?
+                  </h2>
+                </legend>
 
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exceptions-answer-1" name="exceptions-appeal" type="radio" value="appeal-record" >
+                        <label class="govuk-label govuk-radios__label" for="exceptions-answer-1">
+                          Yes, it is being appealed
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="exceptions-answer-2" name="exceptions-appeal" type="radio" value="no-appeal"  >
+                        <label class="govuk-label govuk-radios__label" for="exceptions-answer-2">
+                          No, leave it as it is
+                        </label>
+                    </div>
+                  </div>
               </fieldset>
 
           </div>
-
-          <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Send
-            </button>
-          
-            <a class="govuk-link" href="cancel-request-grade-change.html">Cancel</a>
+          <div class="govuk-inset-text">
+            While this grade is being appealed, we cannot calculate this learner’s overall T Level result
           </div>
+
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Submit</button>
       </form>
   </div>
 </div>
 
-<script type="application/json" id="request-grade-change-input">
+<script type="application/json" id="select-exceptions">
 {
 
-  "more-detail": {
-	
-		"presence": {
-		
-		"message": "^Please tell us what you need to change and why"
-		
-		}
-	
-	}
+  "exceptions-appeal": {
+    "presence": {
+      "message": "^Please select whether you want to appeal the record "
+    }
+
+  }
 
 }
-
 </script>
 {% endblock %}
 
