@@ -1180,6 +1180,50 @@ router.post('/1-18/Research/action-q4-check', function (req, res) {
 
 // 1-19 routes
 
+//T LEVELS
+
+//select which t level to review
+
+router.post('/1-19/dynamic/t-levels/review-tlevel-details', function (req, res) {
+
+  let tlevelChoice = req.session.data['tLevel-name']
+
+
+  if (tlevelChoice  === 'business') {
+
+    req.session.data['tleveltitle'] = 'T Level in Business and Administration'
+    req.session.data['tlevelcore'] = 'Business and Administration'
+    req.session.data['tlevelspecialism'] = 'Data Technician'
+    req.session.data['code'] = '(123456)'
+
+    res.redirect('/1-19/dynamic/t-levels/verify-tlevel-details')
+
+  } else{
+    req.session.data['tleveltitle'] = 'T Level in Digital Business Services'
+    req.session.data['tlevelcore'] = 'Digital Business Services'
+    req.session.data['tlevelspecialism'] = 'Data Technician'
+    req.session.data['code'] = '(123456)'
+    res.redirect('/1-19/dynamic/t-levels/verify-tlevel-details')
+  }
+})
+
+//review t level details
+
+router.post('/1-19/dynamic/t-levels/verify-tlevel-details', function (req, res) {
+
+  let correctDetails = req.session.data['verify-details']
+
+
+  if (correctDetails === 'yes') {
+    
+    res.redirect('/1-19/dynamic/t-levels/review-t-levels-confirmation')
+
+  } else{
+    
+    res.redirect('/1-19/dynamic/t-levels/query-t-level')
+  }
+})
+
 //EXCEPTIONS
 
 router.post('/1-19/dynamic/exceptions/exceptions-process-put-on-appeal', function (req, res) {

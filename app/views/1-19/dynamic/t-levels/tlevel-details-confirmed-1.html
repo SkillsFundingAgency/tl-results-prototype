@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirmed T Level details
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Confirmed T Level details</h1>
+      <p class="govuk-body">You have told us this T Level's details are correct. If something is wrong, <a href="#"class="govuk-link">raise a query</a> and we will investigate within 3 working days.</p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-7 govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            T Level title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            T Level in Hair and Beauty
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Core <br>(code)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Hair and Beauty <br>(123456)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Occupational specialism <br>(code)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body-l">Hairdressing <br>(123456)</p>
+              <p class="govuk-body-l">Health and safety <br>(123456)</p>
+
+          </dd>
+        </div>
+      </dl>
+
+      
+<a class="govuk-button" role="button" href="/1-19/dynamic/t-levels/confirmed-t-levels.html">Back to confirmed T Levels</a>
+
+  </div>
+</div>
+
+
+{% endblock %}

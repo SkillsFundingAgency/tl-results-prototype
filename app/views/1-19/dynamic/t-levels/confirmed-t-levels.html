@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirmed T Levels - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/t-levels/student-t-levels">T Levels</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Confirmed T Levels</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Confirmed T Levels</h1>
+        <p class="govuk-body">T Levels you have checked and told us are correct</p>
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              T level in Design, Surveying and Planning for Construction
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed">
+                View <span class="govuk-visually-hidden">T level</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              T level in Hair and Beauty
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="tlevel-details-confirmed-1">
+                View <span class="govuk-visually-hidden">T level</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I cannot find a T Level
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you cannot find the T Level you are looking for, check if you need to <a href="/1-19/dynamic/t-levels/tlevel-select-non-reviewed" class="govuk-link">review</a> it or have <a href="#" class="govuk-link">queried</a> it.<br><br>
+            If you still cannot find it, <a href="#" class="govuk-link">contact us</a>.
+          </div>
+        </details>
+
+      <a class="govuk-button " role="button" href="/1-19/dynamic/t-levels/student-t-levels">Back to T Levels</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}
