@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify T Level - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form action="verify-tlevel-details" method="post" class="form" novalidate data-validate="correct-details">
+
+        <h1 class="govuk-heading-l">Review T Level</h1>
+        
+        <p class="govuk-body">These details will be printed on learners' certificates</p>
+        
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9 govuk-!-margin-top-7">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              T Level title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tleveltitle'] }}
+
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Core <br>(code)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tlevelcore'] }}<br>
+              {{ data['code'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Occupational specialism <br>(code)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['tlevelspecialism'] }}<br>
+              {{ data['code'] }}
+              
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="verify-details">
+                  <h2 class="govuk-fieldset__heading">
+                    Are these details correct?
+                  </h2>
+                </legend>
+
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="verify-details-1" name="verify-details" type="radio" value="yes" >
+                        <label class="govuk-label govuk-radios__label" for="verify-details-1">
+                          Yes, everything is correct
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="verify-details-2" name="verify-details" type="radio" value="no"  >
+                        <label class="govuk-label govuk-radios__label" for="verify-details-2">
+                          No, tell us what is wrong
+                        </label>
+                    </div>
+                  </div>
+              </fieldset>
+
+          </div>
+         
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">Continue</button>
+      </form>
+  </div>
+</div>
+
+<script type="application/json" id="correct-details">
+{
+
+  "verify-details": {
+    "presence": {
+      "message": "^Select yes if this T level's details are correct  "
+    }
+
+  }
+
+}
+</script>
+{% endblock %}

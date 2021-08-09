@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Queried T Level details
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Queried T Level details</h1>
+            <div class="govuk-inset-text">
+              We are investigating this query and will update your organisation within 3 working days of it being submitted.<br><br>
+              If you do not hear from us within 3 working days, <a href="#" class="govuk-link">contact us</a>.
+            </div>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-top-7 govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  T Level title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  T Level in Design, Surveying and Planning for Construction
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Core <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Design, Surveying and Planning for Construction <br>(123456)
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Occupational specialism <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body-l">Surveying and design for construction and the built environment <br>(123456)</p>
+                  <p class="govuk-body-l">Civil engineering <br>(123456)</p>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Queried by 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Barry White
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date queried by
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  2 August 2021
+                </dd>
+              </div>
+            </dl>
+
+            
+      <a class="govuk-button" role="button" href="/1-19/dynamic/t-levels/queried-t-levels.html">Back to queried T Levels</a>
+
+        </div>
+    </div>
+
+{% endblock %}

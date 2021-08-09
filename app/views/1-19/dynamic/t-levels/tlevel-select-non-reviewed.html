@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Review T Levels - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/t-levels/student-t-levels">T Levels</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Review new T Levels</li>
+  </ol>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="review-tlevel-details" method="post" class="form" novalidate data-validate="select-tlevel">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                              Which T Level do you want to review?
+                            </h1>
+                        </legend>
+
+                        <p class="govuk-body">You must check and confirm each T Level is correctly set up before you can add them to a provider.</p>
+
+                        <p class="govuk-body">These details will be printed on learners' certificates.</p>
+
+                          <div class="govuk-radios govuk-!-padding-bottom-2">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="tlevel-name-1" name="tLevel-name" type="radio" value="business">
+                                <label class="govuk-label govuk-radios__label" for="tlevel-name-1">
+                                  T Level in Business and Administration
+                                </label>
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="tlevel-name-2" name="tLevel-name" type="radio" value="digital">
+                                <label class="govuk-label govuk-radios__label" for="level-name-2">
+                                  T Level in Digital Business Services
+                                </label>
+                              </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  I cannot find a T Level
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                If you cannot find the T Level you are looking for, check you have not already <a href="#" class="govuk-link">confirmed</a> or <a href="#" class="govuk-link">queried</a> it.<br><br>
+                If you still cannot find it, <a href="#" class="govuk-link">contact us</a>.
+              </div>
+            </details>
+
+        </div>
+    </div>
+    <script type="application/json" id="select-tlevel">
+      {
+      
+        "tLevel-name": {
+          "presence": {
+            "message": "^Select a T level to review "
+          }
+      
+        }
+      
+      }
+      </script>
+{% endblock %}

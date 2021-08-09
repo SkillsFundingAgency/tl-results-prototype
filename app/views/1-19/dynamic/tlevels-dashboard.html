@@ -11,13 +11,21 @@
         background-color: #f3f2f1;
         padding-left: 20px;
         padding-right: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 30px;
         padding-top: 10px;
-        height: 100%;
-        margin-bottom: 10px;
+        height: 180px;
+        margin-bottom: 20px;
     }
 
-    .card-deep {
+    @media screen and (max-width: 801px) {
+        .card {
+        padding-bottom: 20px;
+        height: 100%;
+
+    }
+    }
+
+    /* .card-deep {
         background-color: #f3f2f1;
         padding-left: 20px;
         padding-right: 10px;
@@ -26,9 +34,7 @@
         height: 120px;
         margin-bottom: 10px;
     }
-    .card-padding {
-        padding-bottom: 69px; 
-    }
+    } */
 </style>
 
 <!-- MAIN HEADING -->
@@ -51,7 +57,7 @@
 <!-- MAIN ROW -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card card-padding" name="hub-choice-1">
+        <div class="govuk-form-group card" name="hub-choice-1">
 
                 <h2 class="govuk-heading-m">
                     <a class="govuk-link--no-visited-state" href="reviews-and-appeals">
@@ -62,6 +68,7 @@
                 <ul class="govuk-list govuk-list--bullet gov-uk-!-padding-bottom-3">
                     <li>Tell us when a learner has appealed a grade</li>
                     <li>Tell us the result of an appeal</li>
+                    <li>Withdraw an appeal</li>
                 </ul>
         </div>
     </div>
@@ -78,14 +85,14 @@
                 <ul class="govuk-list govuk-list--bullet">
                     <li>Register learners onto T Level courses</li>
                     <li>Change a learner's personal details</li>
-                    <li>Change the T Level a learner is studying</li>
-                    <li>Manage movers, leavers and rejoiners</li>
+                    <li>Change a learner's T Level course</li>
+                    <li>Withdraw or reactivate a registration</li>
                 </ul>
         </div>
     </div>
 
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card-deep" name="hub-choice-3">
+        <div class="govuk-form-group card" name="hub-choice-3">
 
                 <h2 class="govuk-heading-m">
                     <a class="govuk-link--no-visited-state" href="assessments/assessments-dashboard.html">
@@ -99,7 +106,7 @@
     </div>
 
     <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group card-deep" name="hub-choice-4">
+        <div class="govuk-form-group card" name="hub-choice-4">
 
                 <h2 class="govuk-heading-m">
                     <a class="govuk-link--no-visited-state" href="results/student-results.html">
@@ -116,7 +123,7 @@
         <div class="govuk-form-group card" name="hub-choice-5">
 
             <h2 class="govuk-heading-m">
-                <a class="govuk-link--no-visited-state" href="">
+                <a class="govuk-link--no-visited-state" href="t-levels/student-t-levels.html">
                     T Levels
                 </a>
             </h2>
