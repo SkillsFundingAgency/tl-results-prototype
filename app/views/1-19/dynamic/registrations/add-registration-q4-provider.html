@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Select the provider - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/1-19/dynamic/registrations/add-registration-q5-core" method="post" novalidate data-validate="register-for-learner-validation">
+            <div class="govuk-form-group">
+                
+                    <span class="govuk-caption-xl">Register a new learner</span>
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="provider">
+                        Who is their education provider?
+                      </label>
+                    </h1>
+
+                    <div class="govuk-form-group">
+
+                        <select class="govuk-select" id="provider" name="provider">
+                          <option value="Barnsley Community College (100034)">Barnsley Community College (100034)</option>
+                          <option value="None" selected>Select one</option>
+                          <option value="Abingdon and Witney College (1000031)">Abingdon and Witney College (1000031)</option>
+                          <option value="Bath College (100083)">Bath College (100083)</option>
+                        </select>
+                      </div>
+
+                      <details class="govuk-details govuk-!-margin-top-6" closed>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                I cannot see the provider
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                           Check your organisation's Providers Editor has added the education provider in the <a class="govuk-link" href="">Providers</a> section of this service
+                        </div>
+                    </details>  
+
+ 
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<!-- <script type="application/json" id="register-for-learner-validation">
+    {
+
+        "first-name": {
+        
+        "presence": {
+        
+        "message": "^Enter learner’s last name"
+        
+        }
+        
+        },
+    
+        "last-name": {
+        
+          "presence": {
+          
+          "message": "^Enter learner’s last name"
+          
+          }
+          
+          }
+        
+      }
+</script> -->
+
+{% endblock %}

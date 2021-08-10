@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Check and submit - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-xl">Register a new learner</span>
+
+            <h1 class="govuk-heading-l">
+              Check and submit
+            </h1>
+
+            <p class="govuk-body govuk-!-margin-top-3">Check the information is correct before submitting.</p>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  ULN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{data['uln']}}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q1-uln">
+                    Change<span class="govuk-visually-hidden"> ULN</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['first-name'] }} {{ data['last-name'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q2-name">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['dob-day'] }}
+
+                  {% if data['dob-month'] === "1" %}
+                  January
+                  
+                  {% elseif data['dob-month'] === "2" %}
+                  February
+
+                  {% elseif data['dob-month'] === "3" %}
+                  March
+
+                  {% elseif data['dob-month'] === "4" %}
+                  April
+
+                  {% elseif data['dob-month'] === "5" %}
+                  May
+
+                  {% elseif data['dob-month'] === "6" %}
+                  June
+
+                  {% elseif data['dob-month'] === "7" %}
+                  July
+
+                  {% elseif data['dob-month'] === "8" %}
+                  August
+
+                  {% elseif data['dob-month'] === "9" %}
+                  September
+
+                  {% elseif data['dob-month'] === "10" %}
+                  October
+
+                  {% elseif data['dob-month'] === "11" %}
+                  November
+
+                  {% elseif data['dob-month'] === "12" %}
+                  December
+                  
+                  {% else %}
+                  {{ data['dob-month'] }} 
+                  {% endif %} 
+
+                  
+                  {{ data['dob-year'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q3-dob">
+                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Provider <br>(UKPRN)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['provider'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q4-provider">
+                    Change<span class="govuk-visually-hidden"> Provider</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Core <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['core'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q6-core">
+                    Change<span class="govuk-visually-hidden"> core</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Occupational specialism <br>(code)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['specialism'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q7b-specialism">
+                    Change<span class="govuk-visually-hidden"> occupational specialism</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Academic year
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['year'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="change-registration-q5a-year">
+                    Change<span class="govuk-visually-hidden"> academic year</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <a class="govuk-button govuk-!-margin-top-6" role="button " href="registration-successful">Submit</a>
+      </div>
+    </div>
+
+{% endblock %}

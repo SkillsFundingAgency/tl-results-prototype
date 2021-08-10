@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - Select the provider - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/1-19/dynamic/registrations/add-registration-q6-specialism" method="post" novalidate data-validate="register-for-learner-validation">
+            <div class="govuk-form-group">
+                
+                    <span class="govuk-caption-xl">Register a new learner</span>
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+                        Which T Level are they studying?
+                      </label>
+                    </h1>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="core">
+                            Select the T Level core from the list
+                          </label>
+
+                        <select class="govuk-select" id="core" name="core">
+                          
+                          <option value="Digital Business Services (1000382)">Digital Business Services (1000382)</option>
+                          <option value="Design, Surveying and Planning (1000374)">Design, Surveying and Planning (1000374)</option>  
+                          <option value="none" selected>Select one</option>
+                          <option value="Digital Support Services (1000442)">Digital Support Services (1000442)</option>
+                          <option value="Health Support Services (1099393)">Health Support Services (1099393)</option>
+                        </select>
+                      </div>
+
+                      <details class="govuk-details govuk-!-margin-top-6" closed>
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                I cannot see the right core
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Check your organisation's Providers Editor has added the T Level to the education provider in the <a class="govuk-link" href="">Providers</a> section of this service.
+                        </div>
+                    </details>  
+
+ 
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<!-- <script type="application/json" id="register-for-learner-validation">
+    {
+
+        "first-name": {
+        
+        "presence": {
+        
+        "message": "^Enter learner’s last name"
+        
+        }
+        
+        },
+    
+        "last-name": {
+        
+          "presence": {
+          
+          "message": "^Enter learner’s last name"
+          
+          }
+          
+          }
+        
+      }
+</script> -->
+
+{% endblock %}

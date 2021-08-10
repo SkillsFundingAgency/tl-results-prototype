@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Assessments - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Providers</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- CARD STYLES -->
+<style>
+    .card {
+        background-color: #f3f2f1;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-top: 0px;
+        height: 100%;
+        min-height: 140px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<!-- MAIN HEADING -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <h1 class="govuk-heading-l">Providers
+            </h1>
+            <p class="govuk-body-l">Tell us which T Levels your providers offer</p>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN ROW -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="">
+                    Add a new provider
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Add a new provider and tell us which T Levels they offer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group card" name="hub-choice-1">
+            <h2 class="govuk-heading-m govuk-!-padding-top-3">
+                <a class="govuk-link--no-visited-state" href="">
+                    Manage existing providers
+                </a>
+            </h2>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>See which T Levels have been added to your existing providers</li>
+                <li>Change the T Levels each provider offers</li>
+            </ul>
+        </div>
+    </div>
+
+  </div>
+
+
+{% endblock %}

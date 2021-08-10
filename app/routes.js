@@ -1277,6 +1277,34 @@ router.post('/1-19/dynamic/exceptions/cancel-grade-change-request', function (re
   }
 })
 
+//REGISTRATIONS
+
+//add a new registration
+router.post('/1-19/dynamic/registrations/add-registration-q1', function (req, res) {
+
+  let uln = req.session.data['uln']
+
+  if (uln === '0987654321') {
+    
+    res.redirect('add-registration-q2-name')
+
+  } else if (uln === '1234509876'){
+    req.session.data['name'] = 'John Smith'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/registrations/registration-cannot-be-found')
+  
+  } else if (uln === '1212343456'){
+    req.session.data['name'] = 'Jean Jeffery'
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/registrations/registration-already-registered') 
+    
+  } else {
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/results/results-no-learner-found')
+  }
+})
+
+
 //RESULTS
 router.post('/1-19/dynamic/results/search-learner', function (req, res) {
 
