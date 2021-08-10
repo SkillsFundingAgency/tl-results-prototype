@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add a new registration - enter the learner’s name - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/1-19/dynamic/registrations/add-registration-q3-dob" method="post" novalidate data-validate="register-for-learner-validation">
+            <div class="govuk-form-group">
+                
+                    <span class="govuk-caption-xl">Register a new learner</span>
+                    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
+                        What is the learner’s name
+                      </label>
+                    </h1>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="first-name">
+                            First name
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="first-name" name="first-name" inputmode="numeric">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="last-name">
+                            Last name
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-half" id="last-name" name="last-name" inputmode="text">
+                    </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+    </div>
+</div>
+
+<script type="application/json" id="register-for-learner-validation">
+    {
+
+        "first-name": {
+        
+        "presence": {
+        
+        "message": "^Enter learner’s last name"
+        
+        }
+        
+        },
+    
+        "last-name": {
+        
+          "presence": {
+          
+          "message": "^Enter learner’s last name"
+          
+          }
+          
+          }
+        
+      }
+</script>
+
+{% endblock %}

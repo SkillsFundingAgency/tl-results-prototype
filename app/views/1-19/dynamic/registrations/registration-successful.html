@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add registration - Registration added confirmation - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Learner registered</h1>
+        <div class="govuk-panel__body">ULN: {{data['uln']}} <br> {{ data['first-name'] }} {{ data['last-name'] }}
+        </div>
+      </div>
+      <p class="govuk-body govuk-!-padding-top-3">You have registered one new learner</p>
+
+      <h2 class="govuk-heading-m">What happens now</h2>
+      <p class="govuk-body">You can manage this registration by searching for the learner's ULN. </p>
+      <p class="govuk-body">You will be able to: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>see registration details</li>
+        <li>change registration details</li>
+        <li>change a learner's course</li>
+        <li>withdraw a learner's registration</li>
+        <li>reactivate a withdrawn learner</li>
+      </ul>
+      
+      <p class="govuk-body">You can now add an assessment period for this learner.</p>
+
+      <div class="govuk-button-group">
+        <a class="govuk-button" role="button" href="register-new-learner.html">Register another learner</a>
+        <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back to home</a>
+      </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
