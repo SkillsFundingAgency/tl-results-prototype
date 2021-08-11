@@ -1293,7 +1293,7 @@ router.post('/1-19/dynamic/registrations/add-registration-q1', function (req, re
     req.session.data['uln'] = uln
     res.redirect('/1-19/dynamic/registrations/registration-cannot-be-found')
   
-  } else if (uln === '1212343456'){
+  } else if (uln === '1002323456'){
     req.session.data['name'] = 'Jean Jeffery'
     req.session.data['uln'] = uln
     res.redirect('/1-19/dynamic/registrations/registration-already-registered') 
@@ -1304,6 +1304,40 @@ router.post('/1-19/dynamic/registrations/add-registration-q1', function (req, re
   }
 })
 
+
+// 2021 cancel register a new learner
+router.post('/1-19/dynamic/registrations/cancel-register-new-learner', function (req, res) {
+
+  let cancelRequest = req.session.data['cancel-register-new-learner']
+
+  if (cancelRequest === 'yes') {
+    res.redirect('/1-19/dynamic/registrations/register-new-learner')
+
+  } else{
+    res.redirect('/1-19/dynamic/registrations/add-registration-check-submit')
+  }
+})
+
+//manage a registration
+// router.post('/1-19/dynamic/registrations/search-registration', function (req, res) {
+
+//   let uln = req.session.data['search']
+
+//   if (uln === '0987654321') {
+    
+//     res.redirect('/1-19/dynamic/results/learner-results-cannot-edit')
+
+//   } else if (uln === '1002323456'){
+//     req.session.data['name'] = 'John Smith'
+//     req.session.data['uln'] = uln
+//     res.redirect('/1-19/dynamic/results/learner-results')
+   
+    
+//   } else {
+//     req.session.data['uln'] = uln
+//     res.redirect('/1-19/dynamic/results/results-no-learner-found')
+//   }
+// })
 
 //RESULTS
 router.post('/1-19/dynamic/results/search-learner', function (req, res) {

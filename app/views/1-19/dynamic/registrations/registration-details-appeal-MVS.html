@@ -28,9 +28,20 @@
 
               <h1 class="govuk-heading-l">Registration details</h1>
 
-              <h2 class="govuk-heading-m">ULN: 1002323456</h2>
+              <p class="govuk-body-l">See what you've told us about this learner or make changes if you need to</p>
 
               <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    ULN
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{data['uln']}}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    
+                  </dd>
+                </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Status
@@ -40,7 +51,7 @@
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="registration-details-amend-options-active">
-                      Change status
+                      Change
                     </a>
                   </dd>
                 </div>
@@ -105,7 +116,7 @@
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="change-specialism-a">
-                      Change<span class="govuk-visually-hidden"> Specialism</span>
+                      Change<span class="govuk-visually-hidden"> occupational specialism</span>
                     </a>
                   </dd>
                 </div>
@@ -114,7 +125,7 @@
                     Academic year
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    September 2020 to September 2021
+                    2020 to 2021
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="change-year-denial">
@@ -125,7 +136,7 @@
               </dl>
 
               
-              <a class="govuk-button" href="search-registration.html">Search again</a>
+              <a class="govuk-button govuk-!-margin-top-4" href="search-registration.html">Search again</a>
               
 
               
