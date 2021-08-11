@@ -5,7 +5,17 @@ Reviewed all new T Levels
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/t-levels/student-t-levels">T Levels</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Review new T Levels</li>
+  </ol>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -17,19 +27,16 @@ Reviewed all new T Levels
         You have reviewed all of your T Levels
       </h1>
 
-      <p>The next wave of T Levels will be available for review from September.</p>
-
       <h2 class="govuk-heading-m">You can now:</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li>View your <a class="govuk-link" href="">confirmed</a> T Levels</li>
-        <li><a class="govuk-link" href="">Query</a> your T Levels</li>
-        <li><a class="govuk-link" href="">Register</a> your learners</li>
-        <li>Add T Levels to your <a class="govuk-link" href="">providers</a></li>
+        <li>View your <a class="govuk-link" href="confirmed-t-levels.html">confirmed T Levels</a></li>
+        <li><a class="govuk-link" href="/1-19/dynamic/registrations/student-registrations.html">Register</a> your learners</li>
+        <li><a class="govuk-link" href="">Add T Levels</a> to your providers</li>
       </ul>
 
       <div class="govuk-button-group govuk-!-margin-top-7">
         <a class="govuk-button" role="button" href="/1-19/dynamic/t-levels/student-t-levels">Back to T Levels</a>
-        <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back home</a>
+        <a class="govuk-button govuk-button--secondary" role="button" href="/1-19/dynamic/tlevels-dashboard.html">Back to home</a>
       </div>
 
     </div>

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Cancel register a new learner
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" onclick= "goBack()" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="cancel-register-new-learner" method="post" class="form" novalidate data-validate="cancel-request">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l" for="cancel-register-new-learner">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to cancel the registering a new learner?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-register-new-learner" name="cancel-register-new-learner" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel-register-new-learner">
+                Yes, I want to cancel
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel-register-new-learner-2" name="cancel-register-new-learner" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel-register-new-learner-2">
+                No, I do not want to cancel
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+<script type="application/json" id="cancel-request">
+  {
+
+    "cancel-register-new-learner": {
+      "presence": {
+        "message": "^Please select whether you want to cancel registering a new learner"
+      }
+
+    }
+
+  }
+</script>
+{% endblock %}
+
