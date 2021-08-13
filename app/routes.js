@@ -1319,25 +1319,61 @@ router.post('/1-19/dynamic/registrations/cancel-register-new-learner', function 
 })
 
 //manage a registration
-// router.post('/1-19/dynamic/registrations/search-registration', function (req, res) {
+router.post('/1-19/dynamic/registrations/search-registration', function (req, res) {
 
-//   let uln = req.session.data['search']
+  let uln = req.session.data['search']
 
-//   if (uln === '0987654321') {
+  if (uln === '1234567890') {
     
-//     res.redirect('/1-19/dynamic/results/learner-results-cannot-edit')
-
-//   } else if (uln === '1002323456'){
-//     req.session.data['name'] = 'John Smith'
-//     req.session.data['uln'] = uln
-//     res.redirect('/1-19/dynamic/results/learner-results')
-   
+    req.session.data['uln'] = uln
+    req.session.data['name'] = 'Danny Davies'
+    req.session.data['dob'] = '6 May 2002'
+    req.session.data['provider'] = 'Barnsley College'
+    req.session.data['ukprn'] = '(1002342)'
+    req.session.data['core'] = 'Design, Surveying and Planning for Construction'
+    req.session.data['coreCode'] = '(10293344)'
+    req.session.data['specialism'] = 'Building Services Design'
+    req.session.data['specialismCode'] = '(ZT01284)'
+    req.session.data['academicYear'] = '2020 to 2021'
+    req.session.data['showNotification'] = ''
+    res.redirect('/1-19/dynamic/registrations/registration-details-appeal-MVS')   
     
-//   } else {
-//     req.session.data['uln'] = uln
-//     res.redirect('/1-19/dynamic/results/results-no-learner-found')
-//   }
-// })
+  } else {
+    req.session.data['uln'] = uln
+    res.redirect('/1-19/dynamic/registrations/registrations-no-learner-found')
+  }
+})
+
+//change name
+router.post('/1-19/dynamic/registrations/registration-change-name', function(req, res) {
+  
+  let firstName = req.session.data['first-name']
+  let lastName = req.session.data['last-name']
+  
+  req.session.data['change-first-name'] = firstName
+  req.session.data['change-last-name'] = lastName
+  req.session.data['nameChanged'] = 'yes'
+  req.session.data['showNotification'] = 'yes'
+
+ 
+  res.redirect('/1-19/dynamic/registrations/registration-details-appeal-MVS')   
+
+})
+
+//change dob
+router.post('/1-19/dynamic/registrations/registration-change-dob', function(req, res) {
+  
+  let dobDay = req.session.data['dob-day']
+  
+  req.session.data['change-dob-day'] = dobDay
+  req.session.data['dobChanged'] = 'yes'
+  req.session.data['showNotification'] = 'yes'
+
+ 
+  res.redirect('/1-19/dynamic/registrations/registration-details-appeal-MVS')   
+
+})
+
 
 //RESULTS
 router.post('/1-19/dynamic/results/search-learner', function (req, res) {

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add a new registration - enter the learner’s name - Manage T Level results - GOV.UK
+  Change learner's name
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,10 +12,10 @@ Add a new registration - enter the learner’s name - Manage T Level results - G
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="/1-19/dynamic/registrations/add-registration-q3-dob" method="post" novalidate data-validate="register-for-learner-validation">
+        <form class="form" action="registration-change-name" method="post" novalidate data-validate="register-for-learner-validation">
             <div class="govuk-form-group">
                 
-                    <span class="govuk-caption-xl">Register a new learner</span>
+                    <span class="govuk-caption-xl">Manage existing registrations</span>
                     <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l">
                         What is the learner’s name
                       </label>
@@ -65,5 +65,4 @@ Add a new registration - enter the learner’s name - Manage T Level results - G
         
       }
 </script>
-
 {% endblock %}

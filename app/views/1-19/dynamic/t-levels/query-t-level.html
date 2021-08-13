@@ -12,7 +12,7 @@ Query T Level
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <form action="" method="post" class="form" novalidate data-validate="request-grade-change-input">
+      <form action="/1-19/dynamic/t-levels/query-t-level-confirmation" method="post" class="form" novalidate data-validate="query-t-level">
 
         <h1 class="govuk-heading-l">Query T Level details</h1> 
         
@@ -62,13 +62,15 @@ Query T Level
 
           </div>
 
-          <a class="govuk-button" role="button" href="/1-19/dynamic/t-levels/query-t-level-confirmation">Submit</a>
+          <button class="govuk-button" data-module="govuk-button">
+            Submit
+          </button>
 
       </form>
   </div>
 </div>
 
-<script type="application/json" id="request-grade-change-input">
+<script type="application/json" id="query-t-level">
 {
 
   "more-detail": {
