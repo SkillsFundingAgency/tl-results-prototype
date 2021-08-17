@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Queried T Levels - Manage T Level results - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/tlevels-dashboard.html">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/1-19/dynamic/t-levels/student-t-levels">T Levels</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Queried T Levels</li>
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You have not queried any T Levels</h1>
+      <p class="govuk-body">T Levels you ask us to change will appear here, until we finish investigating your query.</p>
+
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I cannot find a T Level
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you cannot find the T Level you are looking for, check if you have <a href="confirmed-t-levels.html" class="govuk-link">confirmed</a> it or need to <a href="tlevel-select-non-reviewed.html" class="govuk-link">review it</a><br><br>
+            If you still cannot find it, <a href="#" class="govuk-link">contact us</a>.
+          </div>
+        </details>
+
+      <a class="govuk-button " role="button" href="/1-19/dynamic/t-levels/student-t-levels">Back to T Levels</a>
+
+
+    </div>
+  </div>
+
+{% endblock %}
